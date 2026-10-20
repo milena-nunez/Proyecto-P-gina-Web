@@ -117,6 +117,12 @@ h1, h2, h3, h4, h5 {
 }
 .skip-link:focus { top: 10px; }
 
+a.desactivado {
+  pointer-events: none;   /* ignora clics y hover */
+  opacity: .5;            /* se ve apagado */
+  cursor: default;
+}
+
 /* Texto solo para lectores de pantalla (Bootstrap 5 lo llama visually-hidden) */
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
 
@@ -138,11 +144,12 @@ h1, h2, h3, h4, h5 {
   --bs-gutter-x: 0.35rem;
 }
 
-.ctn-nav .navbar-brand { padding: 10px 0; margin-right: var(--sp-4); }
+.ctn-nav .navbar-brand { padding: 10px 0; margin-right: var(--sp-3); min-width: 0; }
 
 /* Logo: dos imágenes superpuestas; al pasar el mouse se cambia de una a otra */
 .logo-container { position: relative; display: block; }
-.logo-container img { display: block; height: 48px; width: auto; transition: opacity .4s ease; }
+/* El logo mide 567x68: en celular se achica para dejar sitio al botón de las 3 rayitas */
+.logo-container img { display: block; width: min(400px, calc(100vw - 112px)); height: auto; transition: opacity .4s ease; }
 .logo-container .logo-hovered { position: absolute; top: 0; left: 0; opacity: 0; }
 .navbar-brand:hover .logo-hovered,
 .navbar-brand:focus-visible .logo-hovered { opacity: 1; }
@@ -320,7 +327,7 @@ h1, h2, h3, h4, h5 {
 .cabecera-seccion .subtitulo-seccion { margin-bottom: 0; }
 
 /* Franja de invitación a inscribirse */
-.banda-admision { padding: var(--sp-5) 0; margin: 0 0 var(--sp-6) 0; background: var(--ctn-marron); color: #fff; text-align: center; }
+.banda-admision { padding: var(--sp-5) 0; background: var(--ctn-marron); color: #fff; text-align: center; }
 .banda-admision p { margin: 0 0 var(--sp-3); font-family: var(--fuente-titulos); font-size: clamp(1.25rem, 3vw, 1.75rem); text-transform: uppercase; }
 .banda-admision .acciones { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-3); }
 
