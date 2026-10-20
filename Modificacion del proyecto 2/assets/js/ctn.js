@@ -3,10 +3,11 @@
    --------------------------------------------------------------------------
    No necesita jQuery. Hace tres cosas:
      1. Activa las animaciones de aparición (clase "wow") al hacer scroll.
-     2. Carga el video de fondo del encabezado, solo si conviene.
-     3. Marca el documento con la clase "js" (los estilos la usan).
+     2. Carga el video de fondo de la portada, solo si conviene.
+     3. Abre las fotos de la galería en una ventana ampliada.
 
-   El menú desplegable y las ventanas emergentes los maneja Bootstrap.
+   El menú, las pestañas, los carruseles y las ventanas emergentes los maneja
+   Bootstrap 5 (bootstrap.bundle.min.js).
    ========================================================================== */
 (function () {
   'use strict';
@@ -32,13 +33,13 @@
           observador.unobserve(entrada.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
 
     Array.prototype.forEach.call(elementos, function (el) { observador.observe(el); });
   }
 
 
-  /* ---- 2. Video de fondo del encabezado ----------------------------------
+  /* ---- 2. Video de fondo de la portada -----------------------------------
      En el HTML el video solo tiene la ruta en "data-src". Aquí se decide si se
      descarga. No se carga en:
        - celulares / pantallas angostas (ahorra datos y batería),
@@ -69,6 +70,31 @@
   }
 
 
+  /* ---- 3. Galería ---------------------------------------------------------
+     Cada botón .galeria-item trae la foto grande en data-grande y su texto en
+     data-titulo. Se muestran en la ventana #modalGaleria. */
+  function iniciarGaleria() {
+    var ventana = document.getElementById('modalGaleria');
+    if (!ventana || !window.bootstrap) { return; }
+    var contenedor = ventana.querySelector('.modal-imagen');
+    var pie = ventana.querySelector('.modal-pie');
+
+    document.addEventListener('click', function (evento) {
+      var boton = evento.target.closest('.galeria-item');
+      if (!boton) { return; }
+      var imagen = document.createElement('img');       // la foto se crea al abrir (así no se descarga antes)
+      imagen.src = boton.getAttribute('data-grande');
+      imagen.alt = boton.getAttribute('data-titulo') || '';
+      contenedor.textContent = '';
+      contenedor.appendChild(imagen);
+      pie.textContent = boton.getAttribute('data-titulo') || '';
+      window.bootstrap.Modal.getOrCreateInstance(ventana).show();
+    });
+    ventana.addEventListener('hidden.bs.modal', function () { contenedor.textContent = ''; });
+  }
+
+
   animarAlHacerScroll();
   iniciarVideoDeFondo();
+  iniciarGaleria();
 })();

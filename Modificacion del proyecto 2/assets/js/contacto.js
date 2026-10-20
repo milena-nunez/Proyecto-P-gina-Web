@@ -8,6 +8,10 @@
    Los mensajes de error de cada campo se escriben en el HTML, en el atributo
    data-mensaje-requerido. El mensaje de "enviado" solo aparece si el servidor
    respondió que todo salió bien.
+
+   Estructura esperada de cada campo:
+     <div class="campo form-floating"> <input class="form-control">
+       <label></label> <div class="invalid-feedback"></div> </div>
    ========================================================================== */
 (function () {
   'use strict';
@@ -28,22 +32,20 @@
     respuesta.textContent = texto;
   }
 
+  /** Quita el estado de error (borde rojo y mensaje) de un campo. */
+  function limpiarCampo(campo) {
+    if (!campo.classList) { return; }
+    campo.classList.remove('is-invalid');
+    campo.removeAttribute('aria-invalid');
+    var grupo = campo.closest('.campo');
+    var ayuda = grupo && grupo.querySelector('.invalid-feedback');
+    if (ayuda) { ayuda.textContent = ''; }
+  }
+
   function limpiarErrores() {
     respuesta.className = '';
     respuesta.textContent = '';
-    Array.prototype.forEach.call(formulario.elements, function (campo) {
-      limpiarCampo(campo);
-      campo.removeAttribute('aria-invalid');
-    });
-  }
-
-  /** Quita el estado de error (borde rojo y mensaje) del grupo al que pertenece el campo. */
-  function limpiarCampo(campo) {
-    var grupo = campo.closest && campo.closest('.form-group');
-    if (!grupo) { return; }
-    grupo.classList.remove('has-error');
-    var ayuda = grupo.querySelector('.help-block');
-    if (ayuda) { ayuda.textContent = ''; }
+    Array.prototype.forEach.call(formulario.elements, limpiarCampo);
   }
 
   function mensajeDeError(campo) {
@@ -61,10 +63,10 @@
     var primerError = null;
     Array.prototype.forEach.call(formulario.elements, function (campo) {
       if (!campo.willValidate || campo.checkValidity()) { return; }
-      var grupo = campo.closest('.form-group');
-      grupo.classList.add('has-error');
-      grupo.querySelector('.help-block').textContent = mensajeDeError(campo);
+      var grupo = campo.closest('.campo');
+      campo.classList.add('is-invalid');
       campo.setAttribute('aria-invalid', 'true');
+      if (grupo) { grupo.querySelector('.invalid-feedback').textContent = mensajeDeError(campo); }
       primerError = primerError || campo;
     });
     if (primerError) { primerError.focus(); }
@@ -93,7 +95,5 @@
   });
 
   // Al empezar a escribir de nuevo, se limpia el aviso anterior
-  formulario.addEventListener('input', function (evento) {
-    limpiarCampo(evento.target);
-  });
+  formulario.addEventListener('input', function (evento) { limpiarCampo(evento.target); });
 })();

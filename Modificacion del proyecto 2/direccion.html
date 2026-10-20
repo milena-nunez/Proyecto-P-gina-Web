@@ -10,106 +10,98 @@
   <link rel="icon" href="assets/images/logo2.png">
 
   <script>document.documentElement.className += ' js';</script>
+  <link rel="preload" href="assets/fonts/google/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/google/dosis-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/blueridge.min.css">
-  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/ctn.css">
-  <link rel="stylesheet" href="assets/flexslider/flexslider.css">
 </head>
 <body>
 <a class="skip-link" href="#contenido">Ir al contenido</a>
 
 <!-- Menú principal -->
-<nav class="navbar navbar-default navbar-fixed-top ctn-nav" aria-label="Menú principal">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false" aria-controls="menu-principal">
-        <span class="sr-only">Mostrar u ocultar el menú</span>
-        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html" aria-label="Colegio Técnico Nacional - Inicio">
-        <span class="logo-container">
-          <img src="assets/images/themelogo/logo3.png" class="logo-base" alt="">
-          <img src="assets/images/themelogo/logo.png" class="logo-hovered" alt="">
-        </span>
-      </a>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top ctn-nav" aria-label="Menú principal">
+  <div class="container-xxl">
+    <a class="navbar-brand" href="index.html" aria-label="Colegio Técnico Nacional - Inicio">
+      <span class="logo-container">
+        <img src="assets/images/themelogo/logo3.png" class="logo-base" alt="" width="219" height="48">
+        <img src="assets/images/themelogo/logo.png" class="logo-hovered" alt="" width="219" height="48">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Mostrar u ocultar el menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="menu-principal">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="espe.html">Especialidades</a></li>
-        <li class="dropdown active">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Institucional <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="active"><a href="direccion.html" aria-current="page">Dirección General</a></li>
-            <li><a href="admision.html">Admisión</a></li>
-            <li><a href="cetna.html">CETNA</a></li>
-            <li><a href="Formularios.html">Formularios</a></li>
-          </ul>
-        </li>
-        <li><a href="contact2.html">Contacto</a></li>
-        <li><a href="acerca.html">Acerca de</a></li>
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="espe.html">Especialidades</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Institucional</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item active" href="direccion.html" aria-current="page">Dirección General</a></li>
+              <li><a class="dropdown-item" href="cetna.html">CETNA</a></li>
+              <li><a class="dropdown-item" href="Formularios.html">Formularios</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact2.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca de</a></li>
+          <li class="nav-item"><a class="btn-admision" href="admision.html">Admisión</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
 <main id="contenido">
-  <header class="indexbg1 hero-interno" id="hero">
+  <header class="hero hero-interno">
     <video class="bgvideo" muted loop playsinline preload="none" data-src="video/background3.mp4" aria-hidden="true" tabindex="-1"></video>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="header-text text-center white">
-            <h1>Dirección General</h1>
-            <hr class="borderwhite-sm">
-            <h2>Institucional</h2>
-          </div>
-        </div>
-      </div>
+      <h1>Dirección General</h1>
+      <hr class="linea">
+      <p class="hero-subtitulo">Institucional</p>
     </div>
   </header>
 
-  <div class="container">
-    <div class="page-header" id="banner">
-      <div class="flexslider">
-        <ul class="slides">
-          <li><img class="img-responsive center-block" src="assets/images/espe/dire.jpg" alt="El director general en una actividad del colegio"></li>
-          <li><img class="img-responsive center-block" src="assets/images/espe/dire2.jpg" alt="El director general en una actividad del colegio"></li>
-          <li><img class="img-responsive center-block" src="assets/images/espe/dire3.jpg" alt="El director general en una actividad del colegio"></li>
-        </ul>
+  <section class="seccion">
+    <div class="container">
+      <div id="carruselDireccion" class="carousel slide carrusel" data-bs-ride="carousel" role="region" aria-label="Fotos">
+        <div class="carousel-indicators"><button type="button" data-bs-target="#carruselDireccion" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button><button type="button" data-bs-target="#carruselDireccion" data-bs-slide-to="1" aria-label="Foto 2"></button><button type="button" data-bs-target="#carruselDireccion" data-bs-slide-to="2" aria-label="Foto 3"></button></div>
+        <div class="carousel-inner">
+        <div class="carousel-item active"><img src="assets/images/espe/dire.jpg" alt="El director general en una actividad del colegio"></div>
+        <div class="carousel-item"><img src="assets/images/espe/dire2.jpg" alt="El director general en una actividad del colegio" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/dire3.jpg" alt="El director general en una actividad del colegio" loading="lazy"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselDireccion" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Foto anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselDireccion" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Foto siguiente</span></button>
       </div>
 
-      <div class="jumbotron">
+      <div class="ficha-destacada">
         <h2>Abog. Alcides Hosffmeister | Director General</h2>
         <p>El abogado y profesor Hosffmeister tiene 15 años de experiencia y formación docente, ha sido reconocido por apadrinar con excelencia numerosas promociones. Lleva casi una década trabajando arduamente para la Institución y tiene cómo principal función planer, coordinar, supervisar y evaluar todas las actividades del colegio.</p>
-        <p><a class="btn btn-pill btn-ctn btn-ctn-marron text-uppercase" data-toggle="modal" href="#modalCurriculum">Currículum Vitae</a></p>
+        <button type="button" class="btn-ctn" data-bs-toggle="modal" data-bs-target="#modalCurriculum">Currículum Vitae</button>
       </div>
 
       <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><a data-toggle="tab" href="#funciones" role="tab">Funciones</a></li>
-        <li><a data-toggle="tab" href="#audiencia" role="tab">Horario de Audiencia</a></li>
+        <li class="nav-item" role="presentation"><button class="nav-link active" id="tab-funciones" data-bs-toggle="tab" data-bs-target="#funciones" type="button" role="tab" aria-controls="funciones" aria-selected="true">Funciones</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" id="tab-audiencia" data-bs-toggle="tab" data-bs-target="#audiencia" type="button" role="tab" aria-controls="audiencia" aria-selected="false">Horario de Audiencia</button></li>
       </ul>
 
-      <div class="tab-content">
-        <div class="tab-pane fade active in" id="funciones">
-          <p class="lead">ROLES FUNDAMENTALES</p>
-          <p class="lead">La Dirección General del Colegio Técnico Nacional, liderada por el Abog. Alcides Hosffmeister, tiene como roles:</p>
-          <ul class="lead">
+      <div class="tab-content pt-4">
+        <div class="tab-pane fade show active" id="funciones" role="tabpanel" aria-labelledby="tab-funciones" tabindex="0">
+          <h3 class="text-uppercase">Roles fundamentales</h3>
+          <p>La Dirección General del Colegio Técnico Nacional, liderada por el Abog. Alcides Hosffmeister, tiene como roles:</p>
+          <ul class="lista-funciones">
             <li>Ostentar la representación del centro docente, representar a la Administración educativa en el mismo y hacerle llegar a ésta los planteamientos, aspiraciones y necesidades de la comunidad educativa.
-              <br><br><i>Por consiguiente:</i><br><br>
-              <b>a.</b> Dirigir y coordinar todas las actividades del centro docente hacia la consecución del proyecto educativo del mismo.<br>
+              <p class="mt-3 mb-1"><i>Por consiguiente:</i></p>
+              <p><b>a.</b> Dirigir y coordinar todas las actividades del centro docente hacia la consecución del proyecto educativo del mismo.<br>
               <b>b.</b> Ejercer la Dirección pedagógica, promover la innovación educativa e impulsar planes para la consecución de los objetivos del proyecto educativo del centro docente.<br>
-              <b>c.</b> Favorecer la convivencia en el centro docente, garantizar la mediación en la resolución de los conflictos e imponer las medidas disciplinarias que correspondan a los alumnos.</li>
+              <b>c.</b> Favorecer la convivencia en el centro docente, garantizar la mediación en la resolución de los conflictos e imponer las medidas disciplinarias que correspondan a los alumnos.</p></li>
             <li>Acentuar el énfasis en materia técnico-pedagógica.
-              <br><br><i>Por consiguiente:</i><br><br>
-              <b>a.</b> Orientar al personal docente en la interpretación de los lineamientos técnicos para el manejo de los programas de estudio.<br>
+              <p class="mt-3 mb-1"><i>Por consiguiente:</i></p>
+              <p><b>a.</b> Orientar al personal docente en la interpretación de los lineamientos técnicos para el manejo de los programas de estudio.<br>
               <b>b.</b> Autorizar las estrategias o sugerencias que le presente el personal docente, para mejorar la aplicación de los programas de estudio de cada grado.<br>
-              <b>c.</b> Detectar los problemas de actualización y capacitación del personal docente, y canalizarlos hacia el supervisor de zona para su solución cuando ésta no pueda generarse dentro del plantel.</li>
+              <b>c.</b> Detectar los problemas de actualización y capacitación del personal docente, y canalizarlos hacia el supervisor de zona para su solución cuando ésta no pueda generarse dentro del plantel.</p></li>
           </ul>
         </div>
 
-        <div class="tab-pane fade" id="audiencia">
+        <div class="tab-pane fade" id="audiencia" role="tabpanel" aria-labelledby="tab-audiencia" tabindex="0">
           <div class="table-responsive">
             <table class="table table-striped table-hover">
               <thead><tr><th scope="col">Turno</th><th scope="col">Día</th><th scope="col">Desde</th><th scope="col">Hasta</th></tr></thead>
@@ -124,40 +116,52 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Ventana: currículum del director -->
-  <div class="modal fade" id="modalCurriculum" tabindex="-1" role="dialog" aria-labelledby="modalCurriculumTitulo">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-          <h3 class="modal-title texto-marron" id="modalCurriculumTitulo">Currículum Vitae</h3>
-        </div>
-        <div class="modal-body">
-          <p class="text-center"><img src="assets/images/espe/dire4.jpg" alt="Abog. Alcides Hosffmeister" width="120" height="120" loading="lazy"></p>
-          <p>El Director General, don Alcides Hosffmeister, cursó sus estudios de grado en la Universidad Nacional de Asunción, obteniendo el título de Abogado de la Facultad de Derecho y Ciencias Sociales. Egresó del Instituto Ateneo de Lengua Guaraní con el título de Prof. de Lengua y Literatura Guaraní. Egresó de la Universidad Católica de Asunción con el título de Licenciado en Filosofía. Se especializó en Notariado y Escribanía Pública por la Universidad Nacional de Asunción. Se formó en Didáctica Media y Superior, así como en Didáctica Universitaria. Actualmente está cursando una maestría en Derecho Civil y Procesal Penal.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
 </main>
 
-<footer class="bg-dark-blue" id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: (021) 608 663</p>
-        <span class="copyright">Copyright &copy; Desarrollado en la especialidad de Informática.</span>
+<!-- Ventana: currículum del director -->
+<div class="modal fade" id="modalCurriculum" tabindex="-1" aria-labelledby="modalCurriculumTitulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-4" id="modalCurriculumTitulo">Currículum Vitae</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center"><img class="rounded-3" src="assets/images/espe/dire4.jpg" alt="Abog. Alcides Hosffmeister" width="120" height="160" loading="lazy"></p>
+        <p>El Director General, don Alcides Hosffmeister, cursó sus estudios de grado en la Universidad Nacional de Asunción, obteniendo el título de Abogado de la Facultad de Derecho y Ciencias Sociales. Egresó del Instituto Ateneo de Lengua Guaraní con el título de Prof. de Lengua y Literatura Guaraní. Egresó de la Universidad Católica de Asunción con el título de Licenciado en Filosofía. Se especializó en Notariado y Escribanía Pública por la Universidad Nacional de Asunción. Se formó en Didáctica Media y Superior, así como en Didáctica Universitaria. Actualmente está cursando una maestría en Derecho Civil y Procesal Penal.</p>
       </div>
     </div>
+  </div>
+</div>
+
+<footer class="pie">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h2>Colegio Técnico Nacional</h2>
+        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: <a href="tel:+59521608663">(021)&nbsp;608&nbsp;663</a></p>
+      </div>
+      <div class="col-6 col-md-4">
+        <h2>Explorar</h2>
+        <ul>
+          <li><a href="espe.html">Especialidades</a></li>
+          <li><a href="admision.html">Admisión</a></li>
+          <li><a href="Formularios.html">Formularios</a></li>
+          <li><a href="acerca.html">Acerca de</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-4">
+        <h2>Encuéntranos</h2>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Colegio+T%C3%A9cnico+Nacional+de+Asunci%C3%B3n" rel="noopener" target="_blank">Cómo llegar<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a></p>
+        <a class="icono-social" href="https://www.facebook.com/ctnoficial/" rel="noopener" target="_blank" aria-label="Facebook del CTN (se abre en una pestaña nueva)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.6c0-.9.3-1.6 1.6-1.6h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.3H8v3h2.5V21h3z"/></svg></a>
+      </div>
+    </div>
+    <p class="derechos">Copyright &copy; Desarrollado en la especialidad de Informática.</p>
   </div>
 </footer>
 
-<script src="assets/js/jquery-3.7.1.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/flexslider/jquery.flexslider-min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/ctn.js"></script>
-<script>jQuery(function ($) { $('.flexslider').flexslider({ animation: 'slide', slideshowSpeed: 4000, pauseOnHover: true }); });</script>
 </body>
 </html>

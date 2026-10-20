@@ -1,156 +1,94 @@
 /* ==========================================================================
    CTN · Estilos de la página "Especialidades" (espe.html)
    --------------------------------------------------------------------------
-   Cada especialidad tiene su color. Al elegir una pestaña, espe.js cambia el
-   atributo  data-especialidad  del <body> y TODO se recolorea solo: la barra
-   de menú, el pie de página y los botones.
+   La barra de menú y el pie ya NO cambian de color: cada especialidad aporta
+   solo un ACENTO (borde, etiqueta activa, botones, acordeón).
 
    Para cambiar el color de una especialidad, edita su línea en la sección 1.
-   Variables de cada tema:
-     --tema-color    color principal de la especialidad
-     --tema-texto    color del texto que va SOBRE ese color (blanco u negro)
-     --tema-acento   color de enlace activo / al pasar el mouse en el menú
-     --tema-legible  color para textos y bordes sobre fondo BLANCO (en los temas claros
-                     es marrón, porque el color principal casi no se vería)
-     --logo-base     1 = logo claro visible  (para fondos oscuros)
-     --logo-hovered  1 = logo oscuro visible (para fondos claros)
+     --esp          color propio de la especialidad (fondos y bordes)
+     --esp-fuerte   versión más oscura, para TEXTO sobre blanco (buen contraste)
    ========================================================================== */
 
 
 /* ==========================================================================
-   1. TEMAS DE COLOR POR ESPECIALIDAD
+   1. COLORES DE CADA ESPECIALIDAD  (el id coincide con data-especialidad)
    ========================================================================== */
-/* Fondos oscuros: texto blanco, acento dorado, logo claro */
-[data-especialidad="info"]          { --tema-color: #7B1E3B; --tema-texto: #fff; --tema-acento: var(--ctn-dorado); --tema-legible: var(--tema-color); --logo-base: 1; --logo-hovered: 0; }
-[data-especialidad="mecanica_ind"]  { --tema-color: #355E3B; --tema-texto: #fff; --tema-acento: var(--ctn-dorado); --tema-legible: var(--tema-color); --logo-base: 1; --logo-hovered: 0; }
-[data-especialidad="mecanica_auto"] { --tema-color: #000080; --tema-texto: #fff; --tema-acento: var(--ctn-dorado); --tema-legible: var(--tema-color); --logo-base: 1; --logo-hovered: 0; }
-[data-especialidad="electromecanica"] { --tema-color: #2563EB; --tema-texto: #fff; --tema-acento: var(--ctn-dorado); --tema-legible: var(--tema-color); --logo-base: 1; --logo-hovered: 0; }
-
-/* Fondos claros: texto negro, acento marrón, logo oscuro */
-[data-especialidad="construccion"]  { --tema-color: #E5DCC8; --tema-texto: #000; --tema-acento: var(--ctn-marron); --tema-legible: var(--ctn-marron); --tema-legible-texto: var(--ctn-dorado); --logo-base: 0; --logo-hovered: 1; }
-[data-especialidad="electronica"]   { --tema-color: #A7ADB5; --tema-texto: #000; --tema-acento: var(--ctn-marron); --tema-legible: var(--ctn-marron); --tema-legible-texto: var(--ctn-dorado); --logo-base: 0; --logo-hovered: 1; }
-[data-especialidad="electricidad"]  { --tema-color: #87CEEB; --tema-texto: #000; --tema-acento: var(--ctn-marron); --tema-legible: var(--ctn-marron); --tema-legible-texto: var(--ctn-dorado); --logo-base: 0; --logo-hovered: 1; }
-[data-especialidad="quimica"]       { --tema-color: #F9FAFB; --tema-texto: #000; --tema-acento: var(--ctn-marron); --tema-legible: var(--ctn-marron); --tema-legible-texto: var(--ctn-dorado); --logo-base: 0; --logo-hovered: 1; }
-
-/* La barra de menú y el pie de página siguen el tema elegido en el <body> */
-body {
-  padding-top: var(--nav-alto);              /* la barra de menú es fija */
-  --nav-fondo:  var(--tema-color);
-  --nav-texto:  var(--tema-texto);
-  --nav-acento: var(--tema-acento);
-}
-.logo-container .logo-base    { opacity: var(--logo-base, 1); }
-.logo-container .logo-hovered { opacity: var(--logo-hovered, 0); }
-#footer {
-  background-color: var(--tema-color);
-  color: var(--tema-texto);
-  transition: background-color .5s ease, color .5s ease;
-}
-
-/* Botón con el color de la especialidad (borde y texto; al pasar el mouse se rellena) */
-.btn-ctn-tema {
-  --b-color: var(--tema-legible);
-  --b-fondo-hover: var(--tema-legible);
-  --b-texto-hover: var(--tema-legible-texto, var(--tema-texto));
-}
+[data-especialidad="info"]            { --esp: #7B1E3B; --esp-fuerte: #7B1E3B; }
+[data-especialidad="mecanica_ind"]    { --esp: #355E3B; --esp-fuerte: #355E3B; }
+[data-especialidad="mecanica_auto"]   { --esp: #000080; --esp-fuerte: #000080; }
+[data-especialidad="electromecanica"] { --esp: #2563EB; --esp-fuerte: #1d4ed8; }
+[data-especialidad="construccion"]    { --esp: #E5DCC8; --esp-fuerte: #7a5c2e; }
+[data-especialidad="electronica"]     { --esp: #A7ADB5; --esp-fuerte: #4b5563; }
+[data-especialidad="electricidad"]    { --esp: #87CEEB; --esp-fuerte: #0b6e99; }
+[data-especialidad="quimica"]         { --esp: #cfeee4; --esp-fuerte: #0f766e; }
 
 
 /* ==========================================================================
    2. ENCABEZADO: invitación al test vocacional + gráfico
    ========================================================================== */
-.hero-test .columna-texto { padding-top: 70px; }
-.hero-test canvas { max-width: 100%; }
+.hero-test { min-height: 0; padding: var(--sp-6) 0; text-align: left; }
+.hero-test .columna-texto { text-align: center; }
+.hero-test canvas { max-width: 100%; padding: var(--sp-3); border-radius: var(--radio-tarjeta); background: rgba(46, 18, 7, .55); }
 
 
 /* ==========================================================================
-   3. PESTAÑAS DE ESPECIALIDADES
+   3. SELECTOR DE ESPECIALIDADES (íconos)
    --------------------------------------------------------------------------
-   Todas muestran su ícono; la pestaña activa lo agranda y revela el nombre.
+   Todas muestran su ícono; la activa lo agranda y muestra el nombre.
    ========================================================================== */
 .especialidades-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 14px;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2);
+  margin: 0 0 var(--sp-5); padding: 0 0 var(--sp-3); list-style: none;
+  border-bottom: 1px solid var(--ctn-borde);
 }
-.especialidades-tabs > li { float: none; }
-.especialidades-tabs li a { display: block; padding: 10px; text-decoration: none; }
+.especialidades-tabs .nav-link {
+  display: flex; align-items: center; justify-content: center;
+  padding: var(--sp-2); border: 2px solid transparent; border-radius: var(--radio-pildora);
+  background: none; cursor: pointer; color: var(--ctn-texto);
+  transition: background-color .3s ease, border-color .3s ease;
+}
+.especialidades-tabs .nav-link:hover { background: var(--ctn-crema); }
+.especialidad-icon { width: 56px; height: 56px; transition: width .3s ease, height .3s ease; }
+.especialidad-label { max-width: 0; overflow: hidden; white-space: nowrap; font-family: var(--fuente-titulos); font-size: 1.25rem; font-weight: 700; color: var(--esp-fuerte); opacity: 0; transition: max-width .4s ease, margin .4s ease, opacity .3s ease; }
+.especialidades-tabs .nav-link.active { padding-right: var(--sp-4); border-color: var(--esp-fuerte); background: #fff; }
+.especialidades-tabs .nav-link.active .especialidad-icon { width: 72px; height: 72px; }
+.especialidades-tabs .nav-link.active .especialidad-label { max-width: 20rem; margin-left: var(--sp-3); opacity: 1; }
 
-.especialidad-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all .4s ease;
-}
-.especialidad-icon {
-  width: 60px;
-  height: 60px;
-  transition: all .4s ease;
-}
-.especialidad-label {
-  margin-left: 0;
-  font-size: 0;
-  font-weight: 700;
-  color: var(--tema-legible);
-  opacity: 0;
-  transition: all .4s ease;
-}
-.especialidades-tabs li.active .especialidad-icon  { width: 100px; height: 100px; transform: translateX(-10px); }
-.especialidades-tabs li.active .especialidad-label { margin-left: 14px; font-size: 22px; opacity: 1; }
-
-/* En celulares el nombre de la pestaña activa pasa debajo del ícono, para que todo quepa */
-@media (max-width: 575px) {
-  .especialidades-tabs { gap: 4px; }
-  .especialidades-tabs li a { padding: 6px; }
+/* En celulares el nombre pasa debajo del ícono y los íconos se achican */
+@media (max-width: 575.98px) {
+  .especialidades-tabs { gap: 2px; }
   .especialidad-icon { width: 44px; height: 44px; }
-  .especialidades-tabs li.active .especialidad-icon { width: 64px; height: 64px; transform: none; }
-  .especialidades-tabs li.active .especialidad-wrapper { flex-direction: column; }
-  .especialidades-tabs li.active .especialidad-label { margin: 4px 0 0; font-size: 16px; }
+  .especialidades-tabs .nav-link.active { flex-direction: column; padding: var(--sp-2); }
+  .especialidades-tabs .nav-link.active .especialidad-icon { width: 60px; height: 60px; }
+  .especialidades-tabs .nav-link.active .especialidad-label { max-width: 12rem; margin: var(--sp-1) 0 0; font-size: 1rem; white-space: normal; text-align: center; }
 }
 
 
 /* ==========================================================================
    4. CONTENIDO DE CADA ESPECIALIDAD
    ========================================================================== */
-.tab-content { margin-top: 20px; }
-.tab-pane .flexslider { max-width: 800px; margin: 0 auto; }
-.tab-pane .flexslider img { width: 100%; height: auto; }
-#info .post-wrapper { max-width: 900px; margin: 0 auto; }   /* Informática: mismo ancho que las demás */
+.panel-esp { max-width: 960px; margin: 0 auto; padding-top: var(--sp-4); border-top: 5px solid var(--esp); }
+.panel-esp .encabezado { text-align: center; margin-bottom: var(--sp-4); }
+.panel-esp .encabezado img { width: 160px; height: 160px; margin-bottom: var(--sp-3); }
+.panel-esp .encabezado h3 { margin: 0; font-size: var(--titulo-2); text-transform: uppercase; color: var(--esp-fuerte); }
 
-/* Título de cada especialidad: se ve igual que el título de los encabezados del tema */
-.titulo-especialidad { margin: 0; font-size: 38px; font-weight: 300; }
-@media (min-width: 768px) { .titulo-especialidad { font-size: 48px; } }
+/* Acordeón: Perfil general / específico / ocupacional */
+.acordeon-esp { --bs-accordion-btn-focus-box-shadow: 0 0 0 .25rem rgba(71, 28, 12, .2); --bs-accordion-active-bg: var(--ctn-crema); --bs-accordion-active-color: var(--esp-fuerte); --bs-accordion-border-color: var(--ctn-borde); margin-bottom: var(--sp-5); }
+.acordeon-esp .accordion-button { font-family: var(--fuente-titulos); font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
+.acordeon-esp .accordion-button:not(.collapsed) { box-shadow: inset 4px 0 0 var(--esp); }
+.acordeon-esp .accordion-body { font-size: var(--texto-m); }
+.acordeon-esp .accordion-body ul, .acordeon-esp .accordion-body ol { padding-left: 1.25rem; }
+.acordeon-esp .accordion-body li { margin-bottom: var(--sp-3); }
 
-/* Botones COORDINADOR / FORMULARIOS */
-.tab-pane .tags .tag { display: inline-block; margin: 0 4px 8px; }
+.acciones-esp { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-3); }
+.btn-ctn-tema { --b-color: var(--esp-fuerte); --b-texto: var(--esp-fuerte); --b-fondo-hover: var(--esp-fuerte); --b-texto-hover: #fff; }
 
 
 /* ==========================================================================
    5. VENTANAS: COORDINADOR Y FORMULARIOS
    ========================================================================== */
-.modal[data-especialidad] .modal-title,
-.modal[data-especialidad] .tarjeta-blanca h4 {
-  color: var(--tema-legible);
-  font-size: 22px;
-  font-weight: 700;
-}
-.formularios-lista { display: flex; flex-wrap: wrap; margin: 0 -10px; }
-.formularios-lista > div { display: flex; padding: 0 10px; width: 100%; }
-@media (min-width: 992px) { .formularios-lista > div { width: 25%; } }
-@media (min-width: 600px) and (max-width: 991px) { .formularios-lista > div { width: 50%; } }
-
-.formularios-lista .tarjeta-blanca { width: 100%; margin-bottom: 20px; }
-.formularios-lista .tarjeta-blanca p {
-  flex-grow: 1;
-  min-height: 120px;
-  font-size: 15px;
-  font-weight: 700;
-  text-align: justify;
-}
-
-/* Listas largas de perfiles: aire entre punto y punto (antes se lograba con <br> sueltos) */
-.tab-pane ul.lead > li { margin-bottom: 1em; }
-.tab-pane .post-wrapper p.lead:empty { display: none; }
-
-/* El botón ocupa el ancho de su tarjeta (en 4 columnas el texto no cabe en una sola línea fija) */
-.formularios-lista .tarjeta-blanca .btn-ctn { align-self: stretch; padding: 9px 10px; text-align: center; white-space: normal; }
+.modal[data-especialidad] .modal-title { color: var(--esp-fuerte); font-size: 1.5rem; font-weight: 700; }
+.modal[data-especialidad] .modal-header { border-bottom: 4px solid var(--esp); }
+.modal[data-especialidad] .tarjeta-form h4 { color: var(--esp-fuerte); font-weight: 700; }
+.formularios-lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--sp-3); }
+.formularios-lista .tarjeta-form p { font-size: var(--texto-s); font-weight: 600; }

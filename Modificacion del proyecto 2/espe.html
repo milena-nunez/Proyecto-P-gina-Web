@@ -10,46 +10,42 @@
   <link rel="icon" href="assets/images/logo2.png">
 
   <script>document.documentElement.className += ' js';</script>
+  <link rel="preload" href="assets/fonts/google/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/google/dosis-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/blueridge.min.css">
-  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/ctn.css">
-  <link rel="stylesheet" href="assets/flexslider/flexslider.css">
   <link rel="stylesheet" href="assets/css/espe.css">
 </head>
 <body data-especialidad="info">
 <a class="skip-link" href="#contenido">Ir al contenido</a>
 
 <!-- Menú principal -->
-<nav class="navbar navbar-default navbar-fixed-top ctn-nav" aria-label="Menú principal">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false" aria-controls="menu-principal">
-        <span class="sr-only">Mostrar u ocultar el menú</span>
-        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html" aria-label="Colegio Técnico Nacional - Inicio">
-        <span class="logo-container">
-          <img src="assets/images/themelogo/logo3.png" class="logo-base" alt="">
-          <img src="assets/images/themelogo/logo.png" class="logo-hovered" alt="">
-        </span>
-      </a>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top ctn-nav" aria-label="Menú principal">
+  <div class="container-xxl">
+    <a class="navbar-brand" href="index.html" aria-label="Colegio Técnico Nacional - Inicio">
+      <span class="logo-container">
+        <img src="assets/images/themelogo/logo3.png" class="logo-base" alt="" width="219" height="48">
+        <img src="assets/images/themelogo/logo.png" class="logo-hovered" alt="" width="219" height="48">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Mostrar u ocultar el menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="menu-principal">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html">Inicio</a></li>
-        <li class="active"><a href="espe.html" aria-current="page">Especialidades</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Institucional <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="direccion.html">Dirección General</a></li>
-            <li><a href="admision.html">Admisión</a></li>
-            <li><a href="cetna.html">CETNA</a></li>
-            <li><a href="Formularios.html">Formularios</a></li>
-          </ul>
-        </li>
-        <li><a href="contact2.html">Contacto</a></li>
-        <li><a href="acerca.html">Acerca de</a></li>
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="espe.html" aria-current="page">Especialidades</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Institucional</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="direccion.html">Dirección General</a></li>
+              <li><a class="dropdown-item" href="cetna.html">CETNA</a></li>
+              <li><a class="dropdown-item" href="Formularios.html">Formularios</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact2.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca de</a></li>
+          <li class="nav-item"><a class="btn-admision" href="admision.html">Admisión</a></li>
       </ul>
     </div>
   </div>
@@ -58,125 +54,119 @@
 <main id="contenido">
 
   <!-- Invitación al test vocacional (+ gráfico, si hay servidor configurado en assets/js/config.js) -->
-  <header class="indexbg1 hero-test" id="hero">
+  <header class="hero hero-test">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 text-center white columna-texto" id="columna-test">
+      <div class="row align-items-center gx-lg-5 gy-5">
+        <div class="col-lg-6 columna-texto" id="columna-test">
           <h1>¡Prueba nuestro test vocacional!</h1>
-          <hr class="borderwhite-sm">
-          <h2 class="text-uppercase">Descubre con emoción la especialidad que mejor se adapta a ti y a tu futuro.</h2>
-          <p class="mrgn-60-top"><a class="btn btn-blue-sm btn-pill btn-ctn btn-ctn-dorado text-uppercase" href="TEST/TEST/index.html">Haz el test vocacional</a></p>
+          <hr class="linea">
+          <p class="hero-subtitulo">Descubre con emoción la especialidad que mejor se adapta a ti y a tu futuro.</p>
+          <p class="mt-4"><a class="btn-ctn btn-ctn-solido" href="TEST/TEST/index.html">Haz el test vocacional</a></p>
         </div>
-        <div class="col-md-6" id="columna-grafico">
+        <div class="col-lg-6" id="columna-grafico">
           <canvas id="graficoEspecialidades" height="300" role="img" aria-label="Gráfico de barras: especialidades más elegidas en el test vocacional"></canvas>
         </div>
       </div>
     </div>
   </header>
 
-  <section class="bg-lighter-gray" id="services">
+  <section class="seccion" id="servicios">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center wow fadeInDown">
-          <h2 class="section-heading">¿Qué especialidades ofrecemos?</h2>
-        </div>
+      <div class="cabecera-seccion wow fadeInDown">
+        <h2 class="titulo-seccion">¿Qué especialidades ofrecemos?</h2>
+        <p class="subtitulo-seccion">Elige una para ver su perfil, su coordinador y sus formularios.</p>
       </div>
 
-      <ul class="nav nav-tabs especialidades-tabs" role="tablist">
-      <li class="active" role="presentation" data-especialidad="info">
-        <a href="#info" role="tab" data-toggle="tab" aria-controls="info">
-          <span class="especialidad-wrapper">
-            <img src="assets/images/especialidades/info_c.png" alt="" width="100" height="100" class="especialidad-icon">
-            <span class="especialidad-label">Informática</span>
-          </span>
-        </a>
-      </li>
-      <li role="presentation" data-especialidad="mecanica_ind">
-        <a href="#mecanica_ind" role="tab" data-toggle="tab" aria-controls="mecanica_ind">
-          <span class="especialidad-wrapper">
-            <img src="assets/images/especialidades/indu_c.png" alt="" width="100" height="100" class="especialidad-icon">
-            <span class="especialidad-label">Mecánica Industrial</span>
-          </span>
-        </a>
-      </li>
-      <li role="presentation" data-especialidad="mecanica_auto">
-        <a href="#mecanica_auto" role="tab" data-toggle="tab" aria-controls="mecanica_auto">
-          <span class="especialidad-wrapper">
-            <img src="assets/images/especialidades/auto_c.png" alt="" width="100" height="100" class="especialidad-icon">
-            <span class="especialidad-label">Mecánica Automotriz</span>
-          </span>
-        </a>
-      </li>
-      <li role="presentation" data-especialidad="construccion">
-        <a href="#construccion" role="tab" data-toggle="tab" aria-controls="construccion">
-          <span class="especialidad-wrapper">
-            <img src="assets/images/especialidades/cc_c.png" alt="" width="100" height="100" class="especialidad-icon">
-            <span class="especialidad-label">Construcciones Civiles</span>
-          </span>
-        </a>
-      </li>
-      <li role="presentation" data-especialidad="electronica">
-        <a href="#electronica" role="tab" data-toggle="tab" aria-controls="electronica">
-          <span class="especialidad-wrapper">
-            <img src="assets/images/especialidades/eik_c.png" alt="" width="100" height="100" class="especialidad-icon">
-            <span class="especialidad-label">Electrónica</span>
-          </span>
-        </a>
-      </li>
-      <li role="presentation" data-especialidad="electromecanica">
-        <a href="#electromecanica" role="tab" data-toggle="tab" aria-controls="electromecanica">
-          <span class="especialidad-wrapper">
-            <img src="assets/images/especialidades/emca_c.png" alt="" width="100" height="100" class="especialidad-icon">
-            <span class="especialidad-label">Electromecánica</span>
-          </span>
-        </a>
-      </li>
-      <li role="presentation" data-especialidad="electricidad">
-        <a href="#electricidad" role="tab" data-toggle="tab" aria-controls="electricidad">
-          <span class="especialidad-wrapper">
-            <img src="assets/images/especialidades/edad_c.png" alt="" width="100" height="100" class="especialidad-icon">
-            <span class="especialidad-label">Electricidad</span>
-          </span>
-        </a>
-      </li>
-      <li role="presentation" data-especialidad="quimica">
-        <a href="#quimica" role="tab" data-toggle="tab" aria-controls="quimica">
-          <span class="especialidad-wrapper">
-            <img src="assets/images/especialidades/qca_c.png" alt="" width="100" height="100" class="especialidad-icon">
-            <span class="especialidad-label">Química Industrial</span>
-          </span>
-        </a>
-      </li>
+      <ul class="especialidades-tabs" role="tablist" aria-label="Especialidades">
+        <li class="nav-item" role="presentation" data-especialidad="info">
+          <button class="nav-link active" id="tab-info" type="button" role="tab" data-bs-toggle="tab" data-bs-target="#info" aria-controls="info" aria-selected="true" aria-label="Informática">
+            <img class="especialidad-icon" src="assets/images/especialidades/info_c.png" alt="" width="72" height="72">
+            <span class="especialidad-label" aria-hidden="true">Informática</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation" data-especialidad="mecanica_ind">
+          <button class="nav-link" id="tab-mecanica_ind" type="button" role="tab" data-bs-toggle="tab" data-bs-target="#mecanica_ind" aria-controls="mecanica_ind" aria-selected="false" aria-label="Mecánica Industrial">
+            <img class="especialidad-icon" src="assets/images/especialidades/indu_c.png" alt="" width="72" height="72">
+            <span class="especialidad-label" aria-hidden="true">Mecánica Industrial</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation" data-especialidad="mecanica_auto">
+          <button class="nav-link" id="tab-mecanica_auto" type="button" role="tab" data-bs-toggle="tab" data-bs-target="#mecanica_auto" aria-controls="mecanica_auto" aria-selected="false" aria-label="Mecánica Automotriz">
+            <img class="especialidad-icon" src="assets/images/especialidades/auto_c.png" alt="" width="72" height="72">
+            <span class="especialidad-label" aria-hidden="true">Mecánica Automotriz</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation" data-especialidad="construccion">
+          <button class="nav-link" id="tab-construccion" type="button" role="tab" data-bs-toggle="tab" data-bs-target="#construccion" aria-controls="construccion" aria-selected="false" aria-label="Construcciones Civiles">
+            <img class="especialidad-icon" src="assets/images/especialidades/cc_c.png" alt="" width="72" height="72">
+            <span class="especialidad-label" aria-hidden="true">Construcciones Civiles</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation" data-especialidad="electronica">
+          <button class="nav-link" id="tab-electronica" type="button" role="tab" data-bs-toggle="tab" data-bs-target="#electronica" aria-controls="electronica" aria-selected="false" aria-label="Electrónica">
+            <img class="especialidad-icon" src="assets/images/especialidades/eik_c.png" alt="" width="72" height="72">
+            <span class="especialidad-label" aria-hidden="true">Electrónica</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation" data-especialidad="electromecanica">
+          <button class="nav-link" id="tab-electromecanica" type="button" role="tab" data-bs-toggle="tab" data-bs-target="#electromecanica" aria-controls="electromecanica" aria-selected="false" aria-label="Electromecánica">
+            <img class="especialidad-icon" src="assets/images/especialidades/emca_c.png" alt="" width="72" height="72">
+            <span class="especialidad-label" aria-hidden="true">Electromecánica</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation" data-especialidad="electricidad">
+          <button class="nav-link" id="tab-electricidad" type="button" role="tab" data-bs-toggle="tab" data-bs-target="#electricidad" aria-controls="electricidad" aria-selected="false" aria-label="Electricidad">
+            <img class="especialidad-icon" src="assets/images/especialidades/edad_c.png" alt="" width="72" height="72">
+            <span class="especialidad-label" aria-hidden="true">Electricidad</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation" data-especialidad="quimica">
+          <button class="nav-link" id="tab-quimica" type="button" role="tab" data-bs-toggle="tab" data-bs-target="#quimica" aria-controls="quimica" aria-selected="false" aria-label="Química Industrial">
+            <img class="especialidad-icon" src="assets/images/especialidades/qca_c.png" alt="" width="72" height="72">
+            <span class="especialidad-label" aria-hidden="true">Química Industrial</span>
+          </button>
+        </li>
       </ul>
 
       <div class="tab-content">
 
-    <!-- INFORMÁTICA -->
-    <div id="info" class="tab-pane fade in active" role="tabpanel">
-      <div class="container">
-        <div class="header-text text-center black777">
-          <img src="assets/images/icons/icon-bl-info.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
-          <h3 class="titulo-especialidad">Informática</h3>
-          <hr class="border-sm">
+      <!-- INFORMÁTICA -->
+      <div class="tab-pane fade show active panel-esp" id="info" data-especialidad="info" role="tabpanel" aria-labelledby="tab-info" tabindex="0">
+        <div class="encabezado">
+          <img src="assets/images/icons/icon-bl-info.png" alt="" width="160" height="160" loading="lazy">
+          <h3>Informática</h3>
         </div>
-        <div class="post-wrapper">
-          <div class="flexslider">
-            <ul class="slides">
-            <li><img class="img-responsive center-block" src="assets/images/espe/info.jpg" alt="Informática: foto 1 de 5" width="1024" height="680"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/info1.jpg" alt="Informática: foto 2 de 5" width="727" height="551" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/info2.jpg" alt="Informática: foto 3 de 5" width="723" height="554" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/info3.jpg" alt="Informática: foto 4 de 5" width="1277" height="718" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/info4.jpg" alt="Informática: foto 5 de 5" width="1276" height="718" loading="lazy"></li>
-            </ul>
-          </div>
-          <hr class="border-fullwidth">
+      <div id="carr-info" class="carousel slide carrusel" data-bs-ride="carousel" role="region" aria-label="Fotos">
+        <div class="carousel-indicators"><button type="button" data-bs-target="#carr-info" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button><button type="button" data-bs-target="#carr-info" data-bs-slide-to="1" aria-label="Foto 2"></button><button type="button" data-bs-target="#carr-info" data-bs-slide-to="2" aria-label="Foto 3"></button><button type="button" data-bs-target="#carr-info" data-bs-slide-to="3" aria-label="Foto 4"></button><button type="button" data-bs-target="#carr-info" data-bs-slide-to="4" aria-label="Foto 5"></button></div>
+        <div class="carousel-inner">
+        <div class="carousel-item active"><img src="assets/images/espe/info.jpg" alt="Informática: foto 1 de 5" width="1024" height="680"></div>
+        <div class="carousel-item"><img src="assets/images/espe/info1.jpg" alt="Informática: foto 2 de 5" width="727" height="551" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/info2.jpg" alt="Informática: foto 3 de 5" width="723" height="554" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/info3.jpg" alt="Informática: foto 4 de 5" width="1277" height="718" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/info4.jpg" alt="Informática: foto 5 de 5" width="1276" height="718" loading="lazy"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carr-info" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Foto anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carr-info" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Foto siguiente</span></button>
+      </div>
+        <div class="mb-4 cuerpo-lectura">
 <p class="lead">La inform&aacute;tica tiene como objetivo cubrir la necesidad de informaci&oacute;n actualizada y oportuna que requiere la administraci&oacute;n de las empresas, haciendo m&aacute;s eficientes sus labores lo que la lleva a ser m&aacute;s competitiva y a alcanzar los niveles que un mundo globalizado demanda.</p>
-      <p class="lead">PERFIL GENERAL</p>
-      <ul class="lead">
+        </div>
+        <div class="accordion acordeon-esp" id="acc-info">
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-info-0" aria-expanded="true" aria-controls="acc-info-0">PERFIL GENERAL</button></h4>
+            <div id="acc-info-0" class="accordion-collapse collapse show" data-bs-parent="#acc-info">
+              <div class="accordion-body">
+<ul class="lead">
         <li>El perfil profesional del Bachillerato T&eacute;cnico en Inform&aacute;tica pretende una s&oacute;lida formaci&oacute;n t&eacute;cnica, &eacute;tica y human&iacute;stica que le permita proyectar las competencias para incorporar y desarrollar programas inform&aacute;ticos, instalar (hardware y software), asistencia t&eacute;cnica, aplicaci&oacute;n del pensamiento cr&iacute;tico y el m&eacute;todo cient&iacute;fico en los problemas propios de la especialidad, adecu&aacute;ndose a las exigencias de los cambios tecnol&oacute;gicos del mundo globalizado y acordes a las exigencias de la regi&oacute;n.</li>
       </ul>
-      <p class="lead">PERFIL ESPEC&Iacute;FICO</p>
-      <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Inform&aacute;tica, se concibe un T&eacute;cnico en Inform&aacute;tica de Nivel Medio quien ser&aacute; capaz de:</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-info-1" aria-expanded="false" aria-controls="acc-info-1">PERFIL ESPEC&Iacute;FICO</button></h4>
+            <div id="acc-info-1" class="accordion-collapse collapse" data-bs-parent="#acc-info">
+              <div class="accordion-body">
+<p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Inform&aacute;tica, se concibe un T&eacute;cnico en Inform&aacute;tica de Nivel Medio quien ser&aacute; capaz de:</p>
       <ul class="lead">
         <li>Emplear conocimientos cient&iacute;ficos, human&iacute;sticos y tecnol&oacute;gicos para la pr&aacute;ctica laboral de su especialidad y-o prosecuci&oacute;n de estudios superiores.<br><br><i>Por consiguiente: </i><br><br>
           <b>a. </b> Planificar en base a un modelo, organizar, conducir y controlar trabajos en el &aacute;rea de su competencia.<br>
@@ -208,8 +198,14 @@
           <b>e. </b> Actuar con &eacute;tica y responsabilidad en el manejo de equipos de terceros, instalaci&oacute;n de software legal, calidad y veracidad de los componentes a instalar, as&iacute; como el manejo eficiente de los tiempos para la realizaci&oacute;n de los trabajos encomendados.
         </li>
       </ul>
-      <p class="lead">PERFIL OCUPACIONAL</p>
-      <p class="lead">El campo ocupacional espec&iacute;fico del t&eacute;cnico se define por su participaci&oacute;n bajo supervisi&oacute;n o de manera independiente seg&uacute;n requerimientos de terceros en: El desempe&ntilde;o eficiente y eficaz en empresas de servicios p&uacute;blicos y/o privados para:</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-info-2" aria-expanded="false" aria-controls="acc-info-2">PERFIL OCUPACIONAL</button></h4>
+            <div id="acc-info-2" class="accordion-collapse collapse" data-bs-parent="#acc-info">
+              <div class="accordion-body">
+<p class="lead">El campo ocupacional espec&iacute;fico del t&eacute;cnico se define por su participaci&oacute;n bajo supervisi&oacute;n o de manera independiente seg&uacute;n requerimientos de terceros en: El desempe&ntilde;o eficiente y eficaz en empresas de servicios p&uacute;blicos y/o privados para:</p>
       <ul class="lead">
         <li>Planificar la implementaci&oacute;n de software de gesti&oacute;n de datos (informatizaci&oacute;n de empresa) siguiendo el relevamiento de datos.</li>
 <li><i>Por consiguiente: </i><br><br>
@@ -231,33 +227,38 @@
           <b>b. </b> Capacitar y-o ejercer la tutor&iacute;a del personal para operar software de aplicaciones generales.
         </li>
 </ul>
-          <div class="tags">
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorINFO">COORDINADOR</a></span>
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosINFO">FORMULARIOS</a></span>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="acciones-esp">
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#coordinadorINFO">Coordinador</button>
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#formulariosINFO">Formularios</button>
         </div>
       </div>
-    </div>
 
-    <!-- MECÁNICA INDUSTRIAL -->
-    <div id="mecanica_ind" class="tab-pane fade" role="tabpanel">
-      <div class="container">
-        <div class="header-text text-center black777">
-          <img src="assets/images/icons/icon-bl-indu.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
-          <h3 class="titulo-especialidad">Mecánica Industrial</h3>
-          <hr class="border-sm">
+      <!-- MECÁNICA INDUSTRIAL -->
+      <div class="tab-pane fade panel-esp" id="mecanica_ind" data-especialidad="mecanica_ind" role="tabpanel" aria-labelledby="tab-mecanica_ind" tabindex="0">
+        <div class="encabezado">
+          <img src="assets/images/icons/icon-bl-indu.png" alt="" width="160" height="160" loading="lazy">
+          <h3>Mecánica Industrial</h3>
         </div>
-        <div class="post-wrapper">
-          <div class="flexslider">
-            <ul class="slides">
-            <li><img class="img-responsive center-block" src="assets/images/espe/indu.jpg" alt="Mecánica Industrial: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/indu2.jpg" alt="Mecánica Industrial: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/indu3.jpg" alt="Mecánica Industrial: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/indu4.jpg" alt="Mecánica Industrial: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
-            </ul>
-          </div>
-          <hr class="border-fullwidth">
-<p class="lead">PERFIL GENERAL</p>
+      <div id="carr-mecanica_ind" class="carousel slide carrusel" data-bs-ride="carousel" role="region" aria-label="Fotos">
+        <div class="carousel-indicators"><button type="button" data-bs-target="#carr-mecanica_ind" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button><button type="button" data-bs-target="#carr-mecanica_ind" data-bs-slide-to="1" aria-label="Foto 2"></button><button type="button" data-bs-target="#carr-mecanica_ind" data-bs-slide-to="2" aria-label="Foto 3"></button><button type="button" data-bs-target="#carr-mecanica_ind" data-bs-slide-to="3" aria-label="Foto 4"></button></div>
+        <div class="carousel-inner">
+        <div class="carousel-item active"><img src="assets/images/espe/indu.jpg" alt="Mecánica Industrial: foto 1 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/indu2.jpg" alt="Mecánica Industrial: foto 2 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/indu3.jpg" alt="Mecánica Industrial: foto 3 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/indu4.jpg" alt="Mecánica Industrial: foto 4 de 4" width="1024" height="680" loading="lazy"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carr-mecanica_ind" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Foto anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carr-mecanica_ind" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Foto siguiente</span></button>
+      </div>
+        <div class="accordion acordeon-esp" id="acc-mecanica_ind">
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-mecanica_ind-0" aria-expanded="true" aria-controls="acc-mecanica_ind-0">PERFIL GENERAL</button></h4>
+            <div id="acc-mecanica_ind-0" class="accordion-collapse collapse show" data-bs-parent="#acc-mecanica_ind">
+              <div class="accordion-body">
 <ul class="lead">
 	<li>Aplicar el pensamiento cr&iacute;tico y el m&eacute;todo cient&iacute;fico para el estudio y soluci&oacute;n de problemas en el campo tecnol&oacute;gico.</li>
 <li>Utilizar los conocimientos cient&iacute;ficos y tecnol&oacute;gicos en las distintas fases de las actividades profesionales y en sus relaciones laborales.</li>
@@ -266,7 +267,13 @@
 <li>Manejar equipos como ser: maquinas, instrumentos, herramientas y otros servicios propios de su especialidad.</li>
 <li>Manejar las informaciones a trav&eacute;s de: Libros, manuales, videos, cat&aacute;logos u otros medios para solucionar los problemas t&eacute;cnicos de su &aacute;rea.</li>
 </ul>
-<p class="lead">PERFIL ESPEC&Iacute;FICO</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-mecanica_ind-1" aria-expanded="false" aria-controls="acc-mecanica_ind-1">PERFIL ESPEC&Iacute;FICO</button></h4>
+            <div id="acc-mecanica_ind-1" class="accordion-collapse collapse" data-bs-parent="#acc-mecanica_ind">
+              <div class="accordion-body">
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Mec&aacute;nica Industial, se concibe un T&eacute;cnico de Nivel Medio con:</p>
 <ul class="lead">
 	<li>Elaborar proyectos mec&aacute;nicos, dise&ntilde;ando y calculando equipos mec&aacute;nicos como maquinas, herramientas y utillajes.</li>
@@ -275,7 +282,13 @@
 <li>Determinar procesos y procedimientos de fabricaci&oacute;n mec&aacute;nica, indicando los equipos, maquinas, instrumentos, herramientas, utillajes, materiales, tiempo y personal necesario.</li>
 <li>Emplear las maquinas, los equipos, los instrumentos, las herramientas y los procedimientos en el proceso de fabricaci&oacute;n, construcci&oacute;n y mantenimiento mec&aacute;nico.</li>
 </ul>
-<p class="lead">PERFIL OCUPACIONAL</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-mecanica_ind-2" aria-expanded="false" aria-controls="acc-mecanica_ind-2">PERFIL OCUPACIONAL</button></h4>
+            <div id="acc-mecanica_ind-2" class="accordion-collapse collapse" data-bs-parent="#acc-mecanica_ind">
+              <div class="accordion-body">
 <p class="lead">El campo ocupacional espec&iacute;fico del t&eacute;cnico se define por su participaci&oacute;n bajo supervisi&oacute;n o de manera independiente seg&uacute;n requerimientos de terceros en: El desempe&ntilde;o eficiente y eficaz en empresas de servicios p&uacute;blicos y/o privados. Dicho t&eacute;cnico es:</p>
 <ul class="lead">
 	<li><b>a. </b> T&eacute;cnico Mec&aacute;nico en reparaci&oacute;n y mantenimiento de maquinarias de alto porte.</li>
@@ -283,33 +296,38 @@
 <li><b>c. </b> Prestar asistencia t&eacute;cnica promoviendo, recomendando las especificaciones y presupuestando en el sector de compra-venta conexa con la producci&oacute;n y los servicios.</li>
 <li><b>d. </b> Acceder a cursos de nivel superior en el &aacute;rea de su especialidad y ejercer la docencia t&eacute;cnica.</li>
 </ul>
-          <div class="tags">
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorINDU">COORDINADOR</a></span>
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosINDU">FORMULARIOS</a></span>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="acciones-esp">
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#coordinadorINDU">Coordinador</button>
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#formulariosINDU">Formularios</button>
         </div>
       </div>
-    </div>
 
-    <!-- MECÁNICA AUTOMOTRIZ -->
-    <div id="mecanica_auto" class="tab-pane fade" role="tabpanel">
-      <div class="container">
-        <div class="header-text text-center black777">
-          <img src="assets/images/icons/icon-bl-auto.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
-          <h3 class="titulo-especialidad">Mecánica Automotriz</h3>
-          <hr class="border-sm">
+      <!-- MECÁNICA AUTOMOTRIZ -->
+      <div class="tab-pane fade panel-esp" id="mecanica_auto" data-especialidad="mecanica_auto" role="tabpanel" aria-labelledby="tab-mecanica_auto" tabindex="0">
+        <div class="encabezado">
+          <img src="assets/images/icons/icon-bl-auto.png" alt="" width="160" height="160" loading="lazy">
+          <h3>Mecánica Automotriz</h3>
         </div>
-        <div class="post-wrapper">
-          <div class="flexslider">
-            <ul class="slides">
-            <li><img class="img-responsive center-block" src="assets/images/espe/auto.jpg" alt="Mecánica Automotriz: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/auto2.jpg" alt="Mecánica Automotriz: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/auto3.jpg" alt="Mecánica Automotriz: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/auto4.jpg" alt="Mecánica Automotriz: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
-            </ul>
-          </div>
-          <hr class="border-fullwidth">
-<p class="lead">PERFIL GENERAL</p>
+      <div id="carr-mecanica_auto" class="carousel slide carrusel" data-bs-ride="carousel" role="region" aria-label="Fotos">
+        <div class="carousel-indicators"><button type="button" data-bs-target="#carr-mecanica_auto" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button><button type="button" data-bs-target="#carr-mecanica_auto" data-bs-slide-to="1" aria-label="Foto 2"></button><button type="button" data-bs-target="#carr-mecanica_auto" data-bs-slide-to="2" aria-label="Foto 3"></button><button type="button" data-bs-target="#carr-mecanica_auto" data-bs-slide-to="3" aria-label="Foto 4"></button></div>
+        <div class="carousel-inner">
+        <div class="carousel-item active"><img src="assets/images/espe/auto.jpg" alt="Mecánica Automotriz: foto 1 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/auto2.jpg" alt="Mecánica Automotriz: foto 2 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/auto3.jpg" alt="Mecánica Automotriz: foto 3 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/auto4.jpg" alt="Mecánica Automotriz: foto 4 de 4" width="1024" height="680" loading="lazy"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carr-mecanica_auto" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Foto anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carr-mecanica_auto" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Foto siguiente</span></button>
+      </div>
+        <div class="accordion acordeon-esp" id="acc-mecanica_auto">
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-mecanica_auto-0" aria-expanded="true" aria-controls="acc-mecanica_auto-0">PERFIL GENERAL</button></h4>
+            <div id="acc-mecanica_auto-0" class="accordion-collapse collapse show" data-bs-parent="#acc-mecanica_auto">
+              <div class="accordion-body">
 <ul class="lead">
 	<li>Conocimientos Human&iacute;sticos.</li>
 <li>Conocimientos Cient&iacute;ficos.</li>
@@ -317,7 +335,13 @@
 <li>Conocimientos Practicos.</li>
 <li>Profecional Eficiente y Eficaz.</li>
 </ul>
-<p class="lead">PERFIL ESPEC&Iacute;FICO</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-mecanica_auto-1" aria-expanded="false" aria-controls="acc-mecanica_auto-1">PERFIL ESPEC&Iacute;FICO</button></h4>
+            <div id="acc-mecanica_auto-1" class="accordion-collapse collapse" data-bs-parent="#acc-mecanica_auto">
+              <div class="accordion-body">
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Mec&aacute;nica Automoriz, se concibe un T&eacute;cnico de Nivel Medio con:</p>
 <ul class="lead">
 	<li>Conocimientos sobre herramientas, instrumientos de medici&oacute;n y maquinarias auxiliares.</li>
@@ -326,7 +350,13 @@
 <li>Conocimientos sobre dibujo T&eacute;cnico Automotriz.</li>
 <li>Conocimientos sobre c&aacute;lculos m&eacute;canicos referente al automovil.</li>
 </ul>
-<p class="lead">PERFIL OCUPACIONAL</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-mecanica_auto-2" aria-expanded="false" aria-controls="acc-mecanica_auto-2">PERFIL OCUPACIONAL</button></h4>
+            <div id="acc-mecanica_auto-2" class="accordion-collapse collapse" data-bs-parent="#acc-mecanica_auto">
+              <div class="accordion-body">
 <p class="lead">El campo ocupacional espec&iacute;fico del t&eacute;cnico se define por su participaci&oacute;n bajo supervisi&oacute;n o de manera independiente seg&uacute;n requerimientos de terceros en: El desempe&ntilde;o eficiente y eficaz en empresas de servicios p&uacute;blicos y/o privados. Dicho t&eacute;cnico es:</p>
 <ul class="lead">
 	<li><b>a. </b> T&eacute;cnico Mec&aacute;nico en reparaci&oacute;n y mantenimiento de veh&iacute;culos.</li>
@@ -334,34 +364,41 @@
 <li><b>c. </b> Capaz de realizar Asesoramiento T&eacute;cnico.</li>
 <li><b>d. </b> Eficiente en la atenci&oacute;n al cliente; en ventas de veh&iacute;culos y/o repuestos.</li>
 </ul>
-          <div class="tags">
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorAUTO">COORDINADOR</a></span>
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosAUTO">FORMULARIOS</a></span>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="acciones-esp">
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#coordinadorAUTO">Coordinador</button>
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#formulariosAUTO">Formularios</button>
         </div>
       </div>
-    </div>
 
-    <!-- CONSTRUCCIONES CIVILES -->
-    <div id="construccion" class="tab-pane fade" role="tabpanel">
-      <div class="container">
-        <div class="header-text text-center black777">
-          <img src="assets/images/icons/icon-bl-cc.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
-          <h3 class="titulo-especialidad">Construcciones Civiles</h3>
-          <hr class="border-sm">
+      <!-- CONSTRUCCIONES CIVILES -->
+      <div class="tab-pane fade panel-esp" id="construccion" data-especialidad="construccion" role="tabpanel" aria-labelledby="tab-construccion" tabindex="0">
+        <div class="encabezado">
+          <img src="assets/images/icons/icon-bl-cc.png" alt="" width="160" height="160" loading="lazy">
+          <h3>Construcciones Civiles</h3>
         </div>
-        <div class="post-wrapper">
-          <div class="flexslider">
-            <ul class="slides">
-            <li><img class="img-responsive center-block" src="assets/images/espe/cc.jpg" alt="Construcciones Civiles: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/cc2.jpg" alt="Construcciones Civiles: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/cc3.jpg" alt="Construcciones Civiles: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/cc4.jpg" alt="Construcciones Civiles: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
-            </ul>
-          </div>
-          <hr class="border-fullwidth">
+      <div id="carr-construccion" class="carousel slide carrusel" data-bs-ride="carousel" role="region" aria-label="Fotos">
+        <div class="carousel-indicators"><button type="button" data-bs-target="#carr-construccion" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button><button type="button" data-bs-target="#carr-construccion" data-bs-slide-to="1" aria-label="Foto 2"></button><button type="button" data-bs-target="#carr-construccion" data-bs-slide-to="2" aria-label="Foto 3"></button><button type="button" data-bs-target="#carr-construccion" data-bs-slide-to="3" aria-label="Foto 4"></button></div>
+        <div class="carousel-inner">
+        <div class="carousel-item active"><img src="assets/images/espe/cc.jpg" alt="Construcciones Civiles: foto 1 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/cc2.jpg" alt="Construcciones Civiles: foto 2 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/cc3.jpg" alt="Construcciones Civiles: foto 3 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/cc4.jpg" alt="Construcciones Civiles: foto 4 de 4" width="1024" height="680" loading="lazy"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carr-construccion" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Foto anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carr-construccion" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Foto siguiente</span></button>
+      </div>
+        <div class="mb-4 cuerpo-lectura">
 <p class="lead"><strong>Perfil del Bachiller T&eacute;cnico Industrial de Construcciones Civiles</strong></p>
-<p class="lead"><strong>Funciones Espec&iacute;ficas</strong></p>
+        </div>
+        <div class="accordion acordeon-esp" id="acc-construccion">
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-construccion-0" aria-expanded="true" aria-controls="acc-construccion-0">Funciones Espec&iacute;ficas</button></h4>
+            <div id="acc-construccion-0" class="accordion-collapse collapse show" data-bs-parent="#acc-construccion">
+              <div class="accordion-body">
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Construcciones Civiles, se concibe un T&eacute;cnico de Nivel Medio quien ser&aacute; capaz de:</p>
 <ul class="lead">
 	<li>Planificas, orgazinar, programar, dirigir y controlar todo tipo de obras civiles de una edificaci&oacute;n de hasta 250,00m.</li>
@@ -372,7 +409,13 @@
 <li>Ser un profecional competente para enfrentar con eficiencia los desafios actuales y futuras en el campo de las obras de infraestructura con domino de la deciplina y creatividad para resolver problemas.</li>
 <li>Capacidad de administrar recursos humanos y materiales, concebir y crear empresas.</li>
 </ul>
-<p class="lead"><strong>Caracteristicas del Egresado</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-construccion-1" aria-expanded="false" aria-controls="acc-construccion-1">Caracteristicas del Egresado</button></h4>
+            <div id="acc-construccion-1" class="accordion-collapse collapse" data-bs-parent="#acc-construccion">
+              <div class="accordion-body">
 <ul class="lead">
 	<li>Trabaja bajo la direcci&oacute;n y supervisi&oacute;n de ingenieros Civiles o Arquitectos.</li>
 <li>Esta habilitado para trabajar en obras civiles como asistente t&eacute;cnico de un Ingeniero o un Arquitecto.</li>
@@ -381,37 +424,48 @@
 <li>Conoce, gestiona y aplica la legislaci&oacute;n laboral, reglamento de la empresa, permisos municipales y cierre de la obra.</li>
 <li>Controla la calidad de la construcci&oacute;n y reconoce materiales, control de su ingreso y salida.</li>
 </ul>
-          <div class="tags">
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorCC">COORDINADOR</a></span>
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosCC">FORMULARIOS</a></span>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="acciones-esp">
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#coordinadorCC">Coordinador</button>
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#formulariosCC">Formularios</button>
         </div>
       </div>
-    </div>
 
-    <!-- ELECTRÓNICA -->
-    <div id="electronica" class="tab-pane fade" role="tabpanel">
-      <div class="container">
-        <div class="header-text text-center black777">
-          <img src="assets/images/icons/icon-bl-eik.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
-          <h3 class="titulo-especialidad">Electrónica</h3>
-          <hr class="border-sm">
+      <!-- ELECTRÓNICA -->
+      <div class="tab-pane fade panel-esp" id="electronica" data-especialidad="electronica" role="tabpanel" aria-labelledby="tab-electronica" tabindex="0">
+        <div class="encabezado">
+          <img src="assets/images/icons/icon-bl-eik.png" alt="" width="160" height="160" loading="lazy">
+          <h3>Electrónica</h3>
         </div>
-        <div class="post-wrapper">
-          <div class="flexslider">
-            <ul class="slides">
-            <li><img class="img-responsive center-block" src="assets/images/espe/eik3.jpg" alt="Electrónica: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/eik.jpg" alt="Electrónica: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/eik2.jpg" alt="Electrónica: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/eik4.jpg" alt="Electrónica: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
-            </ul>
-          </div>
-          <hr class="border-fullwidth">
-<p class="lead"><strong>PERFIL GENERAL</strong></p>
+      <div id="carr-electronica" class="carousel slide carrusel" data-bs-ride="carousel" role="region" aria-label="Fotos">
+        <div class="carousel-indicators"><button type="button" data-bs-target="#carr-electronica" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button><button type="button" data-bs-target="#carr-electronica" data-bs-slide-to="1" aria-label="Foto 2"></button><button type="button" data-bs-target="#carr-electronica" data-bs-slide-to="2" aria-label="Foto 3"></button><button type="button" data-bs-target="#carr-electronica" data-bs-slide-to="3" aria-label="Foto 4"></button></div>
+        <div class="carousel-inner">
+        <div class="carousel-item active"><img src="assets/images/espe/eik3.jpg" alt="Electrónica: foto 1 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/eik.jpg" alt="Electrónica: foto 2 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/eik2.jpg" alt="Electrónica: foto 3 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/eik4.jpg" alt="Electrónica: foto 4 de 4" width="1024" height="680" loading="lazy"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carr-electronica" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Foto anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carr-electronica" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Foto siguiente</span></button>
+      </div>
+        <div class="accordion acordeon-esp" id="acc-electronica">
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-electronica-0" aria-expanded="true" aria-controls="acc-electronica-0">PERFIL GENERAL</button></h4>
+            <div id="acc-electronica-0" class="accordion-collapse collapse show" data-bs-parent="#acc-electronica">
+              <div class="accordion-body">
 <ul class="lead">
 	<li>Perfil general del egresado El Egresado T&eacute;cnico en Electr&oacute;nica debe ser capaz de desarrollar y aplicar conocimientos cient&iacute;ficos, human&iacute;sticos, tecnol&oacute;gicos y pr&aacute;cticos esenciales, que le permitan desarrollar actividades espec&iacute;ficas de su profesi&oacute;n, con esp&iacute;ritu cr&iacute;tico y creador mediante el trabajo en equipo y multidisciplinario para que pueda enfrentar la vida y el mundo en forma competente, justa y solidaria, en el marco del desarrollo sostenible.</li>
 </ul>
-<p class="lead"><strong>PERFIL ESPEC&Iacute;FICO</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-electronica-1" aria-expanded="false" aria-controls="acc-electronica-1">PERFIL ESPEC&Iacute;FICO</button></h4>
+            <div id="acc-electronica-1" class="accordion-collapse collapse" data-bs-parent="#acc-electronica">
+              <div class="accordion-body">
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Electr&oacute;nica, se concibe un T&eacute;cnico de Nivel Medio quien ser&aacute; capaz de:</p>
 <ul class="lead">
 	<li>Proyectar, componentes y equipos de electr&oacute;nica anal&oacute;gica y/o digital, con tecnolog&iacute;a electr&oacute;nica est&aacute;ndar y de baja o mediana complejidad<br>
@@ -429,39 +483,56 @@
 	<b>b. </b> Montar dispositivos y componentes con electr&oacute;nica anal&oacute;gica y/o digital, est&aacute;ndar de baja o mediana complejidad.<br>
 	<b>c. </b> Realizar la selecci&oacute;n, asesoramiento y comercializaci&oacute;n de dispositivos, componentes, productos y equipos con electr&oacute;nica anal&oacute;gica y/o digital, est&aacute;ndar de baja o mediana complejidad</li>
 </ul>
-<p class="lead"><strong>PERFIL OCUPACIONAL</strong></p>
-<p class="lead">Cada uno de estos alcances particulares sobre la electr&oacute;nica de los equipos, componentes, productos e instalaciones; en los &aacute;mbitos de control, telecomunicaciones, instrumentos, o electr&oacute;nica industrial; tendr&aacute;n en cuenta criterios de seguridad, cuidado del ambiente, ergonom&iacute;a, calidad, productividad, y costos; seg&uacute;n las definiciones estrat&eacute;gicas surgidas de los estamentos t&eacute;cnicos y jer&aacute;rquicos correspondientes con autonom&iacute;a y responsabilidad sobre su propio trabajo y sobre el trabajo de otros a su cargo.</p>
-          <div class="tags">
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorEIK">COORDINADOR</a></span>
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosEIK">FORMULARIOS</a></span>
+              </div>
+            </div>
           </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-electronica-2" aria-expanded="false" aria-controls="acc-electronica-2">PERFIL OCUPACIONAL</button></h4>
+            <div id="acc-electronica-2" class="accordion-collapse collapse" data-bs-parent="#acc-electronica">
+              <div class="accordion-body">
+<p class="lead">Cada uno de estos alcances particulares sobre la electr&oacute;nica de los equipos, componentes, productos e instalaciones; en los &aacute;mbitos de control, telecomunicaciones, instrumentos, o electr&oacute;nica industrial; tendr&aacute;n en cuenta criterios de seguridad, cuidado del ambiente, ergonom&iacute;a, calidad, productividad, y costos; seg&uacute;n las definiciones estrat&eacute;gicas surgidas de los estamentos t&eacute;cnicos y jer&aacute;rquicos correspondientes con autonom&iacute;a y responsabilidad sobre su propio trabajo y sobre el trabajo de otros a su cargo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="acciones-esp">
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#coordinadorEIK">Coordinador</button>
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#formulariosEIK">Formularios</button>
         </div>
       </div>
-    </div>
 
-    <!-- ELECTROMECÁNICA -->
-    <div id="electromecanica" class="tab-pane fade" role="tabpanel">
-      <div class="container">
-        <div class="header-text text-center black777">
-          <img src="assets/images/icons/icon-bl-electro.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
-          <h3 class="titulo-especialidad">Electromecánica</h3>
-          <hr class="border-sm">
+      <!-- ELECTROMECÁNICA -->
+      <div class="tab-pane fade panel-esp" id="electromecanica" data-especialidad="electromecanica" role="tabpanel" aria-labelledby="tab-electromecanica" tabindex="0">
+        <div class="encabezado">
+          <img src="assets/images/icons/icon-bl-electro.png" alt="" width="160" height="160" loading="lazy">
+          <h3>Electromecánica</h3>
         </div>
-        <div class="post-wrapper">
-          <div class="flexslider">
-            <ul class="slides">
-            <li><img class="img-responsive center-block" src="assets/images/espe/emca.jpg" alt="Electromecánica: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/emca2.jpg" alt="Electromecánica: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/emca3.jpg" alt="Electromecánica: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/emca4.jpg" alt="Electromecánica: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
-            </ul>
-          </div>
-          <hr class="border-fullwidth">
-<p class="lead">PERFIL GENERAL</p>
+      <div id="carr-electromecanica" class="carousel slide carrusel" data-bs-ride="carousel" role="region" aria-label="Fotos">
+        <div class="carousel-indicators"><button type="button" data-bs-target="#carr-electromecanica" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button><button type="button" data-bs-target="#carr-electromecanica" data-bs-slide-to="1" aria-label="Foto 2"></button><button type="button" data-bs-target="#carr-electromecanica" data-bs-slide-to="2" aria-label="Foto 3"></button><button type="button" data-bs-target="#carr-electromecanica" data-bs-slide-to="3" aria-label="Foto 4"></button></div>
+        <div class="carousel-inner">
+        <div class="carousel-item active"><img src="assets/images/espe/emca.jpg" alt="Electromecánica: foto 1 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/emca2.jpg" alt="Electromecánica: foto 2 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/emca3.jpg" alt="Electromecánica: foto 3 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/emca4.jpg" alt="Electromecánica: foto 4 de 4" width="1024" height="680" loading="lazy"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carr-electromecanica" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Foto anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carr-electromecanica" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Foto siguiente</span></button>
+      </div>
+        <div class="accordion acordeon-esp" id="acc-electromecanica">
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-electromecanica-0" aria-expanded="true" aria-controls="acc-electromecanica-0">PERFIL GENERAL</button></h4>
+            <div id="acc-electromecanica-0" class="accordion-collapse collapse show" data-bs-parent="#acc-electromecanica">
+              <div class="accordion-body">
 <ul class="lead">
 	<li>Perfil general del egresado El Egresado T&eacute;cnico en Electromec&aacute;nica debe ser capaz de desarrollar y aplicar conocimientos cient&iacute;ficos, human&iacute;sticos, tecnol&oacute;gicos y pr&aacute;cticos esenciales, que le permitan desarrollar actividades espec&iacute;ficas de su profesi&oacute;n, con esp&iacute;ritu cr&iacute;tico y creador mediante el trabajo en equipo y multidisciplinario para que pueda enfrentar la vida y el mundo en forma competente, justa y solidaria, en el marco del desarrollo sostenible.</li>
 </ul>
-<p class="lead">PERFIL ESPEC&Iacute;FICO</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-electromecanica-1" aria-expanded="false" aria-controls="acc-electromecanica-1">PERFIL ESPEC&Iacute;FICO</button></h4>
+            <div id="acc-electromecanica-1" class="accordion-collapse collapse" data-bs-parent="#acc-electromecanica">
+              <div class="accordion-body">
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Electromec&aacute;nica, se concibe un T&eacute;cnico de Nivel Medio quien ser&aacute; capaz de:</p>
 <ul class="lead">
 	<li>Proyectar y dise&ntilde;ar sistemas mec&aacute;nicos, el&eacute;ctricos, electromec&aacute;nicos, neum&aacute;ticos, oleohidra&uacute;licos, de accionamiento y control, herramientas y dispositivos en proyectos de plantas, y en adaptaciones, ampliaciones, optimizaciones y mejoras, de acuerdo a la normativa vigente. Es capaz de identificar el alcance y los l&iacute;mites de su participaci&oacute;n en el dise&ntilde;o y verificar la l&oacute;gica rec&iacute;proca entre el dise&ntilde;o y el proceso.<br>
@@ -480,39 +551,56 @@
 	<b>b. </b> Instalar circuitos y sistemas de instalaciones industriales.<br>
 	<b>c. </b> Realizar e interpretar ensayos de materiales y ensayos el&eacute;ctricos, mec&aacute;nicos y electromec&aacute;nicos.</li>
 </ul>
-<p class="lead">PERFIL OCUPACIONAL</p>
-<p class="lead">Del an&aacute;lisis de las actividades profesionales que se desprenden del Perfil Profesional, se establecen como habilitaciones para el T&eacute;cnico: -Realizar las fases del proyecto de: componentes, equipos e instalaciones: mec&aacute;nicas, el&eacute;ctricas, electromec&aacute;nicas, t&eacute;rmicas, hidr&aacute;ulicas, neum&aacute;ticas, y oleohidr&aacute;ulicas. Sistemas neum&aacute;ticos y oleohidra&uacute;licos. Sistemas estacionarios, m&oacute;viles y de transporte. Circuitos y/o sistemas de distribuci&oacute;n de energ&iacute;a. Control de automatismo. Herramientas y dispositivos. Programas de mantenimiento.</p>
-          <div class="tags">
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorEMCA">COORDINADOR</a></span>
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosEMCA">FORMULARIOS</a></span>
+              </div>
+            </div>
           </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-electromecanica-2" aria-expanded="false" aria-controls="acc-electromecanica-2">PERFIL OCUPACIONAL</button></h4>
+            <div id="acc-electromecanica-2" class="accordion-collapse collapse" data-bs-parent="#acc-electromecanica">
+              <div class="accordion-body">
+<p class="lead">Del an&aacute;lisis de las actividades profesionales que se desprenden del Perfil Profesional, se establecen como habilitaciones para el T&eacute;cnico: -Realizar las fases del proyecto de: componentes, equipos e instalaciones: mec&aacute;nicas, el&eacute;ctricas, electromec&aacute;nicas, t&eacute;rmicas, hidr&aacute;ulicas, neum&aacute;ticas, y oleohidr&aacute;ulicas. Sistemas neum&aacute;ticos y oleohidra&uacute;licos. Sistemas estacionarios, m&oacute;viles y de transporte. Circuitos y/o sistemas de distribuci&oacute;n de energ&iacute;a. Control de automatismo. Herramientas y dispositivos. Programas de mantenimiento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="acciones-esp">
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#coordinadorEMCA">Coordinador</button>
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#formulariosEMCA">Formularios</button>
         </div>
       </div>
-    </div>
 
-    <!-- ELECTRICIDAD -->
-    <div id="electricidad" class="tab-pane fade" role="tabpanel">
-      <div class="container">
-        <div class="header-text text-center black777">
-          <img src="assets/images/icons/icon-bl-design.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
-          <h3 class="titulo-especialidad">Electricidad</h3>
-          <hr class="border-sm">
+      <!-- ELECTRICIDAD -->
+      <div class="tab-pane fade panel-esp" id="electricidad" data-especialidad="electricidad" role="tabpanel" aria-labelledby="tab-electricidad" tabindex="0">
+        <div class="encabezado">
+          <img src="assets/images/icons/icon-bl-design.png" alt="" width="160" height="160" loading="lazy">
+          <h3>Electricidad</h3>
         </div>
-        <div class="post-wrapper">
-          <div class="flexslider">
-            <ul class="slides">
-            <li><img class="img-responsive center-block" src="assets/images/espe/edad.jpg" alt="Electricidad: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/edad2.jpg" alt="Electricidad: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/edad3.jpg" alt="Electricidad: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/edad4.jpg" alt="Electricidad: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
-            </ul>
-          </div>
-          <hr class="border-fullwidth">
-<p class="lead"><strong>PERFIL GENERAL</strong></p>
+      <div id="carr-electricidad" class="carousel slide carrusel" data-bs-ride="carousel" role="region" aria-label="Fotos">
+        <div class="carousel-indicators"><button type="button" data-bs-target="#carr-electricidad" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button><button type="button" data-bs-target="#carr-electricidad" data-bs-slide-to="1" aria-label="Foto 2"></button><button type="button" data-bs-target="#carr-electricidad" data-bs-slide-to="2" aria-label="Foto 3"></button><button type="button" data-bs-target="#carr-electricidad" data-bs-slide-to="3" aria-label="Foto 4"></button></div>
+        <div class="carousel-inner">
+        <div class="carousel-item active"><img src="assets/images/espe/edad.jpg" alt="Electricidad: foto 1 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/edad2.jpg" alt="Electricidad: foto 2 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/edad3.jpg" alt="Electricidad: foto 3 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/edad4.jpg" alt="Electricidad: foto 4 de 4" width="1024" height="680" loading="lazy"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carr-electricidad" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Foto anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carr-electricidad" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Foto siguiente</span></button>
+      </div>
+        <div class="accordion acordeon-esp" id="acc-electricidad">
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-electricidad-0" aria-expanded="true" aria-controls="acc-electricidad-0">PERFIL GENERAL</button></h4>
+            <div id="acc-electricidad-0" class="accordion-collapse collapse show" data-bs-parent="#acc-electricidad">
+              <div class="accordion-body">
 <ul class="lead">
 	<li>El Bachiller en electricidad ser&aacute; completamente para acceder y desenvolverse laboralmente. En las funciones de Proyectar, Montar, Instalar, Operar, Matener, Gestionar y Supervisar recursos para la ejecuci&oacute;n de instalaciones el&eacute;ctricas tanto en locales Residenciales y como Industriales, en baja tensi&oacute;n, en base a proyectos realizados, seg&uacute;n normas t&eacute;cnicas, ambientales, est&aacute;ndares de calidad y seguridad.</li>
 </ul>
-<p class="lead"><strong>PERFIL ESPEC&Iacute;FICO</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-electricidad-1" aria-expanded="false" aria-controls="acc-electricidad-1">PERFIL ESPEC&Iacute;FICO</button></h4>
+            <div id="acc-electricidad-1" class="accordion-collapse collapse" data-bs-parent="#acc-electricidad">
+              <div class="accordion-body">
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Electricidad, se concibe un T&eacute;cnico de Nivel Medio quien ser&aacute; capaz de:</p>
 <ul class="lead">
 	<li>Elaborar proyectos de instalaciones el&eacute;ctricas residenciales e industriales, en baja tensi&oacute;n relacionando los aspectos creativos con la tecnolog&iacute;a espec&iacute;fica.</li>
@@ -523,7 +611,13 @@
 <li>Planificar, gestionar, administrar, coordinar las acciones necesarias en orden cronol&oacute;gico.</li>
 <li>Controlar y supervisar la ejecuci&oacute;n de la instalaci&oacute;n siguiendo la planificaci&oacute;n del proyecto, las normas de seguridad y salud ocupacional.</li>
 </ul>
-<p class="lead"><strong>PERFIL OCUPACIONAL</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-electricidad-2" aria-expanded="false" aria-controls="acc-electricidad-2">PERFIL OCUPACIONAL</button></h4>
+            <div id="acc-electricidad-2" class="accordion-collapse collapse" data-bs-parent="#acc-electricidad">
+              <div class="accordion-body">
 <p class="lead">El campo ocupacional espec&iacute;fico del t&eacute;cnico se define por su participaci&oacute;n bajo supervisi&oacute;n o de manera independiente seg&uacute;n requerimientos de terceros en: El desempe&ntilde;o eficiente y eficaz en empresas de servicios p&uacute;blicos y/o privados.</p>
 <p class="lead">El Bachiller t&eacute;cnico en electricidad puede ejercer sus funciones desempe&ntilde;&aacute;ndose de forma independiente o en relaci&oacute;n de dependencia en servicios de mantenimiento , instalaci&oacute;n y/o reparaci&oacute;n de sistemas el&eacute;ctricos como:</p>
 <ul class="lead">
@@ -532,37 +626,48 @@
 <li><b>c. </b> Instalador de redes el&eacute;ctricas residenciales, comerciales e industriales.</li>
 <li><b>d. </b> Asesor comercial en accesorios y materiales el&eacute;ctricos.</li>
 </ul>
-          <div class="tags">
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorEDAD">COORDINADOR</a></span>
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosEDAD">FORMULARIOS</a></span>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="acciones-esp">
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#coordinadorEDAD">Coordinador</button>
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#formulariosEDAD">Formularios</button>
         </div>
       </div>
-    </div>
 
-    <!-- QUÍMICA INDUSTRIAL -->
-    <div id="quimica" class="tab-pane fade" role="tabpanel">
-      <div class="container">
-        <div class="header-text text-center black777">
-          <img src="assets/images/icons/icon-bl-qca.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
-          <h3 class="titulo-especialidad">Química Industrial</h3>
-          <hr class="border-sm">
+      <!-- QUÍMICA INDUSTRIAL -->
+      <div class="tab-pane fade panel-esp" id="quimica" data-especialidad="quimica" role="tabpanel" aria-labelledby="tab-quimica" tabindex="0">
+        <div class="encabezado">
+          <img src="assets/images/icons/icon-bl-qca.png" alt="" width="160" height="160" loading="lazy">
+          <h3>Química Industrial</h3>
         </div>
-        <div class="post-wrapper">
-          <div class="flexslider">
-            <ul class="slides">
-            <li><img class="img-responsive center-block" src="assets/images/espe/qca.jpg" alt="Química Industrial: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/qca2.jpg" alt="Química Industrial: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/qca3.jpg" alt="Química Industrial: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
-            <li><img class="img-responsive center-block" src="assets/images/espe/qca4.jpg" alt="Química Industrial: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
-            </ul>
-          </div>
-          <hr class="border-fullwidth">
-<p class="lead">PERFIL GENERAL</p>
+      <div id="carr-quimica" class="carousel slide carrusel" data-bs-ride="carousel" role="region" aria-label="Fotos">
+        <div class="carousel-indicators"><button type="button" data-bs-target="#carr-quimica" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button><button type="button" data-bs-target="#carr-quimica" data-bs-slide-to="1" aria-label="Foto 2"></button><button type="button" data-bs-target="#carr-quimica" data-bs-slide-to="2" aria-label="Foto 3"></button><button type="button" data-bs-target="#carr-quimica" data-bs-slide-to="3" aria-label="Foto 4"></button></div>
+        <div class="carousel-inner">
+        <div class="carousel-item active"><img src="assets/images/espe/qca.jpg" alt="Química Industrial: foto 1 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/qca2.jpg" alt="Química Industrial: foto 2 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/qca3.jpg" alt="Química Industrial: foto 3 de 4" width="1024" height="680" loading="lazy"></div>
+        <div class="carousel-item"><img src="assets/images/espe/qca4.jpg" alt="Química Industrial: foto 4 de 4" width="1024" height="680" loading="lazy"></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carr-quimica" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Foto anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carr-quimica" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Foto siguiente</span></button>
+      </div>
+        <div class="accordion acordeon-esp" id="acc-quimica">
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#acc-quimica-0" aria-expanded="true" aria-controls="acc-quimica-0">PERFIL GENERAL</button></h4>
+            <div id="acc-quimica-0" class="accordion-collapse collapse show" data-bs-parent="#acc-quimica">
+              <div class="accordion-body">
 <ul class="lead">
 	<li>Perfil general del egresado El Egresado T&eacute;cnico en Qu&iacute;mica Industrial debe ser capaz de desarrollar y aplicar conocimientos cient&iacute;ficos, human&iacute;sticos, tecnol&oacute;gicos y pr&aacute;cticos esenciales, que le permitan desarrollar actividades espec&iacute;ficas de su profesi&oacute;n, con esp&iacute;ritu cr&iacute;tico y creador mediante el trabajo en equipo y multidisciplinario para que pueda enfrentar la vida y el mundo en forma competente, justa y solidaria, en el marco del desarrollo sostenible.</li>
 </ul>
-<p class="lead">PERFIL ESPEC&Iacute;FICO</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-quimica-1" aria-expanded="false" aria-controls="acc-quimica-1">PERFIL ESPEC&Iacute;FICO</button></h4>
+            <div id="acc-quimica-1" class="accordion-collapse collapse" data-bs-parent="#acc-quimica">
+              <div class="accordion-body">
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Qu&iacute;mica Industrial, se concibe un T&eacute;cnico en Qu&iacute;mica de Nivel Medio quien ser&aacute; capaz de:</p>
 <ul class="lead">
 	<li>Emplear conocimientos cient&iacute;ficos, human&iacute;sticos y tecnol&oacute;gicos para la pr&aacute;ctica laboral de su especialidad y-o prosecuci&oacute;n de estudios superiores.<br>
@@ -595,52 +700,77 @@
 	<b>c. </b> Supervisar grupos de trabajo en el marco del respeto y la &eacute;tica profesional.<br>
 	<b>d. </b> Realizar asistencia t&eacute;cnica de compra-venta y utilizaci&oacute;n de productos qu&iacute;micos para determinados procesos industriales.</li>
 </ul>
-<p class="lead">PERFIL OCUPACIONAL</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#acc-quimica-2" aria-expanded="false" aria-controls="acc-quimica-2">PERFIL OCUPACIONAL</button></h4>
+            <div id="acc-quimica-2" class="accordion-collapse collapse" data-bs-parent="#acc-quimica">
+              <div class="accordion-body">
 <p class="lead">El campo ocupacional espec&iacute;fico del t&eacute;cnico se define por su participaci&oacute;n bajo supervisi&oacute;n o de manera independiente seg&uacute;n requerimientos de terceros en: El desempe&ntilde;o eficiente y eficaz en empresas de servicios p&uacute;blicos y/o privados.</p>
-          <div class="tags">
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorQCA">COORDINADOR</a></span>
-            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosQCA">FORMULARIOS</a></span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="seccion-marron" id="cta">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p class="lead text-uppercase">¿Ya estás convencido? ¿Querés ingresar al Colegio Técnico Nacional?</p>
-          <p class="text-center mrgn-20-top"><a class="btn btn-blue-sm btn-pill btn-ctn btn-ctn-dorado" href="contact2.html">Contáctanos</a></p>
+        <div class="acciones-esp">
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#coordinadorQCA">Coordinador</button>
+          <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#formulariosQCA">Formularios</button>
         </div>
       </div>
-    </div>
-  </section>
-</main>
-
-<footer class="bg-dark-blue" id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: (021) 608 663</p>
-        <span class="copyright">Copyright &copy; Desarrollado en la especialidad de Informática.</span>
       </div>
     </div>
+  </section>
+
+  <section class="banda-admision" aria-label="Inscripción">
+    <div class="container">
+      <p>¿Ya estás convencido? ¿Querés ingresar al Colegio Técnico Nacional?</p>
+      <div class="acciones">
+        <a class="btn-ctn btn-ctn-solido" href="admision.html">Requisitos de admisión</a>
+        <a class="btn-ctn btn-ctn-dorado" href="contact2.html">Contáctanos</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h2>Colegio Técnico Nacional</h2>
+        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: <a href="tel:+59521608663">(021)&nbsp;608&nbsp;663</a></p>
+      </div>
+      <div class="col-6 col-md-4">
+        <h2>Explorar</h2>
+        <ul>
+          <li><a href="espe.html">Especialidades</a></li>
+          <li><a href="admision.html">Admisión</a></li>
+          <li><a href="Formularios.html">Formularios</a></li>
+          <li><a href="acerca.html">Acerca de</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-4">
+        <h2>Encuéntranos</h2>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Colegio+T%C3%A9cnico+Nacional+de+Asunci%C3%B3n" rel="noopener" target="_blank">Cómo llegar<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a></p>
+        <a class="icono-social" href="https://www.facebook.com/ctnoficial/" rel="noopener" target="_blank" aria-label="Facebook del CTN (se abre en una pestaña nueva)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.6c0-.9.3-1.6 1.6-1.6h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.3H8v3h2.5V21h3z"/></svg></a>
+      </div>
+    </div>
+    <p class="derechos">Copyright &copy; Desarrollado en la especialidad de Informática.</p>
   </div>
 </footer>
 
 <!-- Ventanas (coordinador y formularios de cada especialidad) -->
 
 <!-- INFORMÁTICA: ventanas -->
-<div class="modal fade" id="coordinadorINFO" data-especialidad="info" tabindex="-1" role="dialog" aria-labelledby="coordinadorINFO-titulo">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="coordinadorINFO" data-especialidad="info" tabindex="-1" aria-labelledby="coordinadorINFO-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="coordinadorINFO-titulo">Graciela Noem&iacute; L&oacute;pez Molinas</h3>
-        <p class="text-muted">Coordinación de Informática</p>
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="coordinadorINFO-titulo">Graciela Noem&iacute; L&oacute;pez Molinas</h2>
+          <p class="mb-0 texto-suave">Coordinación de Informática</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
 <p>Egresada de la <i> Facultad Polit&eacute;cnica de la Universidad Nacional de Asunci&oacute;n </i> con el Titulo Licenciatura en An&aacute;lisis de Sistemas Inform&aacute;ticos.<br>
@@ -656,43 +786,35 @@
     </div>
   </div>
 </div>
-<div class="modal fade" id="formulariosINFO" data-especialidad="info" tabindex="-1" role="dialog" aria-labelledby="formulariosINFO-titulo">
-  <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" id="formulariosINFO" data-especialidad="info" tabindex="-1" aria-labelledby="formulariosINFO-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="formulariosINFO-titulo">Formularios · Informática</h3>
+        <h2 class="modal-title" id="formulariosINFO-titulo">Formularios · Informática</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
         <div class="formularios-lista">
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Plan de Estudios</h4>
-              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Informática)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Eleccion de Autoridades</h4>
-              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Informática)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
-              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Informática)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Registro de Delegados</h4>
-              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Informática)">Descargar Formulario</a>
-            </article>
-          </div>
+          <article class="tarjeta tarjeta-form">
+            <h4>Plan de Estudios</h4>
+            <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Informática)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Eleccion de Autoridades</h4>
+            <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Informática)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+            <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Informática)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Registro de Delegados</h4>
+            <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Informática)">Descargar</a>
+          </article>
         </div>
       </div>
     </div>
@@ -700,13 +822,15 @@
 </div>
 
 <!-- MECÁNICA INDUSTRIAL: ventanas -->
-<div class="modal fade" id="coordinadorINDU" data-especialidad="mecanica_ind" tabindex="-1" role="dialog" aria-labelledby="coordinadorINDU-titulo">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="coordinadorINDU" data-especialidad="mecanica_ind" tabindex="-1" aria-labelledby="coordinadorINDU-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="coordinadorINDU-titulo">Edgar Gallardo</h3>
-        <p class="text-muted">Coordinación de Mecánica Industrial</p>
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="coordinadorINDU-titulo">Edgar Gallardo</h2>
+          <p class="mb-0 texto-suave">Coordinación de Mecánica Industrial</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
 <p>Egresado de la Facultadcon el Titulo. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
@@ -718,43 +842,35 @@
     </div>
   </div>
 </div>
-<div class="modal fade" id="formulariosINDU" data-especialidad="mecanica_ind" tabindex="-1" role="dialog" aria-labelledby="formulariosINDU-titulo">
-  <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" id="formulariosINDU" data-especialidad="mecanica_ind" tabindex="-1" aria-labelledby="formulariosINDU-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="formulariosINDU-titulo">Formularios · Mecánica Industrial</h3>
+        <h2 class="modal-title" id="formulariosINDU-titulo">Formularios · Mecánica Industrial</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
         <div class="formularios-lista">
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Plan de Estudios</h4>
-              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Mecánica Industrial)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Eleccion de Autoridades</h4>
-              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Mecánica Industrial)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
-              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Mecánica Industrial)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Registro de Delegados</h4>
-              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Mecánica Industrial)">Descargar Formulario</a>
-            </article>
-          </div>
+          <article class="tarjeta tarjeta-form">
+            <h4>Plan de Estudios</h4>
+            <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Mecánica Industrial)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Eleccion de Autoridades</h4>
+            <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Mecánica Industrial)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+            <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Mecánica Industrial)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Registro de Delegados</h4>
+            <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Mecánica Industrial)">Descargar</a>
+          </article>
         </div>
       </div>
     </div>
@@ -762,13 +878,15 @@
 </div>
 
 <!-- MECÁNICA AUTOMOTRIZ: ventanas -->
-<div class="modal fade" id="coordinadorAUTO" data-especialidad="mecanica_auto" tabindex="-1" role="dialog" aria-labelledby="coordinadorAUTO-titulo">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="coordinadorAUTO" data-especialidad="mecanica_auto" tabindex="-1" aria-labelledby="coordinadorAUTO-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="coordinadorAUTO-titulo">Arnaldo Jos&eacute; Cabrera D&iacute;az</h3>
-        <p class="text-muted">Coordinación de Mecánica Automotriz</p>
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="coordinadorAUTO-titulo">Arnaldo Jos&eacute; Cabrera D&iacute;az</h2>
+          <p class="mb-0 texto-suave">Coordinación de Mecánica Automotriz</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
 <p>Titulos Obtenidos:</p>
@@ -784,43 +902,35 @@ Matricula Nro: 39441.<br>
     </div>
   </div>
 </div>
-<div class="modal fade" id="formulariosAUTO" data-especialidad="mecanica_auto" tabindex="-1" role="dialog" aria-labelledby="formulariosAUTO-titulo">
-  <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" id="formulariosAUTO" data-especialidad="mecanica_auto" tabindex="-1" aria-labelledby="formulariosAUTO-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="formulariosAUTO-titulo">Formularios · Mecánica Automotriz</h3>
+        <h2 class="modal-title" id="formulariosAUTO-titulo">Formularios · Mecánica Automotriz</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
         <div class="formularios-lista">
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Plan de Estudios</h4>
-              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Mecánica Automotriz)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Eleccion de Autoridades</h4>
-              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Mecánica Automotriz)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
-              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Mecánica Automotriz)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Registro de Delegados</h4>
-              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Mecánica Automotriz)">Descargar Formulario</a>
-            </article>
-          </div>
+          <article class="tarjeta tarjeta-form">
+            <h4>Plan de Estudios</h4>
+            <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Mecánica Automotriz)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Eleccion de Autoridades</h4>
+            <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Mecánica Automotriz)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+            <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Mecánica Automotriz)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Registro de Delegados</h4>
+            <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Mecánica Automotriz)">Descargar</a>
+          </article>
         </div>
       </div>
     </div>
@@ -828,13 +938,15 @@ Matricula Nro: 39441.<br>
 </div>
 
 <!-- CONSTRUCCIONES CIVILES: ventanas -->
-<div class="modal fade" id="coordinadorCC" data-especialidad="construccion" tabindex="-1" role="dialog" aria-labelledby="coordinadorCC-titulo">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="coordinadorCC" data-especialidad="construccion" tabindex="-1" aria-labelledby="coordinadorCC-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="coordinadorCC-titulo">Edgar Gallardo</h3>
-        <p class="text-muted">Coordinación de Construcciones Civiles</p>
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="coordinadorCC-titulo">Edgar Gallardo</h2>
+          <p class="mb-0 texto-suave">Coordinación de Construcciones Civiles</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
 <p>Egresado de la Facultadcon el Titulo. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
@@ -846,43 +958,35 @@ Matricula Nro: 39441.<br>
     </div>
   </div>
 </div>
-<div class="modal fade" id="formulariosCC" data-especialidad="construccion" tabindex="-1" role="dialog" aria-labelledby="formulariosCC-titulo">
-  <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" id="formulariosCC" data-especialidad="construccion" tabindex="-1" aria-labelledby="formulariosCC-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="formulariosCC-titulo">Formularios · Construcciones Civiles</h3>
+        <h2 class="modal-title" id="formulariosCC-titulo">Formularios · Construcciones Civiles</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
         <div class="formularios-lista">
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Plan de Estudios</h4>
-              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Construcciones Civiles)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Eleccion de Autoridades</h4>
-              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Construcciones Civiles)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
-              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Construcciones Civiles)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Registro de Delegados</h4>
-              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Construcciones Civiles)">Descargar Formulario</a>
-            </article>
-          </div>
+          <article class="tarjeta tarjeta-form">
+            <h4>Plan de Estudios</h4>
+            <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Construcciones Civiles)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Eleccion de Autoridades</h4>
+            <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Construcciones Civiles)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+            <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Construcciones Civiles)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Registro de Delegados</h4>
+            <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Construcciones Civiles)">Descargar</a>
+          </article>
         </div>
       </div>
     </div>
@@ -890,13 +994,15 @@ Matricula Nro: 39441.<br>
 </div>
 
 <!-- ELECTRÓNICA: ventanas -->
-<div class="modal fade" id="coordinadorEIK" data-especialidad="electronica" tabindex="-1" role="dialog" aria-labelledby="coordinadorEIK-titulo">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="coordinadorEIK" data-especialidad="electronica" tabindex="-1" aria-labelledby="coordinadorEIK-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="coordinadorEIK-titulo">Marta Mojoli</h3>
-        <p class="text-muted">Coordinación de Electrónica</p>
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="coordinadorEIK-titulo">Marta Mojoli</h2>
+          <p class="mb-0 texto-suave">Coordinación de Electrónica</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
 <p>Egresada de la Facultad de ** con el Titulo **. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
@@ -908,43 +1014,35 @@ Matricula Nro: 39441.<br>
     </div>
   </div>
 </div>
-<div class="modal fade" id="formulariosEIK" data-especialidad="electronica" tabindex="-1" role="dialog" aria-labelledby="formulariosEIK-titulo">
-  <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" id="formulariosEIK" data-especialidad="electronica" tabindex="-1" aria-labelledby="formulariosEIK-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="formulariosEIK-titulo">Formularios · Electrónica</h3>
+        <h2 class="modal-title" id="formulariosEIK-titulo">Formularios · Electrónica</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
         <div class="formularios-lista">
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Plan de Estudios</h4>
-              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Electrónica)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Eleccion de Autoridades</h4>
-              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Electrónica)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
-              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Electrónica)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Registro de Delegados</h4>
-              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Electrónica)">Descargar Formulario</a>
-            </article>
-          </div>
+          <article class="tarjeta tarjeta-form">
+            <h4>Plan de Estudios</h4>
+            <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Electrónica)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Eleccion de Autoridades</h4>
+            <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Electrónica)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+            <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Electrónica)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Registro de Delegados</h4>
+            <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Electrónica)">Descargar</a>
+          </article>
         </div>
       </div>
     </div>
@@ -952,13 +1050,15 @@ Matricula Nro: 39441.<br>
 </div>
 
 <!-- ELECTROMECÁNICA: ventanas -->
-<div class="modal fade" id="coordinadorEMCA" data-especialidad="electromecanica" tabindex="-1" role="dialog" aria-labelledby="coordinadorEMCA-titulo">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="coordinadorEMCA" data-especialidad="electromecanica" tabindex="-1" aria-labelledby="coordinadorEMCA-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="coordinadorEMCA-titulo">Edgar Gallardo</h3>
-        <p class="text-muted">Coordinación de Electromecánica</p>
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="coordinadorEMCA-titulo">Edgar Gallardo</h2>
+          <p class="mb-0 texto-suave">Coordinación de Electromecánica</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
 <p>Egresado de la Facultadcon el Titulo. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
@@ -970,43 +1070,35 @@ Matricula Nro: 39441.<br>
     </div>
   </div>
 </div>
-<div class="modal fade" id="formulariosEMCA" data-especialidad="electromecanica" tabindex="-1" role="dialog" aria-labelledby="formulariosEMCA-titulo">
-  <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" id="formulariosEMCA" data-especialidad="electromecanica" tabindex="-1" aria-labelledby="formulariosEMCA-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="formulariosEMCA-titulo">Formularios · Electromecánica</h3>
+        <h2 class="modal-title" id="formulariosEMCA-titulo">Formularios · Electromecánica</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
         <div class="formularios-lista">
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Plan de Estudios</h4>
-              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Electromecánica)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Eleccion de Autoridades</h4>
-              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Electromecánica)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
-              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Electromecánica)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Registro de Delegados</h4>
-              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Electromecánica)">Descargar Formulario</a>
-            </article>
-          </div>
+          <article class="tarjeta tarjeta-form">
+            <h4>Plan de Estudios</h4>
+            <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Electromecánica)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Eleccion de Autoridades</h4>
+            <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Electromecánica)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+            <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Electromecánica)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Registro de Delegados</h4>
+            <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Electromecánica)">Descargar</a>
+          </article>
         </div>
       </div>
     </div>
@@ -1014,13 +1106,15 @@ Matricula Nro: 39441.<br>
 </div>
 
 <!-- ELECTRICIDAD: ventanas -->
-<div class="modal fade" id="coordinadorEDAD" data-especialidad="electricidad" tabindex="-1" role="dialog" aria-labelledby="coordinadorEDAD-titulo">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="coordinadorEDAD" data-especialidad="electricidad" tabindex="-1" aria-labelledby="coordinadorEDAD-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="coordinadorEDAD-titulo">Edgar Gallardo</h3>
-        <p class="text-muted">Coordinación de Electricidad</p>
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="coordinadorEDAD-titulo">Edgar Gallardo</h2>
+          <p class="mb-0 texto-suave">Coordinación de Electricidad</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
 <p>Egresado de la Facultadcon el Titulo. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
@@ -1032,43 +1126,35 @@ Matricula Nro: 39441.<br>
     </div>
   </div>
 </div>
-<div class="modal fade" id="formulariosEDAD" data-especialidad="electricidad" tabindex="-1" role="dialog" aria-labelledby="formulariosEDAD-titulo">
-  <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" id="formulariosEDAD" data-especialidad="electricidad" tabindex="-1" aria-labelledby="formulariosEDAD-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="formulariosEDAD-titulo">Formularios · Electricidad</h3>
+        <h2 class="modal-title" id="formulariosEDAD-titulo">Formularios · Electricidad</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
         <div class="formularios-lista">
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Plan de Estudios</h4>
-              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Electricidad)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Eleccion de Autoridades</h4>
-              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Electricidad)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
-              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Electricidad)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Registro de Delegados</h4>
-              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Electricidad)">Descargar Formulario</a>
-            </article>
-          </div>
+          <article class="tarjeta tarjeta-form">
+            <h4>Plan de Estudios</h4>
+            <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Electricidad)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Eleccion de Autoridades</h4>
+            <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Electricidad)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+            <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Electricidad)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Registro de Delegados</h4>
+            <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Electricidad)">Descargar</a>
+          </article>
         </div>
       </div>
     </div>
@@ -1076,13 +1162,15 @@ Matricula Nro: 39441.<br>
 </div>
 
 <!-- QUÍMICA INDUSTRIAL: ventanas -->
-<div class="modal fade" id="coordinadorQCA" data-especialidad="quimica" tabindex="-1" role="dialog" aria-labelledby="coordinadorQCA-titulo">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="coordinadorQCA" data-especialidad="quimica" tabindex="-1" aria-labelledby="coordinadorQCA-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="coordinadorQCA-titulo">Juan &Aacute;ngel Gonz&aacute;lez</h3>
-        <p class="text-muted">Coordinación de Química Industrial</p>
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="coordinadorQCA-titulo">Juan &Aacute;ngel Gonz&aacute;lez</h2>
+          <p class="mb-0 texto-suave">Coordinación de Química Industrial</p>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
 <p>Egresado de la Facultad de Ciencias Qu&iacute;micas con el Titulo Ing. Qu&iacute;mico. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
@@ -1094,52 +1182,42 @@ Matricula Nro: 39441.<br>
     </div>
   </div>
 </div>
-<div class="modal fade" id="formulariosQCA" data-especialidad="quimica" tabindex="-1" role="dialog" aria-labelledby="formulariosQCA-titulo">
-  <div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" id="formulariosQCA" data-especialidad="quimica" tabindex="-1" aria-labelledby="formulariosQCA-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="formulariosQCA-titulo">Formularios · Química Industrial</h3>
+        <h2 class="modal-title" id="formulariosQCA-titulo">Formularios · Química Industrial</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
         <div class="formularios-lista">
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Plan de Estudios</h4>
-              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Química Industrial)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Eleccion de Autoridades</h4>
-              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Química Industrial)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
-              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Química Industrial)">Descargar Formulario</a>
-            </article>
-          </div>
-          <div>
-            <article class="tarjeta-blanca">
-              <h4>Registro de Delegados</h4>
-              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
-              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Química Industrial)">Descargar Formulario</a>
-            </article>
-          </div>
+          <article class="tarjeta tarjeta-form">
+            <h4>Plan de Estudios</h4>
+            <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Química Industrial)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Eleccion de Autoridades</h4>
+            <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Química Industrial)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+            <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Química Industrial)">Descargar</a>
+          </article>
+          <article class="tarjeta tarjeta-form">
+            <h4>Registro de Delegados</h4>
+            <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Química Industrial)">Descargar</a>
+          </article>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<script src="assets/js/jquery-3.7.1.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/flexslider/jquery.flexslider-min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/espe.js"></script>
 <script src="assets/js/ctn.js"></script>

@@ -10,102 +10,111 @@
   <link rel="icon" href="assets/images/logo2.png">
 
   <script>document.documentElement.className += ' js';</script>
+  <link rel="preload" href="assets/fonts/google/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/google/dosis-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/blueridge.min.css">
-  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/ctn.css">
 </head>
 <body>
 <a class="skip-link" href="#contenido">Ir al contenido</a>
 
 <!-- Menú principal -->
-<nav class="navbar navbar-default navbar-fixed-top ctn-nav" aria-label="Menú principal">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false" aria-controls="menu-principal">
-        <span class="sr-only">Mostrar u ocultar el menú</span>
-        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html" aria-label="Colegio Técnico Nacional - Inicio">
-        <span class="logo-container">
-          <img src="assets/images/themelogo/logo3.png" class="logo-base" alt="">
-          <img src="assets/images/themelogo/logo.png" class="logo-hovered" alt="">
-        </span>
-      </a>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top ctn-nav" aria-label="Menú principal">
+  <div class="container-xxl">
+    <a class="navbar-brand" href="index.html" aria-label="Colegio Técnico Nacional - Inicio">
+      <span class="logo-container">
+        <img src="assets/images/themelogo/logo3.png" class="logo-base" alt="" width="219" height="48">
+        <img src="assets/images/themelogo/logo.png" class="logo-hovered" alt="" width="219" height="48">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Mostrar u ocultar el menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="menu-principal">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="espe.html">Especialidades</a></li>
-        <li class="dropdown active">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Institucional <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="direccion.html">Dirección General</a></li>
-            <li><a href="admision.html">Admisión</a></li>
-            <li><a href="cetna.html">CETNA</a></li>
-            <li class="active"><a href="Formularios.html" aria-current="page">Formularios</a></li>
-          </ul>
-        </li>
-        <li><a href="contact2.html">Contacto</a></li>
-        <li><a href="acerca.html">Acerca de</a></li>
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="espe.html">Especialidades</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Institucional</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="direccion.html">Dirección General</a></li>
+              <li><a class="dropdown-item" href="cetna.html">CETNA</a></li>
+              <li><a class="dropdown-item active" href="Formularios.html" aria-current="page">Formularios</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact2.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca de</a></li>
+          <li class="nav-item"><a class="btn-admision" href="admision.html">Admisión</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
 <main id="contenido">
-  <header class="indexbg1 hero-interno" id="hero">
+  <header class="hero hero-interno">
     <video class="bgvideo" muted loop playsinline preload="none" data-src="video/background3.mp4" aria-hidden="true" tabindex="-1"></video>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="header-text text-center white">
-            <h1>Formularios</h1>
-            <div class="linea-formulario"></div>
-          </div>
-        </div>
-      </div>
+      <h1>Formularios</h1>
+      <hr class="linea">
+      <p class="hero-subtitulo">Descargá, completá y presentá en portería</p>
     </div>
   </header>
 
-  <section class="container">
-      <div class="formulario-section">
-        <article class="tarjeta-blanca">
+  <section class="seccion">
+    <div class="container">
+      <div class="formularios-pagina d-grid gap-4">
+        <article class="tarjeta tarjeta-form">
           <h2>Justificativo de Ausencia y Salida Anticipada</h2>
-          <p>Este formulario permite a los responsables comunicar ausencias o salidas anticipadas del estudiante.<br><br><b>"El/la que suscribe informa la ausencia o salida de su hijo/a indicando fechas y motivo."</b><br><br>Se debe presentar al profesor afectado y en portería. <b>Adjuntar copia de cédula</b> y certificado médico si corresponde<b></b>.</p>
-          <a href="https://drive.google.com/uc?export=download&amp;id=1zsBsSviAAUN6pfAF5BmZmBEPfIxJV-8i" class="btn btn-ctn btn-ctn-marron btn-pill" download rel="noopener" aria-label="Descargar formulario: justificativo de ausencia y salida anticipada">Descargar Formulario</a>
+          <p>Este formulario permite a los responsables comunicar ausencias o salidas anticipadas del estudiante.</p>
+          <p><b>"El/la que suscribe informa la ausencia o salida de su hijo/a indicando fechas y motivo."</b></p>
+          <p>Se debe presentar al profesor afectado y en portería. <b>Adjuntar copia de cédula y certificado médico si corresponde.</b></p>
+          <a href="https://drive.google.com/uc?export=download&amp;id=1zsBsSviAAUN6pfAF5BmZmBEPfIxJV-8i" class="btn-ctn btn-ctn-marron-solido" download rel="noopener" aria-label="Descargar formulario: justificativo de ausencia y salida anticipada">Descargar formulario</a>
         </article>
-      </div>
-      <div class="formulario-section">
-        <article class="tarjeta-blanca">
+        <article class="tarjeta tarjeta-form">
           <h2>Solicitud de Entrevista con Profesor/a</h2>
-          <p>Este formulario permite solicitar una reunión con el/la profesor/a titular de una materia.<br><br><b>"El/la que suscribe solicita una entrevista indicando el motivo y datos de contacto."</b><br><br>Se entrega al docente y luego se presenta en portería una vez confirmada. <b>Debe incluir fecha, hora y lugar</b>.</p>
-          <a href="https://drive.google.com/uc?export=download&amp;id=1O4T9nPIYp8e5Hzn5MRa5qHDhOQfkmvCb" class="btn btn-ctn btn-ctn-marron btn-pill" download rel="noopener" aria-label="Descargar formulario: solicitud de entrevista con profesor">Descargar Formulario</a>
+          <p>Este formulario permite solicitar una reunión con el/la profesor/a titular de una materia.</p>
+          <p><b>"El/la que suscribe solicita una entrevista indicando el motivo y datos de contacto."</b></p>
+          <p>Se entrega al docente y luego se presenta en portería una vez confirmada. <b>Debe incluir fecha, hora y lugar.</b></p>
+          <a href="https://drive.google.com/uc?export=download&amp;id=1O4T9nPIYp8e5Hzn5MRa5qHDhOQfkmvCb" class="btn-ctn btn-ctn-marron-solido" download rel="noopener" aria-label="Descargar formulario: solicitud de entrevista con profesor">Descargar formulario</a>
         </article>
-      </div>
-      <div class="formulario-section">
-        <article class="tarjeta-blanca">
+        <article class="tarjeta tarjeta-form">
           <h2>Justificación de Ingreso Después de Hora</h2>
-          <p>Este formulario se utiliza para justificar el ingreso tardío del estudiante al colegio.<br><br><b>"El/la que suscribe comunica el ingreso fuera de horario indicando fecha, hora y motivo."</b><br><br>Se debe entregar en portería y luego al profesor afectado. <b>Adjuntar copia de cédula</b>.</p>
-          <a href="https://drive.google.com/uc?export=download&amp;id=19OGXcfNC3MVcEPzWyNNptjHVgesyUxJU" class="btn btn-ctn btn-ctn-marron btn-pill" download rel="noopener" aria-label="Descargar formulario: justificación de ingreso después de hora">Descargar Formulario</a>
+          <p>Este formulario se utiliza para justificar el ingreso tardío del estudiante al colegio.</p>
+          <p><b>"El/la que suscribe comunica el ingreso fuera de horario indicando fecha, hora y motivo."</b></p>
+          <p>Se debe entregar en portería y luego al profesor afectado. <b>Adjuntar copia de cédula.</b></p>
+          <a href="https://drive.google.com/uc?export=download&amp;id=19OGXcfNC3MVcEPzWyNNptjHVgesyUxJU" class="btn-ctn btn-ctn-marron-solido" download rel="noopener" aria-label="Descargar formulario: justificación de ingreso después de hora">Descargar formulario</a>
         </article>
       </div>
+    </div>
   </section>
 </main>
 
-<footer class="bg-dark-blue" id="footer">
+<footer class="pie">
   <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: (021) 608 663</p>
-        <span class="copyright">Copyright &copy; Desarrollado en la especialidad de Informática.</span>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h2>Colegio Técnico Nacional</h2>
+        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: <a href="tel:+59521608663">(021)&nbsp;608&nbsp;663</a></p>
+      </div>
+      <div class="col-6 col-md-4">
+        <h2>Explorar</h2>
+        <ul>
+          <li><a href="espe.html">Especialidades</a></li>
+          <li><a href="admision.html">Admisión</a></li>
+          <li><a href="Formularios.html">Formularios</a></li>
+          <li><a href="acerca.html">Acerca de</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-4">
+        <h2>Encuéntranos</h2>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Colegio+T%C3%A9cnico+Nacional+de+Asunci%C3%B3n" rel="noopener" target="_blank">Cómo llegar<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a></p>
+        <a class="icono-social" href="https://www.facebook.com/ctnoficial/" rel="noopener" target="_blank" aria-label="Facebook del CTN (se abre en una pestaña nueva)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.6c0-.9.3-1.6 1.6-1.6h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.3H8v3h2.5V21h3z"/></svg></a>
       </div>
     </div>
+    <p class="derechos">Copyright &copy; Desarrollado en la especialidad de Informática.</p>
   </div>
 </footer>
 
-<script src="assets/js/jquery-3.7.1.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/ctn.js"></script>
 </body>
 </html>

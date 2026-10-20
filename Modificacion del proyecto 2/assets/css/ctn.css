@@ -1,464 +1,519 @@
 /* ==========================================================================
-   CTN · Estilos propios del sitio del Colegio Técnico Nacional de Asunción
+   CTN · Estilos del sitio (Bootstrap 5 + estilos propios)
    --------------------------------------------------------------------------
-   Se carga en TODAS las páginas, después de Bootstrap y del tema (blueridge).
-   Todo lo que sea "propio del CTN" vive aquí, ordenado así:
+   Ya no se usa el tema "Blueridge". Todo lo que se ve sale de este archivo,
+   ordenado así:
 
-     1. Tipografías (alojadas en el sitio, sin depender de Google)
-     2. Colores y medidas (variables)  ← cambiar los colores del sitio: AQUÍ
-     3. Base y accesibilidad
-     4. Barra de navegación
-     5. Encabezado (hero) con video
+     1. Tipografías
+     2. Variables de diseño  ← colores, espaciado y tamaños; empieza por aquí
+     3. Base (texto, enlaces, foco, accesibilidad)
+     4. Menú principal
+     5. Portadas (inicio y páginas internas)
      6. Botones
-     7. Secciones comunes: llamada a la acción, tarjetas, pie de página
-     8. Páginas: Inicio · Acerca de · Admisión · Formularios · Contacto
-     9. Noticias (sección dinámica del inicio)
-    10. Animaciones de aparición al hacer scroll
-
-   Las reglas específicas de "Especialidades" están en espe.css.
+     7. Secciones y títulos
+     8. Tarjetas (especialidades, accesos, formularios, equipo)
+     9. Galería de fotos
+    10. Noticias
+    11. Páginas: Acerca de · Admisión · Dirección · Contacto
+    12. Pie de página
+    13. Animaciones de aparición y "reducir movimiento"
    ========================================================================== */
 
 
 /* ==========================================================================
-   1. TIPOGRAFÍAS
+   1. TIPOGRAFÍAS (alojadas en el sitio: no dependen de Google)
    --------------------------------------------------------------------------
-   Dosis (textos y títulos), Playfair Display (citas) y Just Another Hand.
-   Solo el subconjunto "latin" (incluye tildes y ñ).
+   Dosis  → títulos y menú.   Source Sans 3 → texto corrido (más legible).
    ========================================================================== */
-@font-face { font-family: 'Dosis'; font-style: normal; font-weight: 300; font-display: swap; src: url(../fonts/google/dosis-latin-300-normal.woff2) format('woff2'); }
 @font-face { font-family: 'Dosis'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/google/dosis-latin-400-normal.woff2) format('woff2'); }
 @font-face { font-family: 'Dosis'; font-style: normal; font-weight: 500; font-display: swap; src: url(../fonts/google/dosis-latin-500-normal.woff2) format('woff2'); }
 @font-face { font-family: 'Dosis'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/google/dosis-latin-700-normal.woff2) format('woff2'); }
-
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/google/playfair-display-latin-400-normal.woff2) format('woff2'); }
-@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 400; font-display: swap; src: url(../fonts/google/playfair-display-latin-400-italic.woff2) format('woff2'); }
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/google/playfair-display-latin-700-normal.woff2) format('woff2'); }
-@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 700; font-display: swap; src: url(../fonts/google/playfair-display-latin-700-italic.woff2) format('woff2'); }
-
-@font-face { font-family: 'Just Another Hand'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/google/just-another-hand-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/google/source-sans-3-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: italic; font-weight: 400; font-display: swap; src: url(../fonts/google/source-sans-3-latin-400-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/google/source-sans-3-latin-600-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/google/source-sans-3-latin-700-normal.woff2) format('woff2'); }
 
 
 /* ==========================================================================
-   2. COLORES Y MEDIDAS
+   2. VARIABLES DE DISEÑO
    --------------------------------------------------------------------------
-   Estas variables son la "paleta" del sitio. Si cambian los colores del
-   colegio, se modifican solo estas líneas y se actualiza todo el sitio.
+   Paleta de 3 colores base: marrón, dorado y crema.
+   Para cambiar el aspecto de todo el sitio, se cambian aquí.
    ========================================================================== */
 :root {
-  /* Paleta principal */
-  --ctn-marron:         #471c0c;   /* barra de menú, pie de página, botones */
-  --ctn-marron-oscuro:  #341409;   /* variante más oscura (tarjetas, fondo del hero) */
-  --ctn-dorado:         #ffd380;   /* color de acento: enlaces activos, bordes */
-  --ctn-blanco:         #ffffff;
+  /* Colores base */
+  --ctn-marron:        #471c0c;   /* color principal (menú, títulos, botones) */
+  --ctn-marron-oscuro: #2e1207;   /* fondos muy oscuros (pie, portada) */
+  --ctn-dorado:        #ffd380;   /* acento sobre fondos oscuros */
+  --ctn-crema:         #fbf6ee;   /* fondo de secciones alternas */
+  --ctn-blanco:        #fff;
 
-  /* Barra de navegación (espe.css las cambia según la especialidad) */
-  --nav-fondo:   var(--ctn-marron);
-  --nav-texto:   var(--ctn-blanco);
-  --nav-acento:  var(--ctn-dorado);  /* enlace activo y al pasar el mouse */
+  /* Textos (todos con buen contraste sobre blanco y crema) */
+  --ctn-texto:         #2b211c;   /* texto principal */
+  --ctn-texto-suave:   #5c4f48;   /* subtítulos, fechas, notas */
+  --ctn-borde:         #e8dccb;
 
-  /* Medidas */
-  --nav-alto:    70px;
-  --radio-pildora: 2em;
-  --transicion:  .4s ease;
+  /* Escala de espaciado: úsala en vez de números sueltos */
+  --sp-1: .25rem;  --sp-2: .5rem;  --sp-3: 1rem;
+  --sp-4: 1.5rem;  --sp-5: 2.5rem; --sp-6: 4.5rem;
+
+  /* Escala de tamaños de texto */
+  --texto-s:  .9375rem;                       /* 15 px: notas */
+  --texto-m:  1.0625rem;                      /* 17 px: texto corrido */
+  --texto-l:  1.25rem;                        /* 20 px: textos destacados */
+  --titulo-1: clamp(2.125rem, 5vw, 3.75rem);  /* portada */
+  --titulo-2: clamp(1.75rem, 3.5vw, 2.5rem);  /* títulos de sección */
+  --titulo-3: clamp(1.25rem, 2.2vw, 1.5rem);  /* títulos de tarjeta */
+
+  /* Formas y sombras */
+  --radio-tarjeta: 1rem;
+  --radio-pildora: 50rem;
+  --sombra-s: 0 1px 3px rgba(46, 18, 7, .10), 0 1px 2px rgba(46, 18, 7, .06);
+  --sombra-m: 0 10px 28px rgba(46, 18, 7, .16);
+
+  /* Fuentes */
+  --fuente-titulos: 'Dosis', 'Segoe UI', sans-serif;
+  --fuente-texto:   'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+
+  --nav-alto: 72px;
+
+  /* Se le dice a Bootstrap que use nuestros valores */
+  --bs-body-font-family: var(--fuente-texto);
+  --bs-body-font-size: var(--texto-m);
+  --bs-body-line-height: 1.65;
+  --bs-body-color: var(--ctn-texto);
+  --bs-body-bg: var(--ctn-blanco);
+  --bs-link-color: var(--ctn-marron);
+  --bs-link-color-rgb: 71, 28, 12;
+  --bs-link-hover-color: #000;
+  --bs-link-hover-color-rgb: 0, 0, 0;
+  --bs-border-radius: .625rem;
 }
 
 
 /* ==========================================================================
-   3. BASE Y ACCESIBILIDAD
+   3. BASE
    ========================================================================== */
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-alto) + 12px); }
+body { padding-top: var(--nav-alto); }                 /* el menú es fijo */
 
-/* Desplazamiento suave a los anclajes (#noticias, etc.), descontando la barra fija */
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-alto) + 10px); }
-
-/* El tema quitaba el contorno de foco (outline: 0): sin él, quien navega con
-   teclado no ve dónde está. Lo devolvemos, solo para foco de teclado. */
-:focus-visible { outline: 3px solid var(--ctn-dorado); outline-offset: 2px; }
-
-/* Enlace "Saltar al contenido" (aparece al enfocarlo con la tecla Tab) */
-.skip-link {
-  position: absolute; left: 10px; top: -60px; z-index: 2000;
-  padding: 10px 18px; border-radius: var(--radio-pildora);
-  background: var(--ctn-dorado); color: var(--ctn-marron); font-weight: 700;
-  transition: top .2s ease;
+h1, h2, h3, h4, h5 {
+  font-family: var(--fuente-titulos);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ctn-marron);
 }
-.skip-link:focus { top: 10px; color: var(--ctn-marron); text-decoration: none; }
+.lead { font-size: var(--texto-l); font-weight: 400; }
+.texto-suave { color: var(--ctn-texto-suave); }
+.texto-marron { color: var(--ctn-marron); }
+.texto-justificado { text-align: justify; hyphens: auto; }
 
-/* Utilidades pequeñas (reemplazan estilos en línea repetidos) */
-.btn-pill        { border-radius: var(--radio-pildora); }
-.texto-justificado { text-align: justify; }
-.texto-izquierda { text-align: left; }
-.texto-marron    { color: var(--ctn-marron); }
-.resaltado       { color: var(--ctn-dorado); }
+:focus-visible { outline: 3px solid var(--ctn-dorado); outline-offset: 2px; box-shadow: 0 0 0 5px var(--ctn-marron); }
 
-/* Enlaces dentro del pie de página */
-footer a { color: inherit; text-decoration: underline; }
-footer a:hover, footer a:focus { color: var(--ctn-dorado); }
-footer .copyright { display: block; font-size: 14px; line-height: 1.5; margin-top: 8px; }
+.skip-link {
+  position: fixed; top: -60px; left: 10px; z-index: 2000;
+  padding: 10px 16px; border-radius: var(--radio-pildora);
+  background: var(--ctn-dorado); color: var(--ctn-marron); font-weight: 700;
+}
+.skip-link:focus { top: 10px; }
 
-/* Desplazamiento horizontal: nunca debe haberlo */
-html, body { max-width: 100%; }
+/* Texto solo para lectores de pantalla (Bootstrap 5 lo llama visually-hidden) */
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
 
 
 /* ==========================================================================
-   4. BARRA DE NAVEGACIÓN
+   4. MENÚ PRINCIPAL
    --------------------------------------------------------------------------
-   Usa la clase .ctn-nav (el tema ya no controla esta barra).
-   Escritorio (≥ 992 px): logo a la izquierda, menú a la derecha.
-   Celular y tablet (< 992 px): botón de menú (3 rayitas) y lista desplegable.
+   Escritorio (≥ 992 px): logo a la izquierda, enlaces a la derecha.
+   Celular y tablet: botón de 3 rayitas y lista desplegable.
    ========================================================================== */
 .ctn-nav {
+  --bs-navbar-padding-y: 0;
   min-height: var(--nav-alto);
-  margin-bottom: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background-color: var(--nav-fondo);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
-  transition: background-color 1s ease;
+  background-color: var(--ctn-marron);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .28);
 }
+
+.ctn-nav > .container-xxl {
+  --bs-gutter-x: 0.35rem;
+}
+
+.ctn-nav .navbar-brand { padding: 10px 0; margin-right: var(--sp-4); }
 
 /* Logo: dos imágenes superpuestas; al pasar el mouse se cambia de una a otra */
-.ctn-nav .navbar-brand {
-  height: var(--nav-alto);
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-}
 .logo-container { position: relative; display: block; }
-.logo-container img { display: block; height: 50px; width: auto; transition: opacity .4s ease; }
+.logo-container img { display: block; height: 48px; width: auto; transition: opacity .4s ease; }
 .logo-container .logo-hovered { position: absolute; top: 0; left: 0; opacity: 0; }
-.logo-container:hover .logo-hovered,
-.navbar-brand:focus .logo-hovered { opacity: 1; }
-.logo-container:hover .logo-base,
-.navbar-brand:focus .logo-base { opacity: 0; }
+.navbar-brand:hover .logo-hovered,
+.navbar-brand:focus-visible .logo-hovered { opacity: 1; }
+.navbar-brand:hover .logo-base,
+.navbar-brand:focus-visible .logo-base { opacity: 0; }
 
-/* Enlaces del menú */
-.ctn-nav .navbar-nav > li > a {
-  color: var(--nav-texto);
-  font-family: 'Dosis', sans-serif;
-  font-size: 16px;
+.ctn-nav .nav-link {
+  padding: 1.5rem .85rem;
+  color: #fff;
+  font-family: var(--fuente-titulos);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color .25s ease;
+}
+.ctn-nav .nav-link:hover,
+.ctn-nav .nav-link:focus,
+.ctn-nav .nav-link.active,
+.ctn-nav .nav-link.show { color: var(--ctn-dorado); }
+
+.ctn-nav .dropdown-menu {
+  --bs-dropdown-bg: var(--ctn-marron-oscuro);
+  --bs-dropdown-border-width: 0;
+  --bs-dropdown-border-radius: 0 0 1rem 1rem;
+  --bs-dropdown-padding-y: .5rem;
+  margin-top: 0;
+  box-shadow: var(--sombra-m);
+}
+.ctn-nav .dropdown-item {
+  padding: .6rem 1.25rem;
+  color: var(--ctn-dorado);
+  font-weight: 600;
+}
+.ctn-nav .dropdown-item:hover,
+.ctn-nav .dropdown-item:focus,
+.ctn-nav .dropdown-item.active { background: var(--ctn-dorado); color: var(--ctn-marron); }
+
+/* "Admisión": botón destacado dentro del menú */
+.ctn-nav .btn-admision {
+  display: inline-block;
+  margin-left: .5rem;
+  padding: .45rem 1.25rem;
+  text-decoration: none;
+  border-radius: var(--radio-pildora);
+  background: var(--ctn-dorado);
+  color: var(--ctn-marron);
+  font-family: var(--fuente-titulos);
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  background: transparent;
-  transition: color .3s ease, background-color .3s ease;
+  transition: background-color .25s ease, transform .25s ease;
 }
-.ctn-nav .navbar-nav > li > a:hover,
-.ctn-nav .navbar-nav > li > a:focus,
-.ctn-nav .navbar-nav > .active > a,
-.ctn-nav .navbar-nav > .open > a,
-.ctn-nav .navbar-nav > .active > a:hover,
-.ctn-nav .navbar-nav > .open > a:hover,
-.ctn-nav .navbar-nav > .open > a:focus {
-  color: var(--nav-acento);
-  background: transparent;
+.ctn-nav .btn-admision:hover,
+.ctn-nav .btn-admision:focus-visible { background: #fff; color: var(--ctn-marron); transform: translateY(-1px); }
+
+.ctn-nav .navbar-toggler { border: 2px solid var(--ctn-dorado); padding: .35rem .6rem; }
+.ctn-nav .navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(255, 211, 128, .5); }
+
+@media (max-width: 991.98px) {
+  .ctn-nav .navbar-collapse { padding: var(--sp-2) 0 var(--sp-4); max-height: calc(100vh - var(--nav-alto)); overflow-y: auto; }
+  .ctn-nav .nav-link { padding: .8rem .25rem; border-bottom: 1px solid rgba(255, 255, 255, .12); }
+  .ctn-nav .dropdown-menu { --bs-dropdown-bg: transparent; box-shadow: none; padding-left: var(--sp-3); }
+  .ctn-nav .btn-admision { display: block; margin: var(--sp-3) 0 0; text-align: center; padding: .7rem 1rem; }
 }
-
-/* Flechita del menú "Institucional" (ícono de Font Awesome) */
-.ctn-nav .caret { width: auto; height: auto; margin: 0 0 0 4px; border: 0; vertical-align: baseline; }
-.ctn-nav .caret::before { content: "\f107"; font-family: FontAwesome; font-weight: 400; }
-
-/* Submenú */
-.ctn-nav .dropdown-menu {
-  min-width: 210px;
-  margin-top: 0;
-  padding: 8px 0;
-  border: 0;
-  border-radius: 0 0 var(--radio-pildora) var(--radio-pildora);
-  background-color: var(--nav-fondo);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, .25);
-}
-.ctn-nav .dropdown-menu > li > a {
-  padding: 10px 20px;
-  color: var(--nav-texto);
-  font-weight: 700;
-  transition: background-color .3s ease, color .3s ease;
-}
-.ctn-nav .dropdown-menu > li > a:hover,
-.ctn-nav .dropdown-menu > li > a:focus,
-.ctn-nav .dropdown-menu > .active > a {
-  background-color: var(--nav-acento);
-  color: var(--nav-fondo);
-}
-
-/* Botón de menú para celulares (las 3 rayitas) */
-.ctn-nav .navbar-toggle {
-  margin: 17px 15px 17px 0;
-  padding: 9px 10px;
-  border: 2px solid var(--nav-acento);
-  border-radius: 8px;
-  background: transparent;
-}
-.ctn-nav .navbar-toggle .icon-bar { background-color: var(--nav-acento); }
-.ctn-nav .navbar-toggle:hover,
-.ctn-nav .navbar-toggle:focus { background-color: rgba(255, 255, 255, .12); }
-
-/* --- Escritorio ---------------------------------------------------------- */
-@media (min-width: 992px) {
-  .ctn-nav .navbar-nav > li > a { padding-top: 25px; padding-bottom: 25px; line-height: 20px; }
-
-  /* El submenú está siempre en la página pero invisible (así se puede animar).
-     "visibility" evita que se pueda enfocar con Tab mientras está cerrado. */
-  .ctn-nav .dropdown-menu {
-    display: block;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-6px);
-    pointer-events: none;
-    transition: opacity .3s ease, transform .3s ease, visibility 0s linear .3s;
-  }
-  .ctn-nav .open > .dropdown-menu {
-    visibility: visible;
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-    transition-delay: 0s;
-  }
-}
-
-/* --- Celular y tablet ---------------------------------------------------- */
-@media (max-width: 991px) {
-  .ctn-nav .navbar-collapse {
-    max-height: calc(100vh - var(--nav-alto));
-    overflow-y: auto;
-    border-top: 1px solid rgba(255, 211, 128, .3);
-    box-shadow: none;
-  }
-  .ctn-nav .navbar-nav { margin: 0 -15px 8px; }
-  .ctn-nav .navbar-nav > li > a { padding: 13px 20px; }
-
-  /* En el menú de celular el submenú se despliega hacia abajo, sin animación */
-  .ctn-nav .dropdown-menu {
-    position: static;
-    float: none;
-    width: auto;
-    margin: 0;
-    border-radius: 0;
-    background-color: rgba(0, 0, 0, .22);
-    box-shadow: none;
-  }
-  .ctn-nav .dropdown-menu > li > a { padding: 11px 36px; }
-}
-
-/* El logo se achica en pantallas angostas para que quepa junto al menú */
-@media (max-width: 1199px) { .logo-container img { height: 40px; } }
-@media (max-width: 767px)  { .logo-container img { height: 34px; } }
-@media (max-width: 400px)  { .logo-container img { height: 28px; } }
+@media (max-width: 400px) { .logo-container img { height: 40px; } }
 
 
 /* ==========================================================================
-   5. ENCABEZADO (HERO) CON VIDEO DE FONDO
+   5. PORTADAS
    --------------------------------------------------------------------------
-   El video se carga con JavaScript (ctn.js) solo si conviene: pantalla
-   ancha, sin "ahorro de datos" y sin "reducir movimiento". Mientras tanto
-   (o si el video no existe) se muestra la foto del colegio como fondo.
+   El video de fondo es opcional: ctn.js lo carga solo si conviene. Mientras
+   tanto (y en celulares) se ve la foto "hero-poster.jpg".
    ========================================================================== */
-.indexbg1 {
-  isolation: isolate;               /* mantiene el video por detrás del texto */
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: min(82vh, 680px);
+  padding: var(--sp-6) 0;
+  color: #fff;
+  text-align: center;
   background: var(--ctn-marron-oscuro) url(../images/headers/hero-poster.jpg) center / cover no-repeat;
 }
-.indexbg1 .bgvideo { opacity: 0; transition: opacity 1s ease; }
-.indexbg1 .bgvideo.is-playing { opacity: 1; }
+.hero::before {                                    /* velo oscuro para que el texto se lea */
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(46, 18, 7, .70) 0%, rgba(46, 18, 7, .55) 45%, rgba(46, 18, 7, .88) 100%);
+}
+.hero .bgvideo {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity 1s ease;
+}
+.hero .bgvideo.is-playing { opacity: 1; }
 
-/* Encabezados de páginas internas: un poco menos altos que el del inicio */
-header.hero-interno .header-text { padding-top: 110px; padding-bottom: 60px; }
+.hero h1 { color: #fff; font-size: var(--titulo-1); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; text-wrap: balance; }
+.hero h2 { color: #fff; }
+.hero .hero-lema { margin: var(--sp-3) 0 var(--sp-4); font-family: var(--fuente-titulos); font-size: clamp(1.25rem, 3vw, 1.75rem); text-transform: uppercase; }
+.hero .resaltado, .resaltado { color: var(--ctn-dorado); font-weight: 700; }
+.hero .hero-acciones { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-3); }
+
+/* Datos rápidos bajo el título del inicio */
+.hero-datos {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: var(--sp-3) var(--sp-5);
+  margin: var(--sp-5) 0 0; padding: var(--sp-4) 0 0;
+  border-top: 1px solid rgba(255, 255, 255, .25);
+  list-style: none;
+}
+.hero-datos strong { display: block; color: var(--ctn-dorado); font-family: var(--fuente-titulos); font-size: 2rem; line-height: 1; }
+.hero-datos span { font-size: var(--texto-s); text-transform: uppercase; letter-spacing: 1px; }
+
+/* Portada de páginas internas: más baja */
+.hero-interno { min-height: 280px; padding: var(--sp-5) 0; }
+.hero-interno h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
+.hero-interno .hero-subtitulo { margin: var(--sp-2) 0 0; color: #fff; font-family: var(--fuente-titulos); font-size: clamp(1.1rem, 2.5vw, 1.5rem); text-transform: uppercase; }
+.hero-interno .linea { width: 64px; height: 3px; margin: var(--sp-3) auto; background: var(--ctn-dorado); border: 0; opacity: 1; }
 
 
 /* ==========================================================================
    6. BOTONES
    --------------------------------------------------------------------------
-   .btn-ctn            → botón "píldora" con borde, se rellena al pasar el mouse
-   .btn-ctn-marron     → borde marrón (para fondos claros)
-   .btn-ctn-dorado     → borde dorado (para fondos oscuros)
-   .btn-ctn-tema       → toma el color de la especialidad (ver espe.css)
+   .btn-ctn            borde marrón, se rellena al pasar el mouse (fondos claros)
+   .btn-ctn-dorado     lo mismo con dorado (fondos oscuros)
+   .btn-ctn-solido     relleno dorado con texto marrón (acción principal sobre oscuro)
+   .btn-ctn-marron-solido  relleno marrón (acción principal sobre claro)
    ========================================================================== */
 .btn-ctn {
   --b-color: var(--ctn-marron);
+  --b-fondo: transparent;
+  --b-texto: var(--ctn-marron);
   --b-fondo-hover: var(--ctn-marron);
   --b-texto-hover: var(--ctn-dorado);
-  display: inline-block;
-  padding: 9px 24px;
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .6rem 1.6rem;
   border: 2px solid var(--b-color);
   border-radius: var(--radio-pildora);
-  background-color: transparent;
-  color: var(--b-color);
-  font-family: 'Dosis', sans-serif;
-  font-size: 16px;
+  background-color: var(--b-fondo);
+  color: var(--b-texto);
+  font-family: var(--fuente-titulos);
+  font-size: 1.0625rem;
   font-weight: 700;
-  line-height: 1.4;
-  text-align: center;
+  letter-spacing: 1px;
+  line-height: 1.2;
   text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color var(--transicion), color var(--transicion), border-color var(--transicion);
-}
-.btn-ctn:hover,
-.btn-ctn:focus {
-  background-color: var(--b-fondo-hover);
-  border-color: var(--b-fondo-hover);
-  color: var(--b-texto-hover);
   text-decoration: none;
+  cursor: pointer;
+  transition: background-color .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease;
 }
-.btn-ctn-dorado {
-  --b-color: var(--ctn-dorado);
-  --b-fondo-hover: var(--ctn-dorado);
-  --b-texto-hover: var(--ctn-marron);
-}
-/* Botón "Descargar formulario" y similares, a todo lo ancho en celulares */
-.btn-ctn-bloque { display: block; }
+.btn-ctn:hover, .btn-ctn:focus-visible { background-color: var(--b-fondo-hover); color: var(--b-texto-hover); transform: translateY(-2px); box-shadow: var(--sombra-s); }
+.btn-ctn:disabled { opacity: .6; pointer-events: none; }
+
+.btn-ctn-dorado { --b-color: var(--ctn-dorado); --b-texto: var(--ctn-dorado); --b-fondo-hover: var(--ctn-dorado); --b-texto-hover: var(--ctn-marron); }
+.btn-ctn-solido { --b-color: var(--ctn-dorado); --b-fondo: var(--ctn-dorado); --b-texto: var(--ctn-marron); --b-fondo-hover: #fff; --b-texto-hover: var(--ctn-marron); }
+.btn-ctn-marron-solido { --b-fondo: var(--ctn-marron); --b-texto: var(--ctn-dorado); --b-fondo-hover: var(--ctn-marron-oscuro); }
+.btn-ctn-bloque { display: flex; width: 100%; }
 
 
 /* ==========================================================================
-   7. SECCIONES COMUNES
+   7. SECCIONES Y TÍTULOS
    ========================================================================== */
+.seccion { padding: var(--sp-6) 0; }
+.seccion-crema { background-color: var(--ctn-crema); }
+.seccion-marron { background-color: var(--ctn-marron); color: #fff; }
+.seccion-marron h2, .seccion-marron h3 { color: #fff; }
 
-/* Franja de llamada a la acción ("¿Ya estás convencido?") */
-.seccion-marron { background-color: var(--ctn-marron); color: var(--ctn-blanco); }
+.titulo-seccion { margin: 0 0 var(--sp-2); font-size: var(--titulo-2); text-align: center; text-transform: uppercase; letter-spacing: .5px; }
+.titulo-seccion::after { content: ""; display: block; width: 56px; height: 3px; margin: var(--sp-3) auto 0; background: var(--ctn-dorado); border-radius: 2px; }
+.seccion-marron .titulo-seccion::after { background: var(--ctn-dorado); }
+.subtitulo-seccion { max-width: 46rem; margin: var(--sp-3) auto var(--sp-5); color: var(--ctn-texto-suave); font-size: var(--texto-l); text-align: center; }
+.seccion-marron .subtitulo-seccion { color: #f2e6d6; }
+.cabecera-seccion { margin-bottom: var(--sp-5); }
+.cabecera-seccion .subtitulo-seccion { margin-bottom: 0; }
 
-/* Tres tarjetas de colores del inicio (Encuéntranos · Trayectoria · Dirección) */
-.tarjeta-color h2 { font-style: italic; font-weight: 700; }
-.tarjeta-color p  { font-weight: 700; }
-/* El tema pide fotos de fondo que no existen en el proyecto: se anulan para evitar errores 404 */
-.case-study-01.tarjeta-color, .case-study-03.tarjeta-color { background-image: none; }
-.tarjeta-dorada   { background-color: var(--ctn-dorado); color: var(--ctn-marron); }
-.tarjeta-oscura   { background-color: var(--ctn-marron-oscuro); color: var(--ctn-dorado); }
-.tarjeta-dorada h2, .tarjeta-dorada p,
-.case-study-02 h2, .case-study-02 p { color: var(--ctn-marron); }
-.tarjeta-oscura h2, .tarjeta-oscura p { color: var(--ctn-dorado); }
-.tarjeta-color .btn-ctn { margin-top: 10px; }
-/* En la tarjeta con foto, al pasar el mouse el botón se rellena de dorado con texto marrón */
-.case-study-02 .btn-ctn { --b-fondo-hover: var(--ctn-dorado); --b-texto-hover: var(--ctn-marron); }
-
-/* Tarjeta blanca con sombra (formularios, etc.) */
-.tarjeta-blanca {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border-radius: 12px;
-  background: #fff;
-  color: #333;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, .12);
-}
-.tarjeta-blanca .btn-ctn { align-self: flex-start; margin-top: auto; }
-
-/* Ficha de integrantes (CETNA) */
-.team-member img { width: 100%; height: 260px; object-fit: cover; }
-.team-member p.text-primary { color: var(--ctn-marron); font-weight: 700; }
+/* Franja de invitación a inscribirse */
+.banda-admision { padding: var(--sp-5) 0; margin: 0 0 var(--sp-6) 0; background: var(--ctn-marron); color: #fff; text-align: center; }
+.banda-admision p { margin: 0 0 var(--sp-3); font-family: var(--fuente-titulos); font-size: clamp(1.25rem, 3vw, 1.75rem); text-transform: uppercase; }
+.banda-admision .acciones { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-3); }
 
 
 /* ==========================================================================
-   8. PÁGINAS
+   8. TARJETAS
    ========================================================================== */
-
-/* --- Acerca de: pestañas Misión / Visión / Enfoque ------------------------ */
-.nav-tabs > li > a { color: var(--ctn-marron); }
-.nav-tabs > li > a:hover, .nav-tabs > li > a:focus { color: var(--ctn-marron-oscuro); }
-.nav-tabs > li.active > a { border-bottom: 3px solid var(--ctn-marron); }
-
-/* --- Admisión: el texto va dentro del encabezado ---------------------------
-   (se escribió con un editor visual; estas clases reemplazan sus estilos en línea) */
-.admision-contenido { text-align: left; }
-.admision-contenido .tabla-capacidades { margin: 10px 0 20px; font-size: 18px; }
-.admision-contenido .tabla-capacidades td { padding-right: 30px; font-weight: 700; text-transform: uppercase; }
-.admision-contenido .titulo-admision { font-size: 26px; font-weight: 700; text-transform: uppercase; }
-.admision-contenido ul,
-.admision-contenido ol { font-size: 20px; line-height: 1.6; }
-.admision-contenido ol { font-size: 22px; }
-
-/* --- Formularios ------------------------------------------------------------ */
-.linea-formulario { width: 200px; height: 4px; margin: 10px auto 30px; background-color: #fff; }
-.formulario-section { max-width: 860px; margin: 30px auto; }
-.formulario-section h2 { margin-bottom: 12px; color: var(--ctn-marron); font-size: 30px; font-weight: 700; }
-.formulario-section p  { margin-bottom: 14px; font-size: 18px; font-weight: 500; line-height: 1.5; text-align: justify; }
-
-/* --- Contacto ---------------------------------------------------------------- */
-.form-control-pill { border-radius: var(--radio-pildora); }
-textarea.form-control-pill { border-radius: 1.2em; }
-.help-block.text-danger { min-height: 1.2em; margin: 4px 0 0 14px; }
-#respuesta-formulario:empty { display: none; }
-.social-buttons .fa { font-size: 28px; }
-
-
-/* ==========================================================================
-   9. NOTICIAS (inicio) — se rellena con noticias.js
-   ========================================================================== */
-.noticias-lista { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
-.noticias-lista > .noticia-principal  { flex: 2 1 480px; min-width: 0; }
-.noticias-lista > .noticias-laterales { flex: 1 1 280px; min-width: 0; }
-
-.noticia {
-  margin-bottom: 20px;
+.tarjeta {
+  display: flex; flex-direction: column;
+  height: 100%;
   overflow: hidden;
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
+  border: 1px solid var(--ctn-borde);
+  border-radius: var(--radio-tarjeta);
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  box-shadow: var(--sombra-s);
 }
+.tarjeta-cuerpo { padding: var(--sp-4); }
+.tarjeta h2, .tarjeta h3, .tarjeta h4 { font-size: var(--titulo-3); }
+
+/* --- Especialidades (inicio) ------------------------------------------------ */
+.tarjeta-esp { text-decoration: none; color: var(--ctn-texto); transition: transform .25s ease, box-shadow .25s ease; }
+.tarjeta-esp:hover, .tarjeta-esp:focus-visible { transform: translateY(-4px); box-shadow: var(--sombra-m); color: var(--ctn-texto); }
+.tarjeta-esp img.foto { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.tarjeta-esp .icono {
+  width: 60px; height: 60px; margin: -32px 0 0 var(--sp-4);
+  border: 3px solid #fff; border-radius: 50%; background: #fff; position: relative;
+}
+.tarjeta-esp .tarjeta-cuerpo { padding-top: var(--sp-2); }
+.tarjeta-esp h3 { margin: 0 0 var(--sp-2); font-size: 1.375rem; }
+.tarjeta-esp .ver { color: var(--ctn-marron); font-weight: 700; }
+.tarjeta-esp .ver::after { content: " →"; transition: margin-left .2s ease; }
+.tarjeta-esp:hover .ver::after { margin-left: 4px; }
+
+/* --- Accesos rápidos (Encuéntranos · Trayectoria · Dirección) ---------------- */
+.acceso { display: flex; flex-direction: column; align-items: flex-start; height: 100%; padding: var(--sp-5) var(--sp-4); border-radius: var(--radio-tarjeta); }
+.acceso h3 { margin: 0 0 var(--sp-2); font-size: 1.75rem; font-style: italic; font-weight: 700; }
+.acceso p { flex-grow: 1; margin: 0 0 var(--sp-4); font-weight: 600; }
+.acceso-dorado { background: var(--ctn-dorado); color: var(--ctn-marron); }
+.acceso-dorado h3 { color: var(--ctn-marron); }
+.acceso-crema { background: var(--ctn-crema); border: 1px solid var(--ctn-borde); color: var(--ctn-texto); }
+.acceso-oscuro { background: var(--ctn-marron); color: #fff; }
+.acceso-oscuro h3 { color: var(--ctn-dorado); }
+
+/* --- Tarjeta blanca de formularios ------------------------------------------ */
+.tarjeta-form { padding: var(--sp-4); }
+.tarjeta-form h2, .tarjeta-form h3, .tarjeta-form h4 { margin: 0 0 var(--sp-2); }
+.tarjeta-form p { flex-grow: 1; margin-bottom: var(--sp-3); }
+.tarjeta-form .btn-ctn { align-self: stretch; }
+
+/* --- Equipo (CETNA) --------------------------------------------------------- */
+.miembro { text-align: center; }
+.miembro img { display: block; width: 100%; height: 260px; object-fit: cover; }
+.miembro h3 { margin: var(--sp-3) 0 var(--sp-1); font-size: 1.25rem; text-transform: uppercase; }
+.miembro p { margin: 0 0 var(--sp-3); color: var(--ctn-texto-suave); font-weight: 700; }
+
+
+/* ==========================================================================
+   9. GALERÍA DE FOTOS (con ventana ampliada; la maneja ctn.js)
+   ========================================================================== */
+.galeria { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: var(--sp-3); }
+.galeria-item {
+  position: relative; display: block; width: 100%; padding: 0;
+  overflow: hidden; border: 0; border-radius: .75rem; background: var(--ctn-marron);
+  cursor: zoom-in;
+}
+.galeria-item img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; transition: transform .4s ease, opacity .3s ease; }
+.galeria-item:hover img, .galeria-item:focus-visible img { transform: scale(1.06); opacity: .88; }
+.galeria-item .pie {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: var(--sp-3) var(--sp-3) var(--sp-2);
+  background: linear-gradient(transparent, rgba(46, 18, 7, .85));
+  color: #fff; font-family: var(--fuente-titulos); font-weight: 700; text-align: left; letter-spacing: .5px;
+}
+#modalGaleria .modal-content { background: transparent; border: 0; }
+#modalGaleria .modal-imagen img { display: block; max-width: 100%; max-height: 80vh; margin: 0 auto; border-radius: .75rem; }
+#modalGaleria .btn-close { position: absolute; top: -2.5rem; right: 0; filter: invert(1); opacity: 1; }
+#modalGaleria .modal-pie { margin-top: var(--sp-2); color: #fff; text-align: center; }
+
+
+/* ==========================================================================
+   10. NOTICIAS (las dibuja noticias.js; si no hay servidor se ve el aviso fijo)
+   ========================================================================== */
+.aviso-noticias { max-width: 46rem; margin: 0 auto; padding: var(--sp-4); border-left: 4px solid var(--ctn-dorado); border-radius: .5rem; background: #fff; box-shadow: var(--sombra-s); font-size: var(--texto-l); }
+
+.noticias-lista { display: flex; flex-wrap: wrap; gap: var(--sp-4); align-items: flex-start; }
+.noticias-lista > .noticia-principal  { flex: 2 1 480px; min-width: 0; }
+.noticias-lista > .noticias-laterales { flex: 1 1 280px; min-width: 0; display: grid; gap: var(--sp-4); }
+.noticia { overflow: hidden; border: 1px solid var(--ctn-borde); border-radius: var(--radio-tarjeta); background: #fff; box-shadow: var(--sombra-s); }
 .noticia img { display: block; width: 100%; height: auto; }
 .noticia-principal img { max-height: 380px; object-fit: cover; }
 .noticias-laterales .noticia img { max-height: 180px; object-fit: cover; }
-.noticia-cuerpo { padding: 15px 20px 20px; }
-.noticia-cuerpo h2, .noticia-cuerpo h4 { margin-top: 0; font-weight: 700; }
-.noticia-fecha { color: #777; font-size: 14px; }
-/* Texto recortado a 4 líneas con "…" */
-.noticia-resumen {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  overflow: hidden;
-  white-space: pre-line;
-}
+.noticia-cuerpo { padding: var(--sp-3) var(--sp-4) var(--sp-4); }
+.noticia-cuerpo h2, .noticia-cuerpo h4 { margin: 0 0 var(--sp-2); font-weight: 700; }
+.noticia-fecha { margin: 0 0 var(--sp-2); color: var(--ctn-texto-suave); font-size: var(--texto-s); }
+.noticia-resumen { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: var(--sp-3); }
 
-/* Ventana con la noticia completa */
-.noticia-modal .modal-body img { display: block; max-width: 100%; margin: 0 auto 20px; border-radius: 1em; }
-.noticia-modal .modal-body p { max-width: 100%; white-space: pre-line; overflow-wrap: anywhere; }
-.noticia-modal .carousel { margin-bottom: 20px; }
-.noticia-modal .carousel-inner { border-radius: 1em; }
-.noticia-modal .carousel-inner .item img { width: 100%; height: 300px; margin: 0; object-fit: cover; border-radius: 0; }
-.noticia-modal .carousel-indicators { bottom: 10px; }
-.noticia-modal .carousel-indicators li { width: 10px; height: 10px; border-radius: 50%; background-color: rgba(255, 255, 255, .7); }
-.noticia-modal .carousel-indicators .active { background-color: var(--ctn-marron); }
-.noticia-modal .carousel-control {
-  top: 50%; bottom: auto;
-  width: 40px; height: 40px; margin-top: -20px;
-  border-radius: 50%;
-  background: var(--ctn-marron);
-  opacity: .85;
-  text-shadow: none;
-  line-height: 40px;
-  text-align: center;
-}
-.noticia-modal .carousel-control.left  { left: 10px; }
-.noticia-modal .carousel-control.right { right: 10px; }
-.noticia-modal .carousel-control span { color: var(--ctn-dorado); font-size: 20px; }
-.noticia-modal .carousel-control:hover { opacity: 1; background: var(--ctn-dorado); }
-.noticia-modal .carousel-control:hover span { color: var(--ctn-marron); }
+.noticia-modal .modal-body img { display: block; max-width: 100%; margin: 0 auto var(--sp-3); border-radius: .75rem; }
+.noticia-modal .modal-body p { white-space: pre-line; overflow-wrap: anywhere; }
+.noticia-modal .carousel { margin-bottom: var(--sp-3); }
+.noticia-modal .carousel-inner { border-radius: .75rem; }
+.noticia-modal .carousel-item img { width: 100%; height: 300px; margin: 0; object-fit: cover; border-radius: 0; }
 
 
 /* ==========================================================================
-   10. ANIMACIONES DE APARICIÓN
-   --------------------------------------------------------------------------
-   Los elementos con clase "wow fadeIn / fadeInUp / fadeInDown" aparecen
-   con una animación al llegar a la pantalla (lo activa ctn.js).
-   La clase "js" la agrega ctn.js; si JavaScript falla, todo queda visible.
+   11. PÁGINAS
    ========================================================================== */
-.js .wow { opacity: 0; }
-.js .wow.visible { opacity: 1; animation: ctn-aparecer .8s ease both; }
-.js .wow.fadeInDown.visible { animation-name: ctn-aparecer-desde-arriba; }
-.js .wow.fadeInUp.visible   { animation-name: ctn-aparecer-desde-abajo; }
 
-@keyframes ctn-aparecer              { from { opacity: 0; } to { opacity: 1; } }
-@keyframes ctn-aparecer-desde-arriba { from { opacity: 0; transform: translateY(-24px); } to { opacity: 1; transform: none; } }
-@keyframes ctn-aparecer-desde-abajo  { from { opacity: 0; transform: translateY(24px); }  to { opacity: 1; transform: none; } }
+/* --- Pestañas y carruseles (Acerca de, Dirección, Especialidades) ----------- */
+.nav-tabs { --bs-nav-tabs-link-active-color: var(--ctn-marron); --bs-nav-link-color: var(--ctn-marron); --bs-nav-link-hover-color: #000; }
+.nav-tabs .nav-link { font-family: var(--fuente-titulos); font-weight: 700; font-size: 1.125rem; }
+.nav-tabs .nav-link.active { border-bottom: 3px solid var(--ctn-marron); }
 
-/* Quien prefiere menos movimiento: sin animaciones, todo visible */
-@media (prefers-reduced-motion: reduce) {
-  .js .wow, .js .wow.visible { opacity: 1; animation: none; }
-  .indexbg1 .bgvideo { display: none; }
-  * { transition-duration: .01ms !important; }
+.carrusel { max-width: 860px; margin: 0 auto var(--sp-5); overflow: hidden; border-radius: var(--radio-tarjeta); box-shadow: var(--sombra-m); }
+.carrusel img { display: block; width: 100%; height: auto; }
+.carousel-indicators [data-bs-target] { width: 10px; height: 10px; border: 0; border-radius: 50%; }
+.carousel-control-prev-icon, .carousel-control-next-icon { padding: 1.1rem; border-radius: 50%; background-color: rgba(71, 28, 12, .75); background-size: 50%; }
+
+/* --- Acerca de: razones para elegir el CTN ----------------------------------- */
+.razon { text-align: center; }
+.razon img { width: 60px; height: 60px; margin-bottom: var(--sp-3); }
+.razon h3 { margin-bottom: var(--sp-2); font-size: 1.5rem; }
+.razon p { color: var(--ctn-texto-suave); margin: 0; }
+.cuerpo-lectura p { font-size: var(--texto-l); }
+.tabs-mision .tab-pane { padding: var(--sp-4) var(--sp-2) 0; font-size: var(--texto-l); text-align: center; }
+
+/* --- Admisión ---------------------------------------------------------------- */
+.etiquetas { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin: 0 0 var(--sp-3); padding: 0; list-style: none; }
+.etiquetas li { padding: .35rem 1rem; border-radius: var(--radio-pildora); background: var(--ctn-dorado); color: var(--ctn-marron); font-family: var(--fuente-titulos); font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
+.lista-datos { margin: 0; padding-left: 1.25rem; }
+.lista-datos li { margin-bottom: var(--sp-2); }
+.lista-requisitos { margin: 0; padding: 0; list-style: none; counter-reset: req; }
+.lista-requisitos li { position: relative; margin-bottom: var(--sp-3); padding-left: 2.75rem; counter-increment: req; }
+.lista-requisitos li::before {
+  content: counter(req);
+  position: absolute; left: 0; top: -.1rem; width: 2rem; height: 2rem;
+  border-radius: 50%; background: var(--ctn-marron); color: var(--ctn-dorado);
+  font-family: var(--fuente-titulos); font-weight: 700; line-height: 2rem; text-align: center;
 }
 
-/* Formularios en celular: título más chico y texto alineado a la izquierda (el justificado deja huecos enormes) */
-@media (max-width: 575px) {
-  .formulario-section h2 { font-size: 24px; }
-  .formulario-section p  { font-size: 16px; text-align: left; }
+/* --- Dirección: ficha del director -------------------------------------------- */
+.ficha-destacada { margin-bottom: var(--sp-5); padding: var(--sp-5); border-left: 5px solid var(--ctn-dorado); border-radius: var(--radio-tarjeta); background: var(--ctn-crema); }
+.ficha-destacada h2 { font-size: var(--titulo-3); text-transform: uppercase; }
+.lista-funciones li { margin-bottom: var(--sp-3); }
+
+/* --- Contacto ------------------------------------------------------------------ */
+.form-contacto .form-control { border-color: #cdbfae; border-radius: 1rem; }
+.form-contacto .form-control:focus { border-color: var(--ctn-marron); box-shadow: 0 0 0 .25rem rgba(71, 28, 12, .18); }
+.form-contacto .invalid-feedback { font-weight: 600; }
+#respuesta-formulario:empty { display: none; }
+.datos-contacto h2 { margin-top: var(--sp-5); font-size: 1.5rem; text-transform: uppercase; }
+.datos-contacto h2:first-child { margin-top: 0; }
+.mapa { width: 100%; height: clamp(280px, 38vw, 440px); }
+.mapa iframe { width: 100%; height: 100%; border: 0; display: block; }
+.icono-social { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: var(--ctn-marron); color: var(--ctn-dorado); }
+.icono-social:hover, .icono-social:focus-visible { background: var(--ctn-dorado); color: var(--ctn-marron); }
+.icono-social svg { width: 22px; height: 22px; fill: currentColor; }
+
+/* --- Formularios descargables ---------------------------------------------------- */
+.formularios-pagina { max-width: 880px; margin: 0 auto; }
+.formularios-pagina h2 { font-size: 1.75rem; }
+.formularios-pagina p { text-align: left; }
+.lista-formularios { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: var(--sp-4); }
+
+
+/* ==========================================================================
+   12. PIE DE PÁGINA
+   ========================================================================== */
+.pie { padding: var(--sp-5) 0 var(--sp-4); background: var(--ctn-marron-oscuro); color: #f2e6d6; font-size: var(--texto-s); }
+.pie h2 { margin-bottom: var(--sp-3); color: var(--ctn-dorado); font-size: 1.125rem; text-transform: uppercase; letter-spacing: 1px; }
+.pie a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.pie a:hover, .pie a:focus-visible { color: var(--ctn-dorado); }
+.pie ul { margin: 0; padding: 0; list-style: none; }
+.pie li { margin-bottom: var(--sp-2); }
+.pie .icono-social { background: var(--ctn-dorado); color: var(--ctn-marron); text-decoration: none; }
+.pie .icono-social:hover, .pie .icono-social:focus-visible { background: #fff; color: var(--ctn-marron); }
+.pie .derechos { margin-top: var(--sp-4); padding-top: var(--sp-3); border-top: 1px solid rgba(255, 255, 255, .15); text-align: center; }
+
+
+/* ==========================================================================
+   13. ANIMACIONES DE APARICIÓN (ctn.js agrega "visible" al llegar al elemento)
+   --------------------------------------------------------------------------
+   Para animar algo, ponle class="wow" (y "fadeInUp", "fadeInDown" o "fadeIn").
+   Solo se esconden los elementos si el navegador ejecuta JavaScript.
+   ========================================================================== */
+.js .wow { opacity: 0; }
+.js .wow.visible { animation: ctn-aparecer .7s ease both; }
+.js .wow.fadeInUp.visible { animation-name: ctn-aparecer-arriba; }
+.js .wow.fadeInDown.visible { animation-name: ctn-aparecer-abajo; }
+@keyframes ctn-aparecer { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ctn-aparecer-arriba { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes ctn-aparecer-abajo { from { opacity: 0; transform: translateY(-24px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .wow, .js .wow.visible { opacity: 1; animation: none; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }

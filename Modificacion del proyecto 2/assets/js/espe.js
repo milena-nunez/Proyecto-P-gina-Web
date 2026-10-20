@@ -1,41 +1,36 @@
 /* ==========================================================================
    CTN · Página "Especialidades"
    --------------------------------------------------------------------------
-   Requiere jQuery, Bootstrap y FlexSlider. Hace tres cosas:
-     1. Al cambiar de pestaña, cambia el tema de colores de toda la página
-        (los colores están en espe.css, sección 1).
-     2. Inicia el carrusel de fotos de la especialidad que se está viendo.
-     3. Dibuja el gráfico de "especialidades más elegidas en el test vocacional"
+   Requiere Bootstrap 5. Hace dos cosas:
+     1. Permite entrar directo a una especialidad con la dirección
+        espe.html#quimica (así enlazan las tarjetas del inicio) y mantiene la
+        dirección al cambiar de pestaña.
+     2. Dibuja el gráfico de "especialidades más elegidas en el test vocacional"
         (solo si hay un servidor configurado en config.js).
+
+   Los colores de cada especialidad están en espe.css (sección 1) y se aplican
+   con el atributo data-especialidad del HTML: aquí no hay colores.
    ========================================================================== */
-(function ($) {
+(function () {
   'use strict';
 
-  /* ---------- 1. Tema de color por especialidad ---------- */
-  // Cada pestaña (<li>) trae su clave en data-especialidad (info, quimica...).
-  // Al mostrarse, se la copia al <body>: espe.css hace el resto.
-  $('.especialidades-tabs a[data-toggle="tab"]').on('shown.bs.tab', function () {
-    var clave = $(this).closest('li').attr('data-especialidad');
-    document.body.setAttribute('data-especialidad', clave);
-    iniciarCarrusel($($(this).attr('href')).find('.flexslider'));
-  });
+  /* ---------- 1. Pestañas ---------- */
+  var botones = document.querySelectorAll('.especialidades-tabs [data-bs-toggle="tab"]');
 
-
-  /* ---------- 2. Carruseles de fotos ---------- */
-  // FlexSlider no puede iniciarse dentro de una pestaña oculta, por eso cada
-  // carrusel se inicia la primera vez que su pestaña se muestra.
-  function iniciarCarrusel($carrusel) {
-    if (!$carrusel.length || $carrusel.data('flexslider')) { return; }
-    $carrusel.flexslider({
-      animation: 'slide',
-      controlNav: true,
-      directionNav: true,
-      slideshowSpeed: 4000,
-      animationSpeed: 600,
-      pauseOnHover: true
-    });
+  function mostrarDesdeDireccion() {
+    var id = decodeURIComponent(location.hash.replace('#', ''));
+    if (!id || !window.bootstrap) { return; }
+    var boton = document.querySelector('.especialidades-tabs [data-bs-target="#' + id + '"]');
+    if (boton) { window.bootstrap.Tab.getOrCreateInstance(boton).show(); }
   }
-  iniciarCarrusel($('.tab-pane.active .flexslider'));
+
+  Array.prototype.forEach.call(botones, function (boton) {
+    boton.addEventListener('shown.bs.tab', function () {
+      history.replaceState(null, '', boton.getAttribute('data-bs-target'));
+    });
+  });
+  window.addEventListener('hashchange', mostrarDesdeDireccion);
+  mostrarDesdeDireccion();
 
 
   /* ---------- 3. Gráfico del test vocacional ---------- */
@@ -59,8 +54,9 @@
 
   /** Sin gráfico: se quita su columna y el texto del encabezado queda centrado. */
   function ocultarGrafico() {
-    $('#columna-grafico').remove();
-    $('#columna-test').addClass('col-md-offset-3');
+    var columna = document.getElementById('columna-grafico');
+    if (columna) { columna.remove(); }
+    document.getElementById('columna-test').classList.add('mx-auto');
   }
 
   function sinTildes(texto) {
@@ -102,7 +98,7 @@
         },
         scales: {
           x: {
-            ticks: { color: function (c) { return BARRAS[c.index].color; }, font: { weight: 'bold' } },
+            ticks: { color: '#fff', font: { weight: 'bold' } },   // blanco: los colores de las barras se pierden sobre el fondo oscuro
             grid: { color: 'rgba(255,255,255,0.2)' }
           },
           y: {
@@ -146,4 +142,4 @@
       ocultarGrafico();
     });
 
-})(jQuery);
+})();
