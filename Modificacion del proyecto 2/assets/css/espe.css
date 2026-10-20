@@ -1,0 +1,156 @@
+/* ==========================================================================
+   CTN · Estilos de la página "Especialidades" (espe.html)
+   --------------------------------------------------------------------------
+   Cada especialidad tiene su color. Al elegir una pestaña, espe.js cambia el
+   atributo  data-especialidad  del <body> y TODO se recolorea solo: la barra
+   de menú, el pie de página y los botones.
+
+   Para cambiar el color de una especialidad, edita su línea en la sección 1.
+   Variables de cada tema:
+     --tema-color    color principal de la especialidad
+     --tema-texto    color del texto que va SOBRE ese color (blanco u negro)
+     --tema-acento   color de enlace activo / al pasar el mouse en el menú
+     --tema-legible  color para textos y bordes sobre fondo BLANCO (en los temas claros
+                     es marrón, porque el color principal casi no se vería)
+     --logo-base     1 = logo claro visible  (para fondos oscuros)
+     --logo-hovered  1 = logo oscuro visible (para fondos claros)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. TEMAS DE COLOR POR ESPECIALIDAD
+   ========================================================================== */
+/* Fondos oscuros: texto blanco, acento dorado, logo claro */
+[data-especialidad="info"]          { --tema-color: #7B1E3B; --tema-texto: #fff; --tema-acento: var(--ctn-dorado); --tema-legible: var(--tema-color); --logo-base: 1; --logo-hovered: 0; }
+[data-especialidad="mecanica_ind"]  { --tema-color: #355E3B; --tema-texto: #fff; --tema-acento: var(--ctn-dorado); --tema-legible: var(--tema-color); --logo-base: 1; --logo-hovered: 0; }
+[data-especialidad="mecanica_auto"] { --tema-color: #000080; --tema-texto: #fff; --tema-acento: var(--ctn-dorado); --tema-legible: var(--tema-color); --logo-base: 1; --logo-hovered: 0; }
+[data-especialidad="electromecanica"] { --tema-color: #2563EB; --tema-texto: #fff; --tema-acento: var(--ctn-dorado); --tema-legible: var(--tema-color); --logo-base: 1; --logo-hovered: 0; }
+
+/* Fondos claros: texto negro, acento marrón, logo oscuro */
+[data-especialidad="construccion"]  { --tema-color: #E5DCC8; --tema-texto: #000; --tema-acento: var(--ctn-marron); --tema-legible: var(--ctn-marron); --tema-legible-texto: var(--ctn-dorado); --logo-base: 0; --logo-hovered: 1; }
+[data-especialidad="electronica"]   { --tema-color: #A7ADB5; --tema-texto: #000; --tema-acento: var(--ctn-marron); --tema-legible: var(--ctn-marron); --tema-legible-texto: var(--ctn-dorado); --logo-base: 0; --logo-hovered: 1; }
+[data-especialidad="electricidad"]  { --tema-color: #87CEEB; --tema-texto: #000; --tema-acento: var(--ctn-marron); --tema-legible: var(--ctn-marron); --tema-legible-texto: var(--ctn-dorado); --logo-base: 0; --logo-hovered: 1; }
+[data-especialidad="quimica"]       { --tema-color: #F9FAFB; --tema-texto: #000; --tema-acento: var(--ctn-marron); --tema-legible: var(--ctn-marron); --tema-legible-texto: var(--ctn-dorado); --logo-base: 0; --logo-hovered: 1; }
+
+/* La barra de menú y el pie de página siguen el tema elegido en el <body> */
+body {
+  padding-top: var(--nav-alto);              /* la barra de menú es fija */
+  --nav-fondo:  var(--tema-color);
+  --nav-texto:  var(--tema-texto);
+  --nav-acento: var(--tema-acento);
+}
+.logo-container .logo-base    { opacity: var(--logo-base, 1); }
+.logo-container .logo-hovered { opacity: var(--logo-hovered, 0); }
+#footer {
+  background-color: var(--tema-color);
+  color: var(--tema-texto);
+  transition: background-color .5s ease, color .5s ease;
+}
+
+/* Botón con el color de la especialidad (borde y texto; al pasar el mouse se rellena) */
+.btn-ctn-tema {
+  --b-color: var(--tema-legible);
+  --b-fondo-hover: var(--tema-legible);
+  --b-texto-hover: var(--tema-legible-texto, var(--tema-texto));
+}
+
+
+/* ==========================================================================
+   2. ENCABEZADO: invitación al test vocacional + gráfico
+   ========================================================================== */
+.hero-test .columna-texto { padding-top: 70px; }
+.hero-test canvas { max-width: 100%; }
+
+
+/* ==========================================================================
+   3. PESTAÑAS DE ESPECIALIDADES
+   --------------------------------------------------------------------------
+   Todas muestran su ícono; la pestaña activa lo agranda y revela el nombre.
+   ========================================================================== */
+.especialidades-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+.especialidades-tabs > li { float: none; }
+.especialidades-tabs li a { display: block; padding: 10px; text-decoration: none; }
+
+.especialidad-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .4s ease;
+}
+.especialidad-icon {
+  width: 60px;
+  height: 60px;
+  transition: all .4s ease;
+}
+.especialidad-label {
+  margin-left: 0;
+  font-size: 0;
+  font-weight: 700;
+  color: var(--tema-legible);
+  opacity: 0;
+  transition: all .4s ease;
+}
+.especialidades-tabs li.active .especialidad-icon  { width: 100px; height: 100px; transform: translateX(-10px); }
+.especialidades-tabs li.active .especialidad-label { margin-left: 14px; font-size: 22px; opacity: 1; }
+
+/* En celulares el nombre de la pestaña activa pasa debajo del ícono, para que todo quepa */
+@media (max-width: 575px) {
+  .especialidades-tabs { gap: 4px; }
+  .especialidades-tabs li a { padding: 6px; }
+  .especialidad-icon { width: 44px; height: 44px; }
+  .especialidades-tabs li.active .especialidad-icon { width: 64px; height: 64px; transform: none; }
+  .especialidades-tabs li.active .especialidad-wrapper { flex-direction: column; }
+  .especialidades-tabs li.active .especialidad-label { margin: 4px 0 0; font-size: 16px; }
+}
+
+
+/* ==========================================================================
+   4. CONTENIDO DE CADA ESPECIALIDAD
+   ========================================================================== */
+.tab-content { margin-top: 20px; }
+.tab-pane .flexslider { max-width: 800px; margin: 0 auto; }
+.tab-pane .flexslider img { width: 100%; height: auto; }
+#info .post-wrapper { max-width: 900px; margin: 0 auto; }   /* Informática: mismo ancho que las demás */
+
+/* Título de cada especialidad: se ve igual que el título de los encabezados del tema */
+.titulo-especialidad { margin: 0; font-size: 38px; font-weight: 300; }
+@media (min-width: 768px) { .titulo-especialidad { font-size: 48px; } }
+
+/* Botones COORDINADOR / FORMULARIOS */
+.tab-pane .tags .tag { display: inline-block; margin: 0 4px 8px; }
+
+
+/* ==========================================================================
+   5. VENTANAS: COORDINADOR Y FORMULARIOS
+   ========================================================================== */
+.modal[data-especialidad] .modal-title,
+.modal[data-especialidad] .tarjeta-blanca h4 {
+  color: var(--tema-legible);
+  font-size: 22px;
+  font-weight: 700;
+}
+.formularios-lista { display: flex; flex-wrap: wrap; margin: 0 -10px; }
+.formularios-lista > div { display: flex; padding: 0 10px; width: 100%; }
+@media (min-width: 992px) { .formularios-lista > div { width: 25%; } }
+@media (min-width: 600px) and (max-width: 991px) { .formularios-lista > div { width: 50%; } }
+
+.formularios-lista .tarjeta-blanca { width: 100%; margin-bottom: 20px; }
+.formularios-lista .tarjeta-blanca p {
+  flex-grow: 1;
+  min-height: 120px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: justify;
+}
+
+/* Listas largas de perfiles: aire entre punto y punto (antes se lograba con <br> sueltos) */
+.tab-pane ul.lead > li { margin-bottom: 1em; }
+.tab-pane .post-wrapper p.lead:empty { display: none; }
+
+/* El botón ocupa el ancho de su tarjeta (en 4 columnas el texto no cabe en una sola línea fija) */
+.formularios-lista .tarjeta-blanca .btn-ctn { align-self: stretch; padding: 9px 10px; text-align: center; white-space: normal; }

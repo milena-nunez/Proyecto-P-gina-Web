@@ -1,206 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content=""><meta name="author" content="">
-	<title>Acerca de | CTN</title>
-	<link href="assets/images/logo2.png" rel="shortcut icon" type="image/logo2.png" /><!-- mobile settings --><!-- Bootstrap Core CSS -->
-	<link href="assets/css/bootstrap.css" rel="stylesheet" /><!-- Custom CSS -->
-	<link href="assets/css/blueridge.css" rel="stylesheet" />
-	<link href="assets/css/filter-portfolio.css" rel="stylesheet" />
-	<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet" />
-	<link href="assets/owl-carousel/owl.theme.css" rel="stylesheet" /><!-- Lightbox -->
-	<link href="assets/magnific-popup/magnific-popup.css" rel="stylesheet" /><!-- Custom Fonts -->
-	<link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Dosis:400,300,700,500" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" rel="stylesheet" type="text/css" />
-	<style>
-  /* Fuerza estilo granate en las otras páginas */
-#lightnav.navbar-default .dropdown-menu {
-  background-color: #471c0c !important;
-  border-radius: 0 0 2em 2em !important; /* mantiene bordes redondeados */
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.4s ease; /* animación suave */
-}
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acerca de | Colegio Técnico Nacional de Asunción</title>
+  <meta name="description" content="Historia, misión, visión y razones para elegir el Colegio Técnico Nacional de Asunción: más de 36 años formando técnicos.">
+  <meta name="author" content="Colegio Técnico Nacional de Asunción">
+  <meta name="theme-color" content="#471c0c">
+  <link rel="icon" href="assets/images/logo2.png">
 
-#lightnav.navbar-default .dropdown-menu.show,
-#lightnav.navbar-default .open > .dropdown-menu {
-  max-height: 500px; /* altura animada */
-  opacity: 1;
-}
-
-/* Links dentro del menú */
-#lightnav.navbar-default .dropdown-menu > li > a {
-  color: white !important;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
-}
-
-#lightnav.navbar-default .dropdown-menu > li > a:hover {
-  background-color: #ffd380; /* efecto hover */
-  transition: background-color 0.4s ease, color 0.4s ease;
-  color: #471c0c !important;
-}
-
-/* Links dentro del menú */
-#lightnav.navbar-default .dropdown-menu > li > a {
-  color: white !important;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
-}
-/* estilo base */
-.dropdown-menu {
-  display: block !important;        /* siempre block para poder animar */
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  border-radius: 0 0 2em 2em !important;       /* esquinas redondeadas abajo */
-  transition: all 0.4s ease;
-}
-
-/* cuando bootstrap lo abre */
-.dropdown-menu.show,
-.open > .dropdown-menu {
-  max-height: 500px;
-  opacity: 1;
-}
-#institucional-btn {
-  background-color: #AB2A3E !important;
-  color: white !important;
-  border-radius: 2em;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-		.nav-tabs > li.active > a {
-    border-bottom: 3px solid #471c0c !important; /* Cambia #FF0000 al color que quieras */
-}
-
-/* estilo base */
-.dropdown-menu {
-  display: block !important;        /* siempre block para poder animar */
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  border-radius: 0 0 2em 2em !important;       /* esquinas redondeadas abajo */
-  transition: all 0.4s ease;
-}
-
-/* cuando bootstrap lo abre */
-.dropdown-menu.show,
-.open > .dropdown-menu {
-  max-height: 500px;
-  opacity: 1;
-}
-</style>
-<style>
-#lightnav a {
-    color: white !important;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-#lightnav a:hover {
-    color: black !important;
-}
-.logo-container {
-  position: relative;
-  width: auto;
-  height: 50px;
-  display: inline-block;
-  margin-top: -12px;
-  margin-left: -100px;
-}
-
-.logo-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
-  transition: opacity 0.4s ease;
-}
-
-.logo-base {
-  z-index: 1;
-  opacity: 1;
-}
-
-.logo-hovered {
-  z-index: 2;
-  opacity: 0;
-}
-
-.logo-container:hover .logo-hovered {
-  opacity: 1;
-}
-
-.logo-container:hover .logo-base {
-  opacity: 0;
-}
-</style>
+  <script>document.documentElement.className += ' js';</script>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/blueridge.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/ctn.css">
 </head>
-<body><!-- Nav -->
-<nav class="navbar navbar-default navbar-fixed-top" id="lightnav" style="background-color: #471c0c;">
-<div class="container">
-<div class="navbar-header page-scroll"><button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span></button><a class="navbar-brand page-scroll text-uppercase pddn-10" href="index.html"><div class="logo-container">
-  <img src="assets/images/themelogo/logo3.png" class="logo-base" />
-  <img src="assets/images/themelogo/logo.png" class="logo-hovered" />
-</div>
-</a></div>
+<body>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
 
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: -100px;">
-<ul class="nav navbar-nav navbar-right"><!-- Dropdown -->
-	<li class="dropdown" role="presentation"><a href="index.html"><font>Inicio</font></a> <!-- /.Dropdown --> <!-- Dropdown Services --></li>
-	<li class="dropdown"><a href="espe.html">Especialidades</a></li>
-	<!-- /.Dropdown About --><!-- Portafolio -->
-	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" style="background-color: #471c0c;">Institucional <span class="caret"></span></a>
-	<ul class="dropdown-menu">
-		<li><a href="direccion.html">Direcci&oacute;n General</a></li>
-		<li><a href="admision.html">Admision</a></li>
-    <li><a href="cetna.html">CETNA</a></li>
-    <li><a href="Formularios.html">Formularios</a></li>
-	</ul>
-	</li>
-	<!-- /.Dropdown Team --><!-- Dropdown Contact -->
-	<li class="dropdown"><a href="contact2.html">Contacto</a></li>
-	<!-- /.Dropdown Blog --><!-- Dropdown About -->
-	<li class="dropdown"><a href="acerca.html" style="color: #ffd380 !important;">Acerca de</a></li>
-	<!-- /.Dropdown About -->
-</ul>
-</div>
-<!-- /.navbar-collapse --></div>
-<!-- /.container --></nav>
-<!-- /.Navigation -->
-<header class="indexbg1" id="hero">
-	<video autoplay muted loop playsinline class="bgvideo">
-    <source src="C:\Users\eleme\Downloads\editor_publicaciones\editor_publicaciones\Modificacion del proyecto 2\video\background3.mp4" type="video/mp4">
-  </video>
-<div class="container">
-<div class="row">
-<div class="col-md-12"><!-- Heading Title Area -->
-<div class="header-text text-center white">
-<h1>Acerca de nosotros</h1>
+<!-- Menú principal -->
+<nav class="navbar navbar-default navbar-fixed-top ctn-nav" aria-label="Menú principal">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false" aria-controls="menu-principal">
+        <span class="sr-only">Mostrar u ocultar el menú</span>
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html" aria-label="Colegio Técnico Nacional - Inicio">
+        <span class="logo-container">
+          <img src="assets/images/themelogo/logo3.png" class="logo-base" alt="">
+          <img src="assets/images/themelogo/logo.png" class="logo-hovered" alt="">
+        </span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="menu-principal">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="espe.html">Especialidades</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Institucional <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="direccion.html">Dirección General</a></li>
+            <li><a href="admision.html">Admisión</a></li>
+            <li><a href="cetna.html">CETNA</a></li>
+            <li><a href="Formularios.html">Formularios</a></li>
+          </ul>
+        </li>
+        <li><a href="contact2.html">Contacto</a></li>
+        <li class="active"><a href="acerca.html" aria-current="page">Acerca de</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<hr class="borderwhite-sm" />
-<h2 class="text-uppercase">Tenemos m&aacute;s de 36 a&ntilde;os de experiencia</h2>
-</div>
-<!-- Heading Title Area --></div>
-</div>
-</div>
-<!-- /.container --></header>
- <section>
+<main id="contenido">
+  <header class="indexbg1 hero-interno" id="hero">
+    <video class="bgvideo" muted loop playsinline preload="none" data-src="video/background3.mp4" aria-hidden="true" tabindex="-1"></video>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="header-text text-center white">
+            <h1>Acerca de nosotros</h1>
+            <hr class="borderwhite-sm">
+            <h2 class="text-uppercase">Tenemos más de 36 años de experiencia</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+ <section id="identidad">
 <div class="container">
-<!-- About Section Title and Description -->
 <div class="row">
 <div class="col-lg-12 text-center wow fadeInDown">
 <h2 class="section-heading">&iquest;Qu&eacute; es el Colegio T&eacute;cnico Nacional?</h2>
 <h3 class="section-subheading">Un poco de nuestra c&eacute;lebre y tan halagada identidad.</h3>
 </div>
 </div>
-<!-- /.About Section Title and Description -->
-
-<hr class="borderwhite-sm mrgn-50-btm" />
-
+<hr class="borderwhite-sm mrgn-50-btm">
 <div class="row">
-<!-- About Story -->
 <div class="col-md-8 col-md-offset-2 text-center wow fadeInUp">
 <div class="bg-white-10 pddn-20">
 <p class="lead">El Colegio T&eacute;cnico Nacional de la Capital, es una Instituci&oacute;n concebida, proyectada y ejecutada con el af&aacute;n de formar a la juventud paraguaya en la noble misi&oacute;n de superarse, prepar&aacute;ndola para que sean ciudadanos &uacute;tiles y amantes del trabajo, cumpliendo con la pol&iacute;tica educativa del Gobierno Nacional, a trav&eacute;s del Ministerio de Educaci&oacute;n y Cultura.</p>
@@ -208,161 +85,118 @@
 <p class="lead">Somos un colegio t&eacute;cnico de nivel secundario seg&uacute;n los niveles de educaci&oacute;n de nuestro pa&iacute;s. El CTN es uno de los colegios m&aacute;s importantes a nivel de bachillerato t&eacute;cnico industrial de nuestra naci&oacute;n. Adem&aacute;s es una de las mejores instituciones modelo del Paraguay. Al colegio acuden alumnos de Asunci&oacute;n y de ciudades del Departamento Central como: Luque, Fernando de la Mora, San Lorenzo, Lambar&eacute;, Capiat&aacute; entre otras.</p>
 </div>
 </div>
-<!-- /.About Story -->
 </div>
 </div>
-<!-- /.container -->
 </section>
-<!-- /.Header --><!-- About Section -->
 <section id="about-dark">
-<div class="container"><!-- Our Story Section Title and Description -->
+<div class="container">
 <div class="row">
 <div class="col-lg-12 text-center">
 <h2 class="section-heading">Nuestra Historia</h2>
-
 <h3 class="section-subheading">Del c&oacute;mo nuestro Colegio lleg&oacute; a ser lo que es hoy en d&iacute;a</h3>
 </div>
 </div>
-<!-- /.Our Story Section Title and Description -->
-
-<hr class="border-sm pddn-30-top-btm" />
-<div class="row"><!-- About Story -->
+<hr class="border-sm pddn-30-top-btm">
+<div class="row">
 <div class="col-md-6">
 <p class="lead">El Colegio T&eacute;cnico Nacional, oficialmente Colegio T&eacute;cnico Nacional de la Capital o Colegio T&eacute;cnico Nacional de Asunci&oacute;n es un colegio t&eacute;cnico de nivel secundario seg&uacute;n los niveles de educaci&oacute;n del Paraguay, se encuentra ubicado en Asunci&oacute;n.</p>
-
 <p class="lead">Es uno de los colegios m&aacute;s importantes a nivel de bachillerato t&eacute;cnico industrial de nuestro pa&iacute;s. Adem&aacute;s es una de las mejores instituciones modelo del Paraguay.</p>
-
 <p class="lead">Al colegio acuden alumnos de Asunci&oacute;n y de ciudades del Departamento Central como: Luque, Fernando de la Mora, San Lorenzo, Lambar&eacute;, Capiat&aacute; entre otras.</p>
 </div>
-
 <div class="col-md-6">
 <p class="lead">El Ministerio de Educaci&oacute;n y Cultura a fin de dar respuesta concreta a la necesidad de formaci&oacute;n de profesionales t&eacute;cnicos que puedan acompa&ntilde;ar con competencia y responsabilidad el avance tecnol&oacute;gico que vive el pa&iacute;s, cre&oacute; el Colegio T&eacute;cnico Nacional, Instituci&oacute;n destinada exclusivamente a la ense&ntilde;anza t&eacute;cnico profesional, introducido en el sistema educativo de nuestro pa&iacute;s a trav&eacute;s de las innovaciones educacionales.</p>
-
 <p class="lead">Su primer d&iacute;a de clases fue el 8 de abril de 1980 en las 8 especialidades que ofrec&iacute;a: Construcciones Civiles, Electricidad, Mec&aacute;nica General, Electr&oacute;nica, Mec&aacute;nica Automotriz, Mec&aacute;nica Diesel, Refrigeraci&oacute;n y Qu&iacute;mica Industrial.</p>
 </div>
-<!-- /.About Story --></div>
 </div>
-<!-- /.container --></section>
-<!-- /.About Section --><!-- Services Section -->
-
+</div>
+</section>
 <section class="bg-lighter-gray" id="services">
-<div class="container"><!-- Services Section Title and Description -->
+<div class="container">
 <div class="row">
 <div class="col-lg-12 text-center">
 <h2 class="section-heading">&iquest;Por qu&eacute; elegir el Colegio T&eacute;cnico Nacional?</h2>
 </div>
 </div>
-<!-- /.Services Section Title and Description -->
-
-<hr class="border-sm pddn-30-top-btm" /><!-- Services List -->
-<div class="row text-center"><!-- Service 01 -->
+<hr class="border-sm pddn-30-top-btm">
+<div class="row text-center">
 <div class="col-md-4 col-sm-6 mrgn-20-btm">
-<p><img alt="" height="60" src="assets/images/icons/icon-bl-strategy.svg" width="60" /></p>
-
+<p><img alt="" height="60" src="assets/images/icons/icon-bl-strategy.svg" width="60" loading="lazy"></p>
 <h2 class="service-title">Estrategia</h2>
-
 <p>Los docentes llevan a cabo t&eacute;cnicas de ense&ntilde;anza que se demuestra, dan resultados positivos.</p>
 </div>
-<!-- /.Service 01 --><!-- Service 02 -->
-
 <div class="col-md-4 col-sm-6 mrgn-20-btm">
-<p><img alt="" height="60" src="assets/images/icons/icon-bl-design.svg" width="60" /></p>
-
+<p><img alt="" height="60" src="assets/images/icons/icon-bl-design.svg" width="60" loading="lazy"></p>
 <h2 class="service-title">Competencia</h2>
-
 <p>No s&oacute;lo se realizan competencias internas, los alumnos tambi&eacute;n compiten ante otras instituciones.</p>
 </div>
-<!-- /.Service 02 --><!-- Service 03 -->
-
 <div class="col-md-4 col-sm-6 mrgn-20-btm">
-<p><img alt="" height="60" src="assets/images/icons/icon-bl-development.svg" width="60" /></p>
-
+<p><img alt="" height="60" src="assets/images/icons/icon-bl-development.svg" width="60" loading="lazy"></p>
 <h2 class="service-title">Exigencia</h2>
-
 <p>Formar parte del CTN conlleva muchas responsabilidades y la predisposici&oacute;n del joven exige mucho para mantener su estad&iacute;a.</p>
 </div>
-<!-- /.Service 03 --><!-- Service 04 -->
-
 <div class="col-md-4 col-sm-6 mrgn-20-btm">
-<p><img alt="" height="60" src="assets/images/icons/icon-bl-testing.svg" width="60" /></p>
-
+<p><img alt="" height="60" src="assets/images/icons/icon-bl-testing.svg" width="60" loading="lazy"></p>
 <h2 class="service-title">Infraestructura</h2>
-
 <p>Contamos con todos los materiales que est&aacute;n a nuestro alcance para el desarrollo integral de los alumnos.</p>
 </div>
-<!-- /.Service 04 --><!-- Service 05 -->
-
 <div class="col-md-4 col-sm-6 mrgn-20-btm">
-<p><img alt="" height="60" src="assets/images/icons/icon-bl-optimization.svg" width="60" /></p>
-
+<p><img alt="" height="60" src="assets/images/icons/icon-bl-optimization.svg" width="60" loading="lazy"></p>
 <h2 class="service-title">Nivel Acad&eacute;mico</h2>
-
 <p>Los alumnos egresados del CTN son siempre muy bien reconocidos y recomendados por otros por el nivel de manejo que tienen de a cuerdo a su especializaci&oacute;n.</p>
 </div>
-<!-- /.Service 05 --><!-- Service 06 -->
-
 <div class="col-md-4 col-sm-6 mrgn-20-btm">
-<p><img alt="" height="60" src="assets/images/icons/icon-bl-analytics.svg" width="60" /></p>
-
+<p><img alt="" height="60" src="assets/images/icons/icon-bl-analytics.svg" width="60" loading="lazy"></p>
 <h2 class="service-title">Pasant&iacute;as</h2>
-
 <p>Las pasant&iacute;as son realizadas en el tercer a&ntilde;o, puesto que en el &uacute;ltimo a&ntilde;o es cuando se adquieren todos los conocimientos necesarios para que el joven comience a desenvolverse en el campo laboral.</p>
 </div>
-<!-- /.Service 06 --></div>
-<!-- /.Services List --></div>
-<!-- /.container --></section>
-<!-- /.Services Section --><!-- Mission Section -->
-
+</div>
+</div>
+</section>
 <section id="beliefs">
-<div class="container"><!-- Mission Section Title and Description -->
+<div class="container">
 <div class="row">
 <div class="col-lg-12 text-center">
 <h2 class="section-heading">En qu&eacute; trabajamos</h2>
 </div>
 </div>
-<!-- /.Mission Section Title and Description -->
-
-<hr class="border-sm pddn-30-top-btm" /><!-- About Section Toolkit Tabs -->
+<hr class="border-sm pddn-30-top-btm">
 <div class="row">
-<div class="col-lg-10 col-lg-offset-1 text-center"><!-- Nav tabs -->
+<div class="col-lg-10 col-lg-offset-1 text-center">
 <ul class="nav nav-tabs nav-justified" id="toolkit" role="tablist">
-	<li class="active"><a data-toggle="tab" href="#mission" role="tab">Misi&oacute;n </a></li>
-	<li><a data-toggle="tab" href="#values" role="tab">Visi&oacute;n </a></li>
-	<li><a data-toggle="tab" href="#experience" role="tab">Enfoque </a></li>
+	<li class="active"><a data-toggle="tab" href="#mission" role="tab">Misi&oacute;n</a></li>
+	<li><a data-toggle="tab" href="#values" role="tab">Visi&oacute;n</a></li>
+	<li><a data-toggle="tab" href="#experience" role="tab">Enfoque</a></li>
 </ul>
-<!-- /.Nav tabs --><!-- Tab panes -->
-
-<div class="tab-content"><!-- Tab 01 -->
+<div class="tab-content">
 <div class="tab-pane fade active in" id="mission">
 <p class="lead">Nuestra instituci&oacute;n educativa de especializaciones t&eacute;cnicas, con principios y valores, alto nivel de responsabilidad, pertinencia y proyecci&oacute;n positivista procura la formaci&oacute;n integral de los j&oacute;venes para insertarlos al &aacute;mbito laboral, a la continuidad de sus estudios superiores y/o a los emprendimientos productivos con el compromiso de toda la comunidad educativa.</p>
 </div>
-<!-- /.Tab 01 --><!-- Tab 02 -->
-
 <div class="tab-pane fade" id="values">
 <p class="lead">El Colegio T&eacute;cnico Nacional de la Capital ser&aacute; una entidad educativa de excelencia, con un personal capacitado, motivado e involucrado en los objetivos institucionales y el trabajo en equipo, con calidad y calidez, lo que permitir&aacute; formar bachilleres competentes, creativos, emprendedores e investigadores; capaces de generar su bienestar, el de su familia y la comunidad, mediante su propia Unidad De Producci&oacute;n, para lograr el desarrollo sustentable y sostenible de la regi&oacute;n y el Pa&iacute;s.</p>
 </div>
-<!-- /.Tab 02 --><!-- Tab 03 -->
-
 <div class="tab-pane fade" id="experience">
 <p class="lead">Para lograr los objetivos, la instituci&oacute;n cumplir&aacute; las funciones b&aacute;sicas de Docencia, Investigaci&oacute;n y Proyecci&oacute;n Social. Para el buen logro de sus funciones la instituci&oacute;n velar&aacute; por autoevaluarse y autorregularse continua, sistem&aacute;tica y responsablemente.</p>
 </div>
-<!-- /.Tab 03 --></div>
-<!-- /.Tab panes --></div>
 </div>
-<!-- /.About Section Toolkit Tabs --></div>
-<!-- /.container --></section>
-<!-- /.Mission Section --><!-- Footer -->
+</div>
+</div>
+</div>
+</section>
+</main>
 
-<footer class="bg-dark-blue">
-<div class="container">
-<div class="row"><!-- Address, Social Links & Copyright -->
-<div class="col-md-4 col-md-offset-4">
-<p>R.I. 3 Corrales c/ Dr. Hassler<br />
-Campos Cervera, Asunci&oacute;n<br />
-Tel: (021) 608 663</p>
-<span class="copyright">Copyright &copy; Desarrollado en la especialidad de Inform&aacute;tica.</span></div>
-</div>
-<!-- /.Address, Social Links & Copyright --></div>
-<!-- /.container --></footer>
-<!-- /.Footer --><!-- jQuery --><script src="assets/js/jquery.js"></script><!-- Bootstrap Core JavaScript --><script src="assets/js/bootstrap.min.js"></script><!-- JavaScript Plugins --><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script><script src="assets/js/isotope.pkgd.min.js"></script><script src="assets/js/wow.min.js"></script><script src="assets/owl-carousel/owl.carousel.js"></script><script src="assets/js/counterup/jquery.counterup.min.js"></script><script src="assets/js/jquery.easy-pie-chart.js"></script><script src="assets/magnific-popup/jquery.magnific-popup.min.js"></script><!-- Contact Form JavaScript --><script src="assets/js/jqBootstrapValidation.js"></script><script src="assets/js/contact_me.js"></script><!-- Custom Theme JavaScript --><script src="assets/js/blueridge.js"></script></body>
+<footer class="bg-dark-blue" id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: (021) 608 663</p>
+        <span class="copyright">Copyright &copy; Desarrollado en la especialidad de Informática.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/ctn.js"></script>
+</body>
 </html>

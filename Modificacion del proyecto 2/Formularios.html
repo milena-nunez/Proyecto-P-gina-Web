@@ -1,284 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="us-ascii"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="En defensa de nuestra identidad, nuestra historia y nuestros profesionales.">
-	<link href="assets/images/logo2.png" rel="shortcut icon" type="image/logo2.png" />
-	<style>
-  /* Fuerza estilo granate en las otras páginas */
-#lightnav.navbar-default .dropdown-menu {
-  background-color: #471c0c !important;
-  border-radius: 0 0 2em 2em !important; /* mantiene bordes redondeados */
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.4s ease; /* animación suave */
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formularios | Colegio Técnico Nacional de Asunción</title>
+  <meta name="description" content="Formularios descargables del Colegio Técnico Nacional: justificativos de ausencia, entrevistas con profesores e ingreso tardío.">
+  <meta name="author" content="Colegio Técnico Nacional de Asunción">
+  <meta name="theme-color" content="#471c0c">
+  <link rel="icon" href="assets/images/logo2.png">
 
-#lightnav.navbar-default .dropdown-menu.show,
-#lightnav.navbar-default .open > .dropdown-menu {
-  max-height: 500px; /* altura animada */
-  opacity: 1;
-}
-
-/* Links dentro del menú */
-#lightnav.navbar-default .dropdown-menu > li > a {
-  color: white !important;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
-}
-
-#lightnav.navbar-default .dropdown-menu > li > a:hover {
-  background-color: #ffd380 !important; /* efecto hover */
-  transition: background-color 0.4s ease, color 0.4s ease;
-  color: #471c0c !important;
-}
-</style>
-<style>
-#lightnav a {
-    color: white !important;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-#lightnav a:hover {
-    color: black !important;
-}
-.bgvideo {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.header-text h1 {
-  font-size: 48px;
-  font-weight: bold;
-  color: white;
-  margin-top: 40px;
-  animation: fadeInTitle 1s ease forwards;
-}
-
-.linea-formulario {
-  width: 200px;
-  height: 4px;
-  background-color: white;
-  margin: 10px auto 30px;
-  opacity: 0;
-  animation: fadeInLine 1.2s ease forwards;
-}
-
-@keyframes fadeInTitle {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInLine {
-  to { opacity: 1; }
-}
-/* Zoom general para el contenedor de formularios */
-section.container {
-  transform: scale(1.08); /* agranda todo visualmente */
-  transform-origin: top center;
-}
-
-/* Ajuste de tamaño y espaciado en cada bloque */
-.formulario-section {
-  margin: 30px 20px;
-  max-width: 100%;
-}
-
-.formulario-section h2 {
-  font-size: 32px;
-  font-weight: bold;
-  color: #471c0c;
-  margin-bottom: 12px;
-}
-
-.formulario-section p {
-  font-size: 18px;
-  font-weight: 500;
-  color: #333;
-  text-align: justify;
-  margin-bottom: 6px; /* menos espacio entre líneas */
-  line-height: 1.5;
-}
-
-.btn-contacto2 {
-	border-radius: 2em;
-  font-size: 18px;
-  padding: 12px 24px;
-  border: 2px solid #471c0c;
-  color: #471c0c !important;
-  background-color: transparent;
-  transition: all 0.4s ease;
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 10px;
-}
-
-.btn-contacto2:hover {
-	border-radius: 2em;
-  background-color: #471c0c;
-  border-color: #471c0c;
-  color: #ffd380 !important;
-}
-.logo-container {
-  position: relative;
-  width: auto;
-  height: 50px;
-  display: inline-block;
-  margin-top: -12px;
-  margin-left: -100px;
-}
-
-.logo-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
-  transition: opacity 0.4s ease;
-}
-
-.logo-base {
-  z-index: 1;
-  opacity: 1;
-}
-
-.logo-hovered {
-  z-index: 2;
-  opacity: 0;
-}
-
-.logo-container:hover .logo-hovered {
-  opacity: 1;
-}
-
-.logo-container:hover .logo-base {
-  opacity: 0;
-}
-</style>
+  <script>document.documentElement.className += ' js';</script>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/blueridge.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/ctn.css">
 </head>
 <body>
-<!-- Nav -->
-<nav class="navbar navbar-default navbar-fixed-top" id="lightnav" style="background-color: #471c0c;">
-<div class="container">
-<div class="navbar-header page-scroll"><button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span></button><a class="navbar-brand page-scroll text-uppercase pddn-10" href="index.html"><div class="logo-container">
-  <img src="assets/images/themelogo/logo3.png" class="logo-base" />
-  <img src="assets/images/themelogo/logo.png" class="logo-hovered" />
-</div>
-</a></div>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
 
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: -100px;">
-<ul class="nav navbar-nav navbar-right"><!-- Dropdown -->
-	<li class="dropdown" role="presentation"><a href="index.html"><font>Inicio</font></a> <!-- /.Dropdown --> <!-- Dropdown Services --></li>
-	<li class="dropdown"><a href="espe.html">Especialidades</a></li>
-	<!-- /.Dropdown About --><!-- Portafolio -->
-	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" style="background-color: #471c0c; color: #ffd380 !important;">Institucional <span class="caret"></span></a>
-	<ul class="dropdown-menu">
-		<li><a href="direccion.html">Direcci&oacute;n General</a></li>
-		<li><a href="admision.html" >Admision</a></li>
-    <li><a href="cetna.html">CETNA</a></li>
-		<li><a href="Formularios.html" style="color: #ffd380 !important;">Formularios</a></li>
-	</ul>
-	</li>
-	<!-- /.Dropdown Team --><!-- Dropdown Contact -->
-	<li class="dropdown"><a href="contact2.html">Contacto</a></li>
-	<!-- /.Dropdown Blog --><!-- Dropdown About -->
-	<li class="dropdown"><a href="acerca.html">Acerca de</a></li>
-	<!-- /.Dropdown About -->
-</ul>
-</div>
-<!-- /.navbar-collapse --></div>
-<!-- /.container --></nav>
-<!-- /.Navigation -->
-</body>
-</html>
-<title>Formularios</title>
-<link href="assets/css/bootstrap.css" rel="stylesheet" />
-<link href="assets/css/blueridge.css" rel="stylesheet" />
-<link href="assets/css/filter-portfolio.css" rel="stylesheet" />
-<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet" />
-<link href="assets/owl-carousel/owl.theme.css" rel="stylesheet" />
-<link href="assets/magnific-popup/magnific-popup.css" rel="stylesheet" />
-<link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Dosis:400,300,700,500" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" rel="stylesheet" type="text/css" />
-<header class="indexbg1" id="hero">
-  <video autoplay muted loop playsinline class="bgvideo">
-    <source src="video/background3.mp4" type="video/mp4">
-  </video>
+<!-- Menú principal -->
+<nav class="navbar navbar-default navbar-fixed-top ctn-nav" aria-label="Menú principal">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false" aria-controls="menu-principal">
+        <span class="sr-only">Mostrar u ocultar el menú</span>
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html" aria-label="Colegio Técnico Nacional - Inicio">
+        <span class="logo-container">
+          <img src="assets/images/themelogo/logo3.png" class="logo-base" alt="">
+          <img src="assets/images/themelogo/logo.png" class="logo-hovered" alt="">
+        </span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="menu-principal">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="espe.html">Especialidades</a></li>
+        <li class="dropdown active">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Institucional <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="direccion.html">Dirección General</a></li>
+            <li><a href="admision.html">Admisión</a></li>
+            <li><a href="cetna.html">CETNA</a></li>
+            <li class="active"><a href="Formularios.html" aria-current="page">Formularios</a></li>
+          </ul>
+        </li>
+        <li><a href="contact2.html">Contacto</a></li>
+        <li><a href="acerca.html">Acerca de</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="contenido">
+  <header class="indexbg1 hero-interno" id="hero">
+    <video class="bgvideo" muted loop playsinline preload="none" data-src="video/background3.mp4" aria-hidden="true" tabindex="-1"></video>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="header-text text-center white">
+            <h1>Formularios</h1>
+            <div class="linea-formulario"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="container">
+      <div class="formulario-section">
+        <article class="tarjeta-blanca">
+          <h2>Justificativo de Ausencia y Salida Anticipada</h2>
+          <p>Este formulario permite a los responsables comunicar ausencias o salidas anticipadas del estudiante.<br><br><b>"El/la que suscribe informa la ausencia o salida de su hijo/a indicando fechas y motivo."</b><br><br>Se debe presentar al profesor afectado y en portería. <b>Adjuntar copia de cédula</b> y certificado médico si corresponde<b></b>.</p>
+          <a href="https://drive.google.com/uc?export=download&amp;id=1zsBsSviAAUN6pfAF5BmZmBEPfIxJV-8i" class="btn btn-ctn btn-ctn-marron btn-pill" download rel="noopener" aria-label="Descargar formulario: justificativo de ausencia y salida anticipada">Descargar Formulario</a>
+        </article>
+      </div>
+      <div class="formulario-section">
+        <article class="tarjeta-blanca">
+          <h2>Solicitud de Entrevista con Profesor/a</h2>
+          <p>Este formulario permite solicitar una reunión con el/la profesor/a titular de una materia.<br><br><b>"El/la que suscribe solicita una entrevista indicando el motivo y datos de contacto."</b><br><br>Se entrega al docente y luego se presenta en portería una vez confirmada. <b>Debe incluir fecha, hora y lugar</b>.</p>
+          <a href="https://drive.google.com/uc?export=download&amp;id=1O4T9nPIYp8e5Hzn5MRa5qHDhOQfkmvCb" class="btn btn-ctn btn-ctn-marron btn-pill" download rel="noopener" aria-label="Descargar formulario: solicitud de entrevista con profesor">Descargar Formulario</a>
+        </article>
+      </div>
+      <div class="formulario-section">
+        <article class="tarjeta-blanca">
+          <h2>Justificación de Ingreso Después de Hora</h2>
+          <p>Este formulario se utiliza para justificar el ingreso tardío del estudiante al colegio.<br><br><b>"El/la que suscribe comunica el ingreso fuera de horario indicando fecha, hora y motivo."</b><br><br>Se debe entregar en portería y luego al profesor afectado. <b>Adjuntar copia de cédula</b>.</p>
+          <a href="https://drive.google.com/uc?export=download&amp;id=19OGXcfNC3MVcEPzWyNNptjHVgesyUxJU" class="btn btn-ctn btn-ctn-marron btn-pill" download rel="noopener" aria-label="Descargar formulario: justificación de ingreso después de hora">Descargar Formulario</a>
+        </article>
+      </div>
+  </section>
+</main>
+
+<footer class="bg-dark-blue" id="footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-12 text-center header-text">
-        <h1><b>Formularios</b></h1>
-        <div class="linea-formulario"></div>
+      <div class="col-md-4 col-md-offset-4">
+        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: (021) 608 663</p>
+        <span class="copyright">Copyright &copy; Desarrollado en la especialidad de Informática.</span>
       </div>
     </div>
   </div>
-</header>
-<section class="container">
-<!-- Formulario 1 -->
-<div class="formulario-section text-left">
-  <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-    <h2 style="font-size:28px; font-weight:bold; color:#471c0c;">Justificativo de Ausencia y Salida Anticipada</h2>
-    <p style="font-size:17px; font-weight:500; text-align:justify; margin-bottom:10px;">
-      Este formulario permite a los responsables comunicar ausencias o salidas anticipadas del estudiante. <br><br>
-      <span style="font-weight:bold;">"El/la que suscribe informa la ausencia o salida de su hijo/a indicando fechas y motivo."</span><br><br>
-      Se debe presentar al profesor afectado y en porteria. <span style="font-weight:bold;">Adjuntar copia de cedula</span> y certificado medico si corresponde.
-    </p>
-    <a href="https://drive.google.com/uc?export=download&id=1zsBsSviAAUN6pfAF5BmZmBEPfIxJV-8i" class="btn-contacto2" download>
-      Descargar Formulario
-    </a>
-  </div>
-</div>
-
-<!-- Formulario 2 -->
-<div class="formulario-section text-left">
-  <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-    <h2 style="font-size:28px; font-weight:bold; color:#471c0c;">Solicitud de Entrevista con Profesor/a</h2>
-    <p style="font-size:17px; font-weight:500; text-align:justify; margin-bottom:10px;">
-      Este formulario permite solicitar una reunion con el/la profesor/a titular de una materia. <br><br>
-      <span style="font-weight:bold;">"El/la que suscribe solicita una entrevista indicando el motivo y datos de contacto."</span><br><br>
-      Se entrega al docente y luego se presenta en porteria una vez confirmada. <span style="font-weight:bold;">Debe incluir fecha, hora y lugar</span>.
-    </p>
-    <a href="https://drive.google.com/uc?export=download&id=1O4T9nPIYp8e5Hzn5MRa5qHDhOQfkmvCb" class="btn-contacto2" download>
-      Descargar Formulario
-    </a>
-  </div>
-</div>
-
-<!-- Formulario 3 -->
-<div class="formulario-section text-left">
-  <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-    <h2 style="font-size:28px; font-weight:bold; color:#471c0c;">Justificacion de Ingreso Despues de Hora</h2>
-    <p style="font-size:17px; font-weight:500; text-align:justify; margin-bottom:10px;">
-      Este formulario se utiliza para justificar el ingreso tardio del estudiante al colegio. <br><br>
-      <span style="font-weight:bold;">"El/la que suscribe comunica el ingreso fuera de horario indicando fecha, hora y motivo."</span><br><br>
-      Se debe entregar en porteria y luego al profesor afectado. <span style="font-weight:bold;">Adjuntar copia de cedula</span>.
-    </p>
-    <a href="https://drive.google.com/uc?export=download&id=19OGXcfNC3MVcEPzWyNNptjHVgesyUxJU" class="btn-contacto2" download>
-      Descargar Formulario
-    </a>
-  </div>
-</div>
-</div>
-</section>
-
-
-<footer class="bg-dark-blue">
-<div class="container">
-<div class="row">
-<div class="col-md-4 col-md-offset-4">
-<p>R.I.3. Corrales c/ Doctor Hassler<br />
-Campos Cervera, Asunci&oacute;n.</p>
-
-<ul class="list-inline social-buttons mrgn-10-top">
-	<li></li>
-	<li></li>
-	<li></li>
-</ul>
-<span class="copyright">Copyright &copy; Desarrollado en la especialidad de Inform&aacute;tica.</span></div>
-</div>
-</div>
 </footer>
 
-<p><script src="assets/js/jquery.js"></script><script src="assets/js/bootstrap.min.js"></script><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script><script src="assets/js/isotope.pkgd.min.js"></script><script src="assets/js/wow.min.js"></script><script src="assets/owl-carousel/owl.carousel.js"></script><script src="assets/js/counterup/jquery.counterup.min.js"></script><script src="assets/js/jquery.easy-pie-chart.js"></script><script src="assets/magnific-popup/jquery.magnific-popup.min.js"></script><script src="assets/js/jqBootstrapValidation.js"></script><script src="assets/js/blueridge.js"></script></p>
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/ctn.js"></script>
+</body>
+</html>

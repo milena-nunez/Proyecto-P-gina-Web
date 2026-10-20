@@ -1,0 +1,464 @@
+/* ==========================================================================
+   CTN · Estilos propios del sitio del Colegio Técnico Nacional de Asunción
+   --------------------------------------------------------------------------
+   Se carga en TODAS las páginas, después de Bootstrap y del tema (blueridge).
+   Todo lo que sea "propio del CTN" vive aquí, ordenado así:
+
+     1. Tipografías (alojadas en el sitio, sin depender de Google)
+     2. Colores y medidas (variables)  ← cambiar los colores del sitio: AQUÍ
+     3. Base y accesibilidad
+     4. Barra de navegación
+     5. Encabezado (hero) con video
+     6. Botones
+     7. Secciones comunes: llamada a la acción, tarjetas, pie de página
+     8. Páginas: Inicio · Acerca de · Admisión · Formularios · Contacto
+     9. Noticias (sección dinámica del inicio)
+    10. Animaciones de aparición al hacer scroll
+
+   Las reglas específicas de "Especialidades" están en espe.css.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. TIPOGRAFÍAS
+   --------------------------------------------------------------------------
+   Dosis (textos y títulos), Playfair Display (citas) y Just Another Hand.
+   Solo el subconjunto "latin" (incluye tildes y ñ).
+   ========================================================================== */
+@font-face { font-family: 'Dosis'; font-style: normal; font-weight: 300; font-display: swap; src: url(../fonts/google/dosis-latin-300-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Dosis'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/google/dosis-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Dosis'; font-style: normal; font-weight: 500; font-display: swap; src: url(../fonts/google/dosis-latin-500-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Dosis'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/google/dosis-latin-700-normal.woff2) format('woff2'); }
+
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/google/playfair-display-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 400; font-display: swap; src: url(../fonts/google/playfair-display-latin-400-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/google/playfair-display-latin-700-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 700; font-display: swap; src: url(../fonts/google/playfair-display-latin-700-italic.woff2) format('woff2'); }
+
+@font-face { font-family: 'Just Another Hand'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/google/just-another-hand-latin-400-normal.woff2) format('woff2'); }
+
+
+/* ==========================================================================
+   2. COLORES Y MEDIDAS
+   --------------------------------------------------------------------------
+   Estas variables son la "paleta" del sitio. Si cambian los colores del
+   colegio, se modifican solo estas líneas y se actualiza todo el sitio.
+   ========================================================================== */
+:root {
+  /* Paleta principal */
+  --ctn-marron:         #471c0c;   /* barra de menú, pie de página, botones */
+  --ctn-marron-oscuro:  #341409;   /* variante más oscura (tarjetas, fondo del hero) */
+  --ctn-dorado:         #ffd380;   /* color de acento: enlaces activos, bordes */
+  --ctn-blanco:         #ffffff;
+
+  /* Barra de navegación (espe.css las cambia según la especialidad) */
+  --nav-fondo:   var(--ctn-marron);
+  --nav-texto:   var(--ctn-blanco);
+  --nav-acento:  var(--ctn-dorado);  /* enlace activo y al pasar el mouse */
+
+  /* Medidas */
+  --nav-alto:    70px;
+  --radio-pildora: 2em;
+  --transicion:  .4s ease;
+}
+
+
+/* ==========================================================================
+   3. BASE Y ACCESIBILIDAD
+   ========================================================================== */
+
+/* Desplazamiento suave a los anclajes (#noticias, etc.), descontando la barra fija */
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-alto) + 10px); }
+
+/* El tema quitaba el contorno de foco (outline: 0): sin él, quien navega con
+   teclado no ve dónde está. Lo devolvemos, solo para foco de teclado. */
+:focus-visible { outline: 3px solid var(--ctn-dorado); outline-offset: 2px; }
+
+/* Enlace "Saltar al contenido" (aparece al enfocarlo con la tecla Tab) */
+.skip-link {
+  position: absolute; left: 10px; top: -60px; z-index: 2000;
+  padding: 10px 18px; border-radius: var(--radio-pildora);
+  background: var(--ctn-dorado); color: var(--ctn-marron); font-weight: 700;
+  transition: top .2s ease;
+}
+.skip-link:focus { top: 10px; color: var(--ctn-marron); text-decoration: none; }
+
+/* Utilidades pequeñas (reemplazan estilos en línea repetidos) */
+.btn-pill        { border-radius: var(--radio-pildora); }
+.texto-justificado { text-align: justify; }
+.texto-izquierda { text-align: left; }
+.texto-marron    { color: var(--ctn-marron); }
+.resaltado       { color: var(--ctn-dorado); }
+
+/* Enlaces dentro del pie de página */
+footer a { color: inherit; text-decoration: underline; }
+footer a:hover, footer a:focus { color: var(--ctn-dorado); }
+footer .copyright { display: block; font-size: 14px; line-height: 1.5; margin-top: 8px; }
+
+/* Desplazamiento horizontal: nunca debe haberlo */
+html, body { max-width: 100%; }
+
+
+/* ==========================================================================
+   4. BARRA DE NAVEGACIÓN
+   --------------------------------------------------------------------------
+   Usa la clase .ctn-nav (el tema ya no controla esta barra).
+   Escritorio (≥ 992 px): logo a la izquierda, menú a la derecha.
+   Celular y tablet (< 992 px): botón de menú (3 rayitas) y lista desplegable.
+   ========================================================================== */
+.ctn-nav {
+  min-height: var(--nav-alto);
+  margin-bottom: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: var(--nav-fondo);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  transition: background-color 1s ease;
+}
+
+/* Logo: dos imágenes superpuestas; al pasar el mouse se cambia de una a otra */
+.ctn-nav .navbar-brand {
+  height: var(--nav-alto);
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+}
+.logo-container { position: relative; display: block; }
+.logo-container img { display: block; height: 50px; width: auto; transition: opacity .4s ease; }
+.logo-container .logo-hovered { position: absolute; top: 0; left: 0; opacity: 0; }
+.logo-container:hover .logo-hovered,
+.navbar-brand:focus .logo-hovered { opacity: 1; }
+.logo-container:hover .logo-base,
+.navbar-brand:focus .logo-base { opacity: 0; }
+
+/* Enlaces del menú */
+.ctn-nav .navbar-nav > li > a {
+  color: var(--nav-texto);
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: transparent;
+  transition: color .3s ease, background-color .3s ease;
+}
+.ctn-nav .navbar-nav > li > a:hover,
+.ctn-nav .navbar-nav > li > a:focus,
+.ctn-nav .navbar-nav > .active > a,
+.ctn-nav .navbar-nav > .open > a,
+.ctn-nav .navbar-nav > .active > a:hover,
+.ctn-nav .navbar-nav > .open > a:hover,
+.ctn-nav .navbar-nav > .open > a:focus {
+  color: var(--nav-acento);
+  background: transparent;
+}
+
+/* Flechita del menú "Institucional" (ícono de Font Awesome) */
+.ctn-nav .caret { width: auto; height: auto; margin: 0 0 0 4px; border: 0; vertical-align: baseline; }
+.ctn-nav .caret::before { content: "\f107"; font-family: FontAwesome; font-weight: 400; }
+
+/* Submenú */
+.ctn-nav .dropdown-menu {
+  min-width: 210px;
+  margin-top: 0;
+  padding: 8px 0;
+  border: 0;
+  border-radius: 0 0 var(--radio-pildora) var(--radio-pildora);
+  background-color: var(--nav-fondo);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .25);
+}
+.ctn-nav .dropdown-menu > li > a {
+  padding: 10px 20px;
+  color: var(--nav-texto);
+  font-weight: 700;
+  transition: background-color .3s ease, color .3s ease;
+}
+.ctn-nav .dropdown-menu > li > a:hover,
+.ctn-nav .dropdown-menu > li > a:focus,
+.ctn-nav .dropdown-menu > .active > a {
+  background-color: var(--nav-acento);
+  color: var(--nav-fondo);
+}
+
+/* Botón de menú para celulares (las 3 rayitas) */
+.ctn-nav .navbar-toggle {
+  margin: 17px 15px 17px 0;
+  padding: 9px 10px;
+  border: 2px solid var(--nav-acento);
+  border-radius: 8px;
+  background: transparent;
+}
+.ctn-nav .navbar-toggle .icon-bar { background-color: var(--nav-acento); }
+.ctn-nav .navbar-toggle:hover,
+.ctn-nav .navbar-toggle:focus { background-color: rgba(255, 255, 255, .12); }
+
+/* --- Escritorio ---------------------------------------------------------- */
+@media (min-width: 992px) {
+  .ctn-nav .navbar-nav > li > a { padding-top: 25px; padding-bottom: 25px; line-height: 20px; }
+
+  /* El submenú está siempre en la página pero invisible (así se puede animar).
+     "visibility" evita que se pueda enfocar con Tab mientras está cerrado. */
+  .ctn-nav .dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease, visibility 0s linear .3s;
+  }
+  .ctn-nav .open > .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+}
+
+/* --- Celular y tablet ---------------------------------------------------- */
+@media (max-width: 991px) {
+  .ctn-nav .navbar-collapse {
+    max-height: calc(100vh - var(--nav-alto));
+    overflow-y: auto;
+    border-top: 1px solid rgba(255, 211, 128, .3);
+    box-shadow: none;
+  }
+  .ctn-nav .navbar-nav { margin: 0 -15px 8px; }
+  .ctn-nav .navbar-nav > li > a { padding: 13px 20px; }
+
+  /* En el menú de celular el submenú se despliega hacia abajo, sin animación */
+  .ctn-nav .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin: 0;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, .22);
+    box-shadow: none;
+  }
+  .ctn-nav .dropdown-menu > li > a { padding: 11px 36px; }
+}
+
+/* El logo se achica en pantallas angostas para que quepa junto al menú */
+@media (max-width: 1199px) { .logo-container img { height: 40px; } }
+@media (max-width: 767px)  { .logo-container img { height: 34px; } }
+@media (max-width: 400px)  { .logo-container img { height: 28px; } }
+
+
+/* ==========================================================================
+   5. ENCABEZADO (HERO) CON VIDEO DE FONDO
+   --------------------------------------------------------------------------
+   El video se carga con JavaScript (ctn.js) solo si conviene: pantalla
+   ancha, sin "ahorro de datos" y sin "reducir movimiento". Mientras tanto
+   (o si el video no existe) se muestra la foto del colegio como fondo.
+   ========================================================================== */
+.indexbg1 {
+  isolation: isolate;               /* mantiene el video por detrás del texto */
+  background: var(--ctn-marron-oscuro) url(../images/headers/hero-poster.jpg) center / cover no-repeat;
+}
+.indexbg1 .bgvideo { opacity: 0; transition: opacity 1s ease; }
+.indexbg1 .bgvideo.is-playing { opacity: 1; }
+
+/* Encabezados de páginas internas: un poco menos altos que el del inicio */
+header.hero-interno .header-text { padding-top: 110px; padding-bottom: 60px; }
+
+
+/* ==========================================================================
+   6. BOTONES
+   --------------------------------------------------------------------------
+   .btn-ctn            → botón "píldora" con borde, se rellena al pasar el mouse
+   .btn-ctn-marron     → borde marrón (para fondos claros)
+   .btn-ctn-dorado     → borde dorado (para fondos oscuros)
+   .btn-ctn-tema       → toma el color de la especialidad (ver espe.css)
+   ========================================================================== */
+.btn-ctn {
+  --b-color: var(--ctn-marron);
+  --b-fondo-hover: var(--ctn-marron);
+  --b-texto-hover: var(--ctn-dorado);
+  display: inline-block;
+  padding: 9px 24px;
+  border: 2px solid var(--b-color);
+  border-radius: var(--radio-pildora);
+  background-color: transparent;
+  color: var(--b-color);
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--transicion), color var(--transicion), border-color var(--transicion);
+}
+.btn-ctn:hover,
+.btn-ctn:focus {
+  background-color: var(--b-fondo-hover);
+  border-color: var(--b-fondo-hover);
+  color: var(--b-texto-hover);
+  text-decoration: none;
+}
+.btn-ctn-dorado {
+  --b-color: var(--ctn-dorado);
+  --b-fondo-hover: var(--ctn-dorado);
+  --b-texto-hover: var(--ctn-marron);
+}
+/* Botón "Descargar formulario" y similares, a todo lo ancho en celulares */
+.btn-ctn-bloque { display: block; }
+
+
+/* ==========================================================================
+   7. SECCIONES COMUNES
+   ========================================================================== */
+
+/* Franja de llamada a la acción ("¿Ya estás convencido?") */
+.seccion-marron { background-color: var(--ctn-marron); color: var(--ctn-blanco); }
+
+/* Tres tarjetas de colores del inicio (Encuéntranos · Trayectoria · Dirección) */
+.tarjeta-color h2 { font-style: italic; font-weight: 700; }
+.tarjeta-color p  { font-weight: 700; }
+/* El tema pide fotos de fondo que no existen en el proyecto: se anulan para evitar errores 404 */
+.case-study-01.tarjeta-color, .case-study-03.tarjeta-color { background-image: none; }
+.tarjeta-dorada   { background-color: var(--ctn-dorado); color: var(--ctn-marron); }
+.tarjeta-oscura   { background-color: var(--ctn-marron-oscuro); color: var(--ctn-dorado); }
+.tarjeta-dorada h2, .tarjeta-dorada p,
+.case-study-02 h2, .case-study-02 p { color: var(--ctn-marron); }
+.tarjeta-oscura h2, .tarjeta-oscura p { color: var(--ctn-dorado); }
+.tarjeta-color .btn-ctn { margin-top: 10px; }
+/* En la tarjeta con foto, al pasar el mouse el botón se rellena de dorado con texto marrón */
+.case-study-02 .btn-ctn { --b-fondo-hover: var(--ctn-dorado); --b-texto-hover: var(--ctn-marron); }
+
+/* Tarjeta blanca con sombra (formularios, etc.) */
+.tarjeta-blanca {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  color: #333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .12);
+}
+.tarjeta-blanca .btn-ctn { align-self: flex-start; margin-top: auto; }
+
+/* Ficha de integrantes (CETNA) */
+.team-member img { width: 100%; height: 260px; object-fit: cover; }
+.team-member p.text-primary { color: var(--ctn-marron); font-weight: 700; }
+
+
+/* ==========================================================================
+   8. PÁGINAS
+   ========================================================================== */
+
+/* --- Acerca de: pestañas Misión / Visión / Enfoque ------------------------ */
+.nav-tabs > li > a { color: var(--ctn-marron); }
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus { color: var(--ctn-marron-oscuro); }
+.nav-tabs > li.active > a { border-bottom: 3px solid var(--ctn-marron); }
+
+/* --- Admisión: el texto va dentro del encabezado ---------------------------
+   (se escribió con un editor visual; estas clases reemplazan sus estilos en línea) */
+.admision-contenido { text-align: left; }
+.admision-contenido .tabla-capacidades { margin: 10px 0 20px; font-size: 18px; }
+.admision-contenido .tabla-capacidades td { padding-right: 30px; font-weight: 700; text-transform: uppercase; }
+.admision-contenido .titulo-admision { font-size: 26px; font-weight: 700; text-transform: uppercase; }
+.admision-contenido ul,
+.admision-contenido ol { font-size: 20px; line-height: 1.6; }
+.admision-contenido ol { font-size: 22px; }
+
+/* --- Formularios ------------------------------------------------------------ */
+.linea-formulario { width: 200px; height: 4px; margin: 10px auto 30px; background-color: #fff; }
+.formulario-section { max-width: 860px; margin: 30px auto; }
+.formulario-section h2 { margin-bottom: 12px; color: var(--ctn-marron); font-size: 30px; font-weight: 700; }
+.formulario-section p  { margin-bottom: 14px; font-size: 18px; font-weight: 500; line-height: 1.5; text-align: justify; }
+
+/* --- Contacto ---------------------------------------------------------------- */
+.form-control-pill { border-radius: var(--radio-pildora); }
+textarea.form-control-pill { border-radius: 1.2em; }
+.help-block.text-danger { min-height: 1.2em; margin: 4px 0 0 14px; }
+#respuesta-formulario:empty { display: none; }
+.social-buttons .fa { font-size: 28px; }
+
+
+/* ==========================================================================
+   9. NOTICIAS (inicio) — se rellena con noticias.js
+   ========================================================================== */
+.noticias-lista { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+.noticias-lista > .noticia-principal  { flex: 2 1 480px; min-width: 0; }
+.noticias-lista > .noticias-laterales { flex: 1 1 280px; min-width: 0; }
+
+.noticia {
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+}
+.noticia img { display: block; width: 100%; height: auto; }
+.noticia-principal img { max-height: 380px; object-fit: cover; }
+.noticias-laterales .noticia img { max-height: 180px; object-fit: cover; }
+.noticia-cuerpo { padding: 15px 20px 20px; }
+.noticia-cuerpo h2, .noticia-cuerpo h4 { margin-top: 0; font-weight: 700; }
+.noticia-fecha { color: #777; font-size: 14px; }
+/* Texto recortado a 4 líneas con "…" */
+.noticia-resumen {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  white-space: pre-line;
+}
+
+/* Ventana con la noticia completa */
+.noticia-modal .modal-body img { display: block; max-width: 100%; margin: 0 auto 20px; border-radius: 1em; }
+.noticia-modal .modal-body p { max-width: 100%; white-space: pre-line; overflow-wrap: anywhere; }
+.noticia-modal .carousel { margin-bottom: 20px; }
+.noticia-modal .carousel-inner { border-radius: 1em; }
+.noticia-modal .carousel-inner .item img { width: 100%; height: 300px; margin: 0; object-fit: cover; border-radius: 0; }
+.noticia-modal .carousel-indicators { bottom: 10px; }
+.noticia-modal .carousel-indicators li { width: 10px; height: 10px; border-radius: 50%; background-color: rgba(255, 255, 255, .7); }
+.noticia-modal .carousel-indicators .active { background-color: var(--ctn-marron); }
+.noticia-modal .carousel-control {
+  top: 50%; bottom: auto;
+  width: 40px; height: 40px; margin-top: -20px;
+  border-radius: 50%;
+  background: var(--ctn-marron);
+  opacity: .85;
+  text-shadow: none;
+  line-height: 40px;
+  text-align: center;
+}
+.noticia-modal .carousel-control.left  { left: 10px; }
+.noticia-modal .carousel-control.right { right: 10px; }
+.noticia-modal .carousel-control span { color: var(--ctn-dorado); font-size: 20px; }
+.noticia-modal .carousel-control:hover { opacity: 1; background: var(--ctn-dorado); }
+.noticia-modal .carousel-control:hover span { color: var(--ctn-marron); }
+
+
+/* ==========================================================================
+   10. ANIMACIONES DE APARICIÓN
+   --------------------------------------------------------------------------
+   Los elementos con clase "wow fadeIn / fadeInUp / fadeInDown" aparecen
+   con una animación al llegar a la pantalla (lo activa ctn.js).
+   La clase "js" la agrega ctn.js; si JavaScript falla, todo queda visible.
+   ========================================================================== */
+.js .wow { opacity: 0; }
+.js .wow.visible { opacity: 1; animation: ctn-aparecer .8s ease both; }
+.js .wow.fadeInDown.visible { animation-name: ctn-aparecer-desde-arriba; }
+.js .wow.fadeInUp.visible   { animation-name: ctn-aparecer-desde-abajo; }
+
+@keyframes ctn-aparecer              { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ctn-aparecer-desde-arriba { from { opacity: 0; transform: translateY(-24px); } to { opacity: 1; transform: none; } }
+@keyframes ctn-aparecer-desde-abajo  { from { opacity: 0; transform: translateY(24px); }  to { opacity: 1; transform: none; } }
+
+/* Quien prefiere menos movimiento: sin animaciones, todo visible */
+@media (prefers-reduced-motion: reduce) {
+  .js .wow, .js .wow.visible { opacity: 1; animation: none; }
+  .indexbg1 .bgvideo { display: none; }
+  * { transition-duration: .01ms !important; }
+}
+
+/* Formularios en celular: título más chico y texto alineado a la izquierda (el justificado deja huecos enormes) */
+@media (max-width: 575px) {
+  .formulario-section h2 { font-size: 24px; }
+  .formulario-section p  { font-size: 16px; text-align: left; }
+}

@@ -1,350 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content=""><meta name="author" content="">
-	<title>Direcci&oacute;n General | CTN</title>
-	<link href="assets/images/logo2.png" rel="shortcut icon" type="image/logo2.png" /><!-- mobile settings --><!-- Bootstrap Core CSS -->
-	<link href="assets/css/bootstrap.css" rel="stylesheet" /><!-- Custom CSS -->
-	<link href="assets/css/blueridge.css" rel="stylesheet" />
-	<link href="assets/css/filter-portfolio.css" rel="stylesheet" />
-	<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet" />
-	<link href="assets/owl-carousel/owl.theme.css" rel="stylesheet" />
-	<link href="assets/css/all-elements.css" rel="stylesheet" /><!-- Lightbox -->
-	<link href="assets/magnific-popup/magnific-popup.css" rel="stylesheet" /><!-- Custom Fonts -->
-	<link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Dosis:400,300,700,500" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet" type="text/css" /><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-<style>
-  /* Fuerza estilo granate en las otras páginas */
-#lightnav.navbar-default .dropdown-menu {
-  background-color: #471c0c !important;
-  border-radius: 0 0 2em 2em !important; /* mantiene bordes redondeados */
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.4s ease; /* animación suave */
-}
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dirección General | Colegio Técnico Nacional de Asunción</title>
+  <meta name="description" content="Director general del Colegio Técnico Nacional de Asunción: currículum, funciones y horario de audiencia.">
+  <meta name="author" content="Colegio Técnico Nacional de Asunción">
+  <meta name="theme-color" content="#471c0c">
+  <link rel="icon" href="assets/images/logo2.png">
 
-#lightnav.navbar-default .dropdown-menu.show,
-#lightnav.navbar-default .open > .dropdown-menu {
-  max-height: 500px; /* altura animada */
-  opacity: 1;
-}
-
-/* Links dentro del menú */
-#lightnav.navbar-default .dropdown-menu > li > a {
-  color: white !important;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
-}
-
-#lightnav.navbar-default .dropdown-menu > li > a:hover {
-  background-color: #ffd380; /* efecto hover */
-  transition: background-color 0.4s ease, color 0.4s ease;
-  color: #471c0c !important;
-}
-
-/* Links dentro del menú */
-#lightnav.navbar-default .dropdown-menu > li > a {
-  color: white !important;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
-}
-#institucional-btn {
-  background-color: #AB2A3E !important;
-  color: white !important;
-  border-radius: 2em;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-.btn-contacto {
-  border: 2px solid #471c0c; /* borde granate */
-  color: #471c0c !important;           /* texto granate */
-  background-color: transparent; 
-  transition: all 0.4s ease;
-}
-.btn-contacto:hover {
-  background-color: #471c0c; /* fondo granate */
-  border-color: #471c0c;
-  color: #ffd380 !important;              /* texto blanco */
-}
-/* estilo base */
-.dropdown-menu {
-  display: block !important;        /* siempre block para poder animar */
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  border-radius: 0 0 2em 2em !important;       /* esquinas redondeadas abajo */
-  transition: all 0.4s ease;
-}
-
-/* cuando bootstrap lo abre */
-.dropdown-menu.show,
-.open > .dropdown-menu {
-  max-height: 500px;
-  opacity: 1;
-}
-</style>
-<style>
-#lightnav a {
-    color: white !important;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-#lightnav a:hover {
-    color: black !important;
-}
-.logo-container {
-  position: relative;
-  width: auto;
-  height: 50px;
-  display: inline-block;
-  margin-top: -12px;
-  margin-left: -100px;
-}
-
-.logo-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
-  transition: opacity 0.4s ease;
-}
-
-.logo-base {
-  z-index: 1;
-  opacity: 1;
-}
-
-.logo-hovered {
-  z-index: 2;
-  opacity: 0;
-}
-
-.logo-container:hover .logo-hovered {
-  opacity: 1;
-}
-
-.logo-container:hover .logo-base {
-  opacity: 0;
-}
-</style>
+  <script>document.documentElement.className += ' js';</script>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/blueridge.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/ctn.css">
+  <link rel="stylesheet" href="assets/flexslider/flexslider.css">
 </head>
-<body><!-- Nav -->
-<nav class="navbar navbar-default navbar-fixed-top" id="lightnav" style="background-color: #471c0c;">
-<div class="container">
-<div class="navbar-header page-scroll"><button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span></button><a class="navbar-brand page-scroll text-uppercase pddn-10" href="index.html"><div class="logo-container">
-  <img src="assets/images/themelogo/logo3.png" class="logo-base" />
-  <img src="assets/images/themelogo/logo.png" class="logo-hovered" />
-</div>
-</a></div>
+<body>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
 
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: -100px;">
-<ul class="nav navbar-nav navbar-right"><!-- Dropdown -->
-	<li class="dropdown" role="presentation"><a href="index.html"><font>Inicio</font></a> <!-- /.Dropdown --> <!-- Dropdown Services --></li>
-	<li class="dropdown"><a href="espe.html">Especialidades</a></li>
-	<!-- /.Dropdown About --><!-- Portafolio -->
-	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" style="background-color: #471c0c; color: #ffd380 !important;">Institucional <span class="caret"></span></a>
-	<ul class="dropdown-menu">
-		<li><a href="direccion.html" style="color: #ffd380 !important;">Direcci&oacute;n General</a></li>
-		<li><a href="admision.html">Admision</a></li>
-		<li><a href="cetna.html">CETNA</a></li>
-		<li><a href="Formularios.html">Formularios</a></li>
-	</ul>
-	</li>
-	<!-- /.Dropdown Team --><!-- Dropdown Contact -->
-	<li class="dropdown"><a href="contact2.html">Contacto</a></li>
-	<!-- /.Dropdown Blog --><!-- Dropdown About -->
-	<li class="dropdown"><a href="acerca.html">Acerca de</a></li>
-	<!-- /.Dropdown About -->
-</ul>
-</div>
-<!-- /.navbar-collapse --></div>
-<!-- /.container --></nav>
-<!-- /.Navigation -->
+<!-- Menú principal -->
+<nav class="navbar navbar-default navbar-fixed-top ctn-nav" aria-label="Menú principal">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false" aria-controls="menu-principal">
+        <span class="sr-only">Mostrar u ocultar el menú</span>
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html" aria-label="Colegio Técnico Nacional - Inicio">
+        <span class="logo-container">
+          <img src="assets/images/themelogo/logo3.png" class="logo-base" alt="">
+          <img src="assets/images/themelogo/logo.png" class="logo-hovered" alt="">
+        </span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="menu-principal">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="espe.html">Especialidades</a></li>
+        <li class="dropdown active">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Institucional <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="direccion.html" aria-current="page">Dirección General</a></li>
+            <li><a href="admision.html">Admisión</a></li>
+            <li><a href="cetna.html">CETNA</a></li>
+            <li><a href="Formularios.html">Formularios</a></li>
+          </ul>
+        </li>
+        <li><a href="contact2.html">Contacto</a></li>
+        <li><a href="acerca.html">Acerca de</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<header class="indexbg1" id="hero-sm">
-	<video autoplay muted loop playsinline class="bgvideo">
-    <source src="C:\Users\eleme\Downloads\editor_publicaciones\editor_publicaciones\Modificacion del proyecto 2\video\background.mp4" type="video/mp4">
-  </video>
-<div class="container">
-<div class="row">
-<div class="col-md-12"><!-- Heading Title Area -->
-<div class="header-text white text-center">
-<h1>Direcci&oacute;n General</h1>
+<main id="contenido">
+  <header class="indexbg1 hero-interno" id="hero">
+    <video class="bgvideo" muted loop playsinline preload="none" data-src="video/background3.mp4" aria-hidden="true" tabindex="-1"></video>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="header-text text-center white">
+            <h1>Dirección General</h1>
+            <hr class="borderwhite-sm">
+            <h2>Institucional</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<h2>Institucional</h2>
-</div>
-<!-- /.Heading Title Area --></div>
-</div>
-</div>
-<!-- /.container --></header>
-<!-- /.Header -->
+  <div class="container">
+    <div class="page-header" id="banner">
+      <div class="flexslider">
+        <ul class="slides">
+          <li><img class="img-responsive center-block" src="assets/images/espe/dire.jpg" alt="El director general en una actividad del colegio"></li>
+          <li><img class="img-responsive center-block" src="assets/images/espe/dire2.jpg" alt="El director general en una actividad del colegio"></li>
+          <li><img class="img-responsive center-block" src="assets/images/espe/dire3.jpg" alt="El director general en una actividad del colegio"></li>
+        </ul>
+      </div>
 
-<div class="container">
-<div class="page-header" id="banner">
-<div class="row">
-<div class="flexslider">
-<ul class="slides">
-	<li><img class="img-responsive center-block" src="assets/images/espe/dire.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/dire2.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/dire3.jpg" /></li>
-</ul>
-</div>
+      <div class="jumbotron">
+        <h2>Abog. Alcides Hosffmeister | Director General</h2>
+        <p>El abogado y profesor Hosffmeister tiene 15 años de experiencia y formación docente, ha sido reconocido por apadrinar con excelencia numerosas promociones. Lleva casi una década trabajando arduamente para la Institución y tiene cómo principal función planer, coordinar, supervisar y evaluar todas las actividades del colegio.</p>
+        <p><a class="btn btn-pill btn-ctn btn-ctn-marron text-uppercase" data-toggle="modal" href="#modalCurriculum">Currículum Vitae</a></p>
+      </div>
 
-<div class="jumbotron">
-<h2>Abog. Alcides Hosffmeister | Director General</h2>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a data-toggle="tab" href="#funciones" role="tab">Funciones</a></li>
+        <li><a data-toggle="tab" href="#audiencia" role="tab">Horario de Audiencia</a></li>
+      </ul>
 
-<p>El abogado y profesor Hosffmeister tiene 15 a&ntilde;os de experiencia y formaci&oacute;n docente, ha sido reconocido por apadrinar con excelencia numerosas promociones. Lleva casi una d&eacute;cada trabajando arduamente para la Instituci&oacute;n y tiene c&oacute;mo principal funci&oacute;n planer, coordinar, supervisar y evaluar todas las actividades del colegio.</p>
+      <div class="tab-content">
+        <div class="tab-pane fade active in" id="funciones">
+          <p class="lead">ROLES FUNDAMENTALES</p>
+          <p class="lead">La Dirección General del Colegio Técnico Nacional, liderada por el Abog. Alcides Hosffmeister, tiene como roles:</p>
+          <ul class="lead">
+            <li>Ostentar la representación del centro docente, representar a la Administración educativa en el mismo y hacerle llegar a ésta los planteamientos, aspiraciones y necesidades de la comunidad educativa.
+              <br><br><i>Por consiguiente:</i><br><br>
+              <b>a.</b> Dirigir y coordinar todas las actividades del centro docente hacia la consecución del proyecto educativo del mismo.<br>
+              <b>b.</b> Ejercer la Dirección pedagógica, promover la innovación educativa e impulsar planes para la consecución de los objetivos del proyecto educativo del centro docente.<br>
+              <b>c.</b> Favorecer la convivencia en el centro docente, garantizar la mediación en la resolución de los conflictos e imponer las medidas disciplinarias que correspondan a los alumnos.</li>
+            <li>Acentuar el énfasis en materia técnico-pedagógica.
+              <br><br><i>Por consiguiente:</i><br><br>
+              <b>a.</b> Orientar al personal docente en la interpretación de los lineamientos técnicos para el manejo de los programas de estudio.<br>
+              <b>b.</b> Autorizar las estrategias o sugerencias que le presente el personal docente, para mejorar la aplicación de los programas de estudio de cada grado.<br>
+              <b>c.</b> Detectar los problemas de actualización y capacitación del personal docente, y canalizarlos hacia el supervisor de zona para su solución cuando ésta no pueda generarse dentro del plantel.</li>
+          </ul>
+        </div>
 
-<p><a class="btn text-uppercase btn-contacto" data-target="#JuniorWeb" style="border-radius: 2em;" data-toggle="modal" href="#">Curr&iacute;culum Vitae</a></p>
-</div>
+        <div class="tab-pane fade" id="audiencia">
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead><tr><th scope="col">Turno</th><th scope="col">Día</th><th scope="col">Desde</th><th scope="col">Hasta</th></tr></thead>
+              <tbody>
+                <tr><td>Mañana</td><td>Martes</td><td>08:00</td><td>12:00</td></tr>
+                <tr><td>Tarde</td><td>Martes</td><td>13:00</td><td>15:00</td></tr>
+                <tr><td>Mañana</td><td>Jueves</td><td>13:00</td><td>15:00</td></tr>
+                <tr><td>Tarde</td><td>Jueves</td><td>13:00</td><td>15:00</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<ul class="nav nav-tabs">
-	<li class="active"><a data-toggle="tab" style="color: #471c0c;" href="#home">Funciones</a></li>
-	<li><a data-toggle="tab" style="color: #471c0c;" href="#profile">Horario de Audiencia</a></li>
-</ul>
+  <!-- Ventana: currículum del director -->
+  <div class="modal fade" id="modalCurriculum" tabindex="-1" role="dialog" aria-labelledby="modalCurriculumTitulo">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+          <h3 class="modal-title texto-marron" id="modalCurriculumTitulo">Currículum Vitae</h3>
+        </div>
+        <div class="modal-body">
+          <p class="text-center"><img src="assets/images/espe/dire4.jpg" alt="Abog. Alcides Hosffmeister" width="120" height="120" loading="lazy"></p>
+          <p>El Director General, don Alcides Hosffmeister, cursó sus estudios de grado en la Universidad Nacional de Asunción, obteniendo el título de Abogado de la Facultad de Derecho y Ciencias Sociales. Egresó del Instituto Ateneo de Lengua Guaraní con el título de Prof. de Lengua y Literatura Guaraní. Egresó de la Universidad Católica de Asunción con el título de Licenciado en Filosofía. Se especializó en Notariado y Escribanía Pública por la Universidad Nacional de Asunción. Se formó en Didáctica Media y Superior, así como en Didáctica Universitaria. Actualmente está cursando una maestría en Derecho Civil y Procesal Penal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
-<div class="tab-content" id="myTabContent">
-<div class="tab-pane fade active in" id="home">&nbsp;
-<p class="lead">ROLES FUNDAMENTALES</p>
+<footer class="bg-dark-blue" id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: (021) 608 663</p>
+        <span class="copyright">Copyright &copy; Desarrollado en la especialidad de Informática.</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-<p class="lead">La Direcci&oacute;n General del Colegio T&eacute;cnico Nacional, liderada por el Abog. Alcides Hosffmeister, tiene como roles:</p>
-
-<ul class="lead">
-	<li>Ostentar la representaci&oacute;n del centro docente, representar a la Administraci&oacute;n educativa en el mismo y hacerle llegar a &eacute;sta los planteamientos, aspiraciones y necesidades de la comunidad educativa.<br />
-	<br />
-	<i>Por consiguiente: </i><br />
-	<br />
-	<b>a. </b> Dirigir y coordinar todas las actividades del centro docente hacia la consecuci&oacute;n del proyecto educativo del mismo.<br />
-	<b>b. </b> Ejercer la Direcci&oacute;n pedag&oacute;gica, promover la innovaci&oacute;n educativa e impulsar planes para la consecuci&oacute;n de los objetivos del proyecto educativo del centro docente.<br />
-	<b>c. </b> Favorecer la convivencia en el centro docente, garantizar la mediaci&oacute;n en la resoluci&oacute;n de los conflictos e imponer las medidas disciplinarias que correspondan a los alumnos.</li>
-	<br />
-	<li>Acentuar el &eacute;nfasis en materia t&eacute;cnico-pedag&oacute;gica.<br />
-	<br />
-	<i>Por consiguiente: </i><br />
-	<br />
-	<b>a. </b> Orientar al personal docente en la interpretaci&oacute;n de los lineamientos t&eacute;cnicos para el manejo de los programas de estudio.<br />
-	<b>b. </b> Autorizar las estrategias o sugerencias que le presente el personal docente, para mejorar la aplicaci&oacute;n de los programas de estudio de cada grado.<br />
-	<b>c. </b> Detectar los problemas de actualizaci&oacute;n y capacitaci&oacute;n del personal docente, y canalizarlos hacia el supervisor de zona para su soluci&oacute;n cuando &eacute;sta no pueda generarse dentro del plantel.</li>
-	<br />
-	&nbsp;
-</ul>
-</div>
-
-<div class="tab-pane fade" id="profile">&nbsp;
-<table class="table table-striped table-hover">
-	<thead>
-		<tr>
-			<th>Turno</th>
-			<th>D&iacute;a</th>
-			<th>Desde</th>
-			<th>Hasta</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Ma&ntilde;ana</td>
-			<td>Martes</td>
-			<td>08:00</td>
-			<td>12:00</td>
-		</tr>
-		<tr>
-			<td>Tarde</td>
-			<td>Martes</td>
-			<td>13:00</td>
-			<td>15:00</td>
-		</tr>
-		<tr>
-			<td>Ma&ntilde;ana</td>
-			<td>Jueves</td>
-			<td>13:00</td>
-			<td>15:00</td>
-		</tr>
-		<tr>
-			<td>Tarde</td>
-			<td>Jueves</td>
-			<td>13:00</td>
-			<td>15:00</td>
-		</tr>
-	</tbody>
-</table>
-</div>
-
-<div class="tab-pane fade" id="dropdown1">
-<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney&#39;s organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
-</div>
-
-<div class="tab-pane fade" id="dropdown2">
-<p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
-</div>
-</div>
-<!-- Single Post Content -->
-
-<div aria-labelledby="DigitalResearch" class="modal fade" id="DigitalResearch" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch">Plan de Estudios / Horario Especialidad</h3>
-
-<p>Aqu&iacute; tienes los horarios correspondientes a tu especialidad.</p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<p>Hello</p>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- /.Job Modal Content  --></div>
-</div>
-<!-- /.Job Modal --><!-- /.Digital Researcher Job Application --><!-- Junior Web Designer Job Application --><!-- Job Modal -->
-
-<div aria-labelledby="JuniorWeb" class="modal fade" id="JuniorWeb" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch" style="color: #AB2A3E;">Curr&iacute;culum Vitae</h3>
-
-<p></p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<center><img alt="Smiley face" height="120" src="assets/images/espe/dire4.jpg" width="120" /></center>
-&nbsp;
-
-<p>El Director General, don Alcides Hosffmeister, curs&oacute; sus estudios de grado en la Universidad Nacional de Asunci&oacute;n, obteniendo el t&iacute;tulo de Abogado de la Facultad de Derecho y Ciencias Sociales. Egres&oacute; del Instituto Ateneo de Lengua Guaran&iacute; con el t&iacute;tulo de Prof. de Lengua y Literatura Guaran&iacute;. Egres&oacute; de la Universidad Cat&oacute;lica de Asunci&oacute;n con el t&iacute;tulo de Licenciado en Filosof&iacute;a. Se especializ&oacute; en Notariado y Escriban&iacute;a P&uacute;blica por la Universidad Nacional de Asunci&oacute;n. Se form&oacute; en Did&aacute;ctica Media y Superior, as&iacute; como en Did&aacute;ctica Universitaria. Actualmente est&aacute; cursando una maestr&iacute;a en Derecho Civil y Procesal Penal.</p>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- Job Modal Content  --></div>
-</div>
-<!-- /.Job Modal --><!-- /.Junior Web Designer Job Application --></div>
-<!-- /.Single Post Wrapper --></div>
-<!-- /.Single Post Content --></div>
-<!-- /.container --><!-- Main Content --><!-- Footer -->
-
-<footer class="bg-dark-blue">
-<div class="container">
-<div class="row"><!-- Address, Social Links & Copyright -->
-<div class="col-md-4 col-md-offset-4">
-<p>R.I. 3 Corrales c/ Dr. Hassler<br />
-Campos Cervera, Asunci&oacute;n<br />
-Tel: (021) 608 663</p>
-
-<ul class="list-inline social-buttons mrgn-10-top"><!--  <li><a href="#"><i class="fa fa-twitter"></i></a> </li>-->
-</ul>
-<span class="copyright">Copyright &copy; Colegio T&eacute;cnico Nacional - 2018</span></div>
-</div>
-<!-- /.Address, Social Links & Copyright --></div>
-<!-- /.container --></footer>
-<!-- /.Footer --><!-- jQuery --><script src="assets/js/jquery.js"></script><!-- Flexslider --></body>
-<link href="assets/flexslider/flexslider.css" rel="stylesheet" /><script src="assets/flexslider/jquery.flexslider.js"></script><script type="text/javascript" charset="utf-8">
-  $(window).load(function() {
-    $('.flexslider').flexslider();
-  });
-</script><!-- /.Flexslider --><!-- Bootstrap Core JavaScript --><script src="assets/js/bootstrap.min.js"></script><!-- JavaScript Plugins --><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script><script src="assets/js/isotope.pkgd.min.js"></script><script src="assets/js/wow.min.js"></script><script src="assets/owl-carousel/owl.carousel.js"></script><script src="assets/js/counterup/jquery.counterup.min.js"></script><script src="assets/js/jquery.easy-pie-chart.js"></script><script src="assets/magnific-popup/jquery.magnific-popup.min.js"></script><!-- Contact Form JavaScript --><script src="assets/js/jqBootstrapValidation.js"></script><script src="assets/js/contact_me.js"></script><!-- Custom Theme JavaScript --><script src="assets/js/blueridge.js"></script></html>
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/flexslider/jquery.flexslider-min.js"></script>
+<script src="assets/js/ctn.js"></script>
+<script>jQuery(function ($) { $('.flexslider').flexslider({ animation: 'slide', slideshowSpeed: 4000, pauseOnHover: true }); });</script>
+</body>
+</html>

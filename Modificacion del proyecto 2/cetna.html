@@ -1,306 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content=""><meta name="author" content="">
-	<title>CETNA | CTN</title>
-	<link href="assets/images/logo2.png" rel="shortcut icon" type="image/logo2.png" /><!-- mobile settings --><!-- Bootstrap Core CSS -->
-	<link href="assets/css/bootstrap.css" rel="stylesheet" /><!-- Custom CSS -->
-	<link href="assets/css/blueridge.css" rel="stylesheet" />
-	<link href="assets/css/filter-portfolio.css" rel="stylesheet" />
-	<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet" />
-	<link href="assets/owl-carousel/owl.theme.css" rel="stylesheet" />
-	<link href="assets/css/all-elements.css" rel="stylesheet" /><!-- Lightbox -->
-	<link href="assets/magnific-popup/magnific-popup.css" rel="stylesheet" /><!-- Custom Fonts -->
-	<link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Dosis:400,300,700,500" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet" type="text/css" /><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-<style>
-  /* Fuerza estilo granate en las otras páginas */
-#lightnav.navbar-default .dropdown-menu {
-  background-color: #471c0c !important;
-  border-radius: 0 0 2em 2em !important; /* mantiene bordes redondeados */
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.4s ease; /* animación suave */
-}
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CETNA - Centro de Estudiantes | Colegio Técnico Nacional de Asunción</title>
+  <meta name="description" content="Centro de Estudiantes del Colegio Técnico Nacional (CETNA): quiénes somos y nuestra junta directiva.">
+  <meta name="author" content="Colegio Técnico Nacional de Asunción">
+  <meta name="theme-color" content="#471c0c">
+  <link rel="icon" href="assets/images/logo2.png">
 
-#lightnav.navbar-default .dropdown-menu.show,
-#lightnav.navbar-default .open > .dropdown-menu {
-  max-height: 500px; /* altura animada */
-  opacity: 1;
-}
-
-/* Links dentro del menú */
-#lightnav.navbar-default .dropdown-menu > li > a {
-  color: white !important;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
-}
-
-#lightnav.navbar-default .dropdown-menu > li > a:hover {
-  background-color: #ffd380; /* efecto hover */
-  transition: background-color 0.4s ease, color 0.4s ease;
-  color: #471c0c !important;
-}
-
-/* Links dentro del menú */
-#lightnav.navbar-default .dropdown-menu > li > a {
-  color: white !important;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
-}
-#institucional-btn {
-  background-color: #AB2A3E !important;
-  color: white !important;
-  border-radius: 2em;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-.btn-contacto {
-  border: 2px solid #471c0c; /* borde granate */
-  color: #471c0c !important;           /* texto granate */
-  background-color: transparent; 
-  transition: all 0.4s ease;
-}
-.btn-contacto:hover {
-  background-color: #471c0c; /* fondo granate */
-  border-color: #471c0c;
-  color: #ffd380 !important;              /* texto blanco */
-}
-/* estilo base */
-.dropdown-menu {
-  display: block !important;        /* siempre block para poder animar */
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  border-radius: 0 0 2em 2em !important;       /* esquinas redondeadas abajo */
-  transition: all 0.4s ease;
-}
-
-/* cuando bootstrap lo abre */
-.dropdown-menu.show,
-.open > .dropdown-menu {
-  max-height: 500px;
-  opacity: 1;
-}
-</style>
-<style>
-#lightnav a {
-    color: white !important;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-#lightnav a:hover {
-    color: black !important;
-}
-.logo-container {
-  position: relative;
-  width: auto;
-  height: 50px;
-  display: inline-block;
-  margin-top: -12px;
-  margin-left: -100px;
-}
-
-.logo-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
-  transition: opacity 0.4s ease;
-}
-
-.logo-base {
-  z-index: 1;
-  opacity: 1;
-}
-
-.logo-hovered {
-  z-index: 2;
-  opacity: 0;
-}
-
-.logo-container:hover .logo-hovered {
-  opacity: 1;
-}
-
-.logo-container:hover .logo-base {
-  opacity: 0;
-}
-</style>
+  <script>document.documentElement.className += ' js';</script>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/blueridge.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/ctn.css">
+  <link rel="stylesheet" href="assets/flexslider/flexslider.css">
 </head>
-<body><!-- Nav -->
-<nav class="navbar navbar-default navbar-fixed-top" id="lightnav" style="background-color: #471c0c;">
-<div class="container">
-<div class="navbar-header page-scroll"><button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span></button><a class="navbar-brand page-scroll text-uppercase pddn-10" href="index.html"><div class="logo-container">
-  <img src="assets/images/themelogo/logo3.png" class="logo-base" />
-  <img src="assets/images/themelogo/logo.png" class="logo-hovered" />
-</div>
-</a></div>
+<body>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
 
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: -100px;">
-<ul class="nav navbar-nav navbar-right"><!-- Dropdown -->
-	<li class="dropdown" role="presentation"><a href="index.html"><font>Inicio</font></a> <!-- /.Dropdown --> <!-- Dropdown Services --></li>
-	<li class="dropdown"><a href="espe.html">Especialidades</a></li>
-	<!-- /.Dropdown About --><!-- Portafolio -->
-	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" style="background-color: #471c0c; color: #ffd380 !important;">Institucional <span class="caret"></span></a>
-	<ul class="dropdown-menu">
-		<li><a href="direccion.html">Direcci&oacute;n General</a></li>
-		<li><a href="admision.html">Admision</a></li>
-		<li><a href="cetna.html" style="color: #ffd380 !important;">CETNA</a></li>
-		<li><a href="Formularios.html">Formularios</a></li>
-	</ul>
-	</li>
-	<!-- /.Dropdown Team --><!-- Dropdown Contact -->
-	<li class="dropdown"><a href="contact2.html">Contacto</a></li>
-	<!-- /.Dropdown Blog --><!-- Dropdown About -->
-	<li class="dropdown"><a href="acerca.html">Acerca de</a></li>
-	<!-- /.Dropdown About -->
-</ul>
-</div>
-<!-- /.navbar-collapse --></div>
-<!-- /.container --></nav>
-<!-- /.Navigation -->
+<!-- Menú principal -->
+<nav class="navbar navbar-default navbar-fixed-top ctn-nav" aria-label="Menú principal">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false" aria-controls="menu-principal">
+        <span class="sr-only">Mostrar u ocultar el menú</span>
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html" aria-label="Colegio Técnico Nacional - Inicio">
+        <span class="logo-container">
+          <img src="assets/images/themelogo/logo3.png" class="logo-base" alt="">
+          <img src="assets/images/themelogo/logo.png" class="logo-hovered" alt="">
+        </span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="menu-principal">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="espe.html">Especialidades</a></li>
+        <li class="dropdown active">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Institucional <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="direccion.html">Dirección General</a></li>
+            <li><a href="admision.html">Admisión</a></li>
+            <li class="active"><a href="cetna.html" aria-current="page">CETNA</a></li>
+            <li><a href="Formularios.html">Formularios</a></li>
+          </ul>
+        </li>
+        <li><a href="contact2.html">Contacto</a></li>
+        <li><a href="acerca.html">Acerca de</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<header class="indexbg1" id="hero-sm">
-	<video autoplay muted loop playsinline class="bgvideo">
-    <source src="C:\Users\eleme\Downloads\editor_publicaciones\editor_publicaciones\Modificacion del proyecto 2\video\background.mp4" type="video/mp4">
-  </video>
-<div class="container">
-<div class="row">
-<div class="col-md-12"><!-- Heading Title Area -->
-<div class="header-text white text-center">
-<h1>Centro de Estudiantes</h1>
+<main id="contenido">
+  <header class="indexbg1 hero-interno" id="hero">
+    <video class="bgvideo" muted loop playsinline preload="none" data-src="video/background3.mp4" aria-hidden="true" tabindex="-1"></video>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="header-text text-center white">
+            <h1>Centro de Estudiantes</h1>
+            <hr class="borderwhite-sm">
+            <h2>Cetna</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<h2>Cetna</h2>
-</div>
-<!-- /.Heading Title Area --></div>
-</div>
-</div>
-<!-- /.container --></header>
-<!-- /.Header -->
+  <div class="container">
+    <div class="page-header" id="banner">
+      <div class="flexslider">
+        <ul class="slides">
+          <li><img class="img-responsive center-block" src="assets/images/espe/cetna.jpg" alt="Actividad del Centro de Estudiantes"></li>
+          <li><img class="img-responsive center-block" src="assets/images/espe/cetna2.jpg" alt="Actividad del Centro de Estudiantes"></li>
+          <li><img class="img-responsive center-block" src="assets/images/espe/cetna3.jpg" alt="Actividad del Centro de Estudiantes"></li>
+        </ul>
+      </div>
 
-<div class="container">
-<div class="page-header" id="banner">
-<div class="row">
-<div class="flexslider">
-<ul class="slides">
-	<li><img class="img-responsive center-block" src="assets/images/espe/cetna.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/cetna2.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/cetna3.jpg" /></li>
-</ul>
-</div>
+      <div class="jumbotron">
+        <h2>Centro de Estudiantes del Colegio Técnico Nacional</h2>
+        <p>El Centro de estudiantes del CTN es una organización conformada por jóvenes idealistas, organización que vela por el bienestar estudiantil y defiende la integridad y derecho de todos los estudiantes que forman parte de la Institución. La actual junta directiva del Centro de Estudiantes, trabaja por la construcción de una mejor educación a nivel medio capaz de cumplir las exigencias del mercado laboral</p>
+      </div>
 
-<div class="jumbotron">
-<h2>Centro de Estudiantes del Colegio T&eacute;cnico Nacional</h2>
+      <hr class="border-sm mrgn-50-btm">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="team-member">
+            <img class="img-responsive" src="assets/images/team/team-03.jpg" alt="Paula Cairet" loading="lazy">
+            <h3>Paula Cairet</h3>
+            <p class="text-primary">Presidenta</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="team-member">
+            <img class="img-responsive" src="assets/images/team/21149142_1577458335610552_4566865719706255360_n.jpg" alt="Carlos Colarte" loading="lazy">
+            <h3>Carlos Colarte</h3>
+            <p class="text-primary">Vice-presidente</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="team-member">
+            <img class="img-responsive" src="assets/images/team/jajajan4in4_Bjkn1YRFBcL3n6nRLHwHwEhEJ3PobyDjNYaUvU0.jpeg" alt="Janaina Pontes" loading="lazy">
+            <h3>Janaina Pontes</h3>
+            <p class="text-primary">Secretaría de Arte y Cultura</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="team-member">
+            <img class="img-responsive" src="assets/images/team/team-03.jpg" alt="Ana Ayala" loading="lazy">
+            <h3>Ana Ayala</h3>
+            <p class="text-primary">Secretaria de Finanzas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
-<p>El Centro de estudiantes del CTN es una organizaci&oacute;n conformada por j&oacute;venes idealistas, organizaci&oacute;n que vela por el bienestar estudiantil y defiende la integridad y derecho de todos los estudiantes que forman parte de la Instituci&oacute;n. La actual junta directiva del Centro de Estudiantes, trabaja por la construcci&oacute;n de una mejor educaci&oacute;n a nivel medio capaz de cumplir las exigencias del mercado laboral</p>
-</div>
-<!-- Team Section -->
+<footer class="bg-dark-blue" id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: (021) 608 663</p>
+        <span class="copyright">Copyright &copy; Desarrollado en la especialidad de Informática.</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-<div class="container"><!-- Team Section Title and Description --><!-- /.Team Section Title and Description -->
-<hr class="border-sm mrgn-50-btm" /><!-- Team Members -->
-<div class="row"><!-- Team Member 01 -->
-<div class="col-md-3 col-sm-6">
-<div class="team-member"><img alt="" class="img-responsive" src="assets/images/team/team-03.jpg" />
-<h3>Paula cairet</h3>
-
-<p class="text-primary" style="color: #AB2A3E;">Presidenta</p>
-</div>
-</div>
-<!-- /.Team Member 01 --><!-- Team Member 02 -->
-
-<div class="col-md-3 col-sm-6">
-<div class="team-member"><img alt="" class="img-responsive" src="assets/images/team/21149142_1577458335610552_4566865719706255360_n.jpg" />
-<h3>Carlos colarte</h3>
-
-<p class="text-primary" style="color: #AB2A3E;">Vice-presidente</p>
-</div>
-</div>
-<!-- /.Team Member 02 --><!-- Team Member 03 -->
-
-<div class="col-md-3 col-sm-6">
-<div class="team-member"><img alt="" class="img-responsive" src="assets/images/team/jajajan4in4_Bjkn1YRFBcL3n6nRLHwHwEhEJ3PobyDjNYaUvU0.jpeg" />
-<h3>janaina pontes</h3>
-
-<p class="text-primary" style="color: #AB2A3E;">Secretar&iacute;a de Arte y Cultura</p>
-</div>
-</div>
-<!-- /.Team Member 03 --><!-- Team Member 04 -->
-
-<div class="col-md-3 col-sm-6">
-<div class="team-member"><img alt="" class="img-responsive" src="assets/images/team/team-03.jpg" />
-<h3>ana ayala</h3>
-
-<p class="text-primary" style="color: #AB2A3E;">Secretaria de Finanzas</p>
-</div>
-</div>
-<!-- /.Team Member 04 --></div>
-<!-- /.Team Members --></div>
-<!-- /.container --><!-- /.Team Section --><!-- Single Post Content -->
-
-<div aria-labelledby="DigitalResearch" class="modal fade" id="DigitalResearch" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch">Plan de Estudios / Horario Especialidad</h3>
-
-<p>Aqu&iacute; tienes los horarios correspondientes a tu especialidad.</p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<p>Hello</p>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- /.Job Modal Content  --></div>
-</div>
-<!-- /.Job Modal --><!-- /.Digital Researcher Job Application --><!-- Junior Web Designer Job Application --><!-- Job Modal -->
-
-<div aria-labelledby="JuniorWeb" class="modal fade" id="JuniorWeb" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch">Curr&iacute;culum Vitae</h3>
-
-<p></p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<center><img alt="Smiley face" height="120" src="assets/images/espe/dire4.jpg" width="120" /></center>
-&nbsp;
-
-<p>El Director General, don Alcides Hosffmeister, curs&oacute; sus estudios de grado en la Universidad Nacional de Asunci&oacute;n, obteniendo el t&iacute;tulo de Abogado de la Facultad de Derecho y Ciencias Sociales. Egres&oacute; del Instituto Ateneo de Lengua Guaran&iacute; con el t&iacute;tulo de Prof. de Lengua y Literatura Guaran&iacute;. Egres&oacute; de la Universidad Cat&oacute;lica de Asunci&oacute;n con el t&iacute;tulo de Licenciado en Filosof&iacute;a. Se especializ&oacute; en Notariado y Escriban&iacute;a P&uacute;blica por la Universidad Nacional de Asunci&oacute;n. Se form&oacute; en Did&aacute;ctica Media y Superior, as&iacute; como en Did&aacute;ctica Universitaria. Actualmente est&aacute; cursando una maestr&iacute;a en Derecho Civil y Procesal Penal.</p>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- Job Modal Content  --></div>
-</div>
-<!-- /.Job Modal --><!-- /.Junior Web Designer Job Application --></div>
-<!-- /.Single Post Wrapper --></div>
-<!-- /.Single Post Content --></div>
-<!-- /.container --><!-- Main Content --><!-- Footer -->
-
-<footer class="bg-dark-blue">
-<div class="container">
-<div class="row"><!-- Address, Social Links & Copyright -->
-<div class="col-md-4 col-md-offset-4">
-<p>R.I. 3 Corrales c/ Dr. Hassler<br />
-Campos Cervera, Asunci&oacute;n<br />
-Tel: (021) 608 663</p>
-<span class="copyright">Copyright &copy; Colegio T&eacute;cnico Nacional - 2018</span></div>
-</div>
-<!-- /.Address, Social Links & Copyright --></div>
-<!-- /.container --></footer>
-<!-- /.Footer --><!-- jQuery --><script src="assets/js/jquery.js"></script><!-- Flexslider --></body>
-<link href="assets/flexslider/flexslider.css" rel="stylesheet" /><script src="assets/flexslider/jquery.flexslider.js"></script><script type="text/javascript" charset="utf-8">
-  $(window).load(function() {
-    $('.flexslider').flexslider();
-  });
-</script><!-- /.Flexslider --><!-- Bootstrap Core JavaScript --><script src="assets/js/bootstrap.min.js"></script><!-- JavaScript Plugins --><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script><script src="assets/js/isotope.pkgd.min.js"></script><script src="assets/js/wow.min.js"></script><script src="assets/owl-carousel/owl.carousel.js"></script><script src="assets/js/counterup/jquery.counterup.min.js"></script><script src="assets/js/jquery.easy-pie-chart.js"></script><script src="assets/magnific-popup/jquery.magnific-popup.min.js"></script><!-- Contact Form JavaScript --><script src="assets/js/jqBootstrapValidation.js"></script><script src="assets/js/contact_me.js"></script><!-- Custom Theme JavaScript --><script src="assets/js/blueridge.js"></script></html>
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/flexslider/jquery.flexslider-min.js"></script>
+<script src="assets/js/ctn.js"></script>
+<script>jQuery(function ($) { $('.flexslider').flexslider({ animation: 'slide', slideshowSpeed: 4000, pauseOnHover: true }); });</script>
+</body>
+</html>

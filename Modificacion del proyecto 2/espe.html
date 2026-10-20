@@ -1,1461 +1,652 @@
 <!DOCTYPE html>
-<html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content=""><meta name="author" content="">
-	<title>Especialidades | CTN</title>
-	<link href="assets/images/logo2.png" rel="shortcut icon" type="image/logo2.png" /><!-- mobile settings --><!-- Bootstrap Core CSS -->
-	<link href="assets/css/bootstrap.css" rel="stylesheet" /><!-- Custom CSS -->
-	<link href="assets/css/blueridge.css" rel="stylesheet" />
-	<link href="assets/css/filter-portfolio.css" rel="stylesheet" />
-	<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet" />
-	<link href="assets/owl-carousel/owl.theme.css" rel="stylesheet" /><!-- Lightbox -->
-	<link href="assets/magnific-popup/magnific-popup.css" rel="stylesheet" /><!-- Custom Fonts -->
-	<link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Dosis:400,300,700,500" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" rel="stylesheet" type="text/css" /><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css" />
-<style>
-.especialidades-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 14px;
-}
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Especialidades | Colegio Técnico Nacional de Asunción</title>
+  <meta name="description" content="Conocé las 8 especialidades del Colegio Técnico Nacional de Asunción: perfil, coordinadores, formularios y test vocacional.">
+  <meta name="author" content="Colegio Técnico Nacional de Asunción">
+  <meta name="theme-color" content="#471c0c">
+  <link rel="icon" href="assets/images/logo2.png">
 
-.especialidades-tabs li a {
-  text-decoration: none;
-  display: block;
-  padding: 10px;
-}
-
-.especialidad-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.4s ease;
-}
-
-.especialidad-icon {
-  width: 60px;
-  height: 60px;
-  transition: all 0.4s ease;
-}
-
-.especialidad-label {
-  font-size: 0;
-  margin-left: 0;
-  opacity: 0;
-  font-weight: bold;
-  transition: all 0.4s ease;
-}
-
-/* Activa: ícono grande, desplazado, texto revelado */
-.especialidades-tabs li.active .especialidad-icon {
-  width: 100px;
-  height: 100px;
-  transform: translateX(-10px);
-}
-
-.especialidades-tabs li.active .especialidad-label {
-  font-size: 22px;
-  margin-left: 14px;
-  opacity: 1;
-}
-
-/* Colores temáticos */
-.especialidad-info .especialidad-label { color: #7B1E3B; }
-.especialidad-mecanica_ind .especialidad-label { color: #355E3B; }
-.especialidad-mecanica_auto .especialidad-label { color: #000080; }
-.especialidad-construccion .especialidad-label { color: #E5DCC8; }
-.especialidad-electronica .especialidad-label { color: #A7ADB5; }
-.especialidad-electromecanica .especialidad-label { color: #2563EB; }
-.especialidad-electricidad .especialidad-label { color: #87CEEB; }
-.especialidad-quimica .especialidad-label { color: #F9FAFB; }
-
-
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  min-height: 100%; /* Asegura que todas crezcan igual */
-}
-
-.card p {
-  flex-grow: 1;
-  min-height: 120px;
-  margin-bottom: 1rem; /* Espacio antes del botón */
-}
-
-.btn-contacto {
-  margin-top: auto;
-}
-.card {
-  min-height: 340px; /* Ajusta según el contenido más largo */
-}
-
-
-  .btn-contacto {
-  border: 2px solid transparent;
-  border-radius: 2em;   /* mismo estilo redondeado */
-  padding: 8px 20px;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-  #lightnav a {
-  color: white;
-  transition: color 0.3s;
-}
-/* Ajustar solo el texto de Informática */
-#info .post-wrapper {
-  max-width: 900px;   /* mismo ancho que las columnas de Mecánica */
-  margin: 0 auto;     /* centrado */
-}
-
-.flexslider {
-  max-width: 800px;   /* o el ancho que quieras */
-  margin: 0 auto;     /* centrado */
-}
-
-#lightnav.nav-especial a {
-  color: black !important;
-}
-#lightnav.nav-especial a:hover {
-  color: white !important;
-}
-body {
-  padding-top: 70px; /* ajusta según la altura de tu navbar */
-}
-</style>
-<style>
-/* estilo normal (granate) */
-.btn-contacto {
-  border: 2px solid #7B1E3B;
-  color: #7B1E3B; /* quitar !important */
-  background-color: transparent;
-  transition: all 0.4s ease;
-}
-.btn-contacto:hover {
-  background-color: #7B1E3B;
-  border-color: #7B1E3B;
-  color: white;
-}
-
-/* estilo cuando se activa especialidad */
-.nav-especial .btn-contacto {
-  color: black;
-  background-color: transparent !important;
-}
-.nav-especial .btn-contacto:hover {
-  color: black !important;
-}
-
-/* enlaces de la navbar en especialidad */
-.nav-especial a {
-  color: black !important;
-  transition: color 0.3s;
-}
-.nav-especial a:hover {
-  color: black !important; /* se mantiene negro al pasar */
-}
-
-#institucional-btn {
-  transition: background-color 1s ease, color 0.5s ease !important;
-}
-/* estilo base */
-.dropdown-menu {
-  display: block !important;        /* siempre block para poder animar */
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  border-radius: 0 0 2em 2em !important;       /* esquinas redondeadas abajo */
-  transition: all 0.4s ease;
-}
-
-/* cuando bootstrap lo abre */
-.dropdown-menu.show,
-.open > .dropdown-menu {
-  max-height: 500px;
-  opacity: 1;
-}
-</style>
-<style>
-  /* transición suave para el color */
-  #lightnav {
-    transition: background-color 1s ease !important;
-  }
-</style>
-<style>
-#lightnav a {
-    color: white !important;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-#lightnav a:hover {
-    color: black !important;
-}
-.logo-container {
-  position: relative;
-  width: auto;
-  height: 50px;
-  display: inline-block;
-  margin-top: -12px;
-  margin-left: -100px;
-}
-
-.logo-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
-  transition: opacity 0.4s ease;
-}
-
-.logo-base {
-  z-index: 1;
-  opacity: 1;
-}
-
-.logo-hovered {
-  z-index: 2;
-  opacity: 0;
-}
-
-.logo-container:hover .logo-hovered {
-  opacity: 1;
-}
-
-.logo-container:hover .logo-base {
-  opacity: 0;
-}
-</style>
+  <script>document.documentElement.className += ' js';</script>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/blueridge.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/ctn.css">
+  <link rel="stylesheet" href="assets/flexslider/flexslider.css">
+  <link rel="stylesheet" href="assets/css/espe.css">
 </head>
-<body><!-- Nav -->
-<nav class="navbar navbar-default navbar-fixed-top" id="lightnav" style="background-color: #7B1E3B;">
-<div class="container">
-<div class="navbar-header page-scroll"><button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span></button><a class="navbar-brand page-scroll text-uppercase pddn-10" href="index.html"><div class="logo-container">
-  <img src="assets/images/themelogo/logo3.png" class="logo-base" />
-  <img src="assets/images/themelogo/logo.png" class="logo-hovered" />
-</div>
-</a></div>
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: -100px;">
-<ul class="nav navbar-nav navbar-right"><!-- Dropdown -->
-	<li class="dropdown" role="presentation"><a href="index.html">Inicio</a> <!-- /.Dropdown --> <!-- Dropdown Services --></li>
-	<li class="dropdown"><a href="espe.html"><font>Especialidades</font></a></li>
-	<!-- /.Dropdown About --><!-- Portafolio -->
-	<li class="dropdown"><a id="institucional-btn" style="background-color: #7B1E3B;" aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Institucional<span class="caret"></span></a>
-	<ul class="dropdown-menu">
-		<li><a href="direccion.html">Direccion General</a></li>
-		<li><a href="admision.html">Admision</a></li>
-    <li><a href="cetna.html">CETNA</a></li>
-    <li><a href="Formularios.html">Formularios</a></li>
-	</ul>
-	</li>
-	<!-- /.Dropdown Team --><!-- Dropdown Contact -->
-	<li class="dropdown"><a href="contact2.html">Contacto</a></li>
-	<!-- /.Dropdown Blog --><!-- Dropdown About -->
-	<li class="dropdown"><a href="acerca.html">Acerca de</a></li>
-	<!-- /.Dropdown About -->
-</ul>
-</div>
-<!-- /.navbar-collapse --></div>
-<!-- /.container --></nav>
-<!-- /.Navigation --><!-- Header -->
+<body data-especialidad="info">
+<a class="skip-link" href="#contenido">Ir al contenido</a>
 
-<header class="indexbg1" id="hero">
-	<!-- Para poner el video que no se si es que tienen
-  <video autoplay muted loop playsinline class="bgvideo">
-    <source src="C:\Users\eleme\Downloads\editor_publicaciones\editor_publicaciones\Modificacion del proyecto 2\video\background2.mp4" type="video/mp4">
-  </video>-->
-<div class="container">
-<div class="row">
-<div class="row align-items-center">
-  <div class="col-md-6 text-center white" style="padding-top: 70px;">
-    <h1>Prueba nuestro test vocacional!</h1>
-    <hr class="borderwhite-sm" />
-    <h2 class="text-uppercase">Descubre con emocion la especialidad que mejor se adapta a ti y a tu futuro.</h2>
-    <p class="mrgn-60-top">
-      <a class="page-scroll btn btn-blue-sm text-uppercase btn-contacto" style="border-radius: 2em;" href="C:\Users\eleme\Downloads\editor_publicaciones\editor_publicaciones\PROYECTO 2025\TEST\index.html">
-        Haz el test vocacional!
+<!-- Menú principal -->
+<nav class="navbar navbar-default navbar-fixed-top ctn-nav" aria-label="Menú principal">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false" aria-controls="menu-principal">
+        <span class="sr-only">Mostrar u ocultar el menú</span>
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html" aria-label="Colegio Técnico Nacional - Inicio">
+        <span class="logo-container">
+          <img src="assets/images/themelogo/logo3.png" class="logo-base" alt="">
+          <img src="assets/images/themelogo/logo.png" class="logo-hovered" alt="">
+        </span>
       </a>
-    </p>
-  </div>
-  <div class="col-md-6">
-    <canvas id="graficoEspecialidades" height="300"></canvas>
-  </div>
-</div>
-</div>
-</div>
-</div>
-</header>
-
-<section class="no-padding" id="features">
-<div class="container-fluid">
-<div class="row">
-<div class="col-md-4 no-padding"><!-- /.Case Study 03 --></div>
-</div>
-</div>
-</section>
-<!-- /.Case Studies --><!-- Services Section -->
-
-<section class="bg-lighter-gray" id="services">
-<div class="container"><!-- Services Section Title and Description -->
-<div class="row">
-<div class="col-lg-12 text-center  wow fadeInDown">
-<h2 class="section-heading">&iquest;Qu&eacute; Especialidades Ofrecemos?</h2>
-</div>
-</div>
-<!-- Tabs -->
-<ul class="nav nav-tabs especialidades-tabs">
-  <li class="active especialidad-info">
-    <a data-toggle="tab" href="#info">
-      <div class="especialidad-wrapper">
-        <img src="Img/info_c.png" alt="informatica" class="especialidad-icon">
-        <span class="especialidad-label">informatica</span>
-      </div>
-    </a>
-  </li>
-  <li class="especialidad-mecanica_ind">
-    <a data-toggle="tab" href="#mecanica_ind">
-      <div class="especialidad-wrapper">
-        <img src="Img/indu_c.png" alt="mecanica industrial" class="especialidad-icon">
-        <span class="especialidad-label">mecanica industrial</span>
-      </div>
-    </a>
-  </li>
-  <li class="especialidad-mecanica_auto">
-    <a data-toggle="tab" href="#mecanica_auto">
-      <div class="especialidad-wrapper">
-        <img src="Img/auto_c.png" alt="mecanica automotriz" class="especialidad-icon">
-        <span class="especialidad-label">mecanica automotriz</span>
-      </div>
-    </a>
-  </li>
-  <li class="especialidad-construccion">
-    <a data-toggle="tab" href="#construccion">
-      <div class="especialidad-wrapper">
-        <img src="Img/cc_c.png" alt="construcciones civiles" class="especialidad-icon">
-        <span class="especialidad-label">construcciones civiles</span>
-      </div>
-    </a>
-  </li>
-  <li class="especialidad-electronica">
-    <a data-toggle="tab" href="#electronica">
-      <div class="especialidad-wrapper">
-        <img src="Img/eik_c.png" alt="electronica" class="especialidad-icon">
-        <span class="especialidad-label">electronica</span>
-      </div>
-    </a>
-  </li>
-  <li class="especialidad-electromecanica">
-    <a data-toggle="tab" href="#electromecanica">
-      <div class="especialidad-wrapper">
-        <img src="Img/emca_c.png" alt="electromecanica" class="especialidad-icon">
-        <span class="especialidad-label">electromecanica</span>
-      </div>
-    </a>
-  </li>
-  <li class="especialidad-electricidad">
-    <a data-toggle="tab" href="#electricidad">
-      <div class="especialidad-wrapper">
-        <img src="Img/edad_c.png" alt="electricidad" class="especialidad-icon">
-        <span class="especialidad-label">electricidad</span>
-      </div>
-    </a>
-  </li>
-  <li class="especialidad-quimica">
-    <a data-toggle="tab" href="#quimica">
-      <div class="especialidad-wrapper">
-        <img src="Img/qca_c.png" alt="quimica" class="especialidad-icon">
-        <span class="especialidad-label">quimica</span>
-      </div>
-    </a>
-  </li>
-</ul>
-<!-- INFORMÁTICA-->
-<div class="tab-content" style="margin-top:20px">
-  <div id="info" class="tab-pane fade in active">
-    <h3>Informatica</h3>
-  <div class="container">
-    <div class="header-text text-center black777">
-      <img alt="" height="400" src="assets/images/icons/icon-bl-info.png" width="400" />
-      <h1>Inform&aacute;tica</h1>
-      <p class="larger-text">____________________________________________________</p>
     </div>
+    <div class="collapse navbar-collapse" id="menu-principal">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Inicio</a></li>
+        <li class="active"><a href="espe.html" aria-current="page">Especialidades</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Institucional <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="direccion.html">Dirección General</a></li>
+            <li><a href="admision.html">Admisión</a></li>
+            <li><a href="cetna.html">CETNA</a></li>
+            <li><a href="Formularios.html">Formularios</a></li>
+          </ul>
+        </li>
+        <li><a href="contact2.html">Contacto</a></li>
+        <li><a href="acerca.html">Acerca de</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-    <div class="post-wrapper">
-      <hr />
-      <div class="flexslider">
-        <ul class="slides">
-          <li><img class="img-responsive center-block" src="assets/images/espe/info.jpg" /></li>
-          <li><img class="img-responsive center-block" src="assets/images/espe/info1.jpg" /></li>
-          <li><img class="img-responsive center-block" src="assets/images/espe/info2.jpg" /></li>
-          <li><img class="img-responsive center-block" src="assets/images/espe/info3.jpg" /></li>
-          <li><img class="img-responsive center-block" src="assets/images/espe/info4.jpg" /></li>
-        </ul>
+<main id="contenido">
+
+  <!-- Invitación al test vocacional (+ gráfico, si hay servidor configurado en assets/js/config.js) -->
+  <header class="indexbg1 hero-test" id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center white columna-texto" id="columna-test">
+          <h1>¡Prueba nuestro test vocacional!</h1>
+          <hr class="borderwhite-sm">
+          <h2 class="text-uppercase">Descubre con emoción la especialidad que mejor se adapta a ti y a tu futuro.</h2>
+          <p class="mrgn-60-top"><a class="btn btn-blue-sm btn-pill btn-ctn btn-ctn-dorado text-uppercase" href="TEST/TEST/index.html">Haz el test vocacional</a></p>
+        </div>
+        <div class="col-md-6" id="columna-grafico">
+          <canvas id="graficoEspecialidades" height="300" role="img" aria-label="Gráfico de barras: especialidades más elegidas en el test vocacional"></canvas>
+        </div>
       </div>
-      <hr class="border-fullwidth" />
+    </div>
+  </header>
 
-      <p class="lead">La inform&aacute;tica tiene como objetivo cubrir la necesidad de informaci&oacute;n actualizada y oportuna que requiere la administraci&oacute;n de las empresas, haciendo m&aacute;s eficientes sus labores lo que la lleva a ser m&aacute;s competitiva y a alcanzar los niveles que un mundo globalizado demanda.</p>
+  <section class="bg-lighter-gray" id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center wow fadeInDown">
+          <h2 class="section-heading">¿Qué especialidades ofrecemos?</h2>
+        </div>
+      </div>
 
+      <ul class="nav nav-tabs especialidades-tabs" role="tablist">
+      <li class="active" role="presentation" data-especialidad="info">
+        <a href="#info" role="tab" data-toggle="tab" aria-controls="info">
+          <span class="especialidad-wrapper">
+            <img src="assets/images/especialidades/info_c.png" alt="" width="100" height="100" class="especialidad-icon">
+            <span class="especialidad-label">Informática</span>
+          </span>
+        </a>
+      </li>
+      <li role="presentation" data-especialidad="mecanica_ind">
+        <a href="#mecanica_ind" role="tab" data-toggle="tab" aria-controls="mecanica_ind">
+          <span class="especialidad-wrapper">
+            <img src="assets/images/especialidades/indu_c.png" alt="" width="100" height="100" class="especialidad-icon">
+            <span class="especialidad-label">Mecánica Industrial</span>
+          </span>
+        </a>
+      </li>
+      <li role="presentation" data-especialidad="mecanica_auto">
+        <a href="#mecanica_auto" role="tab" data-toggle="tab" aria-controls="mecanica_auto">
+          <span class="especialidad-wrapper">
+            <img src="assets/images/especialidades/auto_c.png" alt="" width="100" height="100" class="especialidad-icon">
+            <span class="especialidad-label">Mecánica Automotriz</span>
+          </span>
+        </a>
+      </li>
+      <li role="presentation" data-especialidad="construccion">
+        <a href="#construccion" role="tab" data-toggle="tab" aria-controls="construccion">
+          <span class="especialidad-wrapper">
+            <img src="assets/images/especialidades/cc_c.png" alt="" width="100" height="100" class="especialidad-icon">
+            <span class="especialidad-label">Construcciones Civiles</span>
+          </span>
+        </a>
+      </li>
+      <li role="presentation" data-especialidad="electronica">
+        <a href="#electronica" role="tab" data-toggle="tab" aria-controls="electronica">
+          <span class="especialidad-wrapper">
+            <img src="assets/images/especialidades/eik_c.png" alt="" width="100" height="100" class="especialidad-icon">
+            <span class="especialidad-label">Electrónica</span>
+          </span>
+        </a>
+      </li>
+      <li role="presentation" data-especialidad="electromecanica">
+        <a href="#electromecanica" role="tab" data-toggle="tab" aria-controls="electromecanica">
+          <span class="especialidad-wrapper">
+            <img src="assets/images/especialidades/emca_c.png" alt="" width="100" height="100" class="especialidad-icon">
+            <span class="especialidad-label">Electromecánica</span>
+          </span>
+        </a>
+      </li>
+      <li role="presentation" data-especialidad="electricidad">
+        <a href="#electricidad" role="tab" data-toggle="tab" aria-controls="electricidad">
+          <span class="especialidad-wrapper">
+            <img src="assets/images/especialidades/edad_c.png" alt="" width="100" height="100" class="especialidad-icon">
+            <span class="especialidad-label">Electricidad</span>
+          </span>
+        </a>
+      </li>
+      <li role="presentation" data-especialidad="quimica">
+        <a href="#quimica" role="tab" data-toggle="tab" aria-controls="quimica">
+          <span class="especialidad-wrapper">
+            <img src="assets/images/especialidades/qca_c.png" alt="" width="100" height="100" class="especialidad-icon">
+            <span class="especialidad-label">Química Industrial</span>
+          </span>
+        </a>
+      </li>
+      </ul>
+
+      <div class="tab-content">
+
+    <!-- INFORMÁTICA -->
+    <div id="info" class="tab-pane fade in active" role="tabpanel">
+      <div class="container">
+        <div class="header-text text-center black777">
+          <img src="assets/images/icons/icon-bl-info.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
+          <h3 class="titulo-especialidad">Informática</h3>
+          <hr class="border-sm">
+        </div>
+        <div class="post-wrapper">
+          <div class="flexslider">
+            <ul class="slides">
+            <li><img class="img-responsive center-block" src="assets/images/espe/info.jpg" alt="Informática: foto 1 de 5" width="1024" height="680"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/info1.jpg" alt="Informática: foto 2 de 5" width="727" height="551" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/info2.jpg" alt="Informática: foto 3 de 5" width="723" height="554" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/info3.jpg" alt="Informática: foto 4 de 5" width="1277" height="718" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/info4.jpg" alt="Informática: foto 5 de 5" width="1276" height="718" loading="lazy"></li>
+            </ul>
+          </div>
+          <hr class="border-fullwidth">
+<p class="lead">La inform&aacute;tica tiene como objetivo cubrir la necesidad de informaci&oacute;n actualizada y oportuna que requiere la administraci&oacute;n de las empresas, haciendo m&aacute;s eficientes sus labores lo que la lleva a ser m&aacute;s competitiva y a alcanzar los niveles que un mundo globalizado demanda.</p>
       <p class="lead">PERFIL GENERAL</p>
       <ul class="lead">
         <li>El perfil profesional del Bachillerato T&eacute;cnico en Inform&aacute;tica pretende una s&oacute;lida formaci&oacute;n t&eacute;cnica, &eacute;tica y human&iacute;stica que le permita proyectar las competencias para incorporar y desarrollar programas inform&aacute;ticos, instalar (hardware y software), asistencia t&eacute;cnica, aplicaci&oacute;n del pensamiento cr&iacute;tico y el m&eacute;todo cient&iacute;fico en los problemas propios de la especialidad, adecu&aacute;ndose a las exigencias de los cambios tecnol&oacute;gicos del mundo globalizado y acordes a las exigencias de la regi&oacute;n.</li>
       </ul>
-
       <p class="lead">PERFIL ESPEC&Iacute;FICO</p>
       <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Inform&aacute;tica, se concibe un T&eacute;cnico en Inform&aacute;tica de Nivel Medio quien ser&aacute; capaz de:</p>
       <ul class="lead">
-        <li>Emplear conocimientos cient&iacute;ficos, human&iacute;sticos y tecnol&oacute;gicos para la pr&aacute;ctica laboral de su especialidad y-o prosecuci&oacute;n de estudios superiores.<br /><br /><i>Por consiguiente: </i><br /><br />
-          <b>a. </b> Planificar en base a un modelo, organizar, conducir y controlar trabajos en el &aacute;rea de su competencia.<br />
-          <b>b. </b> Analizar y proponer soluciones a problemas inform&aacute;ticos acordes a su nivel de preparaci&oacute;n.<br />
+        <li>Emplear conocimientos cient&iacute;ficos, human&iacute;sticos y tecnol&oacute;gicos para la pr&aacute;ctica laboral de su especialidad y-o prosecuci&oacute;n de estudios superiores.<br><br><i>Por consiguiente: </i><br><br>
+          <b>a. </b> Planificar en base a un modelo, organizar, conducir y controlar trabajos en el &aacute;rea de su competencia.<br>
+          <b>b. </b> Analizar y proponer soluciones a problemas inform&aacute;ticos acordes a su nivel de preparaci&oacute;n.<br>
           <b>c. </b> Adaptarse a los cambios tecnol&oacute;gicos de su especialidad.
-        </li><br />
-        <li>Aplicar con calidad los conocimientos tecnol&oacute;gicos e inform&aacute;ticos adquiridos en la ejecuci&oacute;n de trabajos.<br /><br /><i>Por consiguiente: </i><br /><br />
-          <b>a. </b> Utilizar el pensamiento cr&iacute;tico, el m&eacute;todo tecnol&oacute;gico y cient&iacute;fico para el estudio y resoluci&oacute;n de problemas.<br />
-          <b>b. </b> Elaborar presupuestos de los proyectos y-o trabajos que le son encomendados bajo la supervisi&oacute;n de instancias superiores.<br />
+        </li>
+<li>Aplicar con calidad los conocimientos tecnol&oacute;gicos e inform&aacute;ticos adquiridos en la ejecuci&oacute;n de trabajos.<br><br><i>Por consiguiente: </i><br><br>
+          <b>a. </b> Utilizar el pensamiento cr&iacute;tico, el m&eacute;todo tecnol&oacute;gico y cient&iacute;fico para el estudio y resoluci&oacute;n de problemas.<br>
+          <b>b. </b> Elaborar presupuestos de los proyectos y-o trabajos que le son encomendados bajo la supervisi&oacute;n de instancias superiores.<br>
           <b>c. </b> Utilizar eficientemente los recursos del hardware, software, y la literatura t&eacute;cnica correspondiente en formato impreso y digital.
-        </li><br />
-        <li>Aplicar habilidades y destrezas para el uso y desarrollo de aplicaciones inform&aacute;ticas.<br /><br /><i>Por consiguiente: </i><br /><br />
-          <b>a. </b> Manejar con solvencia software de aplicaciones generales.<br />
-          <b>b. </b> Desarrollar programas de aplicaci&oacute;n de peque&ntilde;o porte utilizando paradigmas de programaci&oacute;n actual.<br />
+        </li>
+<li>Aplicar habilidades y destrezas para el uso y desarrollo de aplicaciones inform&aacute;ticas.<br><br><i>Por consiguiente: </i><br><br>
+          <b>a. </b> Manejar con solvencia software de aplicaciones generales.<br>
+          <b>b. </b> Desarrollar programas de aplicaci&oacute;n de peque&ntilde;o porte utilizando paradigmas de programaci&oacute;n actual.<br>
           <b>c. </b> Implementar capacidades emprendedoras para desarrollar proyectos, producir trabajos originales o resolver problemas.
-        </li><br />
-        <li>Desarrollar destrezas generales para el uso y mantenimiento de equipos inform&aacute;ticos.<br /><br /><i>Por consiguiente: </i><br /><br />
-          <b>a. </b> Instalar y configurar sistemas inform&aacute;ticos b&aacute;sicos (hardware y software).<br />
-          <b>b. </b> Realizar asistencia t&eacute;cnica de equipos, insumos, productos y servicios inform&aacute;ticos b&aacute;sicos.<br />
-          <b>c. </b> Asistir para la compra-venta de equipos inform&aacute;ticos b&aacute;sicos.<br />
-          <b>d. </b> Utilizar con eficiencia equipos, procedimientos y t&eacute;cnicas habituales en la ejecuci&oacute;n de trabajos de instalaci&oacute;n y mantenimiento.<br />
+        </li>
+<li>Desarrollar destrezas generales para el uso y mantenimiento de equipos inform&aacute;ticos.<br><br><i>Por consiguiente: </i><br><br>
+          <b>a. </b> Instalar y configurar sistemas inform&aacute;ticos b&aacute;sicos (hardware y software).<br>
+          <b>b. </b> Realizar asistencia t&eacute;cnica de equipos, insumos, productos y servicios inform&aacute;ticos b&aacute;sicos.<br>
+          <b>c. </b> Asistir para la compra-venta de equipos inform&aacute;ticos b&aacute;sicos.<br>
+          <b>d. </b> Utilizar con eficiencia equipos, procedimientos y t&eacute;cnicas habituales en la ejecuci&oacute;n de trabajos de instalaci&oacute;n y mantenimiento.<br>
           <b>e. </b> Montar, instalar y configurar una red de peque&ntilde;a o mediana empresa.
-        </li><br />
-        <li>Aplicar el pensamiento cr&iacute;tico y la &eacute;tica en el manejo de informaciones y en el desempe&ntilde;o de sus funciones.<br /><br /><i>Por consiguiente: </i><br /><br />
-          <b>a. </b> Aplicar los procesos del pensamiento cr&iacute;tico en la elaboraci&oacute;n de trabajos.<br />
-          <b>b. </b> Comunicar informaci&oacute;n e ideas a m&uacute;ltiples audiencias, usando con solvencia una variedad de medios y de formatos.<br />
-          <b>c. </b> Promover y practicar el uso seguro, legal y responsable de la informaci&oacute;n.<br />
-          <b>d. </b> Demostrar actitud positiva frente al uso de las TIC&acute;S como medio de comunicaci&oacute;n interpersonal y grupal para apoyar la colaboraci&oacute;n, el aprendizaje y la productividad.<br />
+        </li>
+<li>Aplicar el pensamiento cr&iacute;tico y la &eacute;tica en el manejo de informaciones y en el desempe&ntilde;o de sus funciones.<br><br><i>Por consiguiente: </i><br><br>
+          <b>a. </b> Aplicar los procesos del pensamiento cr&iacute;tico en la elaboraci&oacute;n de trabajos.<br>
+          <b>b. </b> Comunicar informaci&oacute;n e ideas a m&uacute;ltiples audiencias, usando con solvencia una variedad de medios y de formatos.<br>
+          <b>c. </b> Promover y practicar el uso seguro, legal y responsable de la informaci&oacute;n.<br>
+          <b>d. </b> Demostrar actitud positiva frente al uso de las TIC&acute;S como medio de comunicaci&oacute;n interpersonal y grupal para apoyar la colaboraci&oacute;n, el aprendizaje y la productividad.<br>
           <b>e. </b> Actuar con &eacute;tica y responsabilidad en el manejo de equipos de terceros, instalaci&oacute;n de software legal, calidad y veracidad de los componentes a instalar, as&iacute; como el manejo eficiente de los tiempos para la realizaci&oacute;n de los trabajos encomendados.
         </li>
       </ul>
-
       <p class="lead">PERFIL OCUPACIONAL</p>
       <p class="lead">El campo ocupacional espec&iacute;fico del t&eacute;cnico se define por su participaci&oacute;n bajo supervisi&oacute;n o de manera independiente seg&uacute;n requerimientos de terceros en: El desempe&ntilde;o eficiente y eficaz en empresas de servicios p&uacute;blicos y/o privados para:</p>
-
       <ul class="lead">
-        <li>Planificar la implementaci&oacute;n de software de gesti&oacute;n de datos (informatizaci&oacute;n de empresa) siguiendo el relevamiento de datos.</li><br />
-        <li><i>Por consiguiente: </i><br /><br />
-          <b>a. </b> Identificar las necesidades de los usuarios.<br />
-          <b>b. </b> Dise&ntilde;ar las recomendaciones t&eacute;cnicas a medida acordes a su nivel.<br />
-          <b>c. </b> Recomendar (Sugerir-Diagnosticar) soluciones t&eacute;cnicas acordes a su nivel)<br />
-          <b>d. </b> Programar e implementar software de gesti&oacute;n de datos para medianas empresas.<br />
+        <li>Planificar la implementaci&oacute;n de software de gesti&oacute;n de datos (informatizaci&oacute;n de empresa) siguiendo el relevamiento de datos.</li>
+<li><i>Por consiguiente: </i><br><br>
+          <b>a. </b> Identificar las necesidades de los usuarios.<br>
+          <b>b. </b> Dise&ntilde;ar las recomendaciones t&eacute;cnicas a medida acordes a su nivel.<br>
+          <b>c. </b> Recomendar (Sugerir-Diagnosticar) soluciones t&eacute;cnicas acordes a su nivel)<br>
+          <b>d. </b> Programar e implementar software de gesti&oacute;n de datos para medianas empresas.<br>
           <b>e. </b> Elaborar documentaciones t&eacute;cnicas y planificar procesos de instalaci&oacute;n y actualizaci&oacute;n de software.
-        </li><br /><br /><br />
-        <li>Administrar recursos inform&aacute;ticos b&aacute;sicos.</li><br />
-        <li><i>Por consiguiente: </i><br /><br />
-          <b>a. </b> Coordinar y gestionar recursos inform&aacute;ticos b&aacute;sicos (hardware y software).<br />
-          <b>b. </b> Controlar y evaluar el uso de los recursos inform&aacute;ticos b&aacute;sicos.<br />
+        </li>
+<li>Administrar recursos inform&aacute;ticos b&aacute;sicos.</li>
+<li><i>Por consiguiente: </i><br><br>
+          <b>a. </b> Coordinar y gestionar recursos inform&aacute;ticos b&aacute;sicos (hardware y software).<br>
+          <b>b. </b> Controlar y evaluar el uso de los recursos inform&aacute;ticos b&aacute;sicos.<br>
           <b>c. </b> Asesorar t&eacute;cnicamente en el mantenimiento y la compra-venta de equipos e insumos inform&aacute;ticos b&aacute;sicos a terceros.
-        </li><br /><br /><br />
-        <li>Extensi&oacute;n profesional.</li><br />
-        <li><i>Por consiguiente: </i><br /><br />
-          <b>a. </b> Capacitar al personal para operar equipos y dispositivos tecnol&oacute;gicos-inform&aacute;ticos.<br />
+        </li>
+<li>Extensi&oacute;n profesional.</li>
+<li><i>Por consiguiente: </i><br><br>
+          <b>a. </b> Capacitar al personal para operar equipos y dispositivos tecnol&oacute;gicos-inform&aacute;ticos.<br>
           <b>b. </b> Capacitar y-o ejercer la tutor&iacute;a del personal para operar software de aplicaciones generales.
-        </li><br /><br />
-      </ul>
-<!--DATOS COORDINADOR DE INFO-->
-      <div class="tags">
-        <span class="tag tag-main"><a class="btn-contacto" data-target="#coordinadorINFO" data-toggle="modal" href="#">COORDINADOR</a></span>&nbsp;
-        <span class="tag tag-main">
-    <a class="btn-contacto" data-toggle="modal" data-target="#formulariosINFO" href="#">FORMULARIOS</a>
-  </span>
-      </div>
-
-      <!-- MODALES: mantenlos fuera del contenedor del tab o en la raíz del body para evitar problemas -->
-    </div>
-  </div>
-  </div>
-
-  <!--MECANICA INDUSTRIAL-->
-  <div id="mecanica_ind" class="tab-pane fade">
-    <h3>Mecanica Industrial</h3>
-<header id="single-plain-indum">
-<div class="container"><!-- Header Project Title -->
-<div class="row">
-<div class="col-md-12"><!-- Heading Title Area -->
-<div class="header-text text-center black777"><img alt="" height="400" src="assets/images/icons/icon-bl-indu.png" width="400" />
-<h1>Mec&aacute;nica Industrial</h1>
-
-<p class="larger-text">____________________________________________________</p>
-</div>
-<!-- Heading Title Area --></div>
-</div>
-<!-- /.Header Project Title --></div>
-<!-- /.container --></header>
-<!-- /.Header --><!-- Main Content -->
-
-<div class="container">
-<div class="row"><!-- Single Post Content -->
-<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"><!-- Single Post Wrapper -->
-<div class="post-wrapper">
-<hr /><!-- Single Post Image Slider -->
-<div class="flexslider">
-<ul class="slides">
-	<li><img class="img-responsive center-block" src="assets/images/espe/indu.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/indu2.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/indu3.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/indu4.jpg" /></li>
+        </li>
 </ul>
-</div>
-<!-- /.Single Post Image Slider -->
+          <div class="tags">
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorINFO">COORDINADOR</a></span>
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosINFO">FORMULARIOS</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<hr class="border-fullwidth" /><!-- Single Post Content -->
+    <!-- MECÁNICA INDUSTRIAL -->
+    <div id="mecanica_ind" class="tab-pane fade" role="tabpanel">
+      <div class="container">
+        <div class="header-text text-center black777">
+          <img src="assets/images/icons/icon-bl-indu.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
+          <h3 class="titulo-especialidad">Mecánica Industrial</h3>
+          <hr class="border-sm">
+        </div>
+        <div class="post-wrapper">
+          <div class="flexslider">
+            <ul class="slides">
+            <li><img class="img-responsive center-block" src="assets/images/espe/indu.jpg" alt="Mecánica Industrial: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/indu2.jpg" alt="Mecánica Industrial: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/indu3.jpg" alt="Mecánica Industrial: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/indu4.jpg" alt="Mecánica Industrial: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
+            </ul>
+          </div>
+          <hr class="border-fullwidth">
 <p class="lead">PERFIL GENERAL</p>
-
 <ul class="lead">
 	<li>Aplicar el pensamiento cr&iacute;tico y el m&eacute;todo cient&iacute;fico para el estudio y soluci&oacute;n de problemas en el campo tecnol&oacute;gico.</li>
-	<br />
-	<li>Utilizar los conocimientos cient&iacute;ficos y tecnol&oacute;gicos en las distintas fases de las actividades profesionales y en sus relaciones laborales.</li>
-	<br />
-	<li>Utilizar con eficiencia aparatos y equipos, procedimientos y t&eacute;cnicas habituales en gabinete de ensayos.</li>
-	<br />
-	<li>Interpretar y ejecutar dise&ntilde;os en proyectos y desarrollo de procesos de construcci&oacute;n, fabricaci&oacute;n, mantenimiento y otros servicios propios de su especialidad.</li>
-	<br />
-	<li>Manejar equipos como ser: maquinas, instrumentos, herramientas y otros servicios propios de su especialidad.</li>
-	<br />
-	<li>Manejar las informaciones a trav&eacute;s de: Libros, manuales, videos, cat&aacute;logos u otros medios para solucionar los problemas t&eacute;cnicos de su &aacute;rea.</li>
-	<br />
-	<li></li>
+<li>Utilizar los conocimientos cient&iacute;ficos y tecnol&oacute;gicos en las distintas fases de las actividades profesionales y en sus relaciones laborales.</li>
+<li>Utilizar con eficiencia aparatos y equipos, procedimientos y t&eacute;cnicas habituales en gabinete de ensayos.</li>
+<li>Interpretar y ejecutar dise&ntilde;os en proyectos y desarrollo de procesos de construcci&oacute;n, fabricaci&oacute;n, mantenimiento y otros servicios propios de su especialidad.</li>
+<li>Manejar equipos como ser: maquinas, instrumentos, herramientas y otros servicios propios de su especialidad.</li>
+<li>Manejar las informaciones a trav&eacute;s de: Libros, manuales, videos, cat&aacute;logos u otros medios para solucionar los problemas t&eacute;cnicos de su &aacute;rea.</li>
 </ul>
-
 <p class="lead">PERFIL ESPEC&Iacute;FICO</p>
-
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Mec&aacute;nica Industial, se concibe un T&eacute;cnico de Nivel Medio con:</p>
-
 <ul class="lead">
 	<li>Elaborar proyectos mec&aacute;nicos, dise&ntilde;ando y calculando equipos mec&aacute;nicos como maquinas, herramientas y utillajes.</li>
-	<br />
-	<li>Elaborar presupuestos de los proyectos y &aacute;rea de trabajo a su cargo en un taller industrial..</li>
-	<br />
-	<li>Recomendar las especificaciones de las caracter&iacute;sticas el&eacute;ctricas y mec&aacute;nicas del equipamiento y materiales a ser empleados en la fabricaci&oacute;n mec&aacute;nica.</li>
-	<br />
-	<li>Determinar procesos y procedimientos de fabricaci&oacute;n mec&aacute;nica, indicando los equipos, maquinas, instrumentos, herramientas, utillajes, materiales, tiempo y personal necesario.</li>
-	<br />
-	<li>Emplear las maquinas, los equipos, los instrumentos, las herramientas y los procedimientos en el proceso de fabricaci&oacute;n, construcci&oacute;n y mantenimiento mec&aacute;nico.</li>
+<li>Elaborar presupuestos de los proyectos y &aacute;rea de trabajo a su cargo en un taller industrial..</li>
+<li>Recomendar las especificaciones de las caracter&iacute;sticas el&eacute;ctricas y mec&aacute;nicas del equipamiento y materiales a ser empleados en la fabricaci&oacute;n mec&aacute;nica.</li>
+<li>Determinar procesos y procedimientos de fabricaci&oacute;n mec&aacute;nica, indicando los equipos, maquinas, instrumentos, herramientas, utillajes, materiales, tiempo y personal necesario.</li>
+<li>Emplear las maquinas, los equipos, los instrumentos, las herramientas y los procedimientos en el proceso de fabricaci&oacute;n, construcci&oacute;n y mantenimiento mec&aacute;nico.</li>
 </ul>
-&nbsp;
-
 <p class="lead">PERFIL OCUPACIONAL</p>
-
 <p class="lead">El campo ocupacional espec&iacute;fico del t&eacute;cnico se define por su participaci&oacute;n bajo supervisi&oacute;n o de manera independiente seg&uacute;n requerimientos de terceros en: El desempe&ntilde;o eficiente y eficaz en empresas de servicios p&uacute;blicos y/o privados. Dicho t&eacute;cnico es:</p>
-
 <ul class="lead">
 	<li><b>a. </b> T&eacute;cnico Mec&aacute;nico en reparaci&oacute;n y mantenimiento de maquinarias de alto porte.</li>
-	<br />
-	<li><b>b. </b> Capacitar al personal operativo a su cargo en la ejecuci&oacute;n de las tareas de producci&oacute;n y servicios en el taller industrial.</li>
-	<br />
-	<li><b>c. </b> Prestar asistencia t&eacute;cnica promoviendo, recomendando las especificaciones y presupuestando en el sector de compra-venta conexa con la producci&oacute;n y los servicios.</li>
-	<br />
-	<li><b>d. </b> Acceder a cursos de nivel superior en el &aacute;rea de su especialidad y ejercer la docencia t&eacute;cnica.</li>
+<li><b>b. </b> Capacitar al personal operativo a su cargo en la ejecuci&oacute;n de las tareas de producci&oacute;n y servicios en el taller industrial.</li>
+<li><b>c. </b> Prestar asistencia t&eacute;cnica promoviendo, recomendando las especificaciones y presupuestando en el sector de compra-venta conexa con la producci&oacute;n y los servicios.</li>
+<li><b>d. </b> Acceder a cursos de nivel superior en el &aacute;rea de su especialidad y ejercer la docencia t&eacute;cnica.</li>
 </ul>
-<!-- Single Post Content --><!-- Single Post Tags -->
+          <div class="tags">
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorINDU">COORDINADOR</a></span>
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosINDU">FORMULARIOS</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!--COORDINADOR DE INDU-->
-<div class="tags">
-  <span class="tag tag-main"><a class="btn-contacto" data-target="#coordinadorINDU" data-toggle="modal" href="#">COORDINADOR</a> </span>
-  <span class="tag tag-main">
-    <a class="btn-contacto" data-toggle="modal" data-target="#formulariosINDU" href="#">FORMULARIOS</a>
-  </span>
-
-<p></p>
-</div>
-<div aria-labelledby="coordinadorINDU" class="modal fade" id="coordinadorINDU" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch">Edgar Gallardo</h3>
-
-<p></p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<p>Egresado de la Facultadcon el Titulo. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
-
-<ul>
-	<li>Matricula Nro: 5.183
-	<p></p>
-	</li>
-</ul>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- Job Modal Content  --></div>
-</div>
-
-
-</div>
-</div>
-<!-- /.Single Post Content --></div>
-</div>
-<!-- /.container --><!-- Main Content --><!-- Footer -->
-  </div>
-
-<!--MECANICA AUTOMOTRIZ-->
-  <div id="mecanica_auto" class="tab-pane fade">
-    <h3>Mecanica Automotriz</h3>
-    <header id="single-plain-automov">
-<div class="container"><!-- Header Project Title -->
-<div class="row">
-<div class="col-md-12"><!-- Heading Title Area -->
-<div class="header-text text-center black777"><img alt="" height="400" src="assets/images/icons/icon-bl-auto.png" width="400" />
-<h1>Mec&aacute;nica Automotriz</h1>
-
-<p class="larger-text">____________________________________________________</p>
-</div>
-<!-- Heading Title Area --></div>
-</div>
-<!-- /.Header Project Title --></div>
-<!-- /.container --></header>
-<!-- /.Header --><!-- Main Content -->
-
-<div class="container">
-<div class="row"><!-- Single Post Content -->
-<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"><!-- Single Post Wrapper -->
-<div class="post-wrapper">
-<hr /><!-- Single Post Image Slider -->
-<div class="flexslider">
-<ul class="slides">
-	<li><img class="img-responsive center-block" src="assets/images/espe/auto.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/auto2.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/auto3.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/auto4.jpg" /></li>
-</ul>
-</div>
-<!-- /.Single Post Image Slider -->
-
-<hr class="border-fullwidth" /><!-- Single Post Content -->
+    <!-- MECÁNICA AUTOMOTRIZ -->
+    <div id="mecanica_auto" class="tab-pane fade" role="tabpanel">
+      <div class="container">
+        <div class="header-text text-center black777">
+          <img src="assets/images/icons/icon-bl-auto.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
+          <h3 class="titulo-especialidad">Mecánica Automotriz</h3>
+          <hr class="border-sm">
+        </div>
+        <div class="post-wrapper">
+          <div class="flexslider">
+            <ul class="slides">
+            <li><img class="img-responsive center-block" src="assets/images/espe/auto.jpg" alt="Mecánica Automotriz: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/auto2.jpg" alt="Mecánica Automotriz: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/auto3.jpg" alt="Mecánica Automotriz: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/auto4.jpg" alt="Mecánica Automotriz: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
+            </ul>
+          </div>
+          <hr class="border-fullwidth">
 <p class="lead">PERFIL GENERAL</p>
-
 <ul class="lead">
 	<li>Conocimientos Human&iacute;sticos.</li>
-	<br />
-	<li>Conocimientos Cient&iacute;ficos.</li>
-	<br />
-	<li>Conocimientos T&eacute;cnol&oacute;gicos.</li>
-	<br />
-	<li>Conocimientos Practicos.</li>
-	<br />
-	<li>Profecional Eficiente y Eficaz.</li>
-	<br />
-	<br />
-	&nbsp;
+<li>Conocimientos Cient&iacute;ficos.</li>
+<li>Conocimientos T&eacute;cnol&oacute;gicos.</li>
+<li>Conocimientos Practicos.</li>
+<li>Profecional Eficiente y Eficaz.</li>
 </ul>
-
 <p class="lead">PERFIL ESPEC&Iacute;FICO</p>
-
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Mec&aacute;nica Automoriz, se concibe un T&eacute;cnico de Nivel Medio con:</p>
-
 <ul class="lead">
 	<li>Conocimientos sobre herramientas, instrumientos de medici&oacute;n y maquinarias auxiliares.</li>
-	<br />
-	<li>Conocimientos sobre motores de combusti&oacute;n interna Naftero y Diesel.</li>
-	<br />
-	<li>Conocimientos sobre elementos de chasis del veh&iacute;culo(Transmisi&oacute;n, Direi&oacute;n, Freno, Suspenci&oacute;n).</li>
-	<br />
-	<li>Conocimientos sobre dibujo T&eacute;cnico Automotriz.</li>
-	<br />
-	<li>Conocimientos sobre c&aacute;lculos m&eacute;canicos referente al automovil.</li>
+<li>Conocimientos sobre motores de combusti&oacute;n interna Naftero y Diesel.</li>
+<li>Conocimientos sobre elementos de chasis del veh&iacute;culo(Transmisi&oacute;n, Direi&oacute;n, Freno, Suspenci&oacute;n).</li>
+<li>Conocimientos sobre dibujo T&eacute;cnico Automotriz.</li>
+<li>Conocimientos sobre c&aacute;lculos m&eacute;canicos referente al automovil.</li>
 </ul>
-&nbsp;
-
 <p class="lead">PERFIL OCUPACIONAL</p>
-
 <p class="lead">El campo ocupacional espec&iacute;fico del t&eacute;cnico se define por su participaci&oacute;n bajo supervisi&oacute;n o de manera independiente seg&uacute;n requerimientos de terceros en: El desempe&ntilde;o eficiente y eficaz en empresas de servicios p&uacute;blicos y/o privados. Dicho t&eacute;cnico es:</p>
-
 <ul class="lead">
 	<li><b>a. </b> T&eacute;cnico Mec&aacute;nico en reparaci&oacute;n y mantenimiento de veh&iacute;culos.</li>
-	<br />
-	<li><b>b. </b> Capaz de organizar, planificar y administrar un taller mec&aacute;nico.</li>
-	<br />
-	<li><b>c. </b> Capaz de realizar Asesoramiento T&eacute;cnico.</li>
-	<br />
-	<li><b>d. </b> Eficiente en la atenci&oacute;n al cliente; en ventas de veh&iacute;culos y/o repuestos.</li>
+<li><b>b. </b> Capaz de organizar, planificar y administrar un taller mec&aacute;nico.</li>
+<li><b>c. </b> Capaz de realizar Asesoramiento T&eacute;cnico.</li>
+<li><b>d. </b> Eficiente en la atenci&oacute;n al cliente; en ventas de veh&iacute;culos y/o repuestos.</li>
 </ul>
-<!-- Single Post Content --><!-- Single Post Tags -->
+          <div class="tags">
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorAUTO">COORDINADOR</a></span>
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosAUTO">FORMULARIOS</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!--COORDINADOR DE AUTO-->
-<div class="tags">
-  <span class="tag tag-main"><a class="btn-contacto" data-target="#coordinadorAUTO" data-toggle="modal" href="#">COORDINADOR</a> </span>
- <span class="tag tag-main">
-    <a class="btn-contacto" data-toggle="modal" data-target="#formulariosAUTO" href="#">FORMULARIOS</a>
-  </span></div>
-
-<!--LO QUE VA A APARECER EN EL APARTADO DE FORMULARIOS Y COORDINADOR DE AUTO-->
-<div aria-labelledby="coordinadorAUTO" class="modal fade" id="coordinadorAUTO" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch">Arnaldo Jos&eacute; Cabrera D&iacute;az</h3>
-
-<p></p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<p>Titulos Obtenidos:</p>
-
-<ul>
-	<li>T&eacute;cnico Mec&aacute;nico.</li>
-	<br />
-	<li>Bachiller T&eacute;cnico Industial Electr&oacute;nica.</li>
-	<br />
-	<li>Formaci&oacute;n Pedag&oacute;gica y Lic. en ciencias de la Educaci&oacute;n</li>
-	<br />
-	<br />
-	&nbsp;
-</ul>
-Inicia su <i> actividad docente </i> en el C.T.N en el a&ntilde;o 2000.<br />
-Coordinador de la especialidad desde el a&ntilde;o 2011 hasta la fecha.<br />
-Matricula Nro: 39441.<br />
-&nbsp;
-<p></p>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- Job Modal Content  --></div>
-</div>
-<!-- /.Job Modal --><!-- /.Junior Web Designer Job Application --></div>
-<!-- /.Single Post Wrapper -->
-
-<hr class="border-fullwidth" /></div>
-<!-- /.Single Post Content --></div>
-</div>
-<!-- /.container --><!-- Main Content --><!-- Footer -->
-  </div>
-
-<!--CONSTRUCCIONES CIVILES-->
-  <div id="construccion" class="tab-pane fade">
-    <h3>Construcciones Civiles</h3>
-<header id="single-plain-cc">
-<div class="container"><!-- Header Project Title -->
-<div class="row">
-<div class="col-md-12"><!-- Heading Title Area -->
-<div class="header-text text-center white"><img alt="" height="400" src="assets/images/icons/icon-bl-cc.png" width="400" />
-<h1><span style="color:#000;">Construcciones Civiles</span></h1>
-
-<p class="larger-text"><span style="color:#000;">____________________________________________________</span></p>
-</div>
-<!-- Heading Title Area --></div>
-</div>
-<!-- /.Header Project Title --></div>
-<!-- /.container --></header>
-<!-- /.Header --><!-- Main Content -->
-
-<div class="container">
-<div class="row"><!-- Single Post Content -->
-<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"><!-- Single Post Wrapper -->
-<div class="post-wrapper">
-<hr /><!-- Single Post Image Slider -->
-<div class="flexslider">
-<ul class="slides">
-	<li><img class="img-responsive center-block" src="assets/images/espe/cc.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/cc2.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/cc3.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/cc4.jpg" /></li>
-</ul>
-</div>
-<!-- /.Single Post Image Slider -->
-
-<hr class="border-fullwidth" /><!-- Single Post Content -->
+    <!-- CONSTRUCCIONES CIVILES -->
+    <div id="construccion" class="tab-pane fade" role="tabpanel">
+      <div class="container">
+        <div class="header-text text-center black777">
+          <img src="assets/images/icons/icon-bl-cc.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
+          <h3 class="titulo-especialidad">Construcciones Civiles</h3>
+          <hr class="border-sm">
+        </div>
+        <div class="post-wrapper">
+          <div class="flexslider">
+            <ul class="slides">
+            <li><img class="img-responsive center-block" src="assets/images/espe/cc.jpg" alt="Construcciones Civiles: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/cc2.jpg" alt="Construcciones Civiles: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/cc3.jpg" alt="Construcciones Civiles: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/cc4.jpg" alt="Construcciones Civiles: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
+            </ul>
+          </div>
+          <hr class="border-fullwidth">
 <p class="lead"><strong>Perfil del Bachiller T&eacute;cnico Industrial de Construcciones Civiles</strong></p>
-
 <p class="lead"><strong>Funciones Espec&iacute;ficas</strong></p>
-
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Construcciones Civiles, se concibe un T&eacute;cnico de Nivel Medio quien ser&aacute; capaz de:</p>
-
 <ul class="lead">
 	<li>Planificas, orgazinar, programar, dirigir y controlar todo tipo de obras civiles de una edificaci&oacute;n de hasta 250,00m.</li>
-	<br />
-	<li>Investigar las caracter&iacute;sticas y mejor uso de los materiales de construicci&oacute;n y los m&eacute;todos de aprovechamiento de estos.</li>
-	<br />
-	<li>Investigar el rendimiento de la mano de obra, de equipos y maquinarias.</li>
-	<br />
-	<li>Dise&ntilde;ar sistemas constructivos.</li>
-	<br />
-	<li>Dise&ntilde;ar y poner en marcha sistemas de gesti&oacute;n de calidad, planificar, organizar y administar proyectos de obras civiles, ejercer fiscalizaciones.</li>
-	<br />
-	<li>Ser un profecional competente para enfrentar con eficiencia los desafios actuales y futuras en el campo de las obras de infraestructura con domino de la deciplina y creatividad para resolver problemas.</li>
-	<br />
-	<li>Capacidad de administrar recursos humanos y materiales, concebir y crear empresas.</li>
+<li>Investigar las caracter&iacute;sticas y mejor uso de los materiales de construicci&oacute;n y los m&eacute;todos de aprovechamiento de estos.</li>
+<li>Investigar el rendimiento de la mano de obra, de equipos y maquinarias.</li>
+<li>Dise&ntilde;ar sistemas constructivos.</li>
+<li>Dise&ntilde;ar y poner en marcha sistemas de gesti&oacute;n de calidad, planificar, organizar y administar proyectos de obras civiles, ejercer fiscalizaciones.</li>
+<li>Ser un profecional competente para enfrentar con eficiencia los desafios actuales y futuras en el campo de las obras de infraestructura con domino de la deciplina y creatividad para resolver problemas.</li>
+<li>Capacidad de administrar recursos humanos y materiales, concebir y crear empresas.</li>
 </ul>
-
 <p class="lead"><strong>Caracteristicas del Egresado</strong></p>
-
 <ul class="lead">
 	<li>Trabaja bajo la direcci&oacute;n y supervisi&oacute;n de ingenieros Civiles o Arquitectos.</li>
-	<br />
-	<li>Esta habilitado para trabajar en obras civiles como asistente t&eacute;cnico de un Ingeniero o un Arquitecto.</li>
-	<br />
-	<li>Elabora planos para viviendas y estructuras de planta alta, memorias constructivas y planillas de c&oacute;mputo m&eacute;trico como tambi&eacute;n lista elabora listas para la construcci&oacute;n.</li>
-	<br />
-	<li>Efect&uacute;a metrajes y controles en los avances de la obra. Conoce normas de seguridad higiene en el trabajo, realiza planteos y revelamientos (planim&eacute;tricos y altim&eacute;tricos de terrenos y edificios).</li>
-	<br />
-	<li>Conoce, gestiona y aplica la legislaci&oacute;n laboral, reglamento de la empresa, permisos municipales y cierre de la obra.</li>
-	<br />
-	<li>Controla la calidad de la construcci&oacute;n y reconoce materiales, control de su ingreso y salida.</li>
+<li>Esta habilitado para trabajar en obras civiles como asistente t&eacute;cnico de un Ingeniero o un Arquitecto.</li>
+<li>Elabora planos para viviendas y estructuras de planta alta, memorias constructivas y planillas de c&oacute;mputo m&eacute;trico como tambi&eacute;n lista elabora listas para la construcci&oacute;n.</li>
+<li>Efect&uacute;a metrajes y controles en los avances de la obra. Conoce normas de seguridad higiene en el trabajo, realiza planteos y revelamientos (planim&eacute;tricos y altim&eacute;tricos de terrenos y edificios).</li>
+<li>Conoce, gestiona y aplica la legislaci&oacute;n laboral, reglamento de la empresa, permisos municipales y cierre de la obra.</li>
+<li>Controla la calidad de la construcci&oacute;n y reconoce materiales, control de su ingreso y salida.</li>
 </ul>
-<!-- Single Post Content --><!-- Single Post Tags -->
+          <div class="tags">
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorCC">COORDINADOR</a></span>
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosCC">FORMULARIOS</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!--COORDINADOR DE CC-->
-<div class="tags">
-  <span class="tag tag-main"><a class="btn-contacto" data-target="#coordinadorCC" data-toggle="modal" href="#">COORDINADOR</a> </span>
-  <span class="tag tag-main">
-    <a class="btn-contacto" data-toggle="modal" data-target="#formulariosCC" href="#">FORMULARIOS</a>
-  </span>
-<p></p>
-</div>
-<div aria-labelledby="coordinadorCC" class="modal fade" id="coordinadorCC" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch">Edgar Gallardo</h3>
-
-<p></p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<p>Egresado de la Facultadcon el Titulo. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
-
-<ul>
-	<li>Matricula Nro: 5.183
-	<p></p>
-	</li>
-</ul>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- Job Modal Content  --></div>
-</div>
-
-</div>
-</div>
-<!-- /.Single Post Content --></div>
-</div>
-<!-- /.container --><!-- Main Content --><!-- Footer -->
-  </div>
-
-<!--ELECTRÓNICA-->
-  <div id="electronica" class="tab-pane fade">
-    <h3>Electronica</h3>
-<header id="single-plain-eiko">
-<div class="container"><!-- Header Project Title -->
-<div class="row">
-<div class="col-md-12"><!-- Heading Title Area -->
-<div class="header-text text-center black777"><img alt="" height="400" src="assets/images/icons/icon-bl-eik.png" width="400" />
-<h1>Electr&oacute;nica</h1>
-
-<p class="larger-text">____________________________________________________</p>
-</div>
-<!-- Heading Title Area --></div>
-</div>
-<!-- /.Header Project Title --></div>
-<!-- /.container --></header>
-<!-- /.Header --><!-- Main Content -->
-
-<div class="container">
-<div class="row"><!-- Single Post Content -->
-<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"><!-- Single Post Wrapper -->
-<div class="post-wrapper">
-<hr /><!-- Single Post Image Slider -->
-<div class="flexslider">
-<ul class="slides">
-	<li><img class="img-responsive center-block" src="assets/images/espe/eik3.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/eik.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/eik2.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/eik4.jpg" /></li>
-</ul>
-</div>
-<!-- /.Single Post Image Slider -->
-
-<hr class="border-fullwidth" /><!-- Single Post Content -->
+    <!-- ELECTRÓNICA -->
+    <div id="electronica" class="tab-pane fade" role="tabpanel">
+      <div class="container">
+        <div class="header-text text-center black777">
+          <img src="assets/images/icons/icon-bl-eik.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
+          <h3 class="titulo-especialidad">Electrónica</h3>
+          <hr class="border-sm">
+        </div>
+        <div class="post-wrapper">
+          <div class="flexslider">
+            <ul class="slides">
+            <li><img class="img-responsive center-block" src="assets/images/espe/eik3.jpg" alt="Electrónica: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/eik.jpg" alt="Electrónica: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/eik2.jpg" alt="Electrónica: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/eik4.jpg" alt="Electrónica: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
+            </ul>
+          </div>
+          <hr class="border-fullwidth">
 <p class="lead"><strong>PERFIL GENERAL</strong></p>
-
 <ul class="lead">
 	<li>Perfil general del egresado El Egresado T&eacute;cnico en Electr&oacute;nica debe ser capaz de desarrollar y aplicar conocimientos cient&iacute;ficos, human&iacute;sticos, tecnol&oacute;gicos y pr&aacute;cticos esenciales, que le permitan desarrollar actividades espec&iacute;ficas de su profesi&oacute;n, con esp&iacute;ritu cr&iacute;tico y creador mediante el trabajo en equipo y multidisciplinario para que pueda enfrentar la vida y el mundo en forma competente, justa y solidaria, en el marco del desarrollo sostenible.</li>
 </ul>
-
 <p class="lead"><strong>PERFIL ESPEC&Iacute;FICO</strong></p>
-
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Electr&oacute;nica, se concibe un T&eacute;cnico de Nivel Medio quien ser&aacute; capaz de:</p>
-
 <ul class="lead">
-	<li>Proyectar, componentes y equipos de electr&oacute;nica anal&oacute;gica y/o digital, con tecnolog&iacute;a electr&oacute;nica est&aacute;ndar y de baja o mediana complejidad<br />
-	<br />
-	<i>Por consiguiente: </i><br />
-	<br />
-	<b>a. </b> Realizar ensayos y mediciones el&eacute;ctricas y electr&oacute;nicas en dispositivos, componentes, equipos e instalaciones con electr&oacute;nica anal&oacute;gica y/o digital, est&aacute;ndar de baja o mediana complejidad<br />
-	<b>b. </b> Operar componentes, productos y equipos con electr&oacute;nica anal&oacute;gica y/o digital<br />
+	<li>Proyectar, componentes y equipos de electr&oacute;nica anal&oacute;gica y/o digital, con tecnolog&iacute;a electr&oacute;nica est&aacute;ndar y de baja o mediana complejidad<br>
+	<br>
+	<i>Por consiguiente: </i><br>
+	<br>
+	<b>a. </b> Realizar ensayos y mediciones el&eacute;ctricas y electr&oacute;nicas en dispositivos, componentes, equipos e instalaciones con electr&oacute;nica anal&oacute;gica y/o digital, est&aacute;ndar de baja o mediana complejidad<br>
+	<b>b. </b> Operar componentes, productos y equipos con electr&oacute;nica anal&oacute;gica y/o digital<br>
 	<b>c. </b> Realizar los mantenimientos, predictivo, preventivo, funcional operativo, y correctivo de componentes, productos y equipos con electr&oacute;nica est&aacute;ndar, anal&oacute;gica y/o digital, de baja o mediana complejidad</li>
-	<br />
-	<li>Aplicar con calidad los conocimientos adquiridos en la ejecuci&oacute;n de trabajos.<br />
-	<br />
-	<i>Por consiguiente: </i><br />
-	<br />
-	<b>a. </b> Interpretar especificaciones t&eacute;cnicas de m&aacute;quinas, equipos, instrumentos y herramientas.<br />
-	<b>b. </b> Montar dispositivos y componentes con electr&oacute;nica anal&oacute;gica y/o digital, est&aacute;ndar de baja o mediana complejidad.<br />
+<li>Aplicar con calidad los conocimientos adquiridos en la ejecuci&oacute;n de trabajos.<br>
+	<br>
+	<i>Por consiguiente: </i><br>
+	<br>
+	<b>a. </b> Interpretar especificaciones t&eacute;cnicas de m&aacute;quinas, equipos, instrumentos y herramientas.<br>
+	<b>b. </b> Montar dispositivos y componentes con electr&oacute;nica anal&oacute;gica y/o digital, est&aacute;ndar de baja o mediana complejidad.<br>
 	<b>c. </b> Realizar la selecci&oacute;n, asesoramiento y comercializaci&oacute;n de dispositivos, componentes, productos y equipos con electr&oacute;nica anal&oacute;gica y/o digital, est&aacute;ndar de baja o mediana complejidad</li>
-	<br />
-	<br />
-	<br />
-	&nbsp;
-	<li></li>
 </ul>
-&nbsp;
-
 <p class="lead"><strong>PERFIL OCUPACIONAL</strong></p>
-
 <p class="lead">Cada uno de estos alcances particulares sobre la electr&oacute;nica de los equipos, componentes, productos e instalaciones; en los &aacute;mbitos de control, telecomunicaciones, instrumentos, o electr&oacute;nica industrial; tendr&aacute;n en cuenta criterios de seguridad, cuidado del ambiente, ergonom&iacute;a, calidad, productividad, y costos; seg&uacute;n las definiciones estrat&eacute;gicas surgidas de los estamentos t&eacute;cnicos y jer&aacute;rquicos correspondientes con autonom&iacute;a y responsabilidad sobre su propio trabajo y sobre el trabajo de otros a su cargo.</p>
-<!-- Single Post Content --><!-- Single Post Tags -->
+          <div class="tags">
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorEIK">COORDINADOR</a></span>
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosEIK">FORMULARIOS</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="tags">
-  <span class="tag tag-main"><a class="btn-contacto" data-target="#coordinadorEIK" data-toggle="modal" href="#">COORDINADOra</a></span>&nbsp;
-  <span class="tag tag-main">
-    <a class="btn-contacto" data-toggle="modal" data-target="#formulariosEIK" href="#">FORMULARIOS</a>
-  </span>
-</div>
-<!-- /.Single Post Tags --><!-- Bootstrap Modals for Job Applications --><!-- Digital Researcher Job Application --><!-- Job Modal -->
-
-<div aria-labelledby="DigitalResearch" class="modal fade" id="DigitalResearch" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch">Plan de Estudios / Horario Especialidad</h3>
-
-<p>Aqu&iacute; tienes los horarios correspondientes a tu especialidad.</p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<p>Hello</p>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- /.Job Modal Content  --></div>
-</div>
-<!-- /.Job Modal --><!-- /.Digital Researcher Job Application --><!-- Junior Web Designer Job Application --><!-- Job Modal -->
-
-<!--LO QUE SE VA A DECIR DE EIK-->
-<div aria-labelledby="coordinadorEIK" class="modal fade" id="coordinadorEIK" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch">Marta Mojoli</h3>
-
-<p></p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<p>Egresada de la Facultad de ** con el Titulo **. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
-
-<ul>
-	<li>Matricula Nro: 5.183
-	<p></p>
-	</li>
-</ul>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- Job Modal Content  --></div>
-</div>
-<!-- /.Job Modal --><!-- /.Junior Web Designer Job Application --></div>
-<!-- /.Single Post Wrapper -->
-
-<hr class="border-fullwidth" /></div>
-<!-- /.Single Post Content --></div>
-</div>
-<!-- /.container --><!-- Main Content --><!-- Footer -->
-  </div>
-
-<!--EMCA-->
-  <div id="electromecanica" class="tab-pane fade">
-    <h3>Electromecanica</h3>
-<header id="single-plain-emco">
-<div class="container"><!-- Header Project Title -->
-<div class="row">
-<div class="col-md-12"><!-- Heading Title Area -->
-<div class="header-text text-center black777"><img alt="" height="400" src="assets/images/icons/icon-bl-electro.png" width="400" />
-<h1>Electromec&aacute;nica</h1>
-
-<p class="larger-text">____________________________________________________</p>
-</div>
-<!-- Heading Title Area --></div>
-</div>
-<!-- /.Header Project Title --></div>
-<!-- /.container --></header>
-<!-- /.Header --><!-- Main Content -->
-
-<div class="container">
-<div class="row"><!-- Single Post Content -->
-<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"><!-- Single Post Wrapper -->
-<div class="post-wrapper">
-<hr /><!-- Single Post Image Slider -->
-<div class="flexslider">
-<ul class="slides">
-	<li><img class="img-responsive center-block" src="assets/images/espe/emca.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/emca2.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/emca3.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/emca4.jpg" /></li>
-</ul>
-</div>
-<!-- /.Single Post Image Slider -->
-
-<hr class="border-fullwidth" /><!-- Single Post Content -->
+    <!-- ELECTROMECÁNICA -->
+    <div id="electromecanica" class="tab-pane fade" role="tabpanel">
+      <div class="container">
+        <div class="header-text text-center black777">
+          <img src="assets/images/icons/icon-bl-electro.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
+          <h3 class="titulo-especialidad">Electromecánica</h3>
+          <hr class="border-sm">
+        </div>
+        <div class="post-wrapper">
+          <div class="flexslider">
+            <ul class="slides">
+            <li><img class="img-responsive center-block" src="assets/images/espe/emca.jpg" alt="Electromecánica: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/emca2.jpg" alt="Electromecánica: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/emca3.jpg" alt="Electromecánica: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/emca4.jpg" alt="Electromecánica: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
+            </ul>
+          </div>
+          <hr class="border-fullwidth">
 <p class="lead">PERFIL GENERAL</p>
-
 <ul class="lead">
 	<li>Perfil general del egresado El Egresado T&eacute;cnico en Electromec&aacute;nica debe ser capaz de desarrollar y aplicar conocimientos cient&iacute;ficos, human&iacute;sticos, tecnol&oacute;gicos y pr&aacute;cticos esenciales, que le permitan desarrollar actividades espec&iacute;ficas de su profesi&oacute;n, con esp&iacute;ritu cr&iacute;tico y creador mediante el trabajo en equipo y multidisciplinario para que pueda enfrentar la vida y el mundo en forma competente, justa y solidaria, en el marco del desarrollo sostenible.</li>
 </ul>
-
 <p class="lead">PERFIL ESPEC&Iacute;FICO</p>
-
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Electromec&aacute;nica, se concibe un T&eacute;cnico de Nivel Medio quien ser&aacute; capaz de:</p>
-
 <ul class="lead">
-	<li>Proyectar y dise&ntilde;ar sistemas mec&aacute;nicos, el&eacute;ctricos, electromec&aacute;nicos, neum&aacute;ticos, oleohidra&uacute;licos, de accionamiento y control, herramientas y dispositivos en proyectos de plantas, y en adaptaciones, ampliaciones, optimizaciones y mejoras, de acuerdo a la normativa vigente. Es capaz de identificar el alcance y los l&iacute;mites de su participaci&oacute;n en el dise&ntilde;o y verificar la l&oacute;gica rec&iacute;proca entre el dise&ntilde;o y el proceso.<br />
-	<br />
-	<i>Por consiguiente: </i><br />
-	<br />
-	<b>a. </b> Interpretar las caracter&iacute;sticas t&eacute;cnicas y funcionales de los equipos e instalaciones a dise&ntilde;ar.<br />
-	<b>b. </b> Desarrollar proyectos de equipos e instalaciones y sus componentes.<br />
+	<li>Proyectar y dise&ntilde;ar sistemas mec&aacute;nicos, el&eacute;ctricos, electromec&aacute;nicos, neum&aacute;ticos, oleohidra&uacute;licos, de accionamiento y control, herramientas y dispositivos en proyectos de plantas, y en adaptaciones, ampliaciones, optimizaciones y mejoras, de acuerdo a la normativa vigente. Es capaz de identificar el alcance y los l&iacute;mites de su participaci&oacute;n en el dise&ntilde;o y verificar la l&oacute;gica rec&iacute;proca entre el dise&ntilde;o y el proceso.<br>
+	<br>
+	<i>Por consiguiente: </i><br>
+	<br>
+	<b>a. </b> Interpretar las caracter&iacute;sticas t&eacute;cnicas y funcionales de los equipos e instalaciones a dise&ntilde;ar.<br>
+	<b>b. </b> Desarrollar proyectos de equipos e instalaciones y sus componentes.<br>
 	<b>c. </b> Desarrollar proyectos el&eacute;ctricos de circuitos, componentes y de control de automatismos.</li>
 	<li><b>d. </b> Ejecutar y/o dirigir y/o supervisar proyectos y dise&ntilde;os electromec&aacute;nicos.</li>
-	<br />
-	<li>Aplicar con calidad los conocimientos adquiridos en la ejecuci&oacute;n de trabajos.<br />
-	<br />
-	<i>Por consiguiente: </i><br />
-	<br />
-	<b>a. </b> Realizar la puesta en marcha, control y parada de equipos, instalaciones y dispositivos de accionamiento y control de producci&oacute;n.<br />
-	<b>b. </b> Instalar circuitos y sistemas de instalaciones industriales.<br />
+<li>Aplicar con calidad los conocimientos adquiridos en la ejecuci&oacute;n de trabajos.<br>
+	<br>
+	<i>Por consiguiente: </i><br>
+	<br>
+	<b>a. </b> Realizar la puesta en marcha, control y parada de equipos, instalaciones y dispositivos de accionamiento y control de producci&oacute;n.<br>
+	<b>b. </b> Instalar circuitos y sistemas de instalaciones industriales.<br>
 	<b>c. </b> Realizar e interpretar ensayos de materiales y ensayos el&eacute;ctricos, mec&aacute;nicos y electromec&aacute;nicos.</li>
-	<br />
-	<br />
-	&nbsp;
 </ul>
-&nbsp;
-
 <p class="lead">PERFIL OCUPACIONAL</p>
-
 <p class="lead">Del an&aacute;lisis de las actividades profesionales que se desprenden del Perfil Profesional, se establecen como habilitaciones para el T&eacute;cnico: -Realizar las fases del proyecto de: componentes, equipos e instalaciones: mec&aacute;nicas, el&eacute;ctricas, electromec&aacute;nicas, t&eacute;rmicas, hidr&aacute;ulicas, neum&aacute;ticas, y oleohidr&aacute;ulicas. Sistemas neum&aacute;ticos y oleohidra&uacute;licos. Sistemas estacionarios, m&oacute;viles y de transporte. Circuitos y/o sistemas de distribuci&oacute;n de energ&iacute;a. Control de automatismo. Herramientas y dispositivos. Programas de mantenimiento.</p>
-<!-- Single Post Content --><!-- Single Post Tags -->
+          <div class="tags">
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorEMCA">COORDINADOR</a></span>
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosEMCA">FORMULARIOS</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!--COORDINADOR DE EMCA-->
-<div class="tags">
-  <span class="tag tag-main"><a class="btn-contacto" data-target="#coordinadorEMCA" data-toggle="modal" href="#">COORDINADOR</a></span>&nbsp;
-  <span class="tag tag-main">
-    <a class="btn-contacto" data-toggle="modal" data-target="#formulariosEMCA" href="#">FORMULARIOS</a>
-  </span>
-</div>
-<!-- /.Single Post Tags --><!-- Bootstrap Modals for Job Applications --><!-- Digital Researcher Job Application --><!-- Job Modal -->
-
-<div aria-labelledby="DigitalResearch" class="modal fade" id="DigitalResearch" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch">Plan de Estudios / Horario Especialidad</h3>
-
-<p>Aqu&iacute; tienes los horarios correspondientes a tu especialidad.</p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<p>Hello</p>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- /.Job Modal Content  --></div>
-</div>
-<!-- /.Job Modal --><!-- /.Digital Researcher Job Application --><!-- Junior Web Designer Job Application --><!-- Job Modal -->
-
-<div aria-labelledby="coordinadorEMCA" class="modal fade" id="coordinadorEMCA" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch">Edgar Gallardo</h3>
-
-<p></p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<p>Egresado de la Facultadcon el Titulo. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
-
-<ul>
-	<li>Matricula Nro: 5.183
-	<p></p>
-	</li>
-</ul>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- Job Modal Content  --></div>
-</div>
-<!-- /.Job Modal --><!-- /.Junior Web Designer Job Application --></div>
-<!-- /.Single Post Wrapper -->
-
-<hr class="border-fullwidth" /></div>
-<!-- /.Single Post Content --></div>
-</div>
-<!-- /.container --><!-- Main Content --><!-- Footer -->
-  </div>
-<!--ELECTRICIDAD-->
-  <div id="electricidad" class="tab-pane fade">
-    <h3>Electricidad</h3>
-<header id="single-plain-edadm">
-<div class="container"><!-- Header Project Title -->
-<div class="row">
-<div class="col-md-12"><!-- Heading Title Area -->
-<div class="header-text text-center black777"><img alt="" height="400" src="assets/images/icons/icon-bl-design.png" width="400" />
-<h1>Electricidad</h1>
-
-<p class="larger-text">____________________________________________________</p>
-</div>
-<!-- Heading Title Area --></div>
-</div>
-<!-- /.Header Project Title --></div>
-<!-- /.container --></header>
-<!-- /.Header --><!-- Main Content -->
-
-<div class="container">
-<div class="row"><!-- Single Post Content -->
-<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"><!-- Single Post Wrapper -->
-<div class="post-wrapper">
-<hr /><!-- Single Post Image Slider -->
-<div class="flexslider">
-<ul class="slides">
-	<li><img class="img-responsive center-block" src="assets/images/espe/edad.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/edad2.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/edad3.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/edad4.jpg" /></li>
-</ul>
-</div>
-<!-- /.Single Post Image Slider -->
-
-<hr class="border-fullwidth" /><!-- Single Post Content -->
+    <!-- ELECTRICIDAD -->
+    <div id="electricidad" class="tab-pane fade" role="tabpanel">
+      <div class="container">
+        <div class="header-text text-center black777">
+          <img src="assets/images/icons/icon-bl-design.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
+          <h3 class="titulo-especialidad">Electricidad</h3>
+          <hr class="border-sm">
+        </div>
+        <div class="post-wrapper">
+          <div class="flexslider">
+            <ul class="slides">
+            <li><img class="img-responsive center-block" src="assets/images/espe/edad.jpg" alt="Electricidad: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/edad2.jpg" alt="Electricidad: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/edad3.jpg" alt="Electricidad: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/edad4.jpg" alt="Electricidad: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
+            </ul>
+          </div>
+          <hr class="border-fullwidth">
 <p class="lead"><strong>PERFIL GENERAL</strong></p>
-
 <ul class="lead">
 	<li>El Bachiller en electricidad ser&aacute; completamente para acceder y desenvolverse laboralmente. En las funciones de Proyectar, Montar, Instalar, Operar, Matener, Gestionar y Supervisar recursos para la ejecuci&oacute;n de instalaciones el&eacute;ctricas tanto en locales Residenciales y como Industriales, en baja tensi&oacute;n, en base a proyectos realizados, seg&uacute;n normas t&eacute;cnicas, ambientales, est&aacute;ndares de calidad y seguridad.</li>
 </ul>
-
 <p class="lead"><strong>PERFIL ESPEC&Iacute;FICO</strong></p>
-
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Electricidad, se concibe un T&eacute;cnico de Nivel Medio quien ser&aacute; capaz de:</p>
-
 <ul class="lead">
 	<li>Elaborar proyectos de instalaciones el&eacute;ctricas residenciales e industriales, en baja tensi&oacute;n relacionando los aspectos creativos con la tecnolog&iacute;a espec&iacute;fica.</li>
-	<br />
-	<li>Montar los materiales, equipos y otros componentes el&eacute;ctricos de acuerdo con las exigencias del proyecto.</li>
-	<br />
-	<li>Instalar los Circuitos operacionales y de control en baja tensi&oacute;n de acuerdo con los est&aacute;ndares y especificaciones t&eacute;cnicas.</li>
-	<br />
-	<li>Operar y controlar dispositivos, mecanismos, m&aacute;quinas y otros componentes el&eacute;ctricos en situaci&oacute;n de trabajo conociendo las causas y efectos de su operaci&oacute;n.</li>
-	<br />
-	<li>Identificar, prevenir y/o corregir defectos en instalaciones y/o m&aacute;quinas conforme a los programas de mantenimiento.</li>
-	<br />
-	<li>Planificar, gestionar, administrar, coordinar las acciones necesarias en orden cronol&oacute;gico.</li>
-	<br />
-	<li>Controlar y supervisar la ejecuci&oacute;n de la instalaci&oacute;n siguiendo la planificaci&oacute;n del proyecto, las normas de seguridad y salud ocupacional.</li>
+<li>Montar los materiales, equipos y otros componentes el&eacute;ctricos de acuerdo con las exigencias del proyecto.</li>
+<li>Instalar los Circuitos operacionales y de control en baja tensi&oacute;n de acuerdo con los est&aacute;ndares y especificaciones t&eacute;cnicas.</li>
+<li>Operar y controlar dispositivos, mecanismos, m&aacute;quinas y otros componentes el&eacute;ctricos en situaci&oacute;n de trabajo conociendo las causas y efectos de su operaci&oacute;n.</li>
+<li>Identificar, prevenir y/o corregir defectos en instalaciones y/o m&aacute;quinas conforme a los programas de mantenimiento.</li>
+<li>Planificar, gestionar, administrar, coordinar las acciones necesarias en orden cronol&oacute;gico.</li>
+<li>Controlar y supervisar la ejecuci&oacute;n de la instalaci&oacute;n siguiendo la planificaci&oacute;n del proyecto, las normas de seguridad y salud ocupacional.</li>
 </ul>
-&nbsp;
-
 <p class="lead"><strong>PERFIL OCUPACIONAL</strong></p>
-
 <p class="lead">El campo ocupacional espec&iacute;fico del t&eacute;cnico se define por su participaci&oacute;n bajo supervisi&oacute;n o de manera independiente seg&uacute;n requerimientos de terceros en: El desempe&ntilde;o eficiente y eficaz en empresas de servicios p&uacute;blicos y/o privados.</p>
-
 <p class="lead">El Bachiller t&eacute;cnico en electricidad puede ejercer sus funciones desempe&ntilde;&aacute;ndose de forma independiente o en relaci&oacute;n de dependencia en servicios de mantenimiento , instalaci&oacute;n y/o reparaci&oacute;n de sistemas el&eacute;ctricos como:</p>
-
 <ul class="lead">
 	<li><b>a. </b> Auxiliar en el dise&ntilde;o e implementaci&oacute;n de sistemas el&eacute;ctricos.</li>
-	<br />
-	<li><b>b. </b> Experto en talleres&nbsp;de instalaciones el&eacute;ctricas.</li>
-	<br />
-	<li><b>c. </b> Instalador de redes el&eacute;ctricas residenciales, comerciales e industriales.</li>
-	<br />
-	<li><b>d. </b> Asesor comercial en accesorios y materiales el&eacute;ctricos.</li>
+<li><b>b. </b> Experto en talleres&nbsp;de instalaciones el&eacute;ctricas.</li>
+<li><b>c. </b> Instalador de redes el&eacute;ctricas residenciales, comerciales e industriales.</li>
+<li><b>d. </b> Asesor comercial en accesorios y materiales el&eacute;ctricos.</li>
 </ul>
+          <div class="tags">
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorEDAD">COORDINADOR</a></span>
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosEDAD">FORMULARIOS</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<p></p>
-<!-- Single Post Content --><!-- Single Post Tags -->
-<!--COORDINADOR DE EDAD-->
-<div class="tags">
-  <span class="tag tag-main"><a class="btn-contacto" data-target="#coordinadorEDAD" data-toggle="modal" href="#">COORDINADOR</a> </span>
-  <span class="tag tag-main">
-    <a class="btn-contacto" data-toggle="modal" data-target="#formulariosEDAD" href="#">FORMULARIOS</a>
-  </span>
-<p></p>
-</div>
-<div aria-labelledby="coordinadorEDAD" class="modal fade" id="coordinadorEDAD" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch">Edgar Gallardo</h3>
-
-<p></p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<p>Egresado de la Facultadcon el Titulo. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
-
-<ul>
-	<li>Matricula Nro: 5.183
-	<p></p>
-	</li>
-</ul>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- Job Modal Content  --></div>
-</div>
-
-</div>
-</div>
-<!-- /.Single Post Content --></div>
-</div>
-<!-- /.container --><!-- Main Content --><!-- Footer -->
-  </div>
-<!--QUIMICA INDUSTRIAL-->
-  <div id="quimica" class="tab-pane fade">
-    <h3>Quimica</h3>
-    <header id="single-plain-qca">
-<div class="container"><!-- Header Project Title -->
-<div class="row">
-<div class="col-md-12"><!-- Heading Title Area -->
-<div class="header-text text-center black777"><img alt="" height="400" src="assets/images/icons/icon-bl-qca.png" width="400" />
-<h1>qu&iacute;mica industrial</h1>
-
-<p class="larger-text">____________________________________________________</p>
-</div>
-<!-- Heading Title Area --></div>
-</div>
-<!-- /.Header Project Title --></div>
-<!-- /.container --></header>
-<!-- /.Header --><!-- Main Content -->
-
-<div class="container">
-<div class="row"><!-- Single Post Content -->
-<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"><!-- Single Post Wrapper -->
-<div class="post-wrapper">
-<hr /><!-- Single Post Image Slider -->
-<div class="flexslider">
-<ul class="slides">
-	<li><img class="img-responsive center-block" src="assets/images/espe/qca.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/qca2.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/qca3.jpg" /></li>
-	<li><img class="img-responsive center-block" src="assets/images/espe/qca4.jpg" /></li>
-</ul>
-</div>
-<!-- /.Single Post Image Slider -->
-
-<hr class="border-fullwidth" /><!-- Single Post Content -->
+    <!-- QUÍMICA INDUSTRIAL -->
+    <div id="quimica" class="tab-pane fade" role="tabpanel">
+      <div class="container">
+        <div class="header-text text-center black777">
+          <img src="assets/images/icons/icon-bl-qca.png" alt="" width="400" height="400" class="img-responsive center-block" loading="lazy">
+          <h3 class="titulo-especialidad">Química Industrial</h3>
+          <hr class="border-sm">
+        </div>
+        <div class="post-wrapper">
+          <div class="flexslider">
+            <ul class="slides">
+            <li><img class="img-responsive center-block" src="assets/images/espe/qca.jpg" alt="Química Industrial: foto 1 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/qca2.jpg" alt="Química Industrial: foto 2 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/qca3.jpg" alt="Química Industrial: foto 3 de 4" width="1024" height="680" loading="lazy"></li>
+            <li><img class="img-responsive center-block" src="assets/images/espe/qca4.jpg" alt="Química Industrial: foto 4 de 4" width="1024" height="680" loading="lazy"></li>
+            </ul>
+          </div>
+          <hr class="border-fullwidth">
 <p class="lead">PERFIL GENERAL</p>
-
 <ul class="lead">
 	<li>Perfil general del egresado El Egresado T&eacute;cnico en Qu&iacute;mica Industrial debe ser capaz de desarrollar y aplicar conocimientos cient&iacute;ficos, human&iacute;sticos, tecnol&oacute;gicos y pr&aacute;cticos esenciales, que le permitan desarrollar actividades espec&iacute;ficas de su profesi&oacute;n, con esp&iacute;ritu cr&iacute;tico y creador mediante el trabajo en equipo y multidisciplinario para que pueda enfrentar la vida y el mundo en forma competente, justa y solidaria, en el marco del desarrollo sostenible.</li>
 </ul>
-
 <p class="lead">PERFIL ESPEC&Iacute;FICO</p>
-
 <p class="lead">Al t&eacute;rmino de los cursos de formaci&oacute;n del Bachillerato T&eacute;cnico en Qu&iacute;mica Industrial, se concibe un T&eacute;cnico en Qu&iacute;mica de Nivel Medio quien ser&aacute; capaz de:</p>
-
 <ul class="lead">
-	<li>Emplear conocimientos cient&iacute;ficos, human&iacute;sticos y tecnol&oacute;gicos para la pr&aacute;ctica laboral de su especialidad y-o prosecuci&oacute;n de estudios superiores.<br />
-	<br />
-	<i>Por consiguiente: </i><br />
-	<br />
-	<b>a. </b> Acompa&ntilde;ar el desarrollo de nuevos productos y procesos industriales, aplicando t&eacute;cnicas anal&iacute;ticas apropiadas.<br />
-	<b>b. </b> Realizar proyectos industriales, efectuando c&aacute;lculos de presupuestos concernientes a: Costo de materia prima. Costo de producci&oacute;n. Costo de instalaciones edilicias. Rentabilidad.<br />
+	<li>Emplear conocimientos cient&iacute;ficos, human&iacute;sticos y tecnol&oacute;gicos para la pr&aacute;ctica laboral de su especialidad y-o prosecuci&oacute;n de estudios superiores.<br>
+	<br>
+	<i>Por consiguiente: </i><br>
+	<br>
+	<b>a. </b> Acompa&ntilde;ar el desarrollo de nuevos productos y procesos industriales, aplicando t&eacute;cnicas anal&iacute;ticas apropiadas.<br>
+	<b>b. </b> Realizar proyectos industriales, efectuando c&aacute;lculos de presupuestos concernientes a: Costo de materia prima. Costo de producci&oacute;n. Costo de instalaciones edilicias. Rentabilidad.<br>
 	<b>c. </b> Interpretar proyectos de industrias qu&iacute;micas.</li>
-	<br />
-	<li>Aplicar con calidad los conocimientos adquiridos en la ejecuci&oacute;n de trabajos.<br />
-	<br />
-	<i>Por consiguiente: </i><br />
-	<br />
-	<b>a. </b> Interpretar especificaciones t&eacute;cnicas de m&aacute;quinas, equipos, instrumentos y herramientas.<br />
-	<b>b. </b> Calcular la capacidad de producci&oacute;n de las m&aacute;quinas o equipos que intervienen en el proceso.<br />
+<li>Aplicar con calidad los conocimientos adquiridos en la ejecuci&oacute;n de trabajos.<br>
+	<br>
+	<i>Por consiguiente: </i><br>
+	<br>
+	<b>a. </b> Interpretar especificaciones t&eacute;cnicas de m&aacute;quinas, equipos, instrumentos y herramientas.<br>
+	<b>b. </b> Calcular la capacidad de producci&oacute;n de las m&aacute;quinas o equipos que intervienen en el proceso.<br>
 	<b>c. </b> Aplicar normas de seguridad e higiene industrial y de preservaci&oacute;n ambiental durante la pr&aacute;ctica profesional.</li>
-	<br />
-	<li>Aplicar habilidades y destrezas para el uso y control de calidad de productos.<br />
-	<br />
-	<i>Por consiguiente: </i><br />
-	<br />
-	<b>a. </b> Controlar la calidad de materias primas y productos acabados, mediante an&aacute;lisis industrial ajustado a normas nacionales e internacionales vigentes seg&uacute;n requerimientos t&eacute;cnicos espec&iacute;ficos.<br />
-	<b>b. </b> Controlar los servicios de operaci&oacute;n de equipos, as&iacute; como su instalaci&oacute;n y mantenimiento conforme a especificaciones t&eacute;cnicas.<br />
+<li>Aplicar habilidades y destrezas para el uso y control de calidad de productos.<br>
+	<br>
+	<i>Por consiguiente: </i><br>
+	<br>
+	<b>a. </b> Controlar la calidad de materias primas y productos acabados, mediante an&aacute;lisis industrial ajustado a normas nacionales e internacionales vigentes seg&uacute;n requerimientos t&eacute;cnicos espec&iacute;ficos.<br>
+	<b>b. </b> Controlar los servicios de operaci&oacute;n de equipos, as&iacute; como su instalaci&oacute;n y mantenimiento conforme a especificaciones t&eacute;cnicas.<br>
 	<b>c. </b> Implementar capacidades emprendedoras para desarrollar proyectos, producir trabajos originales o resolver problemas.</li>
-	<br />
-	<li>Desarrollar destrezas generales para el control de producci&oacute;n y las relaciones humanas.<br />
-	<br />
-	<i>Por consiguiente: </i><br />
-	<br />
-	<b>a. </b> Calcular la capacidad de producci&oacute;n de las m&aacute;quinas o equipos que intervienen en el proceso.<br />
-	<b>b. </b> Elaborar informes t&eacute;cnicos referentes a tareas a su cargo.<br />
-	<b>c. </b> Supervisar grupos de trabajo en el marco del respeto y la &eacute;tica profesional.<br />
+<li>Desarrollar destrezas generales para el control de producci&oacute;n y las relaciones humanas.<br>
+	<br>
+	<i>Por consiguiente: </i><br>
+	<br>
+	<b>a. </b> Calcular la capacidad de producci&oacute;n de las m&aacute;quinas o equipos que intervienen en el proceso.<br>
+	<b>b. </b> Elaborar informes t&eacute;cnicos referentes a tareas a su cargo.<br>
+	<b>c. </b> Supervisar grupos de trabajo en el marco del respeto y la &eacute;tica profesional.<br>
 	<b>d. </b> Realizar asistencia t&eacute;cnica de compra-venta y utilizaci&oacute;n de productos qu&iacute;micos para determinados procesos industriales.</li>
-	<br />
-	<br />
-	&nbsp;
 </ul>
-&nbsp;
-
 <p class="lead">PERFIL OCUPACIONAL</p>
-
 <p class="lead">El campo ocupacional espec&iacute;fico del t&eacute;cnico se define por su participaci&oacute;n bajo supervisi&oacute;n o de manera independiente seg&uacute;n requerimientos de terceros en: El desempe&ntilde;o eficiente y eficaz en empresas de servicios p&uacute;blicos y/o privados.</p>
-<!-- Single Post Content --><!-- Single Post Tags -->
-<!--COORDINADOR DE QCA-->
-<div class="tags">
-  <span class="tag tag-main"><a class="btn-contacto" data-target="#coordinadorQCA" data-toggle="modal" href="#">COORDINADOR</a></span>&nbsp;
-  <span class="tag tag-main">
-    <a class="btn-contacto" data-toggle="modal" data-target="#formulariosQCA" href="#">FORMULARIOS</a>
-  </span>
-</div>
-<!-- /.Single Post Tags --><!-- Bootstrap Modals for Job Applications --><!-- Digital Researcher Job Application --><!-- Job Modal -->
+          <div class="tags">
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#coordinadorQCA">COORDINADOR</a></span>
+            <span class="tag"><a class="btn btn-pill btn-ctn btn-ctn-tema" data-toggle="modal" href="#formulariosQCA">FORMULARIOS</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+  </section>
 
-<div aria-labelledby="DigitalResearch" class="modal fade" id="DigitalResearch" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+  <section class="seccion-marron" id="cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="lead text-uppercase">¿Ya estás convencido? ¿Querés ingresar al Colegio Técnico Nacional?</p>
+          <p class="text-center mrgn-20-top"><a class="btn btn-blue-sm btn-pill btn-ctn btn-ctn-dorado" href="contact2.html">Contáctanos</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-<h3 class="modal-title" id="DigitalResearch">Plan de Estudios / Horario Especialidad</h3>
-
-<p>Aqu&iacute; tienes los horarios correspondientes a tu especialidad.</p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<p>Hello</p>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- /.Job Modal Content  --></div>
-</div>
-<!-- /.Job Modal --><!-- /.Digital Researcher Job Application --><!-- Junior Web Designer Job Application --><!-- Job Modal -->
-<!--LO QUE SE VA A DECIR DE QCA-->
-<div aria-labelledby="coordinadorQCA" class="modal fade" id="coordinadorQCA" role="dialog" tabindex="-1">
-<div class="modal-dialog" role="document"><!-- Job Modal Content  -->
-<div class="modal-content"><!-- Job Modal Header  -->
-<div class="modal-header text-center"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-
-<h3 class="modal-title" id="DigitalResearch">Juan &Aacute;ngel Gonz&aacute;lez</h3>
-
-<p></p>
-</div>
-<!-- /.Job Modal Header  --><!-- Job Modal Body  -->
-
-<div class="modal-body">
-<p>Egresado de la Facultad de Ciencias Qu&iacute;micas con el Titulo Ing. Qu&iacute;mico. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
-
-<ul>
-	<li>Matricula Nro: 5.183
-	<p></p>
-	</li>
-</ul>
-</div>
-<!-- /.Job Modal Body  --></div>
-<!-- Job Modal Content  --></div>
-</div>
-<!-- /.Job Modal --><!-- /.Junior Web Designer Job Application --></div>
-<!-- /.Single Post Wrapper -->
-
-<hr class="border-fullwidth" /></div>
-<!-- /.Single Post Content --></div>
-</div>
-<!-- /.container --><!-- Main Content --><!-- Footer -->
+<footer class="bg-dark-blue" id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: (021) 608 663</p>
+        <span class="copyright">Copyright &copy; Desarrollado en la especialidad de Informática.</span>
+      </div>
+    </div>
   </div>
-</div>
-<!-- /.Services List --></div>
-<!-- /.container --></section>
-<!-- /.Services Section --><!-- Call-To-Action Section -->
+</footer>
 
-<section class="bg-dark" id="cta">
-<div class="container"><!-- Call-To-Action Content Area -->
-<div class="row">
-<div class="col-md-12 text-center">
-<p class="lead text-uppercase">&iquest;Ya est&aacute;s convencido? &iquest;Quer&eacute;s ingresar al Colegio T&eacute;cnico Nacional?</p>
+<!-- Ventanas (coordinador y formularios de cada especialidad) -->
 
-<p class="text-center mrgn-20-top"><a class="btn btn-blue-sm btn-contacto" style="border-radius: 2em;" href="contact2.html">Cont&aacute;ctanos</a></p>
-</div>
-</div>
-<!-- /.Call-To-Action Content Area --></div>
-</section>
-<!-- /.Call-To-Action Section --><!-- Clients Section -->
-
-<section class="pddn-10-top-btm bg-light-gray" id="clients">
-<div class="container">&nbsp;
-<div class="row">
-<div class="col-lg-12 text-center">
-<h2 class="section-heading">Escuela - Empresa</h2>
-</div>
-</div>
-
-<!-- /.container --></section>
-<!-- Footer -->
-
-<footer id="footer" class="bg-dark-blue">
-<div class="container">
-<div class="row"><!-- Address, Social Links & Copyright -->
-<div class="col-md-4 col-md-offset-4">
-<p>R.I. 3 Corrales c/ Dr. Hassler<br />
-Campos Cervera, Asunci&oacute;n<br />
-Tel: (021) 608 663</p>
-
-<ul class="list-inline social-buttons mrgn-10-top"><!--  <li><a href="#"><i class="fa fa-twitter"></i></a> </li>-->
-</ul>
-<span class="copyright">Copyright &copy; Desarrollado en la especialidad de Inform&aacute;tica.</span></div>
-</div>
-<!-- /.Address, Social Links & Copyright --></div>
-<!-- /.container --></footer>
-<!-- jQuery -->
-<script src="assets/js/jquery.js"></script>
-
-<!-- Bootstrap -->
-<script src="assets/js/bootstrap.min.js"></script>
-
-<!-- Plugins -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="assets/js/isotope.pkgd.min.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/owl-carousel/owl.carousel.js"></script>
-<script src="assets/js/counterup/jquery.counterup.min.js"></script>
-<script src="assets/js/jquery.easy-pie-chart.js"></script>
-<script src="assets/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-<!-- FlexSlider (después de jQuery y Bootstrap) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
-
-<!-- Tus scripts personalizados -->
-<script src="assets/js/blueridge.js"></script>
-<script src="assets/js/contact_me.js"></script>
-<script src="assets/js/jqBootstrapValidation.js"></script>
-
-<div aria-labelledby="coordinadorINFO" class="modal fade" id="coordinadorINFO" role="dialog" tabindex="-1">
+<!-- INFORMÁTICA: ventanas -->
+<div class="modal fade" id="coordinadorINFO" data-especialidad="info" tabindex="-1" role="dialog" aria-labelledby="coordinadorINFO-titulo">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="coordinadorLabel" style="font-size:22px; font-weight:bold; color:#AB2A3E;">Graciela Noem&iacute; L&oacute;pez Molinas</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="coordinadorINFO-titulo">Graciela Noem&iacute; L&oacute;pez Molinas</h3>
+        <p class="text-muted">Coordinación de Informática</p>
       </div>
       <div class="modal-body">
-        <p>Egresada de la <i> Facultad Polit&eacute;cnica de la Universidad Nacional de Asunci&oacute;n </i> con el Titulo Licenciatura en An&aacute;lisis de Sistemas Inform&aacute;ticos.<br />
-          Egresada del <i>Instituto Superior Salesiano de Estudios Filos&oacute;ficos</i> del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios.<br />
-          Egresada de la <i> UMA </i> con el Titulo de Lic. en Ciencias de la Educaci&oacute;n.<br />
-          Inicia su <i> actividad docente </i> en el C.T.N en el a&ntilde;o 1.995.<br />
+<p>Egresada de la <i> Facultad Polit&eacute;cnica de la Universidad Nacional de Asunci&oacute;n </i> con el Titulo Licenciatura en An&aacute;lisis de Sistemas Inform&aacute;ticos.<br>
+          Egresada del <i>Instituto Superior Salesiano de Estudios Filos&oacute;ficos</i> del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios.<br>
+          Egresada de la <i> UMA </i> con el Titulo de Lic. en Ciencias de la Educaci&oacute;n.<br>
+          Inicia su <i> actividad docente </i> en el C.T.N en el a&ntilde;o 1.995.<br>
           <i>Coordinadora de la especialidad </i> desde el a&ntilde;o 1.996 hasta la fecha.
         </p>
         <ul>
@@ -1465,985 +656,492 @@ Tel: (021) 608 663</p>
     </div>
   </div>
 </div>
-
-<!--FORMULARIOS INFO-->
-<div class="modal fade" id="formulariosINFO" tabindex="-1" role="dialog" aria-labelledby="formulariosLabel">
-  <div class="modal-dialog modal-lg" role="document"> <!-- modal-lg para más ancho -->
+<div class="modal fade" id="formulariosINFO" data-especialidad="info" tabindex="-1" role="dialog" aria-labelledby="formulariosINFO-titulo">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      
-      <!-- Header -->
       <div class="modal-header">
-        <h3 class="modal-title" style="font-size:22px; font-weight:bold; color:#7B1E3B;" id="formulariosLabel">Formularios</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="formulariosINFO-titulo">Formularios · Informática</h3>
       </div>
-  <div class="modal-body">
-  <div class="row text-center align-items-stretch">
-
-    <!-- Formulario 1 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#7B1E3B;">Plan de Estudios</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
+      <div class="modal-body">
+        <div class="formularios-lista">
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Plan de Estudios</h4>
+              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Informática)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Eleccion de Autoridades</h4>
+              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Informática)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Informática)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Registro de Delegados</h4>
+              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Informática)">Descargar Formulario</a>
+            </article>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- Formulario 2 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#7B1E3B;">Eleccion de Autoridades</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 3 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#7B1E3B;">Procedimientos del Laboratorio y Sala Virtual</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 4 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#7B1E3B;">Registro de Delegados</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-      
     </div>
   </div>
 </div>
 
-<!--FORMULARIOS AUTO-->
-<div class="modal fade" id="formulariosAUTO" tabindex="-1" role="dialog" aria-labelledby="formulariosLabel">
-  <div class="modal-dialog modal-lg" role="document"> <!-- modal-lg para más ancho -->
-    <div class="modal-content">
-      
-      <!-- Header -->
-      <div class="modal-header">
-        <h3 class="modal-title" style="font-size:22px; font-weight:bold; color:#000080;" id="formulariosLabel">Formularios</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-  <div class="modal-body">
-  <div class="row text-center align-items-stretch">
-
-    <!-- Formulario 1 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#000080;">Plan de Estudios</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 2 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#000080;">Eleccion de Autoridades</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 3 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#000080;">Procedimientos del Laboratorio y Sala Virtual</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 4 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#000080;">Registro de Delegados</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-      
-    </div>
-  </div>
-</div>
-
-<!--FORMULARIOS INDU-->
-<div class="modal fade" id="formulariosINDU" tabindex="-1" role="dialog" aria-labelledby="formulariosLabel">
-  <div class="modal-dialog modal-lg" role="document"> <!-- modal-lg para más ancho -->
-    <div class="modal-content">
-      
-      <!-- Header -->
-      <div class="modal-header">
-        <h3 class="modal-title" style="font-size:22px; font-weight:bold; color:#355E3B;" id="formulariosLabel">Formularios</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-  <div class="modal-body">
-  <div class="row text-center align-items-stretch">
-
-    <!-- Formulario 1 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#355E3B;">Plan de Estudios</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 2 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#355E3B;">Eleccion de Autoridades</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 3 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#355E3B;">Procedimientos del Laboratorio y Sala Virtual</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 4 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#355E3B;">Registro de Delegados</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-      
-    </div>
-  </div>
-</div>
-
-<!--FORMULARIOS CC-->
-<div class="modal fade" id="formulariosCC" tabindex="-1" role="dialog" aria-labelledby="formulariosLabel">
-  <div class="modal-dialog modal-lg" role="document"> <!-- modal-lg para más ancho -->
-    <div class="modal-content">
-      
-      <!-- Header -->
-      <div class="modal-header">
-        <h3 class="modal-title" style="font-size:22px; font-weight:bold; color:#E5DCC8;" id="formulariosLabel">Formularios</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-  <div class="modal-body">
-  <div class="row text-center align-items-stretch">
-
-    <!-- Formulario 1 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#E5DCC8;">Plan de Estudios</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 2 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#E5DCC8;">Eleccion de Autoridades</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 3 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#E5DCC8;">Procedimientos del Laboratorio y Sala Virtual</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 4 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#E5DCC8;">Registro de Delegados</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-      
-    </div>
-  </div>
-</div>
-<!--FORMULARIOS EMCA-->
-<div class="modal fade" id="formulariosEMCA" tabindex="-1" role="dialog" aria-labelledby="formulariosLabel">
-  <div class="modal-dialog modal-lg" role="document"> <!-- modal-lg para más ancho -->
-    <div class="modal-content">
-      
-      <!-- Header -->
-      <div class="modal-header">
-        <h3 class="modal-title" style="font-size:22px; font-weight:bold; color:#2563EB;" id="formulariosLabel">Formularios</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-  <div class="modal-body">
-  <div class="row text-center align-items-stretch">
-
-    <!-- Formulario 1 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#2563EB;">Plan de Estudios</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 2 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#2563EB;">Eleccion de Autoridades</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 3 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#2563EB;">Procedimientos del Laboratorio y Sala Virtual</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 4 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#2563EB;">Registro de Delegados</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-      
-    </div>
-  </div>
-</div>
-<!--FORMULARIOS QCA-->
-<div class="modal fade" id="formulariosQCA" tabindex="-1" role="dialog" aria-labelledby="formulariosLabel">
-  <div class="modal-dialog modal-lg" role="document"> <!-- modal-lg para más ancho -->
-    <div class="modal-content">
-      
-      <!-- Header -->
-      <div class="modal-header">
-        <h3 class="modal-title" style="font-size:22px; font-weight:bold; color:#F9FAFB;" id="formulariosLabel">Formularios</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-  <div class="modal-body">
-  <div class="row text-center align-items-stretch">
-
-    <!-- Formulario 1 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#F9FAFB;">Plan de Estudios</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 2 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#F9FAFB;">Eleccion de Autoridades</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 3 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#F9FAFB;">Procedimientos del Laboratorio y Sala Virtual</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 4 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#F9FAFB;">Registro de Delegados</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-      
-    </div>
-  </div>
-</div>
-<!--FORMULARIOS EIK-->
-<div class="modal fade" id="formulariosEIK" tabindex="-1" role="dialog" aria-labelledby="formulariosLabel">
-  <div class="modal-dialog modal-lg" role="document"> <!-- modal-lg para más ancho -->
-    <div class="modal-content">
-      
-      <!-- Header -->
-      <div class="modal-header">
-        <h3 class="modal-title" style="font-size:22px; font-weight:bold; color:#A7ADB5;" id="formulariosLabel">Formularios</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-  <div class="modal-body">
-  <div class="row text-center align-items-stretch">
-
-    <!-- Formulario 1 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#A7ADB5;">Plan de Estudios</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 2 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#A7ADB5;">Eleccion de Autoridades</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 3 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#A7ADB5;">Procedimientos del Laboratorio y Sala Virtual</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 4 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#A7ADB5;">Registro de Delegados</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-      
-    </div>
-  </div>
-</div>
-<!--FORMULARIOS EDAD-->
-<div class="modal fade" id="formulariosEDAD" tabindex="-1" role="dialog" aria-labelledby="formulariosLabel">
-  <div class="modal-dialog modal-lg" role="document"> <!-- modal-lg para más ancho -->
-    <div class="modal-content">
-      
-      <!-- Header -->
-      <div class="modal-header">
-        <h3 class="modal-title" style="font-size:22px; font-weight:bold; color:#87CEEB;" id="formulariosLabel">Formularios</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-  <div class="modal-body">
-  <div class="row text-center align-items-stretch">
-
-    <!-- Formulario 1 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#87CEEB;">Plan de Estudios</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 2 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#87CEEB;">Eleccion de Autoridades</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 3 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#87CEEB;">Procedimientos del Laboratorio y Sala Virtual</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-    <!-- Formulario 4 -->
-    <div class="col-md-3 d-flex">
-      <div class="card shadow-sm p-3 mb-4 w-100 d-flex flex-column" style="border-radius:12px; background:#fff; color:#333;">
-        <h4 style="font-size:22px; font-weight:bold; color:#87CEEB;">Registro de Delegados</h4>
-        <p style="font-size:15px; font-weight:bold; text-align:justify; flex-grow:1; min-height:120px;">
-          Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.
-        </p>
-        <a href="https://drive.google.com/uc?export=download&id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn-contacto mt-auto" download>
-          Descargar Formulario
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-      
-    </div>
-  </div>
-</div>
-
-<!-- MODAL PROCEDIMIENTO INTERNO -->
-<div aria-labelledby="procedimientoLabel" class="modal fade" id="procedimiento" role="dialog" tabindex="-1">
+<!-- MECÁNICA INDUSTRIAL: ventanas -->
+<div class="modal fade" id="coordinadorINDU" data-especialidad="mecanica_ind" tabindex="-1" role="dialog" aria-labelledby="coordinadorINDU-titulo">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="procedimientoLabel">Procedimiento Interno</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="coordinadorINDU-titulo">Edgar Gallardo</h3>
+        <p class="text-muted">Coordinación de Mecánica Industrial</p>
       </div>
       <div class="modal-body">
-        <!-- Aquí va todo el contenido del modal Procedimiento Interno -->
+<p>Egresado de la Facultadcon el Titulo. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
+<ul>
+	<li>Matricula Nro: 5.183
+	</li>
+</ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="formulariosINDU" data-especialidad="mecanica_ind" tabindex="-1" role="dialog" aria-labelledby="formulariosINDU-titulo">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="formulariosINDU-titulo">Formularios · Mecánica Industrial</h3>
+      </div>
+      <div class="modal-body">
+        <div class="formularios-lista">
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Plan de Estudios</h4>
+              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Mecánica Industrial)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Eleccion de Autoridades</h4>
+              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Mecánica Industrial)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Mecánica Industrial)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Registro de Delegados</h4>
+              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Mecánica Industrial)">Descargar Formulario</a>
+            </article>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- MODAL DOCUMENTOS -->
-<div aria-labelledby="documentosLabel" class="modal fade" id="documentos" role="dialog" tabindex="-1">
+<!-- MECÁNICA AUTOMOTRIZ: ventanas -->
+<div class="modal fade" id="coordinadorAUTO" data-especialidad="mecanica_auto" tabindex="-1" role="dialog" aria-labelledby="coordinadorAUTO-titulo">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title" id="documentosLabel">Documentos Informatica</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="coordinadorAUTO-titulo">Arnaldo Jos&eacute; Cabrera D&iacute;az</h3>
+        <p class="text-muted">Coordinación de Mecánica Automotriz</p>
       </div>
       <div class="modal-body">
-        <!-- Aquí va todo el contenido del modal Documentos -->
+<p>Titulos Obtenidos:</p>
+<ul>
+	<li>T&eacute;cnico Mec&aacute;nico.</li>
+<li>Bachiller T&eacute;cnico Industial Electr&oacute;nica.</li>
+<li>Formaci&oacute;n Pedag&oacute;gica y Lic. en ciencias de la Educaci&oacute;n</li>
+</ul>
+Inicia su <i> actividad docente </i> en el C.T.N en el a&ntilde;o 2000.<br>
+Coordinador de la especialidad desde el a&ntilde;o 2011 hasta la fecha.<br>
+Matricula Nro: 39441.<br>
       </div>
     </div>
   </div>
 </div>
-<style>
-  /* transición suave para el color */
-  #lightnav {
-    transition: background-color 0.5s ease;
-  }
-</style>
+<div class="modal fade" id="formulariosAUTO" data-especialidad="mecanica_auto" tabindex="-1" role="dialog" aria-labelledby="formulariosAUTO-titulo">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="formulariosAUTO-titulo">Formularios · Mecánica Automotriz</h3>
+      </div>
+      <div class="modal-body">
+        <div class="formularios-lista">
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Plan de Estudios</h4>
+              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Mecánica Automotriz)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Eleccion de Autoridades</h4>
+              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Mecánica Automotriz)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Mecánica Automotriz)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Registro de Delegados</h4>
+              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Mecánica Automotriz)">Descargar Formulario</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<script>
-$(document).ready(function () {
-function actualizarFooter(especialidad) {
-  const colores = {
-    info: "#7B1E3B",
-    mecanica_ind: "#355E3B",
-    mecanica_auto: "#000080",
-    construccion: "#E5DCC8",
-    electronica: "#A7ADB5",
-    electromecanica: "#2563EB",
-    electricidad: "#87CEEB",
-    quimica: "#F9FAFB"
-  }
+<!-- CONSTRUCCIONES CIVILES: ventanas -->
+<div class="modal fade" id="coordinadorCC" data-especialidad="construccion" tabindex="-1" role="dialog" aria-labelledby="coordinadorCC-titulo">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="coordinadorCC-titulo">Edgar Gallardo</h3>
+        <p class="text-muted">Coordinación de Construcciones Civiles</p>
+      </div>
+      <div class="modal-body">
+<p>Egresado de la Facultadcon el Titulo. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
+<ul>
+	<li>Matricula Nro: 5.183
+	</li>
+</ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="formulariosCC" data-especialidad="construccion" tabindex="-1" role="dialog" aria-labelledby="formulariosCC-titulo">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="formulariosCC-titulo">Formularios · Construcciones Civiles</h3>
+      </div>
+      <div class="modal-body">
+        <div class="formularios-lista">
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Plan de Estudios</h4>
+              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Construcciones Civiles)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Eleccion de Autoridades</h4>
+              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Construcciones Civiles)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Construcciones Civiles)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Registro de Delegados</h4>
+              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Construcciones Civiles)">Descargar Formulario</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  const textos = {
-    info: "Desarrollado en la especialidad de Informática.",
-    mecanica_ind: "Desarrollado en la especialidad de Mecánica Industrial.",
-    mecanica_auto: "Desarrollado en la especialidad de Mecánica Automotriz.",
-    construccion: "Desarrollado en la especialidad de Construcción.",
-    electronica: "Desarrollado en la especialidad de Electrónica.",
-    electromecanica: "Desarrollado en la especialidad de Electromecánica.",
-    electricidad: "Desarrollado en la especialidad de Electricidad.",
-    quimica: "Desarrollado en la especialidad de Química."
-  };
+<!-- ELECTRÓNICA: ventanas -->
+<div class="modal fade" id="coordinadorEIK" data-especialidad="electronica" tabindex="-1" role="dialog" aria-labelledby="coordinadorEIK-titulo">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="coordinadorEIK-titulo">Marta Mojoli</h3>
+        <p class="text-muted">Coordinación de Electrónica</p>
+      </div>
+      <div class="modal-body">
+<p>Egresada de la Facultad de ** con el Titulo **. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
+<ul>
+	<li>Matricula Nro: 5.183
+	</li>
+</ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="formulariosEIK" data-especialidad="electronica" tabindex="-1" role="dialog" aria-labelledby="formulariosEIK-titulo">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="formulariosEIK-titulo">Formularios · Electrónica</h3>
+      </div>
+      <div class="modal-body">
+        <div class="formularios-lista">
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Plan de Estudios</h4>
+              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Electrónica)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Eleccion de Autoridades</h4>
+              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Electrónica)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Electrónica)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Registro de Delegados</h4>
+              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Electrónica)">Descargar Formulario</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  let color = colores[especialidad] || "#AB2A3E";
-  let texto = textos[especialidad] || textos["info"];
-  let textColor = ["electronica","construccion","quimica","electricidad"].includes(especialidad) ? "black" : "white";
+<!-- ELECTROMECÁNICA: ventanas -->
+<div class="modal fade" id="coordinadorEMCA" data-especialidad="electromecanica" tabindex="-1" role="dialog" aria-labelledby="coordinadorEMCA-titulo">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="coordinadorEMCA-titulo">Edgar Gallardo</h3>
+        <p class="text-muted">Coordinación de Electromecánica</p>
+      </div>
+      <div class="modal-body">
+<p>Egresado de la Facultadcon el Titulo. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
+<ul>
+	<li>Matricula Nro: 5.183
+	</li>
+</ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="formulariosEMCA" data-especialidad="electromecanica" tabindex="-1" role="dialog" aria-labelledby="formulariosEMCA-titulo">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="formulariosEMCA-titulo">Formularios · Electromecánica</h3>
+      </div>
+      <div class="modal-body">
+        <div class="formularios-lista">
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Plan de Estudios</h4>
+              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Electromecánica)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Eleccion de Autoridades</h4>
+              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Electromecánica)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Electromecánica)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Registro de Delegados</h4>
+              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Electromecánica)">Descargar Formulario</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  // Aplicar estilos con !important usando atributo style directamente
-  $("#footer").attr("style", `background-color: ${color} !important; color: ${textColor} !important; transition: all 0.3s ease !important;`);
-  $("#footer-address").attr("style", `color: ${textColor} !important;`);
-  $("#footer-copyright").text(texto).attr("style", `color: ${textColor} !important;`);
-}
-$(document).ready(function () {
-  // Detectar pestaña activa al cargar
-  var pestañaActiva = $(".tab-pane.active").attr("id"); // ej: "info"
-  if (pestañaActiva) {
-    actualizarFooter(pestañaActiva);
-  }
+<!-- ELECTRICIDAD: ventanas -->
+<div class="modal fade" id="coordinadorEDAD" data-especialidad="electricidad" tabindex="-1" role="dialog" aria-labelledby="coordinadorEDAD-titulo">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="coordinadorEDAD-titulo">Edgar Gallardo</h3>
+        <p class="text-muted">Coordinación de Electricidad</p>
+      </div>
+      <div class="modal-body">
+<p>Egresado de la Facultadcon el Titulo. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
+<ul>
+	<li>Matricula Nro: 5.183
+	</li>
+</ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="formulariosEDAD" data-especialidad="electricidad" tabindex="-1" role="dialog" aria-labelledby="formulariosEDAD-titulo">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="formulariosEDAD-titulo">Formularios · Electricidad</h3>
+      </div>
+      <div class="modal-body">
+        <div class="formularios-lista">
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Plan de Estudios</h4>
+              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Electricidad)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Eleccion de Autoridades</h4>
+              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Electricidad)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Electricidad)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Registro de Delegados</h4>
+              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Electricidad)">Descargar Formulario</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  // Mantener el evento para cuando cambies de pestaña
-  $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
-    var target = $(e.target).attr("href").replace("#", "");
-    actualizarFooter(target);
-  });
-});
+<!-- QUÍMICA INDUSTRIAL: ventanas -->
+<div class="modal fade" id="coordinadorQCA" data-especialidad="quimica" tabindex="-1" role="dialog" aria-labelledby="coordinadorQCA-titulo">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="coordinadorQCA-titulo">Juan &Aacute;ngel Gonz&aacute;lez</h3>
+        <p class="text-muted">Coordinación de Química Industrial</p>
+      </div>
+      <div class="modal-body">
+<p>Egresado de la Facultad de Ciencias Qu&iacute;micas con el Titulo Ing. Qu&iacute;mico. Egresado del Instituto Superior Salesiano de Estudios Filos&oacute;ficos del curso de formaci&oacute;n pedag&oacute;gica para egresados universitarios. Inicia su actividad docente en el C.T.N en el a&ntilde;o 1.999. Coordinador de la especialidad desde el a&ntilde;o 1.999 al 2.003, 2.008 al 2011, y desde 2013 hasta la fecha.</p>
+<ul>
+	<li>Matricula Nro: 5.183
+	</li>
+</ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="formulariosQCA" data-especialidad="quimica" tabindex="-1" role="dialog" aria-labelledby="formulariosQCA-titulo">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="formulariosQCA-titulo">Formularios · Química Industrial</h3>
+      </div>
+      <div class="modal-body">
+        <div class="formularios-lista">
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Plan de Estudios</h4>
+              <p>Documento curricular que define objetivos, perfil de egreso, perfil ocupacional, competencias y materias de la especialidad de Informatica.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1ztvtpxZ4xe-pvSBygCMVf-Cxscy5tu85" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Plan de Estudios (Química Industrial)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Eleccion de Autoridades</h4>
+              <p>Reglamento que indica requisitos, proceso de votacion, cargos y funciones de los representantes de padres en la especialidad.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1oFOu7kpCadbXkV-2FtVY5mKd-x5nFI0h" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Eleccion de Autoridades (Química Industrial)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Procedimientos del Laboratorio y Sala Virtual</h4>
+              <p>Normas internas que regulan el uso del Laboratorio de Software y la Sala Virtual, indicando responsabilidades de alumnos y docentes, limpieza, manejo de equipos y conducta durante las practicas.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1gnO-_Q8QhVcA5mqYeGXNDIqaPxCLR9K1" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Procedimientos del Laboratorio y Sala Virtual (Química Industrial)">Descargar Formulario</a>
+            </article>
+          </div>
+          <div>
+            <article class="tarjeta-blanca">
+              <h4>Registro de Delegados</h4>
+              <p>Formulario para registrar delegados, tesoreros y encargados de materiales del curso (notebooks, proyectores, cuadernos), garantizando el control y la organizacion del curso.</p>
+              <a href="https://drive.google.com/uc?export=download&amp;id=1PiHN82qUHvAiKbXZkpSrXIOf6YWfC2wm" class="btn btn-pill btn-ctn btn-ctn-tema" download rel="noopener" aria-label="Descargar: Registro de Delegados (Química Industrial)">Descargar Formulario</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-function actualizarBoton(especialidad) {
-  const btn = $(".btn-contacto");
-
-  const colores = {
-    info: "#7B1E3B",
-    mecanica_ind: "#355E3B",
-    mecanica_auto: "#000080",
-    construccion: "#E5DCC8",
-    electronica: "#A7ADB5",
-    electromecanica: "#2563EB",
-    electricidad: "#87CEEB",
-    quimica: "#F9FAFB"
-  };
-
-  let color = colores[especialidad] || "#AB2A3E";
-  let especialesNegro = ["electronica","construccion","quimica","electricidad"];
-
-  btn.css({
-    "background-color": "transparent",
-    "border-color": color,
-    "color": color,
-    "transition": "all 0.3s ease"
-  });
-
-  btn.off("mouseenter mouseleave").hover(
-    function() {
-      $(this).css("background-color", color);
-      $(this).css("color", especialesNegro.includes(especialidad) ? "black" : "white");
-    },
-    function() {
-      $(this).css({
-        "background-color": "transparent",
-        "color": color
-      });
-    }
-  );
-}
-
-
-
-$('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
-  var target = $(e.target).attr("href").replace("#","");
-  actualizarBoton(target);
-});
-
-
-// Evento al cambiar tab
-$('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
-  var target = $(e.target).attr("href").replace("#","");
-  actualizarBoton(target);
-});
-
-
-
-// Evento al cambiar tab
-$('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
-  var target = $(e.target).attr("href").replace("#","");
-  actualizarBoton(target);
-  actualizarFooter(target);
-});
-function aplicarEstilos(especialidad) {
-  $("#lightnav").removeClass("nav-especial").css("background-color", "#471c0c");
-
-  $(".navbar-brand img").stop(true,true).fadeOut(300, function(){
-    $(this).attr("src", "assets/images/themelogo/logo3.png").fadeIn(300);
-  });
-
-  if (["electronica","construccion","quimica","electricidad"].includes(especialidad)) {
-    $("#lightnav").addClass("nav-especial").css("background-color", "white");
-    $(".navbar-brand img").stop(true,true).fadeOut(300, function(){
-      $(this).attr("src", "assets/images/themelogo/logo.png").fadeIn(300);
-    });
-  }
-}
-
-  // evento cuando cambia el tab de especialidad
-  $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
-    var target = $(e.target).attr("href").replace("#", "");
-    aplicarEstilos(target);
-  });
-$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-  var target = $(e.target).attr("href"); // id del tab activo
-  var colorNav = ""; // variable para color del nav
-  var textColor = "white"; // por defecto blanco
-
-  // Resetear primero
-  $("#lightnav, #institucional-btn, #institucional-btn + .dropdown-menu")
-    .css("background-color", "")
-    .css("color", "");
-
-  if (target === "#info") {
-    colorNav = "#7B1E3B"; textColor = "white";
-  } else if (target === "#mecanica_ind") {
-    colorNav = "#355E3B"; textColor = "white";
-  } else if (target === "#mecanica_auto") {
-    colorNav = "#000080"; textColor = "white";
-  } else if (target === "#construccion") {
-    colorNav = "#E5DCC8"; textColor = "black";
-  } else if (target === "#electronica") {
-    colorNav = "#A7ADB5"; textColor = "white";
-  } else if (target === "#electromecanica") {
-    colorNav = "#2563EB"; textColor = "white";
-  } else if (target === "#electricidad") {
-    colorNav = "#87CEEB"; textColor = "black";
-  } else if (target === "#quimica") {
-    colorNav = "#F9FAFB"; textColor = "white";
-  }
-  // aplicar colores
-  if (colorNav !== "") {
-    $("#lightnav").css("background-color", colorNav);
-    $("#institucional-btn").css({"background-color": colorNav, "color": textColor});
-    $("#institucional-btn + .dropdown-menu").css("background-color", colorNav);
-    $("#institucional-btn + .dropdown-menu a").css("color", textColor);
-  }
-});
-// Al cargar la página, inicializar botones y footer con la pestaña activa
-var pestañaActiva = $(".tab-pane.active").attr("id"); // ej: "info"
-if (pestañaActiva) {
-  actualizarBoton(pestañaActiva);
-}
-
-});
-</script>
-<script>
-$(document).ready(function () {
-  // Función para inicializar un carrusel si aún no fue activado
-  function activarCarrusel($slider) {
-    if (!$slider.hasClass("flexslider-initialized")) {
-      $slider.flexslider({
-        animation: "slide",
-        controlNav: true,
-        directionNav: true,
-        slideshowSpeed: 4000,
-        animationSpeed: 600,
-        pauseOnHover: true
-      });
-      $slider.addClass("flexslider-initialized");
-    }
-  }
-
-  // Inicializar todos los carruseles visibles al cargar
-  $(".tab-pane.active .flexslider").each(function () {
-    activarCarrusel($(this));
-  });
-
-  // Cuando se activa una pestaña, inicializar su carrusel
-  $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
-    var target = $(e.target).attr("href"); // ejemplo: "#info"
-    var $slider = $(target).find(".flexslider");
-    activarCarrusel($slider);
-  });
-});
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-fetch('http://localhost:3000/api/puntajes')
-  .then(res => res.json())
-  .then(data => {
-    // Normalizar nombres de la API
-    const normalizar = str => str
-      .toLowerCase()
-      .normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // quita tildes
-
-    // Orden fijo de especialidades
-    const nombres = [
-      'electronica',
-      'electromecanica',
-      'informatica',
-      'quimica',
-      'construcciones civiles',
-      'mecanica automotriz',
-      'mecanica industrial',
-      'electricidad'
-    ];
-
-    const colores = [
-      '#808080',
-      '#0000FF',
-      '#AB2A3E',
-      '#03BB85',
-      '#b9ae48',
-      '#000080',
-      '#008000',
-      '#87CEEB'
-    ];
-
-    const logosEspecialidades = [
-      'Img/eik_c.png',
-      'Img/emca_c.png',
-      'Img/info_c.png',
-      'Img/qca_c.png',
-      'Img/cc_c.png',
-      'Img/auto_c.png',
-      'Img/indu_c.png',
-      'Img/edad_c.png'
-    ];
-
-    const imagenes = logosEspecialidades.map(src => {
-      const img = new Image();
-      img.src = src;
-      return img;
-    });
-
-    // Mapear puntajes segun el orden fijo
-    const puntajes = nombres.map(nombre => {
-      const item = data.find(d => normalizar(d.especialidad) === nombre);
-      return item ? item.puntaje : 0;
-    });
-
-    const total = puntajes.reduce((a,b) => a + b, 0);
-    const porcentajes = puntajes.map(p => total > 0 ? ((p/total)*100).toFixed(1) : 0);
-
-    const ctx = document.getElementById('graficoEspecialidades').getContext('2d');
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: nombres,
-        datasets: [{
-          label: 'Porcentaje',
-          data: porcentajes,
-          backgroundColor: colores,
-          borderRadius: 10
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false },
-          title: { 
-            display: true, 
-            text: 'Especialidades con mas puntajes (%)',
-            color: '#fff'
-          },
-          tooltip: {
-            bodyColor: '#fff',
-            titleColor: '#fff'
-          }
-        },
-        scales: {
-          x: {
-            ticks: {
-              callback: function(value, index) {
-                return nombres[index];
-              },
-              color: function(ctx) {
-                return colores[ctx.index];
-              },
-              font: {
-                weight: 'bold'
-              }
-            },
-            grid: { color: 'rgba(255,255,255,0.2)' }
-          },
-          y: {
-            beginAtZero: true,
-            max: 100,
-            ticks: { 
-              color: '#fff',
-              callback: value => value + '%'
-            },
-            grid: { color: 'rgba(255,255,255,0.2)' }
-          }
-        }
-      },
-      plugins: [{
-        id: 'logoSobreBarras',
-        afterDatasetsDraw(chart) {
-          const {ctx, scales: {x, y}} = chart;
-          chart.data.datasets[0].data.forEach((value, index) => {
-            const xPos = x.getPixelForValue(index);
-            const yPos = y.getPixelForValue(value);
-            const img = imagenes[index];
-            if (img.complete) {
-              ctx.save();
-              ctx.globalCompositeOperation = 'source-over';
-              ctx.drawImage(img, xPos - 25, yPos - 50, 50, 50);
-              ctx.restore();
-            }
-          });
-        }
-      }]
-    });
-  })
-  .catch(err => console.error(err));
-</script>
-
-
-
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/flexslider/jquery.flexslider-min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/espe.js"></script>
+<script src="assets/js/ctn.js"></script>
 </body>
 </html>

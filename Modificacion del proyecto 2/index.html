@@ -1,611 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta name="google-site-verification" content="ajiYlA0QoT6kOpENK2qj2kzbBgtasCfp7U72iVV2m6A" />
-   <meta name="google-site-verification" content="sUnIr0B57v94tXAn0keYKMEvaKF6hTCth7tnzVKpjfA" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /><meta name="HandheldFriendly" content="true" /><meta name="author" content="ctnasuncion"><meta name="description" content="Colegio Técnico Nacional de Asunción - Sitio Web Oficial | 2017"><meta name="keywords" content="ctn colegio técnico nacional ingreso al ctn colegio tecnico ingreso 2017"><meta name="robots" content="ctn,colegio tecnico nacional, ingreso al ctn" /><meta name="googlebot" content="ctn especialidades,colegio tecnico en paraguay" /><meta name="google" content="colegio tecnico nacional especialidades" />
-	<title>Colegio T&eacute;cnico Nacional - Asunci&oacute;n</title>
-	<!-- favicon -->
-	<link href="assets/images/logo2.png" rel="shortcut icon" type="image/logo2.png" /><!-- mobile settings --><!-- Bootstrap Core CSS -->
-	<link href="assets/css/bootstrap.css" rel="stylesheet" /><!-- CSS Personalizado -->
-	<link href="assets/css/demo.css" rel="stylesheet" type="text/css" />
-	<link href="assets/css/style1.css" rel="stylesheet" type="text/css" /><script type="text/javascript" src="assets/js/modernizr.custom.86080.js"></script>
-	<link href="assets/css/blueridge.css" rel="stylesheet" />
-	<link href="assets/css/filter-portfolio.css" rel="stylesheet" />
-	<link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet" />
-	<link href="assets/owl-carousel/owl.theme.css" rel="stylesheet" />
-	<link href="assets/animate-css/animate.min.css" rel="stylesheet" /><!-- Lightbox -->
-	<link href="assets/magnific-popup/magnific-popup.css" rel="stylesheet" />
-	<link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Dosis:400,300,700,500" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" rel="stylesheet" type="text/css" /><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-<style>
-  /* Botones circulares */
-.carousel-control.left,
-.carousel-control.right {
-  width: 40px;
-  height: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #471c0c; /* círculo granate por defecto */
-  border-radius: 50%;
-  text-align: center;
-  line-height: 40px;
-  opacity: 0;
-  transition: all 0.3s ease;
-  z-index: 10;
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Colegio Técnico Nacional de Asunción</title>
+  <meta name="description" content="Sitio web oficial del Colegio Técnico Nacional de Asunción: especialidades, admisión, noticias e información institucional.">
+  <meta name="author" content="Colegio Técnico Nacional de Asunción">
+  <meta name="theme-color" content="#471c0c">
+  <meta name="google-site-verification" content="ajiYlA0QoT6kOpENK2qj2kzbBgtasCfp7U72iVV2m6A">
+  <meta name="google-site-verification" content="sUnIr0B57v94tXAn0keYKMEvaKF6hTCth7tnzVKpjfA">
+  <link rel="icon" href="assets/images/logo2.png">
 
-/* Flechas */
-.carousel-control.left span,
-.carousel-control.right span {
-  font-size: 20px;
-  color: #ffd380; /* flecha blanca en reposo */
-  transition: color 0.3s ease;
-}
-/* Mostrar botones al pasar mouse por el carrusel */
-#carruselNoticia:hover .carousel-control.left,
-#carruselNoticia:hover .carousel-control.right {
-  opacity: 1;
-}
-
-/* Hover de los botones */
-.carousel-control.left:hover,
-.carousel-control.right:hover {
-  background-color: #ffd380; /* círculo blanco */
-}
-
-.carousel-control.left:hover span,
-.carousel-control.right:hover span {
-  color: #471c0c; /* flecha granate */
-}
-
-  #carruselNoticia {position: relative;border-radius: 10px;overflow: hidden;}
-#carruselNoticia .carousel-inner .item img {width: 100%;height: 300px;object-fit: cover;}
-.carousel-control.left,.carousel-control.right {
-  width: 40px;height: 40px;top: 50%;transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);border-radius: 50%;
-  text-align: center;line-height: 40px;opacity: 0;transition: opacity 0.3s;z-index: 10;
-}
-.carousel-control.left span,.carousel-control.right span {font-size: 20px;color: #ffd380;}
-#carruselNoticia:hover .carousel-control.left,#carruselNoticia:hover .carousel-control.right {opacity: 1;}
-.carousel-indicators {bottom: 10px;}
-.carousel-indicators li {width: 10px;height: 10px;border-radius: 50%;background-color: rgba(255,255,255,0.7);}
-.carousel-indicators .active {background-color: #471c0c;}
-  /* Fuerza estilo granate en las otras páginas */
-#lightnav.navbar-default .dropdown-menu {
-  background-color: #471c0c !important;
-  border-radius: 0 0 2em 2em !important; /* mantiene bordes redondeados */
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.4s ease; /* animación suave */
-}
-
-#lightnav.navbar-default .dropdown-menu.show,
-#lightnav.navbar-default .open > .dropdown-menu {
-  max-height: 500px; /* altura animada */
-  opacity: 1;
-}
-
-#institucional-btn {
-  background-color: #471c0c !important;
-  color: white !important;
-  border-radius: 2em;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-/* Links dentro del menú */
-#lightnav.navbar-default .dropdown-menu > li > a {
-  color: white !important;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
-}
-
-#lightnav.navbar-default .dropdown-menu > li > a:hover {
-  background-color: #ffd380; /* efecto hover */
-  transition: background-color 0.4s ease, color 0.4s ease;
-  color: #471c0c !important;
-}
-.btn-contacto3 {
-  border: 2px solid #ffd380; /* borde granate */
-  color: #ffd380 !important;           /* texto granate */
-  background-color: transparent; 
-  transition: all 0.4s ease;
-}
-.btn-contacto3:hover {
-  background-color: #ffd380; /* fondo granate */
-  border-color: #ffd380;
-  color: #471c0c !important;              /* texto blanco */
-}
-.btn-contacto4 {
-  border: 2px solid #471c0c; /* borde granate */
-  color: #471c0c !important;           /* texto granate */
-  background-color: transparent; 
-  transition: all 0.4s ease;
-}
-
-.btn-contacto4:hover {
-  background-color: #471c0c; /* fondo granate */
-  border-color: #471c0c;     /* borde granate */
-  color: #ffd380 !important;              /* texto blanco */
-}
-.btn-contacto5 {
-  border: 2px solid #471c0c; /* borde granate */
-  color: #471c0c !important;           /* texto granate */
-  background-color: transparent; 
-  transition: all 0.4s ease;
-}
-
-.btn-contacto5:hover {
-  background-color: #ffd380; /* fondo granate */
-  border-color: #ffd380;     /* borde granate */
-  color: #ffd380 !important;              /* texto blanco */
-}
-.btn-contacto2 {
-  border: 2px solid #471c0c; /* borde granate */
-  color: #471c0c !important;           /* texto granate */
-  background-color: transparent; 
-  transition: all 0.4s ease;
-}
-
-.btn-contacto2:hover {
-  background-color: #471c0c; /* fondo granate */
-  border-color: #471c0c;     /* borde granate */
-  color: #ffd380 !important;              /* texto blanco */
-}
-    .btn-contacto {
-  border: 2px solid #ffd380; /* borde granate */
-  color: #ffd380 !important;           /* texto granate */
-  background-color: transparent; 
-  transition: all 0.4s ease;
-}
-
-.btn-contacto:hover {
-  background-color: #ffd380; /* fondo granate */
-  border-color: #ffd380;     /* borde granate */
-  color: #471c0c !important;              /* texto blanco */
-}
-  /* Centrar imagen en el modal de noticia */
-  .noticia-modal .modal-body img {
-    max-width: 100%;
-    border-radius: 1em;
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-    .noticia-modal .carousel {
-      margin-bottom: 20px;
-    }
-    .noticia-modal .carousel-inner {
-      border-radius: 1em;
-    }
-    .noticia-modal .carousel-control {
-      background: #471c0c;
-      border-radius: 2em;
-    }
-    .noticia-modal .modal-body p {
-      word-break: break-word;
-      overflow-wrap: break-word;
-      max-width: 100%;
-      white-space: pre-line;
-    }
-/* Estilo general del navbar */
-#lightnav {
-    background-color: #471c0c;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-/* Enlaces principales */
-#lightnav a {
-    color: white !important;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-#lightnav a:hover {
-    color: #ffd380 !important;
-}
-
-/* Dropdown */
-.dropdown-menu {
-    background-color: #471c0c !important;
-    border-radius: 0 0 2em 2em !important;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
-}
-
-/* Cuando el dropdown está abierto */
-.dropdown-menu.show,
-.open > .dropdown-menu {
-    max-height: 500px;
-    opacity: 1;
-}
-
-/* Links dentro del dropdown */
-.dropdown-menu a {
-    color: #ffd380 !important;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-.dropdown-menu a:hover {
-  /* Noticias en fila */
-  #contenedor-noticias {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  #contenedor-noticias > .col-md-8,
-  #contenedor-noticias > .col-md-4 {
-    float: none;
-    display: flex;
-    flex-direction: column;
-  }
-    color: black !important;
-}
-  /* Limitar texto largo en publicaciones */
-  .card .descripcion-corta,
-  .thumbnail .descripcion-corta {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-height: 6.6em;
-    white-space: normal;
-  }
-  .logo-container {
-  position: relative;
-  width: auto;
-  height: 50px;
-  display: inline-block;
-  margin-top: -12px;
-  margin-left: -100px;
-}
-
-.logo-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
-  transition: opacity 0.4s ease;
-}
-
-.logo-base {
-  z-index: 1;
-  opacity: 1;
-}
-
-.logo-hovered {
-  z-index: 2;
-  opacity: 0;
-}
-
-.logo-container:hover .logo-hovered {
-  opacity: 1;
-}
-
-.logo-container:hover .logo-base {
-  opacity: 0;
-}
-</style>
+  <script>document.documentElement.className += ' js';</script>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/blueridge.min.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/ctn.css">
+  <link rel="preload" as="image" href="assets/images/headers/hero-poster.jpg">
 </head>
 <body>
-<p>--&gt;</p>
-<!-- Nav -->
-<nav class="navbar navbar-default navbar-fixed-top" id="lightnav" style="background-color: #471c0c;">
-<div class="container">
-<div class="navbar-header page-scroll"><button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span></button><a class="navbar-brand page-scroll text-uppercase pddn-10" href="index.html"><div class="logo-container">
-  <img src="assets/images/themelogo/logo3.png" class="logo-base" />
-  <img src="assets/images/themelogo/logo.png" class="logo-hovered" />
-</div>
-</a></div>
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-right: -100px;">
-<ul class="nav navbar-nav navbar-right"><!-- Dropdown -->
-	<li class="dropdown" role="presentation"><a href="index.html"><font color="#ffd380">Inicio</font></a> <!-- /.Dropdown --> <!-- Dropdown Services --></li>
-	<li class="dropdown"><a href="espe.html">Especialidades</a></li>
-	<!-- /.Dropdown About --><!-- Portafolio -->
-	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" style="background-color: #471c0c;">Institucional <span class="caret"></span></a>
-	<ul class="dropdown-menu">
-		<li><a href="direccion.html">Direcci&oacute;n General</a></li>
-		<li><a href="admision.html">Admision</a></li>
-    <li><a href="cetna.html">CETNA</a></li>
-    <li><a href="Formularios.html">Formularios</a></li>
-	</ul>
-	</li>
-	<!-- /.Dropdown Team --><!-- Dropdown Contact -->
-	<li class="dropdown"><a href="contact2.html">Contacto</a></li>
-	<!-- /.Dropdown Blog --><!-- Dropdown About -->
-	<li class="dropdown"><a href="acerca.html">Acerca de</a></li>
-	<!-- /.Dropdown About -->
-</ul>
-</div>
-<!-- /.navbar-collapse --></div>
-<!-- /.container --></nav>
-<!-- /.Navigation -->
+<a class="skip-link" href="#contenido">Ir al contenido</a>
 
-<header class="indexbg1" id="hero">
-  <!-- video de fondo --><!--Aqui poner el video-->>
-  <video autoplay muted loop playsinline class="bgvideo">
-    <source src="video\background3.mp4" type="video/mp4">
-  </video>
+<!-- Menú principal -->
+<nav class="navbar navbar-default navbar-fixed-top ctn-nav" aria-label="Menú principal">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false" aria-controls="menu-principal">
+        <span class="sr-only">Mostrar u ocultar el menú</span>
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html" aria-label="Colegio Técnico Nacional - Inicio">
+        <span class="logo-container">
+          <img src="assets/images/themelogo/logo3.png" class="logo-base" alt="">
+          <img src="assets/images/themelogo/logo.png" class="logo-hovered" alt="">
+        </span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="menu-principal">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="espe.html">Especialidades</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Institucional <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="direccion.html">Dirección General</a></li>
+            <li><a href="admision.html">Admisión</a></li>
+            <li><a href="cetna.html">CETNA</a></li>
+            <li><a href="Formularios.html">Formularios</a></li>
+          </ul>
+        </li>
+        <li><a href="contact2.html">Contacto</a></li>
+        <li><a href="acerca.html">Acerca de</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <!-- Contenido encima del video -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12"><!-- Heading Title Area -->
-        <div class="header-text white text-center wow fadeInDown">
-          <h1>Colegio T&eacute;cnico Nacional de Asunci&oacute;n</h1>
-          <h2>Bienvenidos</h2>
-          <p>____________________________</p>
-          <h2>
-            Si no lo <span class="text-primary"><font color="#ffd380"><b>viv&iacute;s</b></font></span>
-            no lo <span class="text-primary"><font color="#ffd380"><b>sent&iacute;s</b></font></span>
-          </h2>
+<main id="contenido">
 
-          <p class="mrgn-60-top">
-            <a class="page-scroll btn btn-white-sm text-uppercase hidden-xs" style="border-radius: 2em;" href="#noticias"><b>Noticias CTN</b></a>
-            <span class="hidden-xs">&nbsp; &nbsp;</span>
-            <a class="page-scroll btn btn-white-sm text-uppercase hidden-xs" style="border-radius: 2em;" href="admision.html"><b>Admisión</b></a>
-          </p>
+  <!-- Portada -->
+  <header class="indexbg1" id="hero">
+    <video class="bgvideo" muted loop playsinline preload="none" data-src="video/background3.mp4" aria-hidden="true" tabindex="-1"></video>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="header-text white text-center wow fadeInDown">
+            <h1>Colegio Técnico Nacional de Asunción</h1>
+            <h2>Bienvenidos</h2>
+            <hr class="border-sm">
+            <h2>Si no lo <b class="resaltado">vivís</b> no lo <b class="resaltado">sentís</b></h2>
+            <p class="mrgn-60-top">
+              <a class="btn btn-white-sm btn-pill text-uppercase" href="#noticias"><b>Noticias CTN</b></a>
+              <a class="btn btn-white-sm btn-pill text-uppercase" href="admision.html"><b>Admisión</b></a>
+            </p>
+          </div>
         </div>
-        <!-- /.Heading Title Area -->
+      </div>
+    </div>
+  </header>
+
+  <!-- Noticias: si hay servidor configurado (assets/js/config.js), noticias.js reemplaza este aviso -->
+  <section class="bg-light-gray" id="noticias">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="section-heading">Noticias CTN</h2>
+          <hr class="border-sm">
+        </div>
+      </div>
+      <div id="contenedor-noticias">
+        <p class="lead mrgn-20-top text-center">El glorioso Colegio Técnico Nacional realiza su tradicional EXPOTÉCNICA el 8 de octubre del corriente año.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ventana con la noticia completa (la llena noticias.js) -->
+  <div class="modal fade noticia-modal" id="modalNoticia" tabindex="-1" role="dialog" aria-labelledby="modalNoticiaLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="modalNoticiaLabel">Noticia</h4>
+        </div>
+        <div class="modal-body" id="modalNoticiaBody"></div>
       </div>
     </div>
   </div>
-  <!-- /.container -->
-</header>
 
- <section class="bg-light-gray" id="noticias">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h2 class="section-heading">Noticias CTN</h2>
-      <hr class="border-sm">
-    </div>
-  </div>
-    <div class="row" id="contenedor-noticias">
-      <p class="lead mrgn-20-top" style="text-align: center;">El glorioso Colegio T&eacute;cnico Nacional realiza su tradicional EXPOT&Eacute;CNICA el 8 &nbsp;de octubre del corriente a&ntilde;o.</p>
-
-      <!-- Aquí se insertarán las publicaciones desde la base de datos -->
-    </div>
-  </div>
-</section>
-<!-- Modal para mostrar noticia -->
-<div class="modal fade noticia-modal" id="modalNoticia" tabindex="-1" role="dialog" aria-labelledby="modalNoticiaLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="modalNoticiaLabel"></h4>
-      </div>
-      <div class="modal-body" id="modalNoticiaBody">
+  <!-- Invitación -->
+  <section class="seccion-marron" id="cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="lead text-uppercase">¿Ya estás convencido? ¿Querés ingresar al Colegio Técnico Nacional?</p>
+          <p class="text-center mrgn-20-top"><a class="btn btn-blue-sm btn-pill btn-ctn btn-ctn-dorado" href="contact2.html">Contactá</a></p>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- Case Studies -->
-
-<section class="no-padding" id="features">
-<div class="container-fluid">
-<div class="row"><input name="especialidadeseishon" type="hidden" value="Qué especialidades ofrecemos_" /></div>
-</div>
-</section>
-<!-- /.Case Studies --><!-- Services Section -->
-
-<section class="bg-lighter-gray" id="services">
-
-</div>
-</div>
-<!-- /.Services List --></div>
-<!-- /.container --></section>
-<!-- /.Services Section --><!-- Call-To-Action Section -->
-
-<section class="bg-dark" id="cta" style="background-color: #471c0c;">
-<div class="container"><!-- Call-To-Action Content Area -->
-<div class="row">
-<div class="col-md-12 text-center">
-<p class="lead text-uppercase">&iquest;Ya est&aacute;s convencido? &iquest;Quer&eacute;s ingresar al Colegio T&eacute;cnico Nacional?</p>
-
-<p class="text-center mrgn-20-top"><a class="btn btn-blue-sm btn-contacto" style="border-radius: 2em;" href="contact2.html">Cont&aacute;cta</a></p>
-</div>
-</div>
-<!-- /.Call-To-Action Content Area --></div>
-</section>
-<!-- /.Call-To-Action Section -->
-
-
-<section class="no-padding" id="features">
-<div class="container-fluid">
-<div class="row">
-<div class="col-md-4 no-padding"><!-- Case Study 01 -->
-<div class="case-study-01" style="background-color: #ffd380;">
-<div class="feature-box-plain">
-<h2><font color="#471c0c"><b><i>Encu&eacute;ntranos</i></b></font></h2>
-
-<p><font color="#471c0c"><b>Visita nuestra p&aacute;gina de contacto para ubicar y charlar con nuestro equipo t&eacute;cnico. </b></font></p>
-
-<p class="mrgn-30-top"><font color="#471c0c"><b><a class="btn btn-white-sm text-uppercase btn-contacto4"style="border-radius: 2em;" href="contact2.html"><font>Ver m&aacute;s</font></a></b></font></p>
-</div>
-</div>
-<!-- /.Case Study 01 --></div>
-
-<div class="col-md-4 no-padding"><!-- Case Study 02 -->
-<div class="case-study-02">
-<div class="feature-box-plain">
-<h2><font color="#471c0c"><b><i>Trayectoria</i></b></font></h2>
-
-<p><font color="#471c0c"><b>Ent&eacute;rate de la historia y de la trayectoria del Colegio T&eacute;cnico Nacional de Asunci&oacute;n.</b></font></p>
-
-<p class="mrgn-30-top"><font color="black"><b><a class="btn btn-blue-sm btn-contacto5" style="border-radius: 2em;" href="acerca.html"><font color="#471c0c">Ver m&aacute;s</font></a></b></font></p>
-</div>
-</div>
-<!-- /.Case Study 02 --></div>
-
-<div class="col-md-4 no-padding"><!-- Case Study 03 -->
-<div class="case-study-03" style="background-color: #341409;">
-<div class="feature-box-plain">
-<h2><font color="#ffd380"><b><i>Direcci&oacute;n</i></b></font></h2>
-
-<p><font color="#ffd380"><b>Consulta informaci&oacute;n fundamental acerca de nuestra direcci&oacute;n general. </b></font></p>
-
-<p class="mrgn-30-top"><font color="#471c0c"><b><a class="btn btn-white-sm text-uppercase btn-contacto3" style="border-radius: 2em;" href="direccion.html"><fontd>Ver m&aacute;s</font></a></b></font></p>
-</div>
-</div>
-<!-- /.Case Study 03 --></div>
-</div>
-</div>
-</section>
-<!-- /.Case Studies --><!-- CTA Section -->
-
-<section class="bg-light-gray" id="lightcta">
-<div class="container">
-<div class="row">
-<div class="col-md-8 col-md-offset-2 text-center wow fadeIn">
-<h2>Somos l&iacute;deres en innovaci&oacute;n</h2>
-
-<hr class="border-sm" />
-<p class="lead mrgn-20-top">El equipo t&eacute;cnico estar&aacute; habilitando una galer&iacute;a de im&aacute;genes de los proyectos t&eacute;cnicos y tecnol&oacute;gicos presentados en la expoferia.</p>
-
-</div>
-</div>
-</div>
-<!-- /.container --></section>
-<!-- /.CTA Section --><!-- Footer -->
-
-<footer class="bg-dark-blue" style="background-color: #471c0c; color: white;">
-<div class="container">
-<div class="row"><!-- Address, Social Links & Copyright -->
-<div class="col-md-4 col-md-offset-4">
-<p>R.I. 3 Corrales c/ Dr. Hassler<br />
-Campos Cervera, Asunci&oacute;n<br />
-Tel: (021) 608 663</p>
-<span class="copyright">Copyright &copy; Desarrollado en la especialidad de Inform&aacute;tica.</span></div>
-</div>
-<!-- /.Address, Social Links & Copyright --></div>
-<!-- /.container --></footer>
-<!-- /.Footer --><!-- jQuery --><script src="assets/js/jquery.js"></script><!-- Bootstrap Core JavaScript --><script src="assets/js/bootstrap.min.js"></script><!-- JavaScript Plugins --><script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script><script src="assets/js/isotope.pkgd.min.js"></script><script src="assets/js/wow.min.js"></script><script src="assets/owl-carousel/owl.carousel.js"></script><script src="assets/js/counterup/jquery.counterup.min.js"></script><script src="assets/js/jquery.easy-pie-chart.js"></script><script src="assets/magnific-popup/jquery.magnific-popup.min.js"></script><!-- Contact Form JavaScript --><script src="assets/js/jqBootstrapValidation.js"></script><script src="assets/js/contact_me.js"></script><!-- Custom Theme JavaScript --><script src="assets/js/blueridge.js"></script><script>
-async function cargarNoticias() {
-  try {
-    const res = await fetch("http://localhost:3000/api/publicaciones");
-    const publicaciones = await res.json();
-
-    const principal = publicaciones.find(pub => pub.tipo === "principal");
-    const secundarias = publicaciones.filter(pub => pub.tipo === "secundaria");
-
-    const contenedor = document.getElementById("contenedor-noticias");
-    contenedor.innerHTML = "";
-
-    // Noticia principal (grande a la izquierda)
-    if (principal) {
-      contenedor.innerHTML += `
-        <div class="col-md-8">
-          <div class="card" style="font-family:${principal.fuente};">
-            <img src="${principal.imagen_url || "assets/images/noticias/placeholder.jpg"}" class="img-responsive" alt="Noticia principal">
-            <div class="caption">
-              <h2><b>${principal.titulo}</b></h2>
-              <p><small><i class="fa fa-calendar"></i> ${new Date(principal.fecha_publicacion).toLocaleDateString()}</small></p>
-                <p class="descripcion-corta">${principal.descripcion}</p>
-                <button class='btn btn-contacto2' style='border-radius:2em;' onclick='mostrarNoticiaModal(${JSON.stringify(principal)})'>Ver más</button>
+  <!-- Tres tarjetas -->
+  <section class="no-padding" id="features">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 no-padding">
+          <div class="case-study-01 tarjeta-color tarjeta-dorada">
+            <div class="feature-box-plain">
+              <h2>Encuéntranos</h2>
+              <p>Visita nuestra página de contacto para ubicar y charlar con nuestro equipo técnico.</p>
+              <p class="mrgn-30-top"><a class="btn btn-pill btn-ctn" href="contact2.html">Ver más</a></p>
             </div>
           </div>
         </div>
-      `;
-    }
-
-    // Contenedor para noticias secundarias (al lado derecho en columna)
-    let htmlSecundarias = `<div class="col-md-4">`;
-    secundarias.forEach(pub => {
-      htmlSecundarias += `
-        <div class="thumbnail" style="font-family:${pub.fuente}; margin-bottom:15px;">
-          <img src="${pub.imagen_url || "assets/images/noticias/placeholder.jpg"}" class="img-responsive" alt="Noticia secundaria">
-          <div class="caption">
-            <h4><b>${pub.titulo}</b></h4>
-            <p><small><i class="fa fa-calendar"></i> ${new Date(pub.fecha_publicacion).toLocaleDateString()}</small></p>
-              <p class="descripcion-corta">${pub.descripcion}</p>
-              <button class='btn btn-contacto2' style='border-radius:2em;' onclick='mostrarNoticiaModal(${JSON.stringify(pub)})'>Ver más</button>
+        <div class="col-md-4 no-padding">
+          <div class="case-study-02 tarjeta-color">
+            <div class="feature-box-plain">
+              <h2>Trayectoria</h2>
+              <p>Entérate de la historia y de la trayectoria del Colegio Técnico Nacional de Asunción.</p>
+              <p class="mrgn-30-top"><a class="btn btn-pill btn-ctn" href="acerca.html">Ver más</a></p>
+            </div>
           </div>
         </div>
-      `;
-    });
-    htmlSecundarias += `</div>`;
-
-    contenedor.innerHTML += htmlSecundarias;
-
-  } catch (error) {
-    console.error("Error al cargar noticias:", error);
-  }
-}
-
-// Llamar al cargar la página
-// Función para mostrar la noticia en el modal
-function mostrarNoticiaModal(pub) {
-  document.getElementById('modalNoticiaLabel').innerHTML = `<b>${pub.titulo}</b>`;
-
-  let imagenes = [];
-
-  // Caso: varias URLs separadas por coma en la columna imagen_url
-  if (pub.imagen_url && pub.imagen_url.includes(',')) {
-    imagenes = pub.imagen_url.split(',').map(img => img.trim());
-  } 
-  // Caso: una sola URL
-  else if (pub.imagen_url) {
-    imagenes = [pub.imagen_url];
-  } 
-  // Caso: sin imágenes
-  else {
-    imagenes = ['assets/images/noticias/placeholder.jpg'];
-  }
-
- let carruselHtml = '';
-if (imagenes.length > 1) {
-  let indicators = '<ol class="carousel-indicators">';
-  for (let i = 0; i < imagenes.length; i++) {
-    indicators += `<li data-target="#carruselNoticia" data-slide-to="${i}"${i===0?' class="active"':''}></li>`;
-  }
-  indicators += '</ol>';
-
-  let slides = imagenes.map((img,i)=>
-    `<div class="item${i===0?' active':''}">
-      <img src="${img}" alt="Imagen noticia" />
-    </div>`).join('');
-
-  carruselHtml = `
-    <div id="carruselNoticia" class="carousel slide" data-ride="carousel">
-      ${indicators}
-      <div class="carousel-inner">
-        ${slides}
+        <div class="col-md-4 no-padding">
+          <div class="case-study-03 tarjeta-color tarjeta-oscura">
+            <div class="feature-box-plain">
+              <h2>Dirección</h2>
+              <p>Consulta información fundamental acerca de nuestra dirección general.</p>
+              <p class="mrgn-30-top"><a class="btn btn-pill btn-ctn btn-ctn-dorado" href="direccion.html">Ver más</a></p>
+            </div>
+          </div>
+        </div>
       </div>
-      <a class="left carousel-control" href="#carruselNoticia" data-slide="prev">
-  <span style="font-size:20px;color:none;">&#10094;</span>
-</a>
-<a class="right carousel-control" href="#carruselNoticia" data-slide="next">
-  <span style="font-size:20px;color:none;">&#10095;</span>
-</a>
-    </div>`;
-  setTimeout(()=>$('#carruselNoticia').carousel(0),300);
-} else {
-  carruselHtml = `<img src="${imagenes[0]}" alt="Imagen noticia" class="img-responsive" />`;
-}
+    </div>
+  </section>
 
+  <section class="bg-light-gray" id="lightcta">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center wow fadeIn">
+          <h2>Somos líderes en innovación</h2>
+          <hr class="border-sm">
+          <p class="lead mrgn-20-top">El equipo técnico estará habilitando una galería de imágenes de los proyectos técnicos y tecnológicos presentados en la expoferia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  document.getElementById('modalNoticiaBody').innerHTML = `
-    ${carruselHtml}
-    <p><small><i class='fa fa-calendar'></i> ${new Date(pub.fecha_publicacion).toLocaleDateString()}</small></p>
-    <p style='font-family:${pub.fuente};'>${pub.descripcion}</p>
-  `;
-  $('#modalNoticia').modal('show');
-}
+</main>
 
-cargarNoticias();
-</script>
+<footer class="bg-dark-blue" id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: (021) 608 663</p>
+        <span class="copyright">Copyright &copy; Desarrollado en la especialidad de Informática.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/ctn.js"></script>
+<script src="assets/js/noticias.js"></script>
 </body>
 </html>
