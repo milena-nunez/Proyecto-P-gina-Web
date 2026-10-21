@@ -157,6 +157,17 @@ a.desactivado {
 .navbar-brand:hover .logo-base,
 .navbar-brand:focus-visible .logo-base { opacity: 0; }
 
+/* Transición entre páginas: el menú queda quieto y el contenido se desvanece al salir
+   y aparece suavemente al entrar. Funciona en todos los navegadores (también abriendo
+   los archivos directamente), porque no depende de la API de transiciones del navegador. */
+body > main,
+body > footer { animation: ctn-entrada .35s ease backwards; transition: opacity .2s ease; }
+html.saliendo body > main,
+html.saliendo body > footer { opacity: 0; }
+@keyframes ctn-entrada { from { opacity: 0; } to { opacity: 1; } }
+/* Evita el salto lateral cuando una página tiene barra de scroll y otra no */
+html { scrollbar-gutter: stable; }
+
 .ctn-nav .nav-link {
   padding: 1.5rem .85rem;
   color: #fff;
@@ -188,7 +199,11 @@ a.desactivado {
 .ctn-nav .dropdown-item {
   padding: .6rem 1.25rem;   /* total horizontal: 1.25 + 1.25 = 2.5rem */
   color: #fff;
+  font-family: var(--fuente-titulos);   /* misma letra que los enlaces del menú */
+  font-size: 1rem;
   font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   transition: background-color .25s ease, color .25s ease, padding .25s ease;
 }
 

@@ -1,10 +1,11 @@
 /* ==========================================================================
    CTN · Comportamiento común a todas las páginas
    --------------------------------------------------------------------------
-   No necesita jQuery. Hace tres cosas:
+   No necesita jQuery. Hace cuatro cosas:
      1. Activa las animaciones de aparición (clase "wow") al hacer scroll.
      2. Carga el video de fondo de la portada, solo si conviene.
      3. Abre las fotos de la galería en una ventana ampliada.
+     4. Desvanece el contenido al cambiar de página (transición suave).
 
    El menú, las pestañas, los carruseles y las ventanas emergentes los maneja
    Bootstrap 5 (bootstrap.bundle.min.js).
@@ -13,6 +14,32 @@
   'use strict';
 
   document.documentElement.classList.add('js');
+
+  /* ---- 4. Transición al cambiar de página ---------------------------------
+     Al hacer clic en un enlace interno, el contenido se desvanece (CSS: html.saliendo)
+     y recién entonces se carga la otra página, que aparece con su propio fundido. */
+  (function () {
+    var raiz = document.documentElement;
+    var reducido = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Al volver con el botón "atrás" el navegador puede restaurar la página ya desvanecida.
+    window.addEventListener('pageshow', function () { raiz.classList.remove('saliendo'); });
+    if (reducido) { return; }
+
+    document.addEventListener('click', function (e) {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) { return; }
+      var a = e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a || (a.target && a.target !== '_self') || a.hasAttribute('download')) { return; }
+      if (a.classList.contains('disabled') || a.getAttribute('aria-disabled') === 'true') { return; }
+      var destino = a.href;
+      if (!/^(https?|file):/.test(destino)) { return; }                 // mailto:, tel:, etc.
+      if (a.origin !== location.origin || a.pathname === location.pathname) { return; }  // externo o ancla de la misma página
+      if (/\.(pdf|zip|docx?|xlsx?|pptx?|mp4)$/i.test(a.pathname)) { return; }   // descargas
+      e.preventDefault();
+      raiz.classList.add('saliendo');
+      setTimeout(function () { location.href = destino; }, 180);
+    });
+  })();
 
 
   /* ---- 1. Animaciones de aparición ---------------------------------------
