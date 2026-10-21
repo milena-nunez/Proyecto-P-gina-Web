@@ -56,6 +56,7 @@
   /* Escala de espaciado: úsala en vez de números sueltos */
   --sp-1: .25rem;  --sp-2: .5rem;  --sp-3: 1rem;
   --sp-4: 1.5rem;  --sp-5: 2.5rem; --sp-6: 4.5rem;
+  --sp-7: 3.5rem;
 
   /* Escala de tamaños de texto */
   --texto-s:  .9375rem;                       /* 15 px: notas */
@@ -367,9 +368,11 @@ a.desactivado {
 .acceso p { flex-grow: 1; margin: 0 0 var(--sp-4); font-weight: 600; }
 .acceso-dorado { background: var(--ctn-dorado); color: var(--ctn-marron); }
 .acceso-dorado h3 { color: var(--ctn-marron); }
-.acceso-crema { background: var(--ctn-crema); border: 1px solid var(--ctn-borde); color: var(--ctn-texto); }
+.acceso-crema { background: var(--ctn-crema); border: 3px solid var(--ctn-borde); color: var(--ctn-texto); }
+.my-row-1 { --bs-gutter-x: 0; --bs-gutter-y: 0; }
 .acceso-oscuro { background: var(--ctn-marron); color: #fff; }
 .acceso-oscuro h3 { color: var(--ctn-dorado); }
+.seccion-accesos .acceso { border-radius: 0; padding: var(--sp-7) var(--sp-5); }
 
 /* --- Tarjeta blanca de formularios ------------------------------------------ */
 .tarjeta-form { padding: var(--sp-4); }

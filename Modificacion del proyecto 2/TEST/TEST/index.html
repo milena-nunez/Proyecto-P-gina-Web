@@ -40,9 +40,9 @@ body {
 }
 .tarjeta-cabecera { padding: 22px 24px 18px; background: var(--marron); color: #fff; text-align: center; }
 .tarjeta-cabecera h1, .tarjeta-cabecera p { margin: 0; }
-.tarjeta-cabecera h1 { font-family: var(--titulos); font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 700; color: var(--dorado); line-height: 1.15; }
+.tarjeta-cabecera h1 { font-family: var(--titulos); font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 700; color: #fff; line-height: 1.15; }
 .tarjeta-cabecera p { margin-top: 6px; font-size: .95rem; opacity: .9; }
-.cuerpo { padding: 24px; }
+.cuerpo { padding: 24px;}
 .cuerpo:focus, h2:focus { outline: none; }
 
 /* Progreso */
@@ -62,7 +62,9 @@ h2 { margin: 0 0 18px; font-family: var(--titulos); font-size: clamp(1.3rem, 4.5
 }
 .opcion:hover { border-color: var(--marron); background: var(--crema); transform: translateY(-1px); }
 .opcion:focus-visible, .boton:focus-visible { outline: 3px solid var(--marron); outline-offset: 2px; }
-.opcion[aria-pressed="true"] { border-color: var(--marron); background: var(--crema); }
+.opcion[aria-pressed="true"] { border-color: var(--dorado); background: var(--dorado); color: var(--marron); }
+.opcion[aria-pressed="true"] .letra { background: var(--marron); color: var(--dorado); }
+
 .letra {
   flex: none; width: 2rem; height: 2rem; display: grid; place-items: center;
   font-family: var(--titulos); font-weight: 700; color: var(--marron); background: var(--dorado); border-radius: 50%;
@@ -249,7 +251,7 @@ h2 { margin: 0 0 18px; font-family: var(--titulos); font-size: clamp(1.3rem, 4.5
     var titulo = crear('h2', '', 'Descubrí qué especialidad se parece más a vos');
     titulo.tabIndex = -1;
     cont.appendChild(titulo);
-    cont.appendChild(crear('p', '', 'Son 10 preguntas y lleva unos 2 minutos. Elegí siempre la opción que más se parezca a vos: no hay respuestas buenas ni malas.'));
+    cont.appendChild(crear('p', '', 'Son 12 preguntas y lleva unos 3 minutos. Elegí siempre la opción que más se parezca a vos: no hay respuestas buenas ni malas.'));
     cont.appendChild(crear('p', 'aviso', AVISO));
     var acciones = crear('div', 'acciones');
     acciones.appendChild(boton('Comenzar', '', function () { actual = 0; pantallaPregunta(); }));
