@@ -414,6 +414,17 @@ a.desactivado {
    ========================================================================== */
 .aviso-noticias { max-width: 46rem; margin: 0 auto; padding: var(--sp-4); border-left: 4px solid var(--ctn-dorado); border-radius: .5rem; background: #fff; box-shadow: var(--sombra-s); font-size: var(--texto-l); }
 
+/* Publicaciones de Facebook: bloque centrado. Hasta que se acepta, se ve una tarjeta de aviso en su lugar */
+#contenedor-noticias:empty { display: none; }
+#contenedor-noticias:not(:empty) { margin-bottom: var(--sp-5); }
+.facebook-bloque { max-width: 500px; margin: 0 auto; text-align: center; }
+.facebook-consentimiento { padding: var(--sp-5) var(--sp-4); border: 1px solid var(--ctn-borde); border-top: 4px solid var(--ctn-dorado); border-radius: var(--radio-tarjeta); background: #fff; box-shadow: var(--sombra-s); }
+.facebook-consentimiento h3 { margin: 0 0 var(--sp-2); font-size: 1.5rem; }
+.facebook-consentimiento p { margin: 0 0 var(--sp-4); }
+.facebook-acciones { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-3); }
+.facebook-feed { display: block; width: 100%; height: 700px; border: 0; border-radius: var(--radio-tarjeta); background: #fff; box-shadow: var(--sombra-s); }
+.facebook-enlaces { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-3); margin-top: var(--sp-3); }
+.facebook-ocultar { padding: 0; border: 0; background: none; color: var(--ctn-texto-suave); font-size: var(--texto-s); text-decoration: underline; cursor: pointer; }
 .noticias-lista { display: flex; flex-wrap: wrap; gap: var(--sp-4); align-items: flex-start; }
 .noticias-lista > .noticia-principal  { flex: 2 1 480px; min-width: 0; }
 .noticias-lista > .noticias-laterales { flex: 1 1 280px; min-width: 0; display: grid; gap: var(--sp-4); }

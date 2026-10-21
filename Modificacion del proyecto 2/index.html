@@ -172,8 +172,20 @@
       <div class="cabecera-seccion">
         <h2 class="titulo-seccion">Noticias CTN</h2>
       </div>
-      <div id="contenedor-noticias">
-        <p class="aviso-noticias text-center">El glorioso Colegio Técnico Nacional realiza su tradicional EXPOTÉCNICA el 8 de octubre del corriente año.</p>
+      <!-- Noticias propias: si hay servidor, noticias.js las dibuja aquí; si no, este espacio queda vacío y no se ve -->
+      <div id="contenedor-noticias"></div>
+
+      <!-- Publicaciones de la página oficial de Facebook. No se carga nada de Facebook hasta que la persona lo acepta (assets/js/facebook.js) -->
+      <div class="facebook-bloque" id="facebook-bloque" aria-live="polite" data-pagina="https://www.facebook.com/p/Colegio-T%C3%A9cnico-Nacional-de-Asunci%C3%B3n-61551405140707/"
+           data-src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fp%2FColegio-T%25C3%25A9cnico-Nacional-de-Asunci%25C3%25B3n-61551405140707%2F&amp;tabs=timeline&amp;width=500&amp;height=700&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false&amp;locale=es_LA">
+        <div class="facebook-consentimiento" id="facebook-consentimiento">
+          <h3>Publicaciones del CTN en Facebook</h3>
+          <p>Para mostrarlas, tu navegador se conectará a Facebook, que puede usar cookies y registrar tu visita. No cargamos nada de Facebook hasta que lo aceptes.</p>
+          <div class="facebook-acciones">
+            <button type="button" class="btn-ctn btn-ctn-solido" id="facebook-aceptar">Mostrar publicaciones</button>
+            <a class="btn-ctn" href="https://www.facebook.com/p/Colegio-T%C3%A9cnico-Nacional-de-Asunci%C3%B3n-61551405140707/" target="_blank" rel="noopener">Ir a Facebook<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -306,7 +318,7 @@
       <div class="col-6 col-md-4">
         <h2>Encuéntranos</h2>
         <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Colegio+T%C3%A9cnico+Nacional+de+Asunci%C3%B3n" rel="noopener" target="_blank">Cómo llegar<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a></p>
-        <a class="icono-social" href="https://www.facebook.com/ctnoficial/" rel="noopener" target="_blank" aria-label="Facebook del CTN (se abre en una pestaña nueva)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.6c0-.9.3-1.6 1.6-1.6h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.3H8v3h2.5V21h3z"/></svg></a>
+        <a class="icono-social" href="https://www.facebook.com/p/Colegio-T%C3%A9cnico-Nacional-de-Asunci%C3%B3n-61551405140707/" rel="noopener" target="_blank" aria-label="Facebook del CTN (se abre en una pestaña nueva)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.6c0-.9.3-1.6 1.6-1.6h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.3H8v3h2.5V21h3z"/></svg></a>
       </div>
     </div>
     <p class="derechos">Copyright &copy; Desarrollado en la especialidad de Informática.</p>
@@ -316,6 +328,7 @@
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/noticias.js"></script>
+<script src="assets/js/facebook.js"></script>
 <script src="assets/js/ctn.js"></script>
 </body>
 </html>
