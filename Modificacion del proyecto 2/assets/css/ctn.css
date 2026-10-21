@@ -181,14 +181,25 @@ a.desactivado {
   margin-top: 0;
   box-shadow: var(--sombra-m);
 }
+
+.ctn-nav .dropdown-menu.show { animation: ctn-desplegar .2s ease; }
+@keyframes ctn-desplegar { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+
 .ctn-nav .dropdown-item {
-  padding: .6rem 1.25rem;
+  padding: .6rem 1.25rem;   /* total horizontal: 1.25 + 1.25 = 2.5rem */
   color: #fff;
   font-weight: 400;
+  transition: background-color .25s ease, color .25s ease, padding .25s ease;
 }
+
 .ctn-nav .dropdown-item:hover,
 .ctn-nav .dropdown-item:focus,
-.ctn-nav .dropdown-item.active { background: var(--ctn-dorado); color: var(--ctn-marron); }
+.ctn-nav .dropdown-item.active {
+  background: var(--ctn-dorado);
+  color: var(--ctn-marron);
+  padding-left: 1.6rem;   /* +.35rem a la izquierda... */
+  padding-right: .9rem;   /* ...-.35rem a la derecha: el total sigue en 2.5rem */
+}
 
 /* Divisorias finas entre las opciones del desplegable */
 .ctn-nav .dropdown-menu li + li { border-top: 2px solid #412d27; }
