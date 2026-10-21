@@ -22,7 +22,7 @@
   var respuesta = document.getElementById('respuesta-formulario');
   var botonEnviar = formulario.querySelector('button[type="submit"]');
   var DIRECCION = formulario.getAttribute('action') || 'mail/contact_me.php';
-  var TELEFONO = '(021) 608 663';
+  var TELEFONO = '0961 499450';
 
 
   /* ---------- Mensajes ---------- */

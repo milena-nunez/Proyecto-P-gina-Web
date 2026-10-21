@@ -177,17 +177,24 @@ a.desactivado {
   --bs-dropdown-border-width: 0;
   --bs-dropdown-border-radius: 0 0 1rem 1rem;
   --bs-dropdown-padding-y: .5rem;
+  box-shadow: 10px 0 0 0 rgba(0, 0, 0, .45);
   margin-top: 0;
   box-shadow: var(--sombra-m);
 }
 .ctn-nav .dropdown-item {
   padding: .6rem 1.25rem;
-  color: var(--ctn-dorado);
-  font-weight: 600;
+  color: #fff;
+  font-weight: 400;
 }
 .ctn-nav .dropdown-item:hover,
 .ctn-nav .dropdown-item:focus,
 .ctn-nav .dropdown-item.active { background: var(--ctn-dorado); color: var(--ctn-marron); }
+
+/* Divisorias finas entre las opciones del desplegable */
+.ctn-nav .dropdown-menu li + li { border-top: 2px solid #412d27; }
+
+/* Opción deshabilitada (Clubes): apagada, en cursiva y sin reacción al mouse */
+.ctn-nav .dropdown-item.disabled { color: rgb(255, 255, 255, .4); font-weight: 400; background: transparent; }
 
 /* "Admisión": botón destacado dentro del menú */
 .ctn-nav .btn-admision {

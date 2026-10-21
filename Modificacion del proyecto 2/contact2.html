@@ -41,6 +41,7 @@
               <li><a class="dropdown-item" href="cetna.html">CETNA</a></li>
               <li><a class="dropdown-item" href="Formularios.html">Formularios</a></li>
               <li><a class="dropdown-item" href="normas.html">Normas de Convivencia</a></li>
+              <li><a class="dropdown-item disabled" role="link" aria-disabled="true" tabindex="-1">Clubes</a></li>
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link active" href="contact2.html" aria-current="page">Contacto</a></li>
@@ -90,6 +91,8 @@
               <label for="message">Su mensaje *</label>
               <div class="invalid-feedback" aria-live="polite"></div>
             </div>
+            <!-- Campo trampa para robots: las personas no lo ven; si llega con texto, el servidor descarta el mensaje -->
+            <div class="visually-hidden" aria-hidden="true"><label>No completar este campo<input type="text" name="sitio_web" tabindex="-1" autocomplete="off"></label></div>
             <div id="respuesta-formulario" role="status"></div>
             <button type="submit" class="btn-ctn btn-ctn-marron-solido btn-ctn-bloque">Enviar mensaje</button>
           </form>
@@ -97,7 +100,8 @@
 
         <div class="col-lg-5 offset-lg-1 datos-contacto">
           <h2>Llámanos</h2>
-          <p><a href="tel:+59521608663">(021)&nbsp;608&nbsp;663</a></p>
+          <p><a href="tel:+595961499450">0961&nbsp;499450</a></p>
+          <p><a href="mailto:ctnasuncion1980@gmail.com">ctnasuncion1980@gmail.com</a></p>
           <h2>Encuéntrenos</h2>
           <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción</p>
           <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Colegio+T%C3%A9cnico+Nacional+de+Asunci%C3%B3n" rel="noopener" target="_blank">Abrir en Google Maps<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a></p>
@@ -119,7 +123,7 @@
     <div class="row g-4">
       <div class="col-md-4">
         <h2>Colegio Técnico Nacional</h2>
-        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: <a href="tel:+59521608663">(021)&nbsp;608&nbsp;663</a></p>
+        <p>R.I. 3 Corrales c/ Dr. Hassler<br>Campos Cervera, Asunción<br>Tel: <a href="tel:+595961499450">0961&nbsp;499450</a><br>Correo: <a href="mailto:ctnasuncion1980@gmail.com">ctnasuncion1980@gmail.com</a></p>
       </div>
       <div class="col-6 col-md-4">
         <h2>Explorar</h2>
