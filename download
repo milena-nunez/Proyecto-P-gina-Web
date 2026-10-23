@@ -1,0 +1,44 @@
+# ==========================================================================
+# .gitignore del proyecto CTN  (va en la RAÍZ del repo, junto a "backend")
+# ==========================================================================
+
+# --- Dependencias (se reinstalan con "npm install") ---
+node_modules/
+
+# --- Secretos y claves: NUNCA al repositorio ---
+.env
+.env.*
+# La plantilla SÍ se sube (no lleva contraseñas):
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+wp-config.php
+.htpasswd
+
+# --- Copia del servidor/hosting (correos, claves SSL, logs, WordPress) ---
+# Guardar fuera de Git (disco externo o Drive).
+Elementos como tal del proyecto/
+
+# --- Bases de datos y respaldos ---
+*.sql
+*.sqlite
+*.bak
+*.zip
+
+# --- Logs ---
+*.log
+logs/
+error_log
+
+# --- Archivos del sistema y del editor ---
+Thumbs.db
+.DS_Store
+desktop.ini
+.vscode/
+.idea/
+
+# --- Material pesado que no se publica (descomentar si quieren dejarlo fuera) ---
+# CoordiInfo/
+# Fotos 2024-2025/

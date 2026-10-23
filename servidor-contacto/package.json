@@ -1,0 +1,24 @@
+# Copia este archivo como ".env" y completa los datos.
+# El archivo ".env" NO se sube a Git (está en .gitignore).
+
+PORT=3001
+
+# Correo que recibe los mensajes del formulario
+MAIL_TO=ctnasuncion1980@gmail.com
+
+# Cuenta desde la que se ENVÍA (SMTP).
+# Opción A: casilla del dominio del colegio (la recomendada). Pide los datos SMTP al hosting de correo.
+SMTP_HOST=mail.ctnasuncion.edu.py
+SMTP_PORT=465
+SMTP_USER=contacto@ctnasuncion.edu.py
+SMTP_PASS=cambiar-por-la-contraseña
+# Opción B: Gmail con "contraseña de aplicación"  ->  SMTP_HOST=smtp.gmail.com, SMTP_PORT=465
+
+# Dirección que aparece como remitente (normalmente la misma que SMTP_USER)
+MAIL_FROM=contacto@ctnasuncion.edu.py
+
+# Páginas desde las que se acepta el formulario (separadas por coma, sin "/" al final)
+ALLOWED_ORIGINS=https://ctnasuncion.edu.py,https://www.ctnasuncion.edu.py
+
+# Si el servidor está detrás de Nginx déjalo en 1; si recibe tráfico directo, bórralo.
+TRUST_PROXY=1

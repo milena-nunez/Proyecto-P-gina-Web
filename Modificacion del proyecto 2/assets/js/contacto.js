@@ -2,8 +2,9 @@
    CTN · Formulario de contacto
    --------------------------------------------------------------------------
    Valida los campos con las reglas del navegador (required, type="email"...)
-   y envía los datos a la dirección indicada en el atributo "action" del
-   formulario (por defecto mail/contact_me.php).
+   y envía los datos al servidor de contacto. La dirección se toma, en orden, de:
+     1. CTN_CONFIG.contactoUrl (assets/js/config.js)  <- la que hay que configurar
+     2. el atributo "action" del formulario (por defecto mail/contact_me.php).
 
    Los mensajes de error de cada campo se escriben en el HTML, en el atributo
    data-mensaje-requerido. El mensaje de "enviado" solo aparece si el servidor
@@ -21,7 +22,7 @@
 
   var respuesta = document.getElementById('respuesta-formulario');
   var botonEnviar = formulario.querySelector('button[type="submit"]');
-  var DIRECCION = formulario.getAttribute('action') || 'mail/contact_me.php';
+  var DIRECCION = (window.CTN_CONFIG && window.CTN_CONFIG.contactoUrl) || formulario.getAttribute('action') || 'mail/contact_me.php';
   var TELEFONO = '0961 499450';
 
 
@@ -82,7 +83,7 @@
     if (!validar()) { return; }
 
     botonEnviar.disabled = true;
-    fetch(DIRECCION, { method: 'POST', body: new FormData(formulario) })
+    fetch(DIRECCION, { method: 'POST', body: new URLSearchParams(new FormData(formulario)) })   // formato que entienden tanto el servidor Node como PHP
       .then(function (r) {
         if (!r.ok) { throw new Error('El servidor respondió ' + r.status); }
         mostrarRespuesta('success', '¡Gracias! Tu mensaje fue enviado. Te responderemos a tu correo lo antes posible.');
