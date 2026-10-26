@@ -237,6 +237,42 @@
             </div>
           </div>
         </div>
+        <section class="infografias" aria-labelledby="infografias-info">
+          <h4 id="infografias-info" style="text-align: center;">Infografías</h4>
+          <p class="texto-suave" style="text-align: center;">Toca una infografía para verla en grande.</p>
+          <ul class="infografias-lista">
+          <li>
+            <button type="button" class="infografia-item" data-bs-toggle="modal" data-bs-target="#visorInfografiasINFO" data-indice="0">
+              <img src="assets/images/infografias/info/bachillerato-informatica-mini.webp" alt="Infografía del Bachillerato Técnico en Informática: misión, perfil del egresado, áreas de formación (desarrollo de software e infraestructura tecnológica), ámbito ocupacional y competencias transversales." width="360" height="540" loading="lazy">
+              <span class="infografia-titulo">Bachillerato Técnico en Informática</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="infografia-item" data-bs-toggle="modal" data-bs-target="#visorInfografiasINFO" data-indice="4">
+              <img src="assets/images/infografias/info/procedimiento-interno-mini.webp" alt="Infografía del procedimiento interno de Coordinación Informática: clases y laboratorios, uso de equipos informáticos, visitas técnicas, materias teórico-prácticas, muebles, deberes y uniforme." width="360" height="540" loading="lazy">
+              <span class="infografia-titulo">Procedimiento interno de la especialidad</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="infografia-item" data-bs-toggle="modal" data-bs-target="#visorInfografiasINFO" data-indice="3">
+              <img src="assets/images/infografias/info/cargos-y-funciones-mini.webp" alt="Infografía de cargos y funciones de la especialidad de Informática: normativas de selección y permanencia, sistema de créditos y los 12 cargos con sus funciones." width="360" height="540" loading="lazy">
+              <span class="infografia-titulo">Cargos y funciones</span>
+            </button>
+          </li> 
+          <li>
+            <button type="button" class="infografia-item" data-bs-toggle="modal" data-bs-target="#visorInfografiasINFO" data-indice="1">
+              <img src="assets/images/infografias/info/seleccion-infraestructura-mini.webp" alt="Infografía del proceso de selección para el área de Infraestructura IT: dirigido a segundo año, 80% como mínimo, qué se evalúa, camino de selección y resultados." width="360" height="540" loading="lazy">
+              <span class="infografia-titulo">¿Cómo se seleccionan los alumnos para Infraestructura IT?</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="infografia-item" data-bs-toggle="modal" data-bs-target="#visorInfografiasINFO" data-indice="2">
+              <img src="assets/images/infografias/info/equipo-desarrollo-mini.webp" alt="Infografía del Equipo Institucional de Desarrollo: propósito, trayectoria formativa, perfil del postulante, proceso de selección, evaluación técnica y responsabilidades." width="360" height="540" loading="lazy">
+              <span class="infografia-titulo">Equipo Institucional de Desarrollo</span>
+            </button>
+          </li>
+          </ul>
+        </section>
         <div class="acciones-esp">
           <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#coordinadorINFO">Coordinador</button>
           <button type="button" class="btn-ctn btn-ctn-tema" data-bs-toggle="modal" data-bs-target="#formulariosINFO">Formularios</button>
@@ -827,6 +863,45 @@
   </div>
 </div>
 
+<div class="modal fade modal-infografias" id="visorInfografiasINFO" data-especialidad="info" tabindex="-1" aria-labelledby="visorInfografiasINFO-titulo">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="visorInfografiasINFO-titulo">Infografías · Informática</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <figure class="infografia-visor">
+          <img src="assets/images/infografias/info/bachillerato-informatica.webp" alt="Infografía del Bachillerato Técnico en Informática: misión, perfil del egresado, áreas de formación (desarrollo de software e infraestructura tecnológica), ámbito ocupacional y competencias transversales." width="1024" height="1536">
+          <figcaption class="visually-hidden">Bachillerato Técnico en Informática. Perfil del egresado, áreas de formación y ámbito ocupacional.</figcaption>
+        </figure>
+        <figure class="infografia-visor" hidden>
+          <img src="assets/images/infografias/info/seleccion-infraestructura.webp" alt="Infografía del proceso de selección para el área de Infraestructura IT: dirigido a segundo año, 80% como mínimo, qué se evalúa, camino de selección y resultados." width="1024" height="1536" loading="lazy">
+          <figcaption class="visually-hidden">¿Cómo se seleccionan los alumnos para Infraestructura IT?. Proceso de selección, evaluación y asignación.</figcaption>
+        </figure>
+        <figure class="infografia-visor" hidden>
+          <img src="assets/images/infografias/info/equipo-desarrollo.webp" alt="Infografía del Equipo Institucional de Desarrollo: propósito, trayectoria formativa, perfil del postulante, proceso de selección, evaluación técnica y responsabilidades." width="1024" height="1536" loading="lazy">
+          <figcaption class="visually-hidden">Equipo Institucional de Desarrollo. Procedimiento de selección del área de Desarrollo de Software.</figcaption>
+        </figure>
+        <figure class="infografia-visor" hidden>
+          <img src="assets/images/infografias/info/cargos-y-funciones.webp" alt="Infografía de cargos y funciones de la especialidad de Informática: normativas de selección y permanencia, sistema de créditos y los 12 cargos con sus funciones." width="1024" height="1536" loading="lazy">
+          <figcaption class="visually-hidden">Cargos y funciones. Normativas, responsabilidades y reconocimiento académico.</figcaption>
+        </figure>
+        <figure class="infografia-visor" hidden>
+          <img src="assets/images/infografias/info/procedimiento-interno.webp" alt="Infografía del procedimiento interno de Coordinación Informática: clases y laboratorios, uso de equipos informáticos, visitas técnicas, materias teórico-prácticas, muebles, deberes y uniforme." width="1024" height="1536" loading="lazy">
+          <figcaption class="visually-hidden">Procedimiento interno de la especialidad. Clases, uso de equipos, visitas técnicas, uniforme y más.</figcaption>
+        </figure>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-ctn btn-ctn-tema infografia-anterior">&larr; Anterior</button>
+        <span class="infografia-contador" aria-live="polite"></span>
+        <button type="button" class="btn-ctn btn-ctn-tema infografia-siguiente">Siguiente &rarr;</button>
+        <a class="infografia-abrir" href="assets/images/infografias/info/bachillerato-informatica.webp" target="_blank" rel="noopener">Abrir en una pestaña nueva<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- MECÁNICA INDUSTRIAL: ventanas -->
 <div class="modal fade" id="coordinadorINDU" data-especialidad="mecanica_ind" tabindex="-1" aria-labelledby="coordinadorINDU-titulo">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -1226,6 +1301,7 @@ Matricula Nro: 39441.<br>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/espe.js"></script>
+<script src="assets/js/infografias.js"></script>
 <script src="assets/js/ctn.js"></script>
 </body>
 </html>

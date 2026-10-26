@@ -92,3 +92,38 @@
 .modal[data-especialidad] .tarjeta-form h4 { color: var(--esp-fuerte); font-weight: 700; }
 .formularios-lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--sp-3); }
 .formularios-lista .tarjeta-form p { font-size: var(--texto-s); font-weight: 600; }
+
+
+/* ==========================================================================
+   6. INFOGRAFÍAS (miniaturas + ventana ampliada; las maneja infografias.js)
+   ========================================================================== */
+.infografias { margin-bottom: var(--sp-5); }
+.infografias h4 { margin: 0 0 var(--sp-1); font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--esp-fuerte); }
+.infografias > p { margin: 0 0 var(--sp-3); }
+.infografias-lista { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); margin: 0; padding: 0; list-style: none; }
+@media (min-width: 576px) { .infografias-lista { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .infografias-lista { grid-template-columns: repeat(5, 1fr); } }
+.infografia-item {
+  display: flex; flex-direction: column; width: 100%; height: 100%; padding: 0;
+  overflow: hidden; text-align: left; background: #fff; cursor: zoom-in;
+  border: 2px solid var(--ctn-borde); border-radius: .75rem;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.infografia-item:hover, .infografia-item:focus-visible { transform: translateY(-3px); border-color: var(--esp); box-shadow: var(--sombra-m); }
+.infografia-item img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; object-position: top; }
+.infografia-titulo { padding: var(--sp-2) var(--sp-2) var(--sp-3); font-family: var(--fuente-titulos); font-size: .95rem; font-weight: 700; line-height: 1.2; text-transform: uppercase; color: var(--esp-fuerte); }
+
+.modal-infografias .modal-dialog { max-width: 1000px; }
+.modal-infografias .modal-body { padding: 0; background: #f4eee5; }
+.infografia-visor { margin: 0; }
+.infografia-visor img { display: block; width: 100%; height: auto; }
+.modal-infografias .modal-footer { justify-content: center; gap: var(--sp-2); }
+.infografia-contador { min-width: 4.5rem; text-align: center; font-weight: 600; color: var(--ctn-texto-suave); }
+.infografia-abrir { flex-basis: 100%; text-align: center; font-size: var(--texto-s); }
+.modal-infografias .modal-footer .btn-ctn { padding: .45rem .9rem; font-size: .9rem; }
+@media (max-width: 575.98px) {
+  .modal-infografias .modal-dialog { margin: .5rem; }
+  .modal-infografias .modal-footer { padding: var(--sp-2); gap: var(--sp-1) var(--sp-2); }
+  .modal-infografias .modal-footer .btn-ctn { flex: 1 1 0; padding-inline: .5rem; }
+  .infografia-contador { min-width: 3.5rem; }
+}
