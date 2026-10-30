@@ -115,14 +115,25 @@
 
 .modal-infografias .modal-dialog { max-width: 1000px; }
 .modal-infografias .modal-body { padding: 0; background: #f4eee5; }
-.infografia-visor { margin: 0; }
-.infografia-visor img { display: block; width: 100%; height: auto; }
+/* Al abrir, la infografía se ve COMPLETA y sin ampliar (ajustada a la ventana).
+   Si la persona quiere leerla más grande, la toca: crece (con una transición
+   corta) y se recorre con el scroll; al tocarla otra vez vuelve a su tamaño.
+   La ventana tiene tamaño fijo para que no «salte» al ampliar. */
+.modal-infografias .modal-content { height: 100%; }
+.infografia-visor { margin: 0; padding: .75rem; height: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; }
+.infografia-visor img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; cursor: zoom-in; }
+.infografia-visor img:focus-visible { outline: 3px solid var(--esp); outline-offset: 2px; }
+.modal-infografias.ampliada .infografia-visor { height: auto; padding: 0; display: block; }
+.modal-infografias.ampliada .infografia-visor img { width: 100%; max-height: none; margin: 0 auto; cursor: zoom-out; }
 .modal-infografias .modal-footer { justify-content: center; gap: var(--sp-2); }
 .infografia-contador { min-width: 4.5rem; text-align: center; font-weight: 600; color: var(--ctn-texto-suave); }
 .infografia-abrir { flex-basis: 100%; text-align: center; font-size: var(--texto-s); }
 .modal-infografias .modal-footer .btn-ctn { padding: .45rem .9rem; font-size: .9rem; }
 @media (max-width: 575.98px) {
   .modal-infografias .modal-dialog { margin: .5rem; }
+  .infografia-visor { padding: .5rem; }
+  .modal-infografias.ampliada .modal-body { overflow-x: auto; }
+  .modal-infografias.ampliada .infografia-visor img { width: 170%; max-width: none; }
   .modal-infografias .modal-footer { padding: var(--sp-2); gap: var(--sp-1) var(--sp-2); }
   .modal-infografias .modal-footer .btn-ctn { flex: 1 1 0; padding-inline: .5rem; }
   .infografia-contador { min-width: 3.5rem; }
