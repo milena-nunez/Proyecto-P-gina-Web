@@ -54,13 +54,35 @@
 .especialidades-tabs .nav-link.active .especialidad-icon { width: 72px; height: 72px; }
 .especialidades-tabs .nav-link.active .especialidad-label { max-width: 20rem; margin-left: var(--sp-3); opacity: 1; }
 
-/* En celulares el nombre pasa debajo del ícono y los íconos se achican */
-@media (max-width: 575.98px) {
-  .especialidades-tabs { gap: 2px; }
-  .especialidad-icon { width: 44px; height: 44px; }
-  .especialidades-tabs .nav-link.active { flex-direction: column; padding: var(--sp-2) var(--sp-3) var(--sp-3); border-radius: 1.25rem; }
-  .especialidades-tabs .nav-link.active .especialidad-icon { width: 60px; height: 60px; }
-  .especialidades-tabs .nav-link.active .especialidad-label { max-width: 12rem; margin: var(--sp-1) 0 0; font-size: 1rem; white-space: normal; text-align: center; }
+/* Celulares, tablets y pantallas medianas (< 1200 px): rejilla FIJA.
+   Antes, al cambiar de especialidad los íconos se reacomodaban en filas distintas mientras
+   crecía el nombre, y por eso «temblaban». Ahora cada ícono tiene su lugar y no se mueve:
+   la activa solo se resalta (un aro del color de la especialidad alrededor del ícono) y su
+   nombre aparece, con un suave fundido, en una línea propia debajo de los íconos. */
+@media (max-width: 1199.98px) {
+  .especialidades-tabs {
+    position: relative; display: grid; grid-template-columns: repeat(4, 1fr);
+    justify-items: center; gap: var(--sp-2) 4px; padding-bottom: 3.5rem;
+  }
+  .especialidades-tabs .nav-item { display: flex; }
+  .especialidades-tabs .nav-link,
+  .especialidades-tabs .nav-link.active { padding: 4px; border: 2px solid transparent; border-radius: 50%; }
+  .especialidades-tabs .nav-link { transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease; }
+  .especialidades-tabs .nav-link.active { border-color: var(--esp-fuerte); background: #fff; box-shadow: 0 2px 8px rgba(46, 18, 7, .18); }
+  .especialidad-icon,
+  .especialidades-tabs .nav-link.active .especialidad-icon { width: 52px; height: 52px; border-radius: 50%; }   /* redondo: así las esquinas blancas de la imagen no se salen del aro */
+  .especialidad-label,
+  .especialidades-tabs .nav-link.active .especialidad-label {
+    position: absolute; left: 0; right: 0; bottom: 1rem; max-width: none; margin: 0;
+    text-align: center; white-space: nowrap; pointer-events: none;
+  }
+  .especialidad-label { opacity: 0; transition: opacity .25s ease; }
+  .especialidades-tabs .nav-link.active .especialidad-label { opacity: 1; }
+}
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .especialidades-tabs { grid-template-columns: repeat(8, 1fr); }
+  .especialidad-icon,
+  .especialidades-tabs .nav-link.active .especialidad-icon { width: 56px; height: 56px; }
 }
 
 
