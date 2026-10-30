@@ -67,36 +67,24 @@
     <div class="container">
       <div class="cabecera-seccion wow fadeInDown">
         <h2 class="titulo-seccion">Contacto</h2>
-        <p class="subtitulo-seccion">Envíenos sugerencias, consultas y reclamos. Le responderemos a su correo electrónico lo más pronto posible.</p>
+        <p class="subtitulo-seccion">Envíenos sugerencias, consultas y reclamos por WhatsApp. Escriba su mensaje y se abrirá WhatsApp con el texto listo para enviar a nuestro número.</p>
       </div>
       <div class="row gx-lg-5 gy-5">
         <div class="col-lg-6 wow fadeInUp">
-          <!-- contacto.js valida el formulario y lo envía a la dirección de "action" -->
-          <form class="form-contacto" id="contactForm" action="mail/contact_me.php" method="post" novalidate>
+          <!-- contacto.js valida el formulario y abre WhatsApp con el mensaje ya escrito (número en assets/js/config.js) -->
+          <form class="form-contacto" id="contactForm" novalidate>
             <div class="campo form-floating mb-3">
-              <input type="text" class="form-control" id="name" name="name" placeholder="Su nombre" autocomplete="name" required data-mensaje-requerido="Introduzca su nombre.">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Su nombre" autocomplete="name" maxlength="100" required data-mensaje-requerido="Introduzca su nombre.">
               <label for="name">Su nombre *</label>
               <div class="invalid-feedback" aria-live="polite"></div>
             </div>
             <div class="campo form-floating mb-3">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Su email" autocomplete="email" required data-mensaje-requerido="Introduzca su email.">
-              <label for="email">Su email *</label>
-              <div class="invalid-feedback" aria-live="polite"></div>
-            </div>
-            <div class="campo form-floating mb-3">
-              <input type="tel" class="form-control" id="phone" name="phone" placeholder="Su teléfono" autocomplete="tel" required data-mensaje-requerido="Introduzca su número.">
-              <label for="phone">Su teléfono *</label>
-              <div class="invalid-feedback" aria-live="polite"></div>
-            </div>
-            <div class="campo form-floating mb-3">
-              <textarea class="form-control" id="message" name="message" placeholder="Su mensaje" style="height: 9rem; resize: none;" required data-mensaje-requerido="Introduzca un mensaje."></textarea>
+              <textarea class="form-control" id="message" name="message" placeholder="Su mensaje" style="height: 9rem; resize: none;" maxlength="1000" required data-mensaje-requerido="Introduzca un mensaje."></textarea>
               <label for="message">Su mensaje *</label>
               <div class="invalid-feedback" aria-live="polite"></div>
             </div>
-            <!-- Campo trampa para robots: las personas no lo ven; si llega con texto, el servidor descarta el mensaje -->
-            <div class="visually-hidden" aria-hidden="true"><label>No completar este campo<input type="text" name="sitio_web" tabindex="-1" autocomplete="off"></label></div>
             <div id="respuesta-formulario" role="status"></div>
-            <button type="submit" class="btn-ctn btn-ctn-marron-solido btn-ctn-bloque">Enviar mensaje</button>
+            <button type="submit" class="btn-ctn btn-ctn-marron-solido btn-ctn-bloque">Enviar por WhatsApp</button>
           </form>
         </div>
 

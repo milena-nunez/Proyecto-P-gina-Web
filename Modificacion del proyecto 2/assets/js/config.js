@@ -19,11 +19,8 @@ window.CTN_CONFIG = {
     ? 'http://localhost:3000'
     : '',
 
-  /* Dirección del servidor del formulario de Contacto (carpeta servidor-contacto).
-     • En tu computadora usa el servidor local: http://localhost:3001/contacto
-     • Al PUBLICAR escribe la dirección pública, por ejemplo:
-       'https://api.ctnasuncion.edu.py/contacto'
-     • Si queda vacío (''), el formulario usa el atributo "action" de contact2.html
-       (mail/contact_me.php, la versión en PHP). */
-  contactoUrl: 'https://pagctn.taild8799a.ts.net/contacto'
+  /* Número de WhatsApp que recibe los mensajes del formulario de Contacto.
+     Va con el código de país y SIN "+", espacios ni guiones.
+     Ejemplo: 0961 499450 (Paraguay) -> '595961499450' */
+  whatsapp: '595961499450'
 };
