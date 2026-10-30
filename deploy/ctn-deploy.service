@@ -1,0 +1,12 @@
+[Unit]
+Description=CTN - publicar el sitio si hay cambios nuevos en GitHub
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=pagctn
+# Rama que se publica (cámbiala aquí si algún día se usa otra, p. ej. produccion)
+Environment=CTN_RAMA=main
+ExecStart=/usr/local/bin/ctn-deploy auto
+Nice=10

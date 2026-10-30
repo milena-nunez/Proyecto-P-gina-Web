@@ -150,7 +150,7 @@ a.desactivado {
 /* Logo: dos imágenes superpuestas; al pasar el mouse se cambia de una a otra */
 .logo-container { position: relative; display: block; }
 /* El logo mide 567x68: en celular se achica para dejar sitio al botón de las 3 rayitas */
-.logo-container img { display: block; width: min(400px, calc(100vw - 112px)); height: auto; transition: opacity .4s ease; }
+.logo-container img { display: block; width: min(400px, calc(100vw - 100px)); height: auto; transition: opacity .4s ease; }
 .logo-container .logo-hovered { position: absolute; top: 0; left: 0; opacity: 0; }
 .navbar-brand:hover .logo-hovered,
 .navbar-brand:focus-visible .logo-hovered { opacity: 1; }
@@ -244,12 +244,13 @@ html { scrollbar-gutter: stable; }
 .ctn-nav .navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(255, 211, 128, .5); }
 
 @media (max-width: 991.98px) {
+  /* Margen a los lados: el logo y el botón de las 3 rayas no quedan pegados al borde de la pantalla */
+  .ctn-nav > .container-xxl { --bs-gutter-x: 1.5rem; }
   .ctn-nav .navbar-collapse { padding: var(--sp-2) 0 var(--sp-4); max-height: calc(100vh - var(--nav-alto)); overflow-y: auto; }
   .ctn-nav .nav-link { padding: .8rem .25rem; border-bottom: 1px solid rgba(255, 255, 255, .12); }
   .ctn-nav .dropdown-menu { --bs-dropdown-bg: transparent; box-shadow: none; padding-left: var(--sp-3); }
   .ctn-nav .btn-admision { display: block; margin: var(--sp-3) 0 0; text-align: center; padding: .7rem 1rem; }
 }
-@media (max-width: 400px) { .logo-container img { height: 40px; } }
 
 
 /* ==========================================================================
@@ -573,4 +574,18 @@ html { scrollbar-gutter: stable; }
   html { scroll-behavior: auto; }
   .js .wow, .js .wow.visible { opacity: 1; animation: none; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+/* Pie en celular (< 768 px): mismo contenido, mejor organizado.
+   Los datos del colegio arriba; «Explorar» en dos columnas; «Encuéntranos» en una sola fila
+   (enlace a la izquierda, Facebook a la derecha). */
+@media (max-width: 767.98px) {
+  .pie .row > .col-6 { flex: 0 0 100%; max-width: 100%; }
+  .pie ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--sp-3); }
+  .pie li { margin-bottom: 0; }
+  .pie li a { display: inline-block; padding: .45rem 0; }
+  .pie .row > .col-6:last-child { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+  .pie .row > .col-6:last-child h2 { flex: 0 0 100%; }
+  .pie .row > .col-6:last-child p { margin: 0; }
+  .pie .row > .col-6:last-child a:not(.icono-social) { display: inline-block; padding: .45rem 0; }
 }
