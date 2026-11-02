@@ -246,7 +246,13 @@ html { scrollbar-gutter: stable; }
 @media (max-width: 991.98px) {
   /* Margen a los lados: el logo y el botón de las 3 rayas no quedan pegados al borde de la pantalla */
   .ctn-nav > .container-xxl { --bs-gutter-x: 1.5rem; }
+  /* La fila del logo y las tres rayas mide siempre lo mismo que la barra (72 px) y se alinea
+     arriba: así, al abrir el menú, solo se agrega la lista debajo y NADA de arriba se mueve. */
+  .ctn-nav > .container-xxl { align-items: flex-start; }
+  .ctn-nav .navbar-brand { display: flex; align-items: center; min-height: var(--nav-alto); padding: 0; }
+  .ctn-nav .navbar-toggler { margin-top: calc((var(--nav-alto) - 45px) / 2); }
   .ctn-nav .navbar-collapse { padding: var(--sp-2) 0 var(--sp-4); max-height: calc(100vh - var(--nav-alto)); overflow-y: auto; }
+  .ctn-nav .navbar-collapse.collapsing { overflow: hidden; }   /* sin barra de desplazamiento mientras se abre o cierra */
   .ctn-nav .nav-link { padding: .8rem .25rem; border-bottom: 1px solid rgba(255, 255, 255, .12); }
   .ctn-nav .dropdown-menu { --bs-dropdown-bg: transparent; box-shadow: none; padding-left: var(--sp-3); }
   .ctn-nav .btn-admision { display: block; margin: var(--sp-3) 0 0; text-align: center; padding: .7rem 1rem; }
@@ -522,6 +528,7 @@ html { scrollbar-gutter: stable; }
 /* --- Dirección: ficha del director -------------------------------------------- */
 .ficha-destacada { margin-bottom: var(--sp-5); padding: var(--sp-5); border-left: 5px solid var(--ctn-dorado); border-radius: var(--radio-tarjeta); background: var(--ctn-crema); }
 .ficha-destacada h2 { font-size: var(--titulo-3); text-transform: uppercase; }
+.roles-fundamentales { margin-top: 0; padding-top: var(--sp-3); border-top: 2px solid var(--ctn-borde); }
 .lista-funciones li { margin-bottom: var(--sp-3); }
 
 /* --- Contacto ------------------------------------------------------------------ */
