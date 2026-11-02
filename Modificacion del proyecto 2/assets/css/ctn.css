@@ -251,7 +251,10 @@ html { scrollbar-gutter: stable; }
   .ctn-nav > .container-xxl { align-items: flex-start; }
   .ctn-nav .navbar-brand { display: flex; align-items: center; min-height: var(--nav-alto); padding: 0; }
   .ctn-nav .navbar-toggler { margin-top: calc((var(--nav-alto) - 45px) / 2); }
-  .ctn-nav .navbar-collapse { padding: var(--sp-2) 0 var(--sp-4); max-height: calc(100vh - var(--nav-alto)); overflow-y: auto; }
+  /* Sin relleno propio: un relleno no se anima y dejaba el menú «trabado» a medio cerrar. El espacio va en los elementos de adentro. */
+  .ctn-nav .navbar-collapse { padding: 0; max-height: calc(100vh - var(--nav-alto)); overflow-y: auto; }
+  .ctn-nav .navbar-collapse .navbar-nav { margin-top: var(--sp-2); }
+  .ctn-nav .navbar-collapse > :last-child { margin-bottom: var(--sp-4); }
   .ctn-nav .navbar-collapse.collapsing { overflow: hidden; }   /* sin barra de desplazamiento mientras se abre o cierra */
   .ctn-nav .nav-link { padding: .8rem .25rem; border-bottom: 1px solid rgba(255, 255, 255, .12); }
   .ctn-nav .dropdown-menu { --bs-dropdown-bg: transparent; box-shadow: none; padding-left: var(--sp-3); }
