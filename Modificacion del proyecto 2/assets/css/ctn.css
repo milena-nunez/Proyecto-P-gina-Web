@@ -286,7 +286,7 @@ html:has(body.modal-open) { overflow: hidden; scrollbar-gutter: auto; }
   padding: var(--sp-6) 0;
   color: #fff;
   text-align: center;
-  background: var(--ctn-marron-oscuro) url(../images/headers/hero-poster.jpg) center / cover no-repeat;
+  background: var(--ctn-marron-oscuro) url(../images/headers/tajy.jpg) center / cover no-repeat;
 }
 .hero::before {                                    /* velo oscuro para que el texto se lea */
   content: "";
