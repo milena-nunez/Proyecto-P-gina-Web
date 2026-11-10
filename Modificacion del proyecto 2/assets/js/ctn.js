@@ -1,11 +1,12 @@
 /* ==========================================================================
    CTN · Comportamiento común a todas las páginas
    --------------------------------------------------------------------------
-   No necesita jQuery. Hace cuatro cosas:
+   No necesita jQuery. Hace cinco cosas:
      1. Activa las animaciones de aparición (clase "wow") al hacer scroll.
      2. Carga el video de fondo de la portada, solo si conviene.
      3. Abre las fotos de la galería en una ventana ampliada.
      4. Desvanece el contenido al cambiar de página (transición suave).
+     5. Carruseles: botón de pausa, movimiento reducido y precarga de fotos.
 
    El menú, las pestañas, los carruseles y las ventanas emergentes los maneja
    Bootstrap 5 (bootstrap.bundle.min.js).
@@ -104,6 +105,108 @@
     var promesa = video.play();
     if (promesa && promesa.catch) { promesa.catch(function () { /* el navegador bloqueó el autoplay: se queda la foto */ }); }
   }
+
+
+  /* ---- 5. Carruseles de fotos ----------------------------------------------
+     Para cada carrusel (los de la página y el de las noticias):
+       · agrega un botón de pausa / reproducción (pautas de accesibilidad: lo que
+         se mueve solo tiene que poder detenerse);
+       · si el sistema pide reducir el movimiento, empieza en pausa;
+       · precarga la foto siguiente antes de que le toque, así nunca aparece un
+         hueco en blanco durante la transición.
+     noticias.js usa window.ctnCarrusel(elemento, opciones) para el suyo. */
+  var reducirMovimiento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ICONOS_PAUSA =
+    '<svg class="icono-pausa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>' +
+    '<svg class="icono-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
+
+  function precargarSiguiente(carrusel) {
+    var items = carrusel.querySelectorAll('.carousel-item');
+    var activo = carrusel.querySelector('.carousel-item.active');
+    var i = Array.prototype.indexOf.call(items, activo);
+    [i + 1, i - 1].forEach(function (j) {
+      var img = items[(j + items.length) % items.length].querySelector('img');
+      if (img && img.loading === 'lazy') { img.loading = 'eager'; }
+    });
+  }
+
+  function prepararCarrusel(carrusel, opciones) {
+    if (!window.bootstrap || carrusel.hasAttribute('data-ctn-listo')) { return; }
+    carrusel.setAttribute('data-ctn-listo', '');
+    var automatico = !reducirMovimiento;
+    var instancia = window.bootstrap.Carousel.getOrCreateInstance(carrusel,
+      Object.assign({}, opciones, { ride: automatico ? 'carousel' : false }));
+    if (!automatico) { instancia.pause(); }
+
+    var items = carrusel.querySelectorAll('.carousel-item');
+    if (items.length > 1) {
+      /* Las flechas pasan dentro de .carousel-inner: así quedan sobre la foto y
+         no sobre la barra de abajo. */
+      var interior = carrusel.querySelector('.carousel-inner');
+      carrusel.querySelectorAll('.carousel-control-prev, .carousel-control-next').forEach(function (f) { interior.appendChild(f); });
+
+      /* Barra de abajo: texto de la foto + puntos + pausa */
+      var pie = document.createElement('div');
+      pie.className = 'carrusel-pie';
+      var texto = document.createElement('p');
+      texto.className = 'carrusel-texto';
+      var controles = document.createElement('div');
+      controles.className = 'carrusel-controles';
+      var puntos = carrusel.querySelector('.carousel-indicators');
+      if (puntos) { controles.appendChild(puntos); }
+      pie.appendChild(texto); pie.appendChild(controles);
+      carrusel.appendChild(pie);
+
+      /* El texto sale de data-texto de la foto o de su descripción (alt). Si la
+         descripción es genérica («foto 2 de 4») o se repite en varias fotos,
+         muestra solo la posición. */
+      var textos = Array.prototype.map.call(items, function (it) {
+        var img = it.querySelector('img');
+        return img ? (img.getAttribute('data-texto') || img.alt || '').trim() : '';
+      });
+      var mostrarTexto = function (i) {
+        var propio = textos[i];
+        var generico = !propio || /foto\s*\d+\s*de\s*\d+/i.test(propio) ||
+          textos.indexOf(propio) !== textos.lastIndexOf(propio);
+        texto.textContent = generico ? 'Foto ' + (i + 1) + ' de ' + items.length : propio;
+        texto.classList.toggle('es-contador', generico);
+      };
+      mostrarTexto(Math.max(0, Array.prototype.indexOf.call(items, carrusel.querySelector('.carousel-item.active'))));
+      carrusel.addEventListener('slide.bs.carousel', function (e) { mostrarTexto(e.to); });
+
+      var boton = document.createElement('button');
+      boton.type = 'button';
+      boton.className = 'carrusel-pausa';
+      boton.innerHTML = ICONOS_PAUSA;
+      var actualizar = function () {
+        boton.setAttribute('data-pausado', String(!automatico));
+        boton.setAttribute('aria-label', automatico ? 'Pausar las fotos' : 'Pasar las fotos automáticamente');
+        boton.title = automatico ? 'Pausar' : 'Reproducir';
+      };
+      boton.addEventListener('click', function () {
+        automatico = !automatico;
+        instancia._config.ride = automatico ? 'carousel' : false;   /* así Bootstrap no lo reactiva al sacar el mouse */
+        if (automatico) { instancia.cycle(); } else { instancia.pause(); }
+        actualizar();
+      });
+      actualizar();
+      controles.appendChild(boton);
+    }
+
+    carrusel.addEventListener('slid.bs.carousel', function () { precargarSiguiente(carrusel); });
+    /* La primera precarga, recién cuando el carrusel se ve (los de las pestañas
+       ocultas no descargan nada hasta que se abren). */
+    if ('IntersectionObserver' in window) {
+      var observador = new IntersectionObserver(function (entradas) {
+        if (entradas[0].isIntersecting) { precargarSiguiente(carrusel); observador.disconnect(); }
+      }, { rootMargin: '200px' });
+      observador.observe(carrusel);
+    } else {
+      precargarSiguiente(carrusel);
+    }
+  }
+  window.ctnCarrusel = prepararCarrusel;
+  document.querySelectorAll('.carousel[data-bs-ride]').forEach(function (c) { prepararCarrusel(c); });
 
 
   /* ---- 3. Galería ---------------------------------------------------------

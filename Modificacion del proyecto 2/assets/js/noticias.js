@@ -176,7 +176,8 @@
     if (imagenes.length > 1) {
       var carrusel = crearCarrusel(imagenes, titulo);
       cuerpo.appendChild(carrusel);
-      window.bootstrap.Carousel.getOrCreateInstance(carrusel, { interval: 5000, ride: 'carousel' });
+      if (window.ctnCarrusel) { window.ctnCarrusel(carrusel, { interval: 5000 }); }   /* pausa y precarga: ctn.js */
+      else { window.bootstrap.Carousel.getOrCreateInstance(carrusel, { interval: 5000, ride: 'carousel' }); }
     } else if (imagenes.length === 1) {
       var foto = crear('img', 'img-fluid');
       foto.src = imagenes[0];

@@ -498,7 +498,9 @@ html:has(body.modal-open) { overflow: hidden; scrollbar-gutter: auto; }
 .noticia-modal .modal-body p { white-space: pre-line; overflow-wrap: anywhere; }
 .noticia-modal .carousel { margin-bottom: var(--sp-3); }
 .noticia-modal .carousel-inner { border-radius: .75rem; }
-.noticia-modal .carousel-item img { width: 100%; height: 300px; margin: 0; object-fit: cover; border-radius: 0; }
+/* La foto se ve entera (sin recortar) sobre un fondo crema */
+.noticia-modal .carousel-inner { background: var(--ctn-crema); }
+.noticia-modal .carousel-item img { width: 100%; height: clamp(220px, 45vh, 380px); margin: 0; object-fit: contain; border-radius: 0; }
 
 
 /* ==========================================================================
@@ -510,10 +512,70 @@ html:has(body.modal-open) { overflow: hidden; scrollbar-gutter: auto; }
 .nav-tabs .nav-link { font-family: var(--fuente-titulos); font-weight: 700; font-size: 1.125rem; }
 .nav-tabs .nav-link.active { border-bottom: 3px solid var(--ctn-marron); }
 
-.carrusel { max-width: 860px; margin: 0 auto var(--sp-5); overflow: hidden; border-radius: var(--radio-tarjeta); box-shadow: var(--sombra-m); }
-.carrusel img { display: block; width: 100%; height: auto; }
-.carousel-indicators [data-bs-target] { width: 10px; height: 10px; border: 0; border-radius: 50%; }
-.carousel-control-prev-icon, .carousel-control-next-icon { padding: 1.1rem; border-radius: 50%; background-color: rgba(71, 28, 12, .75); background-size: 50%; }
+.carrusel { position: relative; max-width: 860px; margin: 0 auto var(--sp-5); overflow: hidden; border-radius: var(--radio-tarjeta); box-shadow: var(--sombra-m); background: var(--ctn-crema); }
+/* Proporción fija 3:2: cualquier foto nueva (horizontal, vertical o 4:3) entra
+   recortada al centro y el carrusel no cambia de alto entre fotos ni entre
+   especialidades. */
+.carrusel img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; object-position: center; }
+/* Flechas sobre la foto: círculos blancos con la flecha en marrón; se ven
+   sobre cualquier foto, clara u oscura. */
+.carousel-control-prev, .carousel-control-next { width: 4.5rem; opacity: 1; }
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  width: 48px; height: 48px; padding: 0; border-radius: 50%;
+  background-color: rgba(255, 255, 255, .94); background-size: 24px; background-position: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .28); transition: transform .15s ease, background-color .15s ease;
+}
+.carousel-control-prev-icon { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23471c0c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E"); }
+.carousel-control-next-icon { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23471c0c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E"); }
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon { background-color: #fff; transform: scale(1.08); }
+.carousel-control-prev:focus-visible, .carousel-control-next:focus-visible { outline: none; }
+.carousel-control-prev:focus-visible .carousel-control-prev-icon,
+.carousel-control-next:focus-visible .carousel-control-next-icon { outline: 3px solid var(--ctn-dorado); outline-offset: 2px; }
+
+/* Barra debajo de la foto (la arma ctn.js): texto de la foto, puntos y pausa.
+   Es parte de la tarjeta, no flota sobre la imagen. */
+.carrusel-pie {
+  display: flex; align-items: center; gap: var(--sp-2) var(--sp-3); flex-wrap: wrap;
+  padding: .75rem 1rem .75rem 1.25rem; border-top: 1px solid var(--ctn-borde); background: #fff;
+}
+.carrusel-texto {
+  flex: 1 1 18rem; min-width: 0; margin: 0;
+  font-size: 1rem; line-height: 1.4; color: var(--ctn-texto);
+}
+.carrusel-texto.es-contador { color: var(--ctn-texto-suave); }
+.carrusel-controles { display: flex; align-items: center; gap: var(--sp-2); margin-left: auto; }
+/* Puntos: se ven de 10 px, pero el área para tocarlos es de 26 px */
+.carrusel-pie .carousel-indicators { position: static; margin: 0; padding: 0; }
+.carousel-indicators [data-bs-target] {
+  box-sizing: content-box; width: 10px; height: 10px; margin: 0; padding: 0;
+  border: 8px solid transparent; border-radius: 50%; background-clip: padding-box;
+}
+.carrusel-pie .carousel-indicators [data-bs-target] { background-color: var(--ctn-borde); opacity: 1; transition: background-color .15s ease, transform .15s ease; }
+.carrusel-pie .carousel-indicators [data-bs-target]:hover { background-color: #c9b59b; }
+.carrusel-pie .carousel-indicators .active { background-color: var(--ctn-marron); transform: scale(1.2); }
+.carrusel-pie .carousel-indicators [data-bs-target]:focus-visible { outline: 2px solid var(--ctn-marron); outline-offset: -4px; }
+/* Botón de pausa / reproducción */
+.carrusel-pausa {
+  flex: none; display: inline-grid; place-items: center; width: 40px; height: 40px; padding: 0;
+  border: 2px solid var(--ctn-marron); border-radius: 50%; background: #fff; color: var(--ctn-marron);
+  transition: background-color .15s ease, color .15s ease;
+}
+.carrusel-pausa:hover { background: var(--ctn-marron); color: #fff; }
+.carrusel-pausa:focus-visible { outline: 3px solid var(--ctn-dorado); outline-offset: 2px; }
+.carrusel-pausa svg { width: 16px; height: 16px; }
+.carrusel-pausa .icono-play, .carrusel-pausa[data-pausado="true"] .icono-pausa { display: none; }
+.carrusel-pausa[data-pausado="true"] .icono-play { display: block; }
+@media (max-width: 575.98px) {
+  .carousel-control-prev, .carousel-control-next { width: 3.25rem; }
+  .carousel-control-prev-icon, .carousel-control-next-icon { width: 40px; height: 40px; background-size: 20px; }
+  .carrusel-pie { padding: .75rem; }
+  .carrusel-texto { flex-basis: 100%; font-size: .95rem; }
+  .carrusel-controles { width: 100%; justify-content: space-between; margin: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-control-prev-icon, .carousel-control-next-icon, .carrusel-pie .carousel-indicators [data-bs-target] { transition: none; }
+}
 
 /* --- Acerca de: razones para elegir el CTN ----------------------------------- */
 .razon { text-align: center; }
