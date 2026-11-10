@@ -167,6 +167,15 @@ html.saliendo body > footer { opacity: 0; }
 @keyframes ctn-entrada { from { opacity: 0; } to { opacity: 1; } }
 /* Evita el salto lateral cuando una página tiene barra de scroll y otra no */
 html { scrollbar-gutter: stable; }
+/* ...pero con una ventana abierta (modal) ese espacio reservado quedaba como una
+   franja vacía a la derecha y todo se corría. Mientras hay una ventana abierta se
+   libera la franja; Bootstrap compensa el contenido y ctn.js compensa el menú con
+   --ctn-barra (el ancho de la barra de scroll, medido justo antes de abrir). */
+html:has(body.modal-open) { overflow: hidden; scrollbar-gutter: auto; }
+.modal-open .ctn-nav { padding-right: var(--ctn-barra, 0px); }
+/* El logo se mide con 100vw, que también crece al liberar la franja: se descuenta
+   para que no se agrande y empuje el botón del menú a otra línea. */
+.modal-open .logo-container img { width: min(400px, calc(100vw - 100px - var(--ctn-barra, 0px))); }
 
 .ctn-nav .nav-link {
   padding: 1.5rem .85rem;

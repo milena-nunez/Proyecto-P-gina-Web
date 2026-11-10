@@ -15,6 +15,15 @@
 
   document.documentElement.classList.add('js');
 
+  /* Ventanas (modales): justo antes de abrir una se mide el ancho de la barra
+     de scroll, para que el menú fijo no se corra cuando la barra se oculta
+     (CSS: .modal-open .ctn-nav). */
+  document.addEventListener('show.bs.modal', function () {
+    if (document.body.classList.contains('modal-open')) { return; }
+    var raiz = document.documentElement;
+    raiz.style.setProperty('--ctn-barra', Math.max(0, window.innerWidth - raiz.clientWidth) + 'px');
+  });
+
   /* ---- 4. Transición al cambiar de página ---------------------------------
      Al hacer clic en un enlace interno, el contenido se desvanece (CSS: html.saliendo)
      y recién entonces se carga la otra página, que aparece con su propio fundido. */

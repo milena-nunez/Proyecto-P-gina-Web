@@ -119,44 +119,146 @@
 /* ==========================================================================
    6. INFOGRAFÍAS (miniaturas + ventana ampliada; las maneja infografias.js)
    ========================================================================== */
+/* Lista compacta, como una lista de documentos: portada (la parte de arriba de
+   cada infografía, todas del mismo tamaño), título y una línea de descripción.
+   Dos columnas desde 768 px. */
 .infografias { margin-bottom: var(--sp-5); }
-.infografias h4 { margin: 0 0 var(--sp-1); font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--esp-fuerte); }
-.infografias > p { margin: 0 0 var(--sp-3); }
-.infografias-lista { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); margin: 0; padding: 0; list-style: none; }
-@media (min-width: 576px) { .infografias-lista { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 900px) { .infografias-lista { grid-template-columns: repeat(5, 1fr); } }
-.infografia-item {
-  display: flex; flex-direction: column; width: 100%; height: 100%; padding: 0;
-  overflow: hidden; text-align: left; background: #fff; cursor: zoom-in;
-  border: 2px solid var(--ctn-borde); border-radius: .75rem;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+.infografias-cabecera { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--sp-1) var(--sp-3); margin-bottom: var(--sp-3); }
+.infografias-cabecera h4 { margin: 0; font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--esp-fuerte); }
+.infografias-cabecera p { margin: 0; font-size: var(--texto-s); color: var(--ctn-texto-suave); }
+.infografias-lista {
+  margin: 0; padding: 0; list-style: none; overflow: hidden;
+  border: 1px solid var(--ctn-borde); border-radius: var(--radio-tarjeta); background: #fff;
 }
-.infografia-item:hover, .infografia-item:focus-visible { transform: translateY(-3px); border-color: var(--esp); box-shadow: var(--sombra-m); }
-.infografia-item img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; object-position: top; }
-.infografia-titulo { padding: var(--sp-2) var(--sp-2) var(--sp-3); font-family: var(--fuente-titulos); font-size: .95rem; font-weight: 700; line-height: 1.2; text-transform: uppercase; color: var(--esp-fuerte); }
-
-.modal-infografias .modal-dialog { max-width: 1000px; }
-.modal-infografias .modal-body { padding: 0; background: #f4eee5; }
-/* Al abrir, la infografía se ve COMPLETA y sin ampliar (ajustada a la ventana).
-   Si la persona quiere leerla más grande, la toca: crece (con una transición
-   corta) y se recorre con el scroll; al tocarla otra vez vuelve a su tamaño.
-   La ventana tiene tamaño fijo para que no «salte» al ampliar. */
-.modal-infografias .modal-content { height: 100%; }
-.infografia-visor { margin: 0; padding: .75rem; height: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; }
-.infografia-visor img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; cursor: zoom-in; }
-.infografia-visor img:focus-visible { outline: 3px solid var(--esp); outline-offset: 2px; }
-.modal-infografias.ampliada .infografia-visor { height: auto; padding: 0; display: block; }
-.modal-infografias.ampliada .infografia-visor img { width: 100%; max-height: none; margin: 0 auto; cursor: zoom-out; }
-.modal-infografias .modal-footer { justify-content: center; gap: var(--sp-2); }
-.infografia-contador { min-width: 4.5rem; text-align: center; font-weight: 600; color: var(--ctn-texto-suave); }
-.infografia-abrir { flex-basis: 100%; text-align: center; font-size: var(--texto-s); }
-.modal-infografias .modal-footer .btn-ctn { padding: .45rem .9rem; font-size: .9rem; }
+.infografias-lista li + li { border-top: 1px solid var(--ctn-borde); }
+@media (min-width: 768px) {
+  .infografias-lista { display: grid; grid-template-columns: 1fr 1fr; }
+  .infografias-lista li:nth-child(odd) { border-right: 1px solid var(--ctn-borde); }
+  .infografias-lista li:nth-child(2) { border-top: 0; }
+}
+.infografia-item {
+  display: grid; grid-template-columns: 6.5rem 1fr auto; align-items: center; gap: var(--sp-3);
+  width: 100%; height: 100%; padding: var(--sp-3); border: 0; background: transparent;
+  text-align: left; color: inherit; transition: background-color .15s ease;
+}
+.infografia-item img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: .4rem; box-shadow: 0 0 0 1px rgba(71, 28, 12, .1); }
+.infografia-texto { display: grid; gap: .15rem; min-width: 0; }
+.infografia-titulo { font-family: var(--fuente-titulos); font-size: 1.02rem; font-weight: 700; line-height: 1.2; text-transform: uppercase; color: var(--esp-fuerte); }
+.infografia-desc { font-size: var(--texto-s); line-height: 1.35; color: var(--ctn-texto-suave); }
+.infografia-item > svg { width: 20px; height: 20px; color: var(--esp-fuerte); transition: translate .15s ease; }
+.infografia-item:hover, .infografia-item:focus-visible { background: var(--ctn-crema); }
+.infografia-item:hover > svg { translate: 3px 0; }
+.infografia-item:focus-visible { outline: 2px solid var(--esp-fuerte); outline-offset: -2px; }
 @media (max-width: 575.98px) {
-  .modal-infografias .modal-dialog { margin: .5rem; }
-  .infografia-visor { padding: .5rem; }
-  .modal-infografias.ampliada .modal-body { overflow-x: auto; }
-  .modal-infografias.ampliada .infografia-visor img { width: 170%; max-width: none; }
-  .modal-infografias .modal-footer { padding: var(--sp-2); gap: var(--sp-1) var(--sp-2); }
-  .modal-infografias .modal-footer .btn-ctn { flex: 1 1 0; padding-inline: .5rem; }
-  .infografia-contador { min-width: 3.5rem; }
+  .infografia-item { grid-template-columns: 5rem 1fr auto; gap: .75rem; padding: .75rem; }
+  .infografia-titulo { font-size: .95rem; }
+  .infografia-desc { font-size: .85rem; }
+}
+@media (prefers-reduced-motion: reduce) { .infografia-item, .infografia-item > svg { transition: none; } }
+
+/* --------------------------------------------------------------------------
+   Visor a pantalla completa. Mismo lenguaje que las ventanas de Coordinador y
+   Formularios: fondo blanco, título y línea con el color de la especialidad.
+   La infografía usa todo el alto disponible; se amplía tocándola (o con el
+   botón de lupa / tecla Z) y se cambia con las flechas, las miniaturas del
+   pie, el teclado o deslizando el dedo.
+   -------------------------------------------------------------------------- */
+.modal-infografias .modal-content {
+  display: flex; flex-direction: column; height: 100dvh; border: 0; border-radius: 0;
+  background: #fff; color: var(--ctn-texto);
+}
+.modal-infografias :focus-visible { outline: 2px solid var(--esp-fuerte); outline-offset: 2px; }
+
+/* Barra superior */
+.visor-barra {
+  flex: none; display: flex; align-items: center; gap: var(--sp-3);
+  padding: .5rem .75rem .5rem 1.5rem; border-bottom: 4px solid var(--esp);
+}
+.visor-info { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: .75rem; }
+.visor-titulo {
+  min-width: 0; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-size: 1.5rem; font-weight: 700; color: var(--esp-fuerte);
+}
+.visor-contador { flex: none; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ctn-texto-suave); }
+.visor-acciones { flex: none; display: flex; gap: .25rem; }
+
+/* Botones con ícono (44 px: cómodos para el dedo) */
+.visor-boton {
+  display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0;
+  border: 0; border-radius: 50%; background: transparent; color: var(--esp-fuerte);
+  transition: background-color .15s ease, color .15s ease;
+}
+.visor-boton:hover { background: var(--ctn-crema); color: var(--esp-fuerte); }
+.visor-boton svg { width: 22px; height: 22px; }
+.visor-boton[aria-pressed="true"], .visor-boton[aria-pressed="true"]:hover { background: var(--esp-fuerte); color: #fff; }
+
+/* Escenario */
+.visor-escenario {
+  position: relative; flex: 1; min-height: 0;
+  display: flex; align-items: center; justify-content: center;
+  padding: 1rem 5.5rem; overflow: hidden; touch-action: none; background: #f4eee5;
+}
+.visor-img {
+  display: block; width: auto; height: auto; max-width: 100%; max-height: 100%;
+  border-radius: .375rem; box-shadow: var(--sombra-m);
+  cursor: zoom-in; user-select: none; -webkit-user-drag: none;
+}
+.modal-infografias.ampliada .visor-escenario { display: block; padding: 0; overflow: auto; touch-action: pan-x pan-y; }
+.modal-infografias.ampliada .visor-img { max-width: none; max-height: none; margin: 0 auto; border-radius: 0; box-shadow: none; cursor: zoom-out; }
+
+/* Flechas laterales */
+.visor-flecha {
+  position: absolute; top: 50%; z-index: 2; translate: 0 -50%;
+  width: 52px; height: 52px; background: #fff; border: 2px solid var(--esp-fuerte); box-shadow: var(--sombra-m);
+}
+.visor-flecha:hover { background: var(--esp-fuerte); color: #fff; }
+.visor-flecha svg { width: 26px; height: 26px; }
+.visor-flecha.anterior { left: 1.25rem; }
+.visor-flecha.siguiente { right: 1.25rem; }
+.modal-infografias.ampliada .visor-flecha { display: none; }
+
+/* Pista de zoom (la primera vez) */
+.visor-pista {
+  position: absolute; left: 50%; bottom: 1.5rem; z-index: 2; translate: -50% 0;
+  display: flex; align-items: center; gap: .5rem; margin: 0; padding: .5rem 1rem;
+  border-radius: 999px; background: #fff; box-shadow: var(--sombra-m);
+  font-size: .95rem; font-weight: 600; color: var(--ctn-texto); white-space: nowrap;
+  pointer-events: none; opacity: 0; transition: opacity .3s ease;
+}
+.visor-pista svg { width: 18px; height: 18px; color: var(--esp-fuerte); }
+.visor-pista.visible { opacity: 1; }
+
+/* Pie: miniaturas */
+.visor-pie { flex: none; display: flex; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1rem; border-top: 1px solid var(--ctn-borde); }
+.visor-pie .visor-boton { display: none; border: 2px solid var(--esp-fuerte); }
+.visor-tira { display: flex; gap: .5rem; margin: 0; padding: 2px; list-style: none; overflow-x: auto; }
+.visor-mini {
+  display: block; padding: 0; border: 0; border-radius: .375rem; background: transparent;
+  opacity: .55; outline: 2px solid transparent; outline-offset: 2px;
+  transition: opacity .15s ease, outline-color .15s ease;
+}
+.visor-mini img { display: block; width: auto; height: 56px; border-radius: .375rem; border: 1px solid var(--ctn-borde); }
+.visor-mini:hover { opacity: .9; }
+.visor-mini[aria-current="true"] { opacity: 1; outline-color: var(--esp-fuerte); }
+.modal-infografias.ampliada .visor-pie { display: none; }
+
+/* Teléfono: sin flechas laterales; abajo Anterior · puntos · Siguiente */
+@media (max-width: 767.98px) {
+  .visor-barra { padding-left: 1rem; }
+  .visor-info { flex-direction: column; gap: 0; }
+  .visor-titulo { font-size: 1.15rem; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .visor-contador { font-size: .85rem; }
+  .visor-escenario { padding: .75rem; }
+  .visor-flecha { display: none; }
+  .visor-pie { justify-content: space-between; padding: .5rem .75rem calc(.5rem + env(safe-area-inset-bottom)); }
+  .visor-pie .visor-boton { display: inline-grid; }
+  .visor-tira { gap: 0; overflow: visible; }
+  .visor-mini { display: grid; place-items: center; width: 28px; height: 44px; opacity: 1; outline: 0; }
+  .visor-mini img { display: none; }
+  .visor-mini::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ctn-borde); transition: background-color .15s ease, scale .15s ease; }
+  .visor-mini[aria-current="true"]::before { background: var(--esp-fuerte); scale: 1.3; }
+  .visor-mini:focus-visible::before { outline: 2px solid var(--esp-fuerte); outline-offset: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .modal-infografias * { transition: none !important; }
 }
