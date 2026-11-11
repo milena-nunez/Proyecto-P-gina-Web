@@ -204,6 +204,16 @@
   cursor: zoom-in; user-select: none; -webkit-user-drag: none;
 }
 .modal-infografias.ampliada .visor-escenario { display: block; padding: 0; overflow: auto; touch-action: pan-x pan-y; }
+/* Mientras llega la infografía siguiente: indicador de carga (aparece recién
+   a los 250 ms, así no parpadea cuando la imagen llega rápido) */
+.visor-escenario.cargando::after {
+  content: ""; position: absolute; top: 50%; left: 50%; width: 40px; height: 40px; margin: -20px 0 0 -20px;
+  border: 3px solid var(--ctn-borde); border-top-color: var(--esp-fuerte); border-radius: 50%;
+  animation: visor-gira .8s linear infinite, visor-aparece .2s ease .25s both;
+}
+@keyframes visor-gira { to { transform: rotate(360deg); } }
+@keyframes visor-aparece { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .visor-escenario.cargando::after { animation: visor-aparece .2s ease .25s both; } }
 .modal-infografias.ampliada .visor-img { max-width: none; max-height: none; margin: 0 auto; border-radius: 0; box-shadow: none; cursor: zoom-out; }
 
 /* Flechas laterales */

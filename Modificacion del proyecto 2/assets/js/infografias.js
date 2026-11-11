@@ -72,14 +72,35 @@
 
     function precargar(i) { var im = new Image(); im.src = items[(i + items.length) % items.length].src; }
 
-    /* Pone la infografía i: primero la miniatura (ya cargada, así nunca se ve
-       vacío) y la grande en cuanto termina de llegar. */
-    function poner(i) {
+    /* Pone la infografía i. Al cambiar src, el navegador sigue mostrando la
+       imagen anterior hasta que llega la nueva, así que:
+       · si hay una miniatura con la misma proporción, se muestra ya y la
+         grande la reemplaza cuando llega;
+       · si no, la anterior se oculta, aparece un indicador de carga y la nueva
+         se pone recién cuando terminó de descargarse.
+       listo() se llama cuando ya se ve la imagen correcta. */
+    function poner(i, listo) {
       var it = items[i], id = ++cargaId, grande = new Image();
-      img.width = it.ancho; img.height = it.alto; img.alt = it.alt;
-      img.src = it.mini || it.src;
-      grande.onload = function () { if (id === cargaId) { img.src = it.src; } };
+      function mostrarGrande() {
+        if (id !== cargaId) { return; }          /* ya se pidió otra: esta se descarta */
+        img.width = it.ancho; img.height = it.alto; img.alt = it.alt;
+        img.src = it.src;
+        img.style.visibility = '';
+        escenario.classList.remove('cargando');
+        if (listo) { listo(); listo = null; }
+      }
+      grande.onload = grande.onerror = mostrarGrande;
       grande.src = it.src;
+      if (grande.complete && grande.naturalWidth) {
+        mostrarGrande();
+      } else if (it.mini) {
+        img.width = it.ancho; img.height = it.alto; img.alt = it.alt;
+        img.src = it.mini; img.style.visibility = '';
+        if (listo) { listo(); listo = null; }
+      } else {
+        img.style.visibility = 'hidden';
+        escenario.classList.add('cargando');
+      }
       titulo.textContent = it.titulo;
       contador.textContent = (i + 1) + ' / ' + items.length;
       abrir.href = it.src;
@@ -96,6 +117,8 @@
       if (pz.s > 1) { reiniciarPellizco(); }
       if (i === actual) { return; }
       actual = i;
+      /* Si quedó a medias una transición anterior (cambios rápidos), se corta */
+      if (img.getAnimations) { img.getAnimations().forEach(function (a) { if (a !== animando) { a.cancel(); } }); }
       if (sinMovimiento || !dir || !img.animate) { poner(i); return; }
       var d = dir * 24, hecho = false;
       var salida = img.animate(
@@ -103,10 +126,13 @@
         { duration: 120, easing: 'ease-in', fill: 'forwards' });
       function entrar() {
         if (hecho || actual !== i) { return; }
-        hecho = true; salida.cancel(); poner(i);
-        img.animate(
-          [{ opacity: 0, transform: 'translateX(' + d + 'px)' }, { opacity: 1, transform: 'none' }],
-          { duration: 220, easing: 'cubic-bezier(.2,.7,.2,1)' });
+        hecho = true;
+        poner(i, function () {
+          salida.cancel();
+          img.animate(
+            [{ opacity: 0, transform: 'translateX(' + d + 'px)' }, { opacity: 1, transform: 'none' }],
+            { duration: 220, easing: 'cubic-bezier(.2,.7,.2,1)' });
+        });
       }
       salida.onfinish = entrar;
       setTimeout(entrar, 160);   /* por si la animación no llega a terminar */
