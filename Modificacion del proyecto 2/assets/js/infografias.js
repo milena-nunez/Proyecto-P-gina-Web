@@ -93,6 +93,7 @@
     function mostrar(i, dir) {
       i = (i + items.length) % items.length;
       if (ampliada) { zoom(false); }
+      if (pz.s > 1) { reiniciarPellizco(); }
       if (i === actual) { return; }
       actual = i;
       if (sinMovimiento || !dir || !img.animate) { poner(i); return; }
@@ -151,11 +152,14 @@
       ], { duration: 320, easing: 'cubic-bezier(.2,.8,.2,1)' });
       animando = esta;
       esta.onfinish = esta.oncancel = function () { if (animando === esta) { animando = null; } };
-      setTimeout(function () { if (animando === esta) { esta.finish(); } }, 400);
+      /* Por si el navegador no avisa el final (pestaña en segundo plano): a los
+         400 ms se da por terminada igual y el zoom queda libre. */
+      setTimeout(function () { if (animando === esta) { esta.finish(); animando = null; } }, 400);
     }
 
     function reiniciarZoom() {
       if (animando) { animando.cancel(); }
+      reiniciarPellizco();
       ampliada = false;
       ventana.classList.remove('ampliada');
       img.style.width = '';
@@ -192,13 +196,119 @@
     ventana.addEventListener('hide.bs.modal', ocultarPista);
     ventana.addEventListener('hidden.bs.modal', function () { reiniciarZoom(); titulo.textContent = tituloBase; });
 
+    /* ---- Zoom con los dedos (pantallas táctiles) ------------------------
+       Pellizcar amplía y reduce entre los dedos, un dedo arrastra la imagen
+       ampliada (sin salirse de los bordes), un toque amplía en ese punto y
+       otro toque la vuelve a su tamaño. Deslizar hacia los costados cambia de
+       infografía solo cuando no está ampliada. Se hace con transform (escala
+       y desplazamiento) y no cambia el modo de la computadora. */
+    var tactil = window.matchMedia && window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    var ESCALA_MAX = 4, ESCALA_TOQUE = 2.5;
+    var pz = { s: 1, x: 0, y: 0 };
+    var punteros = {};
+    var gesto = null, ultimoToque = 0;
+
+    function centroEscenario() {
+      var r = escenario.getBoundingClientRect();
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    }
+    function acotar() {
+      pz.s = Math.min(ESCALA_MAX, Math.max(1, pz.s));
+      var mx = Math.max(0, (img.offsetWidth * pz.s - escenario.clientWidth) / 2);
+      var my = Math.max(0, (img.offsetHeight * pz.s - escenario.clientHeight) / 2);
+      pz.x = Math.min(mx, Math.max(-mx, pz.x));
+      pz.y = Math.min(my, Math.max(-my, pz.y));
+    }
+    function pintar(animar) {
+      img.style.transition = animar && !sinMovimiento ? 'transform .28s cubic-bezier(.2,.7,.2,1)' : 'none';
+      img.style.transform = pz.s === 1 ? '' : 'translate(' + pz.x + 'px,' + pz.y + 'px) scale(' + pz.s + ')';
+      var si = pz.s > 1;
+      ventana.classList.toggle('pellizcada', si);
+      zoomBtn.setAttribute('aria-pressed', String(si));
+      zoomBtn.setAttribute('aria-label', si ? 'Reducir' : 'Ampliar');
+      zoomMas.style.display = si ? 'none' : '';
+    }
+    /* Cambia la escala a s dejando quieto el punto de la pantalla (px, py) */
+    function escalarEn(s, px, py, animar) {
+      var c = centroEscenario();
+      var lx = (px - c.x - pz.x) / pz.s, ly = (py - c.y - pz.y) / pz.s;
+      pz.s = Math.min(ESCALA_MAX, Math.max(1, s));
+      pz.x = px - c.x - pz.s * lx; pz.y = py - c.y - pz.s * ly;
+      acotar(); pintar(animar);
+      if (pz.s > 1) { ocultarPista(); }
+    }
+    function reiniciarPellizco() {
+      pz = { s: 1, x: 0, y: 0 }; punteros = {}; gesto = null;
+      pintar(false);
+    }
+    function alternarPellizco(px, py) {
+      if (pz.s > 1) { pz = { s: 1, x: 0, y: 0 }; pintar(true); return; }
+      var c = centroEscenario();
+      escalarEn(ESCALA_TOQUE, px === undefined ? c.x : px, py === undefined ? c.y : py, true);
+    }
+    function dedos() { return Object.keys(punteros).map(function (k) { return punteros[k]; }); }
+    function empezarGesto(movioAntes) {
+      var ps = dedos();
+      if (ps.length >= 2) {
+        var a = ps[0], b = ps[1], c = centroEscenario();
+        var mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+        gesto = { tipo: 'dos', d0: Math.hypot(a.x - b.x, a.y - b.y) || 1, s0: pz.s,
+          lx: (mx - c.x - pz.x) / pz.s, ly: (my - c.y - pz.y) / pz.s, movio: true };
+      } else if (ps.length === 1) {
+        gesto = { tipo: 'uno', x0: ps[0].x, y0: ps[0].y, px: pz.x, py: pz.y, t: Date.now(), movio: !!movioAntes };
+      } else {
+        gesto = null;
+      }
+    }
+
+    escenario.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'touch' || e.target.closest('button')) { return; }
+      ultimoToque = Date.now();
+      punteros[e.pointerId] = { x: e.clientX, y: e.clientY };
+      empezarGesto(gesto && gesto.movio && dedos().length > 1);
+    });
+    escenario.addEventListener('pointermove', function (e) {
+      if (!punteros[e.pointerId] || !gesto) { return; }
+      punteros[e.pointerId] = { x: e.clientX, y: e.clientY };
+      var ps = dedos();
+      if (gesto.tipo === 'dos' && ps.length >= 2) {
+        var a = ps[0], b = ps[1], c = centroEscenario();
+        var mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+        pz.s = Math.min(ESCALA_MAX, Math.max(1, gesto.s0 * Math.hypot(a.x - b.x, a.y - b.y) / gesto.d0));
+        pz.x = mx - c.x - pz.s * gesto.lx; pz.y = my - c.y - pz.s * gesto.ly;
+        acotar(); pintar(false); ocultarPista();
+      } else if (gesto.tipo === 'uno') {
+        var dx = e.clientX - gesto.x0, dy = e.clientY - gesto.y0;
+        if (Math.abs(dx) + Math.abs(dy) > 8) { gesto.movio = true; }
+        if (pz.s > 1) { pz.x = gesto.px + dx; pz.y = gesto.py + dy; acotar(); pintar(false); }
+      }
+    });
+    function soltar(e) {
+      if (!punteros[e.pointerId]) { return; }
+      var g = gesto;
+      delete punteros[e.pointerId];
+      ultimoToque = Date.now();
+      if (dedos().length) { empezarGesto(true); return; }   /* queda un dedo: sigue arrastrando */
+      gesto = null;
+      if (!g || e.type === 'pointercancel') { return; }
+      if (g.tipo === 'uno' && !g.movio && Date.now() - g.t < 350) { alternarPellizco(e.clientX, e.clientY); return; }
+      if (g.tipo === 'uno' && pz.s === 1) {
+        var dx = e.clientX - g.x0, dy = e.clientY - g.y0;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) { mostrar(actual + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1); }
+      }
+    }
+    escenario.addEventListener('pointerup', soltar);
+    escenario.addEventListener('pointercancel', soltar);
+    window.addEventListener('resize', function () { if (pz.s > 1) { acotar(); pintar(false); } });
+
     /* Controles */
-    var gesto = { x: 0, y: 0, movio: false };
     img.addEventListener('click', function (e) {
-      if (gesto.movio) { return; }
+      if (Date.now() - ultimoToque < 700) { return; }   /* un toque ya lo manejan los gestos */
       zoom(!ampliada, { x: e.clientX, y: e.clientY });
     });
-    zoomBtn.addEventListener('click', function () { zoom(!ampliada); });
+    zoomBtn.addEventListener('click', function () {
+      if (tactil) { alternarPellizco(); } else { zoom(!ampliada); }
+    });
     ventana.querySelectorAll('.anterior').forEach(function (b) { b.addEventListener('click', function () { mostrar(actual - 1, -1); }); });
     ventana.querySelectorAll('.siguiente').forEach(function (b) { b.addEventListener('click', function () { mostrar(actual + 1, 1); }); });
     ventana.addEventListener('keydown', function (e) {
@@ -211,24 +321,5 @@
       if (e.key === 'ArrowRight') { mostrar(actual + 1, 1); e.preventDefault(); }
     });
 
-    /* Gestos: deslizar para cambiar, pellizcar para ampliar */
-    escenario.addEventListener('touchstart', function (e) {
-      if (ampliada) { return; }
-      if (e.touches.length === 2) {
-        var a = e.touches[0], b = e.touches[1];
-        zoom(true, { x: (a.clientX + b.clientX) / 2, y: (a.clientY + b.clientY) / 2 });
-        return;
-      }
-      gesto.x = e.touches[0].clientX; gesto.y = e.touches[0].clientY; gesto.movio = false;
-    }, { passive: true });
-    escenario.addEventListener('touchend', function (e) {
-      if (ampliada || !e.changedTouches.length) { return; }
-      var dx = e.changedTouches[0].clientX - gesto.x, dy = e.changedTouches[0].clientY - gesto.y;
-      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
-        gesto.movio = true;
-        mostrar(actual + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
-        setTimeout(function () { gesto.movio = false; }, 350);
-      }
-    });
   });
 })();
