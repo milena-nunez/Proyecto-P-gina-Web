@@ -368,7 +368,7 @@ html:has(body.modal-open) { overflow: hidden; scrollbar-gutter: auto; }
 /* ==========================================================================
    7. SECCIONES Y TÍTULOS
    ========================================================================== */
-.seccion { padding: var(--sp-6) 0; }
+.seccion { padding: var(--sp-6) 0; overflow-wrap: break-word; }   /* un correo o una palabra muy larga pasa a la línea siguiente en vez de salirse */
 .seccion-crema { background-color: var(--ctn-crema); }
 .seccion-marron { background-color: var(--ctn-marron); color: #fff; }
 .seccion-marron h2, .seccion-marron h3 { color: #fff; }
@@ -602,6 +602,8 @@ html:has(body.modal-open) { overflow: hidden; scrollbar-gutter: auto; }
 /* --- Dirección: ficha del director -------------------------------------------- */
 .ficha-destacada { margin-bottom: var(--sp-5); padding: var(--sp-5); border-left: 5px solid var(--ctn-dorado); border-radius: var(--radio-tarjeta); background: var(--ctn-crema); }
 .ficha-destacada h2 { font-size: var(--titulo-3); text-transform: uppercase; }
+/* En el teléfono, menos relleno: el texto aprovecha el ancho de la pantalla */
+@media (max-width: 575.98px) { .ficha-destacada { padding: var(--sp-4) var(--sp-3); } }
 .roles-fundamentales { margin-top: 0; padding-top: var(--sp-3); border-top: 2px solid var(--ctn-borde); }
 .lista-funciones li { margin-bottom: var(--sp-3); }
 
