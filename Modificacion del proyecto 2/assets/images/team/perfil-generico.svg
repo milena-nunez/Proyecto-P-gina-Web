@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" width="480" height="260">
+  <!-- Foto de perfil genérica (silueta), en los colores del sitio.
+       Se usa mientras no haya una foto real del integrante. -->
+  <rect width="480" height="260" fill="#e8dccb"/>
+  <circle cx="240" cy="104" r="50" fill="#fbf6ee"/>
+  <path d="M138 260c0-58 44-96 102-96s102 38 102 96z" fill="#fbf6ee"/>
+</svg>
