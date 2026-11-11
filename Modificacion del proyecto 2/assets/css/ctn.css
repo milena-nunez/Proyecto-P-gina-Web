@@ -638,9 +638,47 @@ html:has(body.modal-open) { overflow: hidden; scrollbar-gutter: auto; }
 .pie a:hover, .pie a:focus-visible { color: var(--ctn-dorado); }
 .pie ul { margin: 0; padding: 0; list-style: none; }
 .pie li { margin-bottom: var(--sp-2); }
-.pie .icono-social { background: var(--ctn-dorado); color: var(--ctn-marron); text-decoration: none; }
-.pie .icono-social:hover, .pie .icono-social:focus-visible { background: #fff; color: var(--ctn-marron); }
 .pie .derechos { margin-top: var(--sp-4); padding-top: var(--sp-3); border-top: 1px solid rgba(255, 255, 255, .15); text-align: center; }
+
+/* --- Pie de todas las páginas: escudo + Explorar + Contacto --------------- */
+.pie-nuevo { padding-top: var(--sp-5); font-size: var(--texto-m, 1rem); }
+/* Escudo del colegio con el nombre al lado, como una firma institucional
+   (distinto del logo de texto del menú, para que el pie no lo repita) */
+.pie .pie-marca { display: inline-flex; align-items: center; gap: var(--sp-3); color: #fff; text-decoration: none; }
+.pie-marca img { flex: none; display: block; width: auto; height: 104px; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .35)); }
+/* El nombre usa el mismo texto del logo del menú (logo-texto.png, recortado de
+   logo3.png sin el escudito), así el pie y el encabezado tienen la misma letra */
+.pie-nombre { display: grid; gap: .5rem; font-family: var(--fuente-titulos); text-transform: uppercase; line-height: 1.15; }
+.pie .pie-nombre img { display: block; width: 260px; max-width: 100%; height: auto; filter: none; }
+.pie-nombre span { font-size: .95rem; letter-spacing: 3px; color: var(--ctn-dorado); }
+.pie .pie-marca:hover, .pie .pie-marca:focus-visible { color: #fff; }
+.pie-marca:focus-visible { outline: 2px solid var(--ctn-dorado); outline-offset: 6px; border-radius: .5rem; }
+.pie-lema { margin: var(--sp-3) 0 0; color: #d9c8b4; }
+/* Explorar: dos columnas de 5 que se llenan de arriba hacia abajo
+   (izquierda: estudios; derecha: el colegio) */
+.pie-nuevo .pie-enlaces { display: grid; grid-auto-flow: column; grid-template-rows: repeat(5, auto); grid-template-columns: auto auto; justify-content: start; gap: var(--sp-2) var(--sp-5); }
+@media (max-width: 767.98px) { .pie-nuevo .pie-enlaces { grid-template-columns: 1fr 1fr; column-gap: var(--sp-3); } }
+.pie-nuevo .pie-enlaces li { margin: 0; }
+.pie-nuevo .pie-contacto { display: grid; gap: .75rem; margin-bottom: 0; }
+.pie-nuevo .pie-contacto .ico-relleno { fill: currentColor; stroke: none; }
+/* La dirección en dos líneas como máximo: así la columna no se estira de más */
+.pie-nuevo .pie-contacto li:first-child > span { max-width: 32ch; }
+.pie-nuevo .pie-contacto li { display: grid; grid-template-columns: 22px 1fr; gap: var(--sp-2); align-items: start; margin: 0; }
+.pie-nuevo .pie-contacto svg { width: 20px; height: 20px; margin-top: 2px; color: var(--ctn-dorado); }
+.pie-nota { color: #d9c8b4; }
+.pie-nuevo .derechos { margin-top: var(--sp-5); color: #d9c8b4; }
+/* Cuando las secciones se apilan (teléfono y tablet), más aire entre ellas */
+@media (max-width: 991.98px) { .pie-nuevo .row { --bs-gutter-y: var(--sp-5); } }
+@media (max-width: 767.98px) {
+  .pie-nuevo { padding-top: var(--sp-4); }
+  .pie-marca img { height: 84px; }
+  /* El nombre ocupa el ancho que queda al lado del escudo (hasta 300 px),
+     para que no quede más chico que el resto de los textos del pie */
+  .pie .pie-nombre img { width: min(300px, calc(100vw - 110px)); }
+  .pie-nombre span { font-size: 1rem; }
+  .pie-nuevo .pie-contacto { display: grid; grid-template-columns: none; }
+  .pie-nuevo .pie-enlaces li a, .pie-nuevo .pie-contacto a { display: inline-block; padding: .3rem 0; }
+}
 
 
 /* ==========================================================================
@@ -663,15 +701,3 @@ html:has(body.modal-open) { overflow: hidden; scrollbar-gutter: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
 
-/* Pie en celular (< 768 px): mismo contenido, alineado a la izquierda y en una sola columna.
-   Datos del colegio, «Explorar» en dos columnas (mitad y mitad) y «Encuéntranos» con el
-   botón de Facebook debajo del enlace «Cómo llegar». */
-@media (max-width: 767.98px) {
-  .pie .row > .col-6 { flex: 0 0 100%; max-width: 100%; }
-  .pie ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--sp-3); }
-  .pie li { margin-bottom: 0; }
-  .pie li a { display: inline-block; padding: .45rem 0; }
-  .pie .row > .col-6:last-child { display: flex; flex-direction: column; align-items: flex-start; }
-  .pie .row > .col-6:last-child p { margin: 0 0 var(--sp-2); }
-  .pie .row > .col-6:last-child a:not(.icono-social) { display: inline-block; padding: .45rem 0; }
-}
