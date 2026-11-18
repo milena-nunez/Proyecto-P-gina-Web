@@ -43,7 +43,7 @@
     { clave: 'quimica',                etiqueta: 'Química',              color: '#03BB85', logo: 'qca_c.png'  },
     { clave: 'construcciones civiles', etiqueta: 'Construcciones Civiles', color: '#b9ae48', logo: 'cc_c.png' },
     { clave: 'mecanica automotriz',    etiqueta: 'Mecánica Automotriz',  color: '#000080', logo: 'auto_c.png' },
-    { clave: 'mecanica industrial',    etiqueta: 'Mecánica Industrial',  color: '#008000', logo: 'indu_c.png' },
+    { clave: 'mecanica industrial',    etiqueta: 'Mecánica General',      color: '#008000', logo: 'indu_c.png' },
     { clave: 'electricidad',           etiqueta: 'Electricidad',         color: '#87CEEB', logo: 'edad_c.png' }
   ];
   var CARPETA_LOGOS = 'assets/images/especialidades/';
